@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Car Rental Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="image-div">
+    <div class="inner-img-div" [style.background-image]=" 'url('+car.vehavailcore[0].vehicle[0].pictureurl[0]+')'">
+
+      <div class="prepaid-div">{{car.vehavailcore[0].rentalrate[0].ratequalifier[0].RateQualifier[0]}}</div>
+    </div>
+  </div>
+<ion-card class="description-card">
+  <ion-row>
+    <ion-col>
+      <p class="header-p">{{car.vehavailcore[0].vehicle[0].vehmakemodel[0].Name[0]}}</p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-icon name="custom-adult"></ion-icon> {{car.vehavailcore[0].vehicle[0].PassengerQuantity[0]}}
+    </ion-col>
+    <ion-col>
+      <ion-icon name="custom-luggage"></ion-icon> {{car.vehavailcore[0].vehicle[0].BaggageQuantity[0]}}
+    </ion-col>
+    <ion-col>
+      <ion-icon name="custom-car-door"></ion-icon>{{car.vehavailcore[0].vehicle[0].vehtype[0].DoorCount[0]}}
+    </ion-col>
+    <ion-col>
+      <ion-icon name="custom-gas-station"></ion-icon> {{car.vehavailcore[0].vehicle[0].FuelType[0]}}
+    </ion-col>
+  </ion-row>
+</ion-card>
+  
+
+  <ion-card *ngFor="let rentalDetail of rentalDetails;let i=index" class="description-card">
+    <ion-card-header (click)="isHidden[i]=!isHidden[i]">
+      <ion-row>
+        <ion-col>{{rentalDetail.Title[0]}}</ion-col>
+        <ion-col class="icon-col">
+          <ion-icon [hidden]="isHidden[i]" name="custom-up-arrow"></ion-icon>
+          <ion-icon [hidden]="!isHidden[i]" name="custom-down-arrow"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content [hidden]="isHidden[i]">
+      <li *ngFor="let para of rentalDetail.paragraph">{{para}}</li>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<div class="div-footer-flight">
+  <ion-row>
+    <ion-col col-6>
+      <p class="label-col">Total Amount</p>
+      <p class="detail-col">{{car.vehavailcore[0].totalcharge[0].CurrencyCode[0]}} {{car.vehavailcore[0].totalcharge[0].RateTotalAmount[0]}}</p>
+    </ion-col>
+    <ion-col col-6 class="button-col">
+      <button (click)="proceed()" color="danger" outline ion-button>Proceed</button>
+    </ion-col>
+  </ion-row>
+</div>
+

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar *ngIf="transferPickUp">
+    <ion-title>Search City</ion-title>
+  </ion-navbar>
+  <ion-navbar *ngIf="transferDropOff">
+    <ion-title>Search City</ion-title>
+  </ion-navbar>
+  <ion-navbar *ngIf="transferAirport">
+    <ion-title>Search Airport</ion-title>
+  </ion-navbar>
+  <ion-navbar *ngIf="transferAirLines">
+    <ion-title>Search Airlines</ion-title>
+  </ion-navbar>
+  </ion-header>  
+    <ion-content>
+      <div *ngIf="transferPickUp">
+      <ion-searchbar placeholder="Search Transfer City" (ionChange)='onChange($event._value)'></ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let hotelCity of transferCities" (click)="selectedCity(hotelCity)">
+          <ion-icon item-start name="custom-hotel-city"></ion-icon>
+            <h2>{{hotelCity.city}}</h2>
+            <p>{{hotelCity.value}} </p>
+        </ion-item>
+      </ion-list>  
+    </div>
+    <div *ngIf="transferDropOff">
+      <ion-searchbar placeholder="Search Transfer City" (ionChange)='onChangeDropOff($event._value)'></ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let hotelCity of transferDestination" (click)="selectedDropOff(hotelCity)">
+          <ion-icon item-start name="custom-hotel-city"></ion-icon>
+            <h2>{{hotelCity.city}}</h2>
+            <p>{{hotelCity.value}} </p>
+        </ion-item>
+      </ion-list> 
+    </div>
+    <div *ngIf="transferAirport">
+      <ion-searchbar placeholder="Search Transfer Airport" (ionChange)='onChangeAirport($event._value)'></ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let transfer of transferAirportSeach" (click)="selectedAirportSeach(transfer)">
+          <ion-icon item-start name="custom-hotel-city"></ion-icon>
+            <h2>{{transfer.code}}</h2>
+            <p>{{transfer.name}} </p>
+        </ion-item>
+      </ion-list> 
+    </div>
+    <div *ngIf="transferAirLines">
+      <ion-searchbar placeholder="Search Transfer Airlines" (ionChange)='onChangeAirlines($event._value)'></ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let transfer of transferAirlinesSeach" (click)="selectedAirlinesSeach(transfer)">
+          <ion-icon item-start name="custom-hotel-city"></ion-icon>
+            <h2>{{transfer.AirLineCode}}</h2>
+            <p>{{transfer.AirLineName}} </p>
+        </ion-item>
+      </ion-list> 
+    </div>
+    </ion-content>
+    
+    
+  

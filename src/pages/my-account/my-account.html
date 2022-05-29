@@ -1,0 +1,51 @@
+
+<ion-content>
+    <div class="outer-div">
+      <p class="header-p">My {{addres.projectName}} Account</p>
+      <div class="profile-img">
+        <img [src]="user?user.image:'assets/imgs/other/user.svg'">
+      </div>
+    </div>
+    <div class="water-mark">
+      <div (click)="GoToLoginPage()">
+        <p class="name-p"> {{user?user.title:''}}  {{user?user.fname:'Sign In/Sign Up'}} {{user?user.lname:' '}} </p>
+        <span class="email-span">{{user?user.emailid:'You need to sign in to view all your records'}}</span>
+    </div>
+    <div class="my-detail">
+      <ion-row (click)="goProfilePage()">
+        <ion-col class="icon-col" col-2>
+          <ion-icon name="custom-profile"></ion-icon>
+        </ion-col>
+        <ion-col class="label-col">My Profile</ion-col>
+        <ion-col class="icon-col" col-2>
+          <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="myBookingPage()">
+        <ion-col class="icon-col" col-2>
+          <ion-icon name="custom-booking"></ion-icon>
+        </ion-col>
+        <ion-col class="label-col">My Bookings</ion-col>
+        <ion-col class="icon-col" col-2>
+          <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="myTransactionPage()">
+        <ion-col class="icon-col" col-2>
+          <ion-icon name="custom-transaction"></ion-icon>
+        </ion-col>
+        <ion-col class="label-col">My Transactions</ion-col>
+        <ion-col class="icon-col" col-2>
+          <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngIf="user" class="button-div">
+      <ion-row><button (click)="logout()" ion-button >LOGOUT</button></ion-row>
+    </div>
+    </div>
+  
+  
+
+  <!-- <img src="assets/imgs/logo/logo-white.png"> -->
+</ion-content>

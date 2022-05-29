@@ -1,0 +1,198 @@
+page-car-booking-voucher .scroll-content {
+  overflow-y: auto !important;
+  margin-top: 50px;
+}
+
+page-car-booking-voucher ion-content ion-card {
+  width: calc(100% - 10px) !important;
+  margin: 35px 5px 5px !important;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content {
+  padding: 10px !important;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .header-div {
+  border-bottom: 1px dashed #dedede;
+  padding: 10px 0;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .header-div .detail-col {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .header-div .detail-col .image-div {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ff9a13;
+  position: relative;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .header-div .detail-col .image-div ion-icon {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  font-size: 27px;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .header-div .detail-col .detail-div {
+  display: inline-block;
+  padding-left: 5px;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .header-div .detail-col .detail-div p {
+  text-transform: uppercase;
+  color: black;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .header-div .detail-col .detail-div span {
+  font-weight: 400;
+  font-size: 12px;
+  font-style: italic;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .header-div .image-col {
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info {
+  border-bottom: 1px dashed #dedede;
+  padding: 10px 0;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info .flight-info .label {
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
+  padding: 5px 0;
+  text-align: start;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info .flight-info .value {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 5px 0;
+  text-align: end;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info .passenger-info ion-card {
+  margin: 5px 0 !important;
+  width: 100% !important;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info .passenger-info ion-card ion-card-header {
+  padding: 5px;
+  color: white;
+  background: #0070d2;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info .passenger-info ion-card ion-card-content {
+  padding: 0 5px !important;
+  border: 1px solid #0070d2;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info .passenger-info ion-card ion-card-content [border-right] {
+  border-right: 1px solid #0070d2;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info .passenger-info ion-card ion-card-content .row .label {
+  text-align: start;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info .passenger-info ion-card ion-card-content .row .detail {
+  text-align: end;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info .passenger-info ion-card ion-card-content .header {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info .passenger-info ion-card ion-card-content .header .col {
+  padding: 5px 0;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info .passenger-info ion-card ion-card-content .data {
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .detailed-info .passenger-info ion-card ion-card-content .data .col {
+  padding: 0px 0 5px;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .payment-info {
+  border-bottom: 1px dashed #dedede;
+  padding: 10px 0;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .payment-info ion-row {
+  display: block;
+  position: relative;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .payment-info .label {
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
+  /* padding: 5px 0; */
+  text-align: start;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .payment-info .value {
+  font-size: 13px;
+  font-weight: 400;
+  /* padding: 5px 0; */
+  text-align: end;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  right: 0;
+  position: absolute;
+  color: #666;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .payment-info .net-value {
+  color: red;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .footer-div {
+  padding: 10px 0 0;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .footer-div p {
+  font-size: 9px;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .footer-div [text-right] {
+  text-align: end !important;
+}
+
+page-car-booking-voucher ion-content ion-card ion-card-content .footer-div ion-col {
+  padding: 0;
+}
+/*# sourceMappingURL=car-booking-voucher.css.map */

@@ -1,0 +1,61 @@
+<!-- Generated template for the AddSightSeeingTravelsComponent component -->
+<ion-header class="search-bar-div"> 
+  <ion-row>
+    <ion-col class="icon-col" col-1><button (click)="close()" class="back-btn" clear ion-button><ion-icon  name="custom-close"></ion-icon></button></ion-col>
+    <ion-col class="search-col"> Select Pax</ion-col>
+  </ion-row>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let room of paxes; let i=index;">
+    <ion-card-content>
+        <ion-row class="detail-row">
+            <ion-col class="label"><p>Adult</p><span>Above 12 years</span></ion-col>
+            <ion-col class="value">
+              <ion-row>
+                <ion-col class="icon-col"><button (click)="decreaseAdults(i)" ion-button clear><ion-icon name="custom-delete"></ion-icon></button></ion-col>
+                <ion-col class="value-col">{{room.adults}}</ion-col>
+                <ion-col class="icon-col"><button (click)="increaseAdults(i)" ion-button clear><ion-icon name="custom-add"></ion-icon></button></ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <ion-row  no-border-bottom class="detail-row">
+              <ion-col class="label"><p>Children</p><span>1-12 years</span></ion-col>
+              <ion-col class="value">
+                <ion-row>
+                  <ion-col class="icon-col"><button (click)="decreaseChildren(i)" ion-button clear><ion-icon name="custom-delete"></ion-icon></button></ion-col>
+                  <ion-col class="value-col">{{room.childs}}</ion-col>
+                  <ion-col class="icon-col"><button (click)="increaseChildren(i)" ion-button clear><ion-icon name="custom-add"></ion-icon></button></ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+            <ion-item  *ngFor="let j of Arr(room.childs).fill(0);let k=index">
+                <ion-label>Age of Child {{k+1}} (yrs)</ion-label>
+                <ion-select  [(ngModel)]="room.child_ages[k]" interface="popover">
+                  <ion-option value=1>1</ion-option>
+                  <ion-option value=2>2</ion-option>
+                  <ion-option value=3>3</ion-option>
+                  <ion-option value=4>4</ion-option>
+                  <ion-option value=5>5</ion-option>
+                  <ion-option value=6>6</ion-option>
+                  <ion-option value=7>7</ion-option>
+                  <ion-option value=8>8</ion-option>
+                  <ion-option value=9>9</ion-option>
+                  <ion-option value=10>10</ion-option>
+                  <ion-option value=11>11</ion-option>
+                  <ion-option value=12>12</ion-option>
+                  <ion-option value=13>13</ion-option>
+                  <ion-option value=14>14</ion-option>
+                  <ion-option value=15>15</ion-option>
+                  <ion-option value=16>16</ion-option>
+                  <!-- <ion-option value=17>17</ion-option> -->
+                </ion-select>
+              </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer padding>
+  <button  (click)="done()" block ion-button >Done</button>
+</ion-footer>
+<!-- <div (click)="done()" class="done-btn">
+<span>Done</span>
+</div> -->

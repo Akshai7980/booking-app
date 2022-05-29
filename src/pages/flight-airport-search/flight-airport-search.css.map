@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAEI,0BAFsB,CAEtB,YAAY,CAAC,eAAe,CAAA;EACxB,UAAU,EAAE,eAAe;CAE5B",
+    "sources": [
+        "flight-airport-search.scss"
+    ],
+    "names": [],
+    "file": "flight-airport-search.css"
+}

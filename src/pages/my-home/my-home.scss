@@ -1,0 +1,295 @@
+page-my-home {
+  .scroll-content {
+    background: #ffffff;
+  }
+
+
+
+  .banner {
+    .logo-box {
+      margin: 20px 20px 15px 20px;
+      text-align: center;
+    }
+    ion-row {
+      background: linear-gradient(to right, rgba(127, 212, 255, 1) 2%, rgba(27, 83, 196, 1) 100%);
+      ion-col {
+        padding-top: 10px;
+        font-size: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        .button-icon-top {
+          border-radius: 50px;
+          height: 10vh;
+          width: 10vh;
+          max-width: 10vh;
+          max-height: 10vh;
+          color:#fff;
+          p{
+            color:#fff;
+          }
+          .button-inner {
+            flex-flow: column;
+           color:#fff;
+           p{
+            color:#fff;
+           }
+            .icon {
+              font-size: 2.4em;
+              color:#fff;
+            }
+          }
+        }
+        .button {
+          font-size: 1.6rem;
+          color: #fff;
+          background: $background;
+          margin: auto;
+         // background: linear-gradient(to right, rgba(127, 212, 255, 1) 2%, rgba(27, 83, 196, 1) 100%);
+        }
+       p{
+        color:#fff;
+       }
+        .Sightseeing{
+          display: flex;
+        font-size: 10px;
+        color:#fff;
+      }
+      }
+    }
+  }
+  @media only screen 
+  and (device-width : 375px) 
+  and (device-height : 812px) 
+  and (-webkit-device-pixel-ratio : 3) {
+    .banner {
+      .logo-box {
+        margin: 55px 55px 50px 55px;
+        text-align: center;
+      }
+      ion-row {
+        ion-col {
+         
+          font-size: 10px;
+          text-align: center;
+          text-transform: uppercase;
+          .button-icon-top {
+            border-radius: 50px;
+            height: 9vh;
+            width: 9vh;
+            max-width: 9vh;
+            max-height: 9vh;
+           
+            .button-inner {
+              flex-flow: column;
+             
+              .icon {
+                font-size: 2.4em;
+               
+              }
+            }
+          }
+          .button {
+            font-size: 1.6rem;
+            color: #fff;
+            background: $background;
+            margin: auto;
+           // background: linear-gradient(to right, rgba(127, 212, 255, 1) 2%, rgba(27, 83, 196, 1) 100%);
+          }
+         
+          .Sightseeing{
+          display: flex;
+          font-size: 10px;
+        }
+        }
+      }
+    }
+   }
+
+  .hot-deals-div {
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0px 0px 0px 1px #dedede;
+
+    .deal-label {
+      padding: 10px;
+      margin: 0;
+      font-size: 16px;
+    }
+
+
+    .image-slide {
+      ion-slide {
+        margin-right: 0;
+
+        .deal-img {
+          height: 150px;
+          background-size: cover;
+
+        }
+
+      }
+    }
+
+    .deal-img::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+
+    }
+
+
+    .card-slide {
+      position: absolute;
+      top: 60px;
+      left: 0;
+
+      ion-slide {
+        ion-row {
+          .category {
+            color: #ffffff;
+            text-align: start;
+            font-weight: 500;
+            font-size: 18px;
+            margin: 0;
+          }
+
+          .label {
+            text-align: start;
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            margin: 0;
+          }
+
+          .content {
+            text-align: start;
+            font-weight: 500;
+            color: #ffffff;
+            font-size: 16px;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .detailed-div {
+    margin-top: 25px;
+
+    .super-deal-div {
+      background: white;
+      box-shadow: 0px 0px 0px 1px #dedede;
+
+      .main-label {
+        padding: 10px;
+        margin: 0;
+        font-size: 16px;
+      }
+
+      ion-slides {
+        ion-slide {
+          ion-card {
+             margin: 5px;
+            // width: calc(100% - 10px);
+           
+
+            ion-card-header {
+              padding: 0px;
+              text-align: start;
+              // background: #0072CF;
+              color: white;
+
+              //padding-top: 50px;
+              img {
+                min-height: 120px;
+                max-height: 120px;
+                width: 100%;
+              }
+
+            }
+
+            ion-card-content {
+              padding: 5px;
+              text-align: start;
+
+              .lavel {
+                text-align: center;
+                margin: 5px 0 2px;
+                color: #000;
+                font-size: 1.4rem;
+                font-weight: 200
+              }
+
+              p {
+                text-align: center;
+                color: #000;
+                font-size: 1.4rem;
+                font-weight: 200;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+
+              h1 {
+                overflow: hidden;
+                text-align: center;
+                font-size: 1.0rem;
+              }
+
+              h1:before,
+              h1:after {
+                background-color: #000;
+                content: "";
+                display: inline-block;
+                height: 0.5px;
+                position: relative;
+                vertical-align: middle;
+                width: 50%;
+              }
+
+              h1:before {
+                right: 0.5em;
+                margin-left: -50%;
+              }
+
+              h1:after {
+                left: 0.5em;
+                margin-right: -50%;
+              }
+
+              .rating-row {
+                ion-col {
+                  text-align: center;
+
+                  rating {
+                    color: #FFC000;
+
+                    ul {
+                      margin: 0;
+                      padding: 0;
+
+                      li {
+                        padding: 0 !important;
+                      }
+                    }
+                  }
+
+                }
+
+              }
+
+            }
+
+
+          }
+        }
+      }
+    }
+
+  }
+
+}

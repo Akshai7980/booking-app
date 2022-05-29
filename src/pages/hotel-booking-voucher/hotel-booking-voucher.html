@@ -1,0 +1,217 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons (click)="goBack()" right><button ion-button icon-only>
+      <ion-icon ios="ios-home" md="md-home"></ion-icon></button>
+    </ion-buttons>
+    <ion-title>Booking Voucher</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <div class="header-div">
+        <ion-row>
+          <ion-col class="detail-col">
+            <div class="image-div">
+              <ion-icon name="custom-ticket"></ion-icon>
+            </div>
+            <div class="detail-div">
+              <p>Booking Voucher</p><span>Date: {{departDate|date:'EE'}}, {{departDate|date:'dd'}} {{departDate|date:'MMM'}} {{departDate|date:'yyyy'}}</span>
+            </div>
+          </ion-col>
+          <ion-col class="image-col" col-4><img src="assets/imgs/logo/logo.png"></ion-col>
+        </ion-row>
+      </div>
+      <div class="header-div">
+        <ion-row>
+          <ion-col>
+            Hi {{guestDetails[0].adults[0].title+'. '+guestDetails[0].adults[0].firstName+' '+guestDetails[0].adults[0].lastName}}
+          </ion-col>
+        </ion-row>
+        <ion-row  *ngFor="let details of roomBook">
+          <ion-col>Your reservation is {{details.status}}.</ion-col>
+        </ion-row>
+      </div>
+
+      <div class="reservation">
+        <ion-row>
+          <ion-col class="details">Your reservation details are below. </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="Name"><p>Customer Name:</p> </ion-col>
+          <ion-col><span>{{guestDetails[0].adults[0].title+'. '+guestDetails[0].adults[0].firstName+' '+guestDetails[0].adults[0].lastName}}</span></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="email"><p>Customer email:</p></ion-col> 
+            <ion-col><span>{{contactDeatil.email}}</span></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="refere">Please refere to your itinerary number if you contact customer servece for any reason</ion-col>
+        </ion-row>
+      </div>
+      
+      <div class="flight-info">
+        <ion-row>
+          <ion-col col-5 class="label"><img src="{{hotelContentDetail[0].hotelImages[0].url}}" onerror="this.src='assets/imgs/hotDeals/hotel.jpg'"></ion-col>
+          <ion-col>
+            <ion-row>{{hotelContentDetail[0].name}}</ion-row>
+            <ion-row>{{hotelContentDetail[0].address}}</ion-row>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col col-5 class="label">Check-In:</ion-col>
+          <ion-col class="value">{{checkInDate|date:"EEE, MMM dd, yy"}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">Check-Out:</ion-col>
+          <ion-col class="value">{{checkoutDate|date:"EEE, MMM dd, yy"}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">Number of Night:</ion-col>
+          <ion-col class="value">{{getNightStayDays}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">Number of Rooms:</ion-col>
+          <ion-col class="value">{{rooms.length}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">Number of guests:</ion-col>
+          <ion-col class="value">{{totalAdultCount}} Adult{{totalChildCount>0?', '+totalChildCount+' Child':''}}</ion-col>
+        </ion-row>
+      </div>
+        
+      <div class="room-info" *ngFor="let details of roomBook">
+        <ion-card>
+          <ion-card-header>
+            Room Details
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row class="room-heder">
+              <ion-col>
+                <ion-row>
+                  Room Type
+                </ion-row>
+              </ion-col>
+              <ion-col>
+                <ion-row>                
+                  Reserved for
+                </ion-row>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-row *ngFor="let room of details.roomBookDetails.rooms">
+                    {{room.boardType}} {{room.description}}
+                </ion-row>
+              </ion-col>
+              <ion-col>
+                <ion-row *ngFor="let room of details.roomBookDetails.rooms">                
+                    {{room.paxDetails.name}}
+                </ion-row>
+              </ion-col>
+            </ion-row>
+
+            <ion-row class="room-heder">
+              <ion-col col-3>
+                Status
+              </ion-col>
+              <ion-col col-5>
+                Confirmation number
+              </ion-col>
+              <ion-col col-4>
+                Reference
+              </ion-col>
+            </ion-row>
+
+            <ion-row>
+              <ion-col col-3>
+                {{details.status}} 
+              </ion-col>
+              <ion-col col-5>
+                {{details.supplierConfirmationNum}} 
+              </ion-col>
+              <ion-col col-4>
+                {{details.clientRefNum}}
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div class="guest-info">
+        <ion-card>
+          <ion-card-header>
+            Guest Details
+          </ion-card-header>
+          <ion-card-content>
+            <div *ngFor="let room of guestDetails;">
+              <ion-row>Room {{room.room_no}}</ion-row>
+              <ion-row *ngFor="let adult of room.adults;">
+                <ion-col class="icon-col" col-1>
+                  <ion-icon *ngIf="adult.firstName" name="custom-adult"></ion-icon>
+                </ion-col>
+                <ion-col class="label-col">
+                  {{adult.firstName?adult.title+'. '+adult.firstName+' '+adult.lastName:'Adult'}}</ion-col>
+              </ion-row>
+              <ion-row *ngFor="let child of room.children;">
+                <ion-col class="icon-col" col-1>
+                  <ion-icon *ngIf="child.firstName" name="custom-child"></ion-icon>
+                </ion-col>
+                <ion-col class="label-col">
+                  {{child.firstName?child.title+'. '+child.firstName+' '+child.lastName:'Child'}}</ion-col>
+              </ion-row>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+
+      <div class="payment-info">
+        <ion-row>
+          <div class="label">Pax</div>
+          <!-- <div class="value">Adult x 2, Child x 2</div> -->
+          <div class="value">
+            <p>{{rooms.length}} Room, {{totalAdultCount}} Adult{{totalChildCount>0?', '+totalChildCount+' Child':''}} </p>
+          </div>
+        </ion-row>
+        <ion-row *ngIf="HotelFix.b2c == 0">
+          <div class="label">Total</div>
+          <div class="value">{{hotelDetail.currency}} {{roundOff(selectedOption.netPrice+hotelAllMarkup.b2c)}}</div>
+        </ion-row>
+        <ion-row *ngIf="HotelFix.b2c == 1">
+          <div class="label">Total</div>
+          <div class="value">{{hotelDetail.currency}} {{roundOff((selectedOption.netPrice*hotelAllMarkup.b2c)/100+(selectedOption.netPrice))}}</div>
+        </ion-row>
+        <ion-row *ngIf="HotelFix.b2c == 0">
+          <div class="label">Total Amount Paid :</div>
+          <div class="value net-value"> <p>{{hotelDetail.currency}} {{roundOff(selectedOption.netPrice+hotelAllMarkup.b2c)}} <span>(All Taxes included)</span></p></div>
+        </ion-row>
+        <ion-row *ngIf="HotelFix.b2c == 1">
+          <div class="label">Total Amount Paid :</div>
+          <div class="value net-value"> <p>{{hotelDetail.currency}} {{roundOff((selectedOption.netPrice*hotelAllMarkup.b2c)/100+(selectedOption.netPrice))}} <span>(All Taxes included)</span></p></div>
+        </ion-row>
+      </div>
+
+      <div class="cancellation-policy">
+        <ion-card *ngFor="let details of roomBook">
+          <ion-card-header>
+            Cancellation Policy
+          </ion-card-header>
+          <ion-card-content>
+            <span>{{details.roomBookDetails.cancellationPolicy}}</span>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div class="footer-div">
+        <p>Please Note: Preferences and special requests cannot be guaranteed. Special requests are subject to
+          availability upon check-in and may incur additional charges</p>
+          <ion-row>
+            <ion-col><p text-left>Phone : {{addres.mobile}}</p></ion-col>
+            <ion-col><p text-right>Email :  {{addres.emial}}</p></ion-col>
+          </ion-row>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

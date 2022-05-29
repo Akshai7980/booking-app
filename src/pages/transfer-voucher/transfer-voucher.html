@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Booking Voucher</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <div class="header-div">
+        <ion-row>
+          <ion-col class="detail-col">
+            <div class="image-div"><ion-icon name="custom-ticket"></ion-icon> </div>
+            <div class="detail-div"><p>Booking Voucher</p><span>Date: {{departDate|date:'EE'}}, {{departDate|date:'dd'}} {{departDate|date:'MMM'}} {{departDate|date:'yyyy'}}</span></div>
+          </ion-col>
+          <ion-col class="image-col" col-4><img src="../../assets/imgs/logo/logo.png"></ion-col>
+      </ion-row>
+      </div>
+      <div class="detailed-info">
+        <div class="flight-info">
+          <ion-row>
+            <ion-col col-5 class="label">Booking ID:</ion-col>
+            <ion-col class="value">THE12494000327327</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5 class="label">Booking Status:</ion-col>
+            <ion-col class="value">Confirmed</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5 class="label">Customer Name:</ion-col>
+            <ion-col class="value">{{personDetails.title}} {{personDetails.firstName}} {{personDetails.lastName}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5 class="label">Customer Email:</ion-col>
+            <ion-col class="value"> {{personDetails.email}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5 class="label">Customer Phone:</ion-col>
+            <ion-col class="value"> {{personDetails.mobile_no}}</ion-col>
+          </ion-row>
+           <ion-row>
+            <ion-col col-5 class="label">Vehicle type:</ion-col>
+            <ion-col class="value">{{transfer.general.producttype}}</ion-col>
+          </ion-row>
+         <ion-row>
+            <ion-col col-5 class="label">From:</ion-col>
+            <ion-col class="value">{{transferType==1?pickUPLocation.value:pickUPLocation.value}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-5 class="label">To:</ion-col>
+            <ion-col class="value">{{transferType==1?dropOffLocation.value:dropOffLocation.value}}</ion-col>
+          </ion-row>
+        </div>  
+      </div> 
+
+      <div class="cancellation-policy">
+        <ion-card>
+          <ion-card-header>
+            ARRIVAL INSTRUCTIONS
+          </ion-card-header>
+          <ion-card-content>
+            <p>Flight number <span>{{personDetails.airline_name}} {{personDetails.flight_number}}</span> from <span>{{transferType==1?pickUPLocation.value:pickUPLocation.value}}</span> Arriving on <span>{{arrivalDate|date:'EEE, MMM dd,'}} {{arrivaltime[0].houres}} : {{arrivaltime[0].mintues}}</span> </p>
+            <p>You will be collected from <span>{{transferType==1?pickUPLocation.value:pickUPLocation.value}}</span> where you will be taken to <span>{{transferType==1?dropOffLocation.value:dropOffLocation.value}}</span> with an estimated transfer time of {{transfer.general.transfertime}} minutes.</p>
+            <p><strong>Note:</strong> If your outbound flight is delayed, cancelled or your final connecting flight has changed please call the supplier immediately on the telephone number shown on this booking voucher to advise them of the changes.</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="cancellation-policy" *ngIf="transferWay==2">
+        <ion-card>
+          <ion-card-header>
+            DEPARTURE INSTRUCTIONS
+          </ion-card-header>
+          <ion-card-content>
+            <p>Flight number <span>{{personDetails.airline_name2}} {{personDetails.flight_number2}}</span> to <span>{{transferType==1?pickUPLocation.value:pickUPLocation.value}}</span> Arriving on <span>{{departureDate|date:'EEE, MMM dd,'}} : {{departuretime[0].houres}} {{departuretime[0].mintues}}</span> </p>
+            <p>You will be collected from <span>{{transferType==1?pickUPLocation.value:pickUPLocation.value}}</span> Departing on <span>{{transferType==1?dropOffLocation.value:dropOffLocation.value}}</span> where you will be taken to with an estimated transfer time {{transfer.general.transfertime}} minutes.</p>
+            <p><strong>Note:</strong> If your outbound flight is delayed, cancelled or your final connecting flight has changed please call the supplier immediately on the telephone number shown on this booking voucher to advise them of the changes.</p>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <div class="payment-info">
+          <ion-row><div class="label">Pax</div>
+            <div class="value">
+            <p>Adult x {{personDetail.adults}}, Child x {{personDetail.children}}, Infant x {{personDetail.infants}}</p>
+            </div>
+          </ion-row>
+          <ion-row>
+            <div class="label">Total</div>
+            <div class="value">{{currencys.currency}}  {{roundOff(totalPrice/currencys.value)}}</div>
+          </ion-row>
+          <ion-row>
+            <div class="label"></div>
+            <div class="value net-value">Total Amount Paid : {{currencys.currency}}  {{roundOff(totalPrice/currencys.value)}}</div>
+          </ion-row>
+        </div> 
+
+        <div class="footer-div">
+            <p>Please Note: Preferences and special requests cannot be guaranteed. Special requests are subject to availability upon check-in and may incur additional charges</p>
+            <ion-row>
+              <ion-col><p text-left>Phone : {{addres.mobile}}</p></ion-col>
+              <ion-col><p text-right>Email :  {{addres.emial}}</p></ion-col>
+            </ion-row>
+          </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

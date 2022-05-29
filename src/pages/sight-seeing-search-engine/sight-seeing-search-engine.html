@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Sightseeing</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="search-div">
+    <ion-slides #imageSlide class="image-slide">
+      <ion-slide *ngFor="let img of  SightseeingDeals">
+        <div class="deal-img" [style.background-image]=" 'url('+img.image+')'"></div>
+      </ion-slide>
+    </ion-slides> 
+   <div class="single-round-way">
+    <ion-row  (click)="getCountry()"  class="all-from">
+      <ion-col col-12>
+        <div   class="from-div1">
+          <p class="label"></p>
+           <p class="detail"><ion-icon item-start name="custom-map"></ion-icon> {{sightseenigCity.dest_name}}, {{sightseenigCity.country}}</p>
+        </div>
+      </ion-col>
+      <!-- <ion-col col-6>
+        <div class="to-div1">
+          <p class="label"><ion-icon item-start name="custom-map"></ion-icon></p>
+          <p class="detail">{{sightseenigCity.country}}</p>
+        </div>
+      </ion-col> -->
+    </ion-row>
+
+      <div (click)="selectCheckInDate()" class="from-div">
+        <p class="label">Start Date</p>
+        <ion-row>
+          <ion-col class="date" col-2>{{startDate|date:'dd'}}</ion-col>
+          <ion-col class="day-month">
+            <ion-row class="month">{{startDate|date:'MMM yyyy'}}</ion-row>
+            <ion-row class="day">{{startDate|date:'EEEE'}}</ion-row>
+          </ion-col>
+        </ion-row>
+        <div  class="swap-div">
+          <!-- <ion-icon name="custom-night"></ion-icon> -->
+            <p>{{getNightStayDays()}} Day</p>
+        </div>
+      </div>
+      <div no-border (click)="selectCheckInDate()" class="from-div">
+        <p class="label">End Date</p>
+        <ion-row>
+            <ion-col class="date" col-2>{{endDate|date:'dd'}}</ion-col>
+            <ion-col class="day-month">
+              <ion-row class="month">{{endDate|date:'MMM yyyy'}}</ion-row>
+              <ion-row class="day">{{endDate|date:'EEEE'}}</ion-row>
+            </ion-col>
+        </ion-row>
+      </div>
+
+      <ion-row class="all-from">
+        <ion-col col-12>
+          <div (click)="getAdults()"  class="from-div1">
+            <p class="detail">Adult {{paxes[0].adults}} Child {{paxes[0].childs}}</p>
+          </div>
+        </ion-col>
+        <!-- <ion-col col-6>
+          <div (click)="getChlild()"  class="to-div1">
+           
+            <p class="detail">Child {{paxes[0].childs}}</p>
+          </div>
+        </ion-col> -->
+      </ion-row>
+    </div> 
+
+    <ion-grid class="search-button"> 
+      <button ion-button block (click)="searchSightSeeing()">Search</button>
+    </ion-grid>
+    
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Guaranteed Best Rates:</span>
+      <p>Book your dream trip with besst guaranteed rates.</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Easy To Use:</span>
+      <p>Travel bookings made easier with the help of {{addres.projectName}} Book now.</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Thoughtful Service:</span>
+      <p>Great services, amazing deals, exclusive offers and seasonal discounts all-in-one platform.</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>24x7 Customer Support:</span>
+      <p>Get advice from a travel expert 24 hours a day, 7 days a week.</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Secure Payment:</span>
+      <p>Book your sightseeing tours and pay online for your travel.</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

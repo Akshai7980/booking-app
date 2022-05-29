@@ -1,0 +1,73 @@
+<ion-content>
+  <div class="header-div">
+    <img class="bg-img" src="assets/imgs/backgrounds/mobile-app-top.svg">
+    <img class="logo-img" src="assets/imgs/logo/logo.png">
+  </div>
+  <div class="water-mark">
+    <div class="my-detail">
+      <ion-row (click)="goToAboutUs()">
+       <ion-col class="icon-col" col-2>
+         <ion-icon name="custom-about"></ion-icon>
+       </ion-col>
+       <ion-col class="label-col">About</ion-col>
+       <ion-col class="icon-col" col-2>
+         <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+       </ion-col>
+     </ion-row>
+     <ion-row>
+       <ion-col class="icon-col" col-2>
+         <ion-icon name="custom-notification"></ion-icon>
+       </ion-col>
+       <ion-col class="label-col">Notifications</ion-col>
+       <ion-col class="icon-col" col-2>
+         <ion-toggle   checked="true"></ion-toggle>
+       </ion-col>
+     </ion-row>
+     <ion-row (click)="rateApp()">
+       <ion-col class="icon-col" col-2>
+         <ion-icon name="custom-star"></ion-icon>
+       </ion-col>
+       <ion-col class="label-col">Rate the App</ion-col>
+       <ion-col class="icon-col" col-2>
+         <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+       </ion-col>
+     </ion-row>
+ 
+     <ion-row (click)="shareApp()">
+       <ion-col class="icon-col" col-2>
+         <ion-icon name="custom-share"></ion-icon>
+       </ion-col>
+       <ion-col class="label-col">Share the App</ion-col>
+       <ion-col class="icon-col" col-2>
+         <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+       </ion-col>
+     </ion-row>
+     <ion-row (click)="goToHelpSupport()">
+       <ion-col class="icon-col" col-2>
+         <ion-icon name="custom-help"></ion-icon>
+       </ion-col>
+       <ion-col class="label-col">Contact Us</ion-col>
+       <ion-col class="icon-col" col-2>
+         <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+       </ion-col>
+     </ion-row>
+     <ion-row (click)="privacyPolicy()">
+       <ion-col class="icon-col" col-2>
+         <ion-icon name="custom-privacy"></ion-icon>
+       </ion-col>
+       <ion-col class="label-col">Privacy Policy</ion-col>
+       <ion-col class="icon-col" col-2>
+         <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+       </ion-col>
+     </ion-row> 
+    
+     <div class="version-div">
+       <ion-row>
+         {{appName}} {{versionNumber}}
+       </ion-row>
+     </div>
+   </div>
+  </div>
+  
+
+</ion-content>

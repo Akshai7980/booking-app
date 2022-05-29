@@ -1,0 +1,117 @@
+page-login {
+.outer-div{
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background:$background;
+    color: white;
+    .back-btn{
+       margin: 0;
+        position: absolute;
+        top: 18%;
+        left: 10px;
+        z-index: 1;
+        font-weight: 600;
+    }
+    .header-label{
+        margin: 0;
+        text-align: center;
+        position: relative;
+        top: 15%;
+        font-size: 14px;
+        font-weight: 600;
+        span{
+            font-size: 32px;
+        }
+    }
+    .sub-label{
+        margin: 0;
+        text-align: center;
+        position: relative;
+        justify-content: center;
+        top: 30%;
+        font-size: 12px;
+        font-style: italic;
+    }
+    ion-card{
+        overflow: visible;
+        position: absolute;
+        top: 75%;
+        border-radius: 10px;
+        ion-card-content{
+            ion-item {
+                ion-label {
+                  color: #000000;
+                  font-size: 13px;
+                }
+
+                ion-input {
+                  border-bottom: 1px solid #dedede;
+                  font-size: 15px;
+                }
+                .icon-btn{
+                    font-size: 16px;
+                    color: $background-sec;
+                }
+              } 
+            //   .item-ios.item-label-floating .text-input {
+            //     margin: 3px !important;
+            //      font-size: 10px;
+            //   }
+              .input-has-focus,
+              .item-input-has-focus {
+                ion-label {
+                    color: #000000;
+                }
+                ion-input {
+                    border-bottom: 1px solid $background-sec;
+                    color: #000000;
+                  }
+            }
+            .forget-pass-row{
+                justify-content: flex-end;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                .forget-password{
+                    text-align: end;
+                    padding-top: 20px;
+                    color:$background-sec;
+                    padding-bottom: 25px;
+                    overflow: hidden;
+                }
+            }
+           
+        }
+        .login-btn{
+            position: absolute;
+            z-index: 3;
+            overflow: visible;
+            top: 100%;
+            width: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 15px;
+            
+        }
+        .lgn-btn-div{
+            button[disabled]{
+                background-color: #89d0ee;
+                opacity: 1;
+            }
+        }
+       
+       
+    }
+
+  
+}
+
+.no-account{
+    margin-top: 65%;
+    text-align: center;
+    color: $background-sec;
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 400;
+}
+}

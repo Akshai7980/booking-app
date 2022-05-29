@@ -1,0 +1,211 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cruise Review</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div *ngFor="let detail of cruiseDetails">
+    <div class="image-div">
+      <div class="inner-img-div">
+        <img src="{{detail.ship_operator_logo}}">
+       <div class="transfer-detail-div">
+           <p class="header-p">{{detail.ship_operator_app_id}}</p>
+           <p class="header-p">Embark At: {{detail.fly_in}}</p>
+           <p class="header-p">Disembark At: {{detail.fly_out}}</p>
+           <ion-row>
+            <ion-col col-6>Cruise Nights: {{detail.cruise_nights}}</ion-col>
+            <ion-col col-6>Region: {{detail.region}}</ion-col>
+          </ion-row>
+         </div>
+      </div>
+     </div>
+  </div> -->
+  <ion-row class="hotel-results" *ngFor="let detail of cruiseDetails">
+    <ion-col class="img-col"  col-5>
+      <img src="{{detail.ship_operator_logo}}" onerror="this.src='assets/imgs/hotDeals/hotel.jpg'">
+    </ion-col>
+    <ion-col class="detail-col" col-7>
+      <ion-row>
+        <p class="header-p">{{detail.operator_title}}</p>
+      </ion-row>
+    <ion-row>
+        <p class="headers-p">Embark At: {{detail.fly_in}}</p>
+      </ion-row>
+      <ion-row>
+        <p class="headers-p">Disembark At: {{detail.fly_out}}</p>
+      </ion-row>
+      <ion-row>
+        <p class="headers-p">Cruise Nights: {{detail.cruise_nights}}</p>
+      </ion-row>
+      <ion-row>
+        <p class="headers-p">Region: {{detail.region}}</p>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-card class="traveller-detail">
+    <ion-card-header>
+      Guest Details
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <ion-row *ngFor="let adult of adultsAll;let j=index" (click)="adultDetail(j)">
+            <ion-col class="icon-col" col-2>
+              <div>
+                <ion-icon name="custom-adult"></ion-icon>
+                <ion-icon *ngIf="adult.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+              </div>  
+            </ion-col>
+            <ion-col class="label-col">{{adult.firstName?adult.title+'. '+adult.firstName+' '+adult.lastName:'Adult'}}</ion-col>
+            <ion-col class="icon-col" col-2>
+              <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngFor="let child of children;let j=index" (click)="childDetail(j)">
+            <ion-col class="icon-col" col-2>
+              <div>
+                <ion-icon name="custom-child"></ion-icon>
+                <ion-icon *ngIf="child.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+             </div>
+            </ion-col>
+            <ion-col class="label-col">{{child.firstName?child.title+'. '+child.firstName+' '+child.lastName:'Child'}}</ion-col>
+            <ion-col class="icon-col" col-2>
+              <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+            </ion-col>
+          </ion-row>
+    </div>
+    </ion-card-content>
+  </ion-card>
+  <!-- <form #form="ngForm" (ngSubmit)="proceed(form)" novalidate> -->
+  <ion-card class="contact-info">
+      <ion-card-header>
+        Contact Details
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-input  [(ngModel)]="contactDeatil.email" type="email" name="email" ></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col padding-right col-4>
+            <ion-item class="isd-item">
+              <ion-label>ISD</ion-label>
+              <ion-input  [(ngModel)]="contactDeatil.country_code" type="text" name="country_code" ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label>Phone</ion-label>
+              <ion-input  [(ngModel)]="contactDeatil.mobile_no" type="number" name="mobile_no" ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-label>Landline</ion-label>
+          <ion-input  [(ngModel)]="contactDeatil.landline" type="number" name="landline" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Address</ion-label>
+          <ion-input  [(ngModel)]="contactDeatil.address" type="text" name="address" ></ion-input>
+        </ion-item>
+        <!-- <ion-item>
+          <ion-label>City</ion-label>
+          <ion-input  [(ngModel)]="contactDeatil.city" type="text" name="city" ></ion-input>
+        </ion-item> -->
+        <ion-item>
+          <ion-label fixed>Message</ion-label>
+          <ion-input readonly [(ngModel)]="contactDeatil.message" type="text" name="state"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-checkbox [(ngModel)]="contactDeatil.confirm" color="dark" checked="true"></ion-checkbox>
+          <ion-label>I confirm that I have read, understood and agree with the Booking Engine Terms & Conditions provided</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    
+    <!-- <ion-card class="contact-info">
+      <ion-card-header>
+        Payment Details
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label fixed>Name on Card</ion-label>
+            <ion-input [(ngModel)]="payment.name" type="text" name="name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Card Type</ion-label>
+            <ion-select [(ngModel)]="payment.cardtypelist" type="text" name="cardtypelist">
+              <ion-option value="V">VISA</ion-option>
+              <ion-option value="M">MasterCard</ion-option>
+              <ion-option value="C">Cashlink (Bank of Valletta)</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+            <ion-label fixed>Card Number</ion-label>
+            <ion-input [(ngModel)]="payment.Card" type="number" name="Card"></ion-input>
+          </ion-item>
+          <ion-row>
+            <ion-col padding-right col-7>
+          <ion-item>
+            <ion-label>Expiry Date</ion-label>
+            <ion-select [(ngModel)]="payment.DateMM" type="text" name="DateMM" interface="popover">
+              <ion-option value="01">01</ion-option>
+              <ion-option value="02">02</ion-option>
+              <ion-option value="03">03</ion-option>
+              <ion-option value="04">04</ion-option>
+              <ion-option value="05">05</ion-option>
+              <ion-option value="06">06</ion-option>
+              <ion-option value="07">07</ion-option>
+              <ion-option value="08">08</ion-option>
+              <ion-option value="09">09</ion-option>
+              <ion-option value="10">10</ion-option>
+              <ion-option value="11">11</ion-option>
+              <ion-option value="12">12</ion-option>
+            </ion-select>
+            <ion-select [(ngModel)]="payment.DateYY" type="text" name="DateYY" interface="popover">
+              <ion-option selected value="3">2021</ion-option>
+              <ion-option value="22">2022</ion-option>
+              <ion-option value="23">2023</ion-option>
+              <ion-option value="24">2024</ion-option>
+              <ion-option value="25">2025</ion-option>
+              <ion-option value="26">2026</ion-option>
+              <ion-option value="27">2027</ion-option>
+              <ion-option value="28">2028</ion-option>
+              <ion-option value="29">2029</ion-option>
+              <ion-option value="30">2030</ion-option>
+            </ion-select>
+          </ion-item> 
+            </ion-col>  
+            <ion-col col-5>
+              <ion-item>
+                <ion-label fixed>CVV</ion-label>
+                <ion-input [(ngModel)]="payment.CVV" type="number" name="CVV"></ion-input>
+              </ion-item>
+            </ion-col>  
+         
+          </ion-row>
+      </ion-list>   
+      </ion-card-content>
+    </ion-card> -->
+ 
+</ion-content>
+<div class="div-footer-flight">
+  <ion-row>
+    <!-- <ion-col col-3.5>
+      <p class="label-col">Total Amount</p>
+    </ion-col> -->
+    <ion-col col-6 *ngIf="cruiseAllFix.b2c == 0">
+      <p class="label-col">Total Amount</p>
+      <p class="detail-col">{{currencys.currency}} {{roundOff(((cruiseCabin.price_per_person*(AdultCount.adults+ChildCount.childs))+cruiseAllMarkup.b2c)/currencys.value)}}</p>
+    </ion-col>
+    <ion-col col-6 *ngIf="cruiseAllFix.b2c == 1">
+      <p class="label-col">Total Amount</p>
+      <p class="detail-col">{{currencys.currency}} {{roundOff(((cruiseCabin.price_per_person*(AdultCount.adults+ChildCount.childs))*cruiseAllMarkup.b2c/100) +(cruiseCabin.price_per_person*(AdultCount.adults+ChildCount.childs))/currencys.value)}}</p>
+    </ion-col>
+    <ion-col col-6 class="button-col" >
+      <button ion-button type="submit" [disabled]="isButtonDisable()" color="danger" outline (click)="proceed()" >Book Now</button>
+    </ion-col>
+  </ion-row>
+</div>

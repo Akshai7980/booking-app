@@ -1,0 +1,10 @@
+truncated-text button {
+  margin: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+}
+
+truncated-text button span {
+  font-size: 12px;
+}
+/*# sourceMappingURL=truncated-text.css.map */

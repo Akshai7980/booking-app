@@ -1,0 +1,293 @@
+<ion-header>
+    <ion-navbar>
+        <div class="header-p">
+            <ion-row>
+                <ion-col class="from-col">
+                    <p>{{fromCity.AirportCode}}
+                        <ion-icon name="custom-aeroplane"></ion-icon>{{toCity.AirportCode}}</p>
+                    <span>{{departDate | date:'MMM dd, yyyy'}}</span>
+                </ion-col>
+                <ion-col class="to-col">
+                    <p>{{toCity.AirportCode}}
+                        <ion-icon name="custom-aeroplane"></ion-icon>{{fromCity.AirportCode}}</p>
+                    <span>{{returnDate | date:'MMM dd, yyyy'}}</span>
+                </ion-col>
+            </ion-row>
+        </div>
+        <ion-buttons *ngIf="filteredResults.length > 2" (click)="filter()" end><button ion-button icon-only>
+          <ion-icon name="custom-filter"></ion-icon></button>
+        </ion-buttons>
+        <ion-buttons *ngIf="filteredResults.length <= 2" (click)="filterDomestic()" end><button ion-button icon-only>
+        <ion-icon name="custom-filter"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+
+    <div class="sort-btn-div">
+        <ion-row>
+            <ion-col col-3><button (click)="sortDepart()" ion-button clear>Departure
+            <ion-icon [hidden]="departDescending||column!='DEPART'"  name="custom-ascending"></ion-icon>
+            <ion-icon [hidden]="!departDescending||column!='DEPART'"  name="custom-descending"></ion-icon>
+          </button></ion-col>
+            <ion-col col-3> <button (click)="sortDuration()" ion-button clear>Duration 
+            <ion-icon [hidden]="durationDescending||column!='DURATION'"  name="custom-ascending"></ion-icon>
+            <ion-icon [hidden]="!durationDescending||column!='DURATION'"  name="custom-descending"></ion-icon>
+        </button></ion-col>
+            <ion-col col-3> <button (click)="sortArrive()" ion-button clear>Arrival
+            <ion-icon [hidden]="arriveDescending||column!='ARRIVE'"  name="custom-ascending"></ion-icon>
+            <ion-icon [hidden]="!arriveDescending||column!='ARRIVE'"  name="custom-descending"></ion-icon>
+        </button></ion-col>
+            <ion-col col-3> <button (click)="sortPrice()" ion-button clear>Price
+            <ion-icon [hidden]="priceDescending||column!='PRICE'"  name="custom-ascending"></ion-icon>
+            <ion-icon [hidden]="!priceDescending||column!='PRICE'"  name="custom-descending"></ion-icon>
+        </button></ion-col>
+        </ion-row>
+    </div>
+</ion-header>
+
+<ion-content>
+    <ion-row id="searchDiv">
+        <ion-col col-6 no-padding>
+            <div class="round-trip" *ngIf="filteredResults.length <= 2" radio-group [(ngModel)]="filterOne" (ionChange)="selectDomesticReturm(filterOne)">
+                <!-- <div>1</div> -->
+                <div>
+                    <ion-card *ngFor="let result of domesticSearchResults | domesticSort: {property: column, order: order}" [attr.data-stop]="result.OriginDestinationOptions.length-1" [attr.data-price]="result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount"
+                        [attr.data-faretype]="result.FareItinerary.AirItineraryFareInfo.IsRefundable" [attr.data-airlines]="getAirlines(result.OriginDestinationOptions)" [attr.data-layowerports]="getLayowerPorts(result.OriginDestinationOptions)" [attr.data-departuretime]="result.OriginDestinationOptions[0].FlightSegment.DepartureDateTime"
+                        [attr.data-aarivalime]="result.OriginDestinationOptions[result.OriginDestinationOptions.length-1].FlightSegment.ArrivalDateTime">
+                        <ion-card-content>
+                            <ion-radio [value]="result" checked="true"></ion-radio>
+                            <div>
+                                <ion-row class="timings-row">
+                                    <ion-col class="from">
+                                        <p>{{result.OriginDestinationOptions[0].FlightSegment.DepartureDateTime | date:'HH:mm'}}</p>
+                                        <span>{{result.OriginDestinationOptions[0].FlightSegment.DepartureAirportLocationCode}}</span>
+                                    </ion-col>
+                                    <ion-col class="info">
+                                        <ion-row>
+                                            {{getTotalDuration(result.OriginDestinationOptions)}}
+                                            <!-- {{getTotalDurationD(rest.StopQuantityInfo.Duration)}} -->
+                                        </ion-row>
+                                        <ion-row class="arrow-row">
+                                            <ion-col class="dot-col" col-1>
+                                                <ion-icon name="custom-dot"></ion-icon>
+                                            </ion-col>
+                                            <ion-col class="arrow-col"></ion-col>
+                                            <ion-col class="forward-col" col-1>
+                                                <ion-icon name="custom-forward"></ion-icon>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>{{result.OriginDestinationOptions.length>1?(result.OriginDestinationOptions.length-1)+'Stop':'Non Stop'}}</ion-row>
+                                    </ion-col>
+                                    <ion-col class="to">
+                                        <p>{{result.OriginDestinationOptions[result.OriginDestinationOptions.length-1].FlightSegment.ArrivalDateTime | date:'HH:mm'}}</p>
+                                        <span>{{result.OriginDestinationOptions[result.OriginDestinationOptions.length-1].FlightSegment.ArrivalAirportLocationCode}}</span>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row class="price-row">
+                                    <ion-col col-6 class="flight-info-domestic"><img src="assets/imgs/airlines/{{result.ValidatingAirlineCode}}.gif">
+                                        <p>{{result.OriginDestinationOptions[0].FlightSegment.MarketingAirlineCode}}-{{result.OriginDestinationOptions[0].FlightSegment.FlightNumber}}</p>
+                                    </ion-col>
+                                    <ion-col col-6 class="price-info" *ngIf="FlightAllFix.b2c == 0"><strong>{{result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}}</strong> {{domestic(result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</ion-col>
+                                    <ion-col col-6 class="price-info" *ngIf="FlightAllFix.b2c == 1"><strong>{{result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}}</strong> {{pdomestic(result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</ion-col>
+                                </ion-row>
+                            </div>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </div>
+        </ion-col>
+        <ion-col col-6 no-padding>
+            <div class="round-trip2" *ngIf="filteredResults.length <= 2">
+                <!-- <div>2</div> -->
+                <div radio-group [(ngModel)]="filterTwo" (ionChange)="selectDomestic(filterTwo)">
+                    <ion-card *ngFor="let result of domesticSearchR | domesticSort: {property: column, order: order}" [attr.data-stop]="result.OriginDestinationOptions.length-1" [attr.data-price]="result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount"
+                        [attr.data-faretype]="result.FareItinerary.AirItineraryFareInfo.IsRefundable" [attr.data-airlines]="getAirlines(result.OriginDestinationOptions)" [attr.data-layowerports]="getLayowerPorts(result.OriginDestinationOptions)" [attr.data-departuretime]="result.OriginDestinationOptions[0].FlightSegment.DepartureDateTime"
+                        [attr.data-aarivalime]="result.OriginDestinationOptions[result.OriginDestinationOptions.length-1].FlightSegment.ArrivalDateTime">
+                        <ion-card-content>
+                            <ion-radio [value]="result" checked="true"></ion-radio>
+                            <div>
+                                <ion-row class="timings-row">
+                                    <ion-col class="from">
+                                        <p>{{result.OriginDestinationOptions[0].FlightSegment.DepartureDateTime | date:'HH:mm'}}</p>
+                                        <span>{{result.OriginDestinationOptions[0].FlightSegment.DepartureAirportLocationCode}}</span>
+                                    </ion-col>
+                                    <ion-col class="info">
+                                        <ion-row>
+                                            {{getTotalDuration(result.OriginDestinationOptions)}}
+                                            <!-- {{getTotalDurationD(rest.StopQuantityInfo.Duration)}} -->
+                                        </ion-row>
+                                        <ion-row class="arrow-row">
+                                            <ion-col class="dot-col" col-1>
+                                                <ion-icon name="custom-dot"></ion-icon>
+                                            </ion-col>
+                                            <ion-col class="arrow-col"></ion-col>
+                                            <ion-col class="forward-col" col-1>
+                                                <ion-icon name="custom-forward"></ion-icon>
+                                            </ion-col>
+                                        </ion-row>
+                                        <ion-row>{{result.OriginDestinationOptions.length>1?(result.OriginDestinationOptions.length-1)+'Stop':'Non Stop'}}</ion-row>
+                                    </ion-col>
+                                    <ion-col class="to">
+                                        <p>{{result.OriginDestinationOptions[result.OriginDestinationOptions.length-1].FlightSegment.ArrivalDateTime | date:'HH:mm'}}</p>
+                                        <span>{{result.OriginDestinationOptions[result.OriginDestinationOptions.length-1].FlightSegment.ArrivalAirportLocationCode}}</span>
+                                    </ion-col>
+                                </ion-row>
+                                <ion-row class="price-row">
+                                    <ion-col col-6 class="flight-info-domestic"><img src="assets/imgs/airlines/{{result.ValidatingAirlineCode}}.gif">
+                                        <p>{{result.ValidatingAirlineCode}} - {{result.OriginDestinationOptions[0].FlightSegment.FlightNumber}}</p>
+                                    </ion-col>
+                                    <ion-col col-6 class="price-info" *ngIf="FlightAllFix.b2c == 0"><strong>{{result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}}</strong> {{domestic(result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</ion-col>
+                                    <ion-col col-6 class="price-info" *ngIf="FlightAllFix.b2c == 1"><strong>{{result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}}</strong> {{pdomestic(result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</ion-col>
+                                </ion-row>
+                            </div>
+                        </ion-card-content>
+                    </ion-card>
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
+
+
+
+    <div id="searchDiv" *ngIf="filteredResults.length > 2">
+        <ion-card *ngFor="let result of filteredResults | sort: {property: column, order: order}" [attr.data-stop]="result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption.length-1" [attr.data-faretype]="result.FareItinerary.AirItineraryFareInfo.IsRefundable"
+            [attr.data-departuretime]="result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption[0].FlightSegment.DepartureDateTime" [attr.data-aarivalime]="result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption[result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption.length-1].FlightSegment.ArrivalDateTime"
+            [attr.data-returndeparturetime]="result.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption[0].FlightSegment.DepartureDateTime" [attr.data-returnarrivetime]="result.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption[result.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption.length-1].FlightSegment.ArrivalDateTime"
+            [attr.data-price]="result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount" [attr.data-airlines]="getAirlines(result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption)" [attr.data-layowerports]="getLayowerPorts(result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption)"
+            (click)="selectFlight(result)">
+            <ion-card-content>
+                <ion-row class="timings-row">
+                    <ion-col class="from">
+                        <p>{{result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption[0].FlightSegment.DepartureDateTime | date:'HH:mm'}}</p>
+                        <span>{{result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption[0].FlightSegment.DepartureAirportLocationCode}}</span>
+                    </ion-col>
+                    <ion-col class="info">
+                        <ion-row>{{getTotalDuration(result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption)}}</ion-row>
+                        <ion-row class="arrow-row">
+                            <ion-col class="dot-col" col-2>
+                                <!-- <ion-icon name="custom-dot"></ion-icon> -->
+                            </ion-col>
+                            <ion-col class="arrow-col"></ion-col>
+                            <ion-col class="forward-col" col-2>
+                                <!-- <ion-icon name="custom-forward"></ion-icon> -->
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>{{result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption.length>1?(result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption.length-1)+'Stop':'Non Stop'}}</ion-row>
+                    </ion-col>
+                    <ion-col class="to">
+                        <p>{{result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption[result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption.length-1].FlightSegment.ArrivalDateTime | date:'HH:mm'}}</p>
+                        <!-- <span>{{result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption[result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption.length-1].FlightSegment.ArrivalAirportLocationCode}}</span> -->
+                        <span>{{toCity.AirportCode}}</span>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="timings-row">
+                    <ion-col class="from">
+                        <p>{{result.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption[0].FlightSegment.DepartureDateTime | date:'HH:mm'}}</p>
+                        <span>{{result.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption[0].FlightSegment.DepartureAirportLocationCode}}</span>
+                    </ion-col>
+                    <ion-col class="info">
+                        <ion-row>{{getTotalDuration(result.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption)}}</ion-row>
+                        <ion-row class="arrow-row">
+                            <ion-col class="dot-col" col-2>
+                                <!-- <ion-icon name="custom-dot"></ion-icon> -->
+                            </ion-col>
+                            <ion-col class="arrow-col"></ion-col>
+                            <ion-col class="forward-col" col-2>
+                                <!-- <ion-icon name="custom-forward"></ion-icon> -->
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>{{result.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption.length>1?(result.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption.length-1)+'Stop':'Non Stop'}}</ion-row>
+                    </ion-col>
+                    <ion-col class="to">
+                        <p>{{result.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption[result.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption.length-1].FlightSegment.ArrivalDateTime | date:'HH:mm'}}</p>
+                        <span>{{result.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption[result.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption.length-1].FlightSegment.ArrivalAirportLocationCode}}</span>
+                        <!-- <span>{{fromCity.AirportCode}}</span> -->
+                    </ion-col>
+                </ion-row>
+                <ion-row class="price-row">
+                    <ion-col col-3.5 class="flight-info">
+                        <ion-row>
+                            <img src="assets/imgs/airlines/{{result.FareItinerary.ValidatingAirlineCode}}.gif">
+                            <!-- <h2>{{getAirlineName(result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption[0].FlightSegment.MarketingAirlineCode)}}</h2> -->
+                        </ion-row>
+                        <ion-row>
+                            <span>{{result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption[0].FlightSegment.MarketingAirlineCode}}-{{result.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption[0].FlightSegment.FlightNumber}}</span>
+                        </ion-row>
+                    </ion-col>
+                    <ion-col col-5 class="flight-info">
+                        <p>{{result.FareItinerary.AirItineraryFareInfo.IsRefundable!='Yes'?'Refundable':'Non-Refundable'}}</p>
+                    </ion-col>
+                    <ion-col col-3.5 class="price" *ngIf="FlightAllFix.b2c == 0">
+                        <p>{{currencys.currency}} {{roundOff(result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</p>
+                    </ion-col>
+                    <ion-col col-3.5 class="price" *ngIf="FlightAllFix.b2c == 1">
+                        <p>{{currencys.currency}} {{roundOffPer(result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</p>
+                    </ion-col>
+                </ion-row>
+
+                <!-- <ion-row class="price-row">
+                    <ion-col col-3 class="flight-info"><img src="assets/imgs/airlines/{{result.FareItinerary.ValidatingAirlineCode}}.gif"></ion-col>
+                    <ion-col col-6 class="flight-info">{{result.FareItinerary.AirItineraryFareInfo.IsRefundable!='Yes'?'Refundable':'Non-Refundable'}}</ion-col>
+                    <ion-col col-3 class="price-info" *ngIf="FlightAllFix.b2c == 0"><strong>{{result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}}</strong> {{roundOff(result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</ion-col>
+                    <ion-col col-3 class="price-info" *ngIf="FlightAllFix.b2c == 1"><strong>{{result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}}</strong> {{roundOffPer(result.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</ion-col>
+                </ion-row> -->
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>
+<div class="div-footer" *ngIf="filterOne">
+    <ion-row>
+        <ion-col col-3>
+            <ion-row>
+                <img src="assets/imgs/airlines/{{filterOne.ValidatingAirlineCode}}.gif">
+            </ion-row>
+            <ion-row>
+                <p class="label-col">{{filterOne.ValidatingAirlineCode}} - {{filterOne.OriginDestinationOptions[0].FlightSegment.FlightNumber}}</p>
+            </ion-row>
+            <ion-row *ngIf="FlightAllFix.b2c == 0">
+                <p class="label-col">{{filterOne.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}} {{domestic(filterOne.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}
+                </p>
+            </ion-row>
+            <ion-row *ngIf="FlightAllFix.b2c == 1">
+                <p class="label-col">{{filterOne.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}} {{pdomestic(filterOne.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}
+                </p>
+            </ion-row>
+        </ion-col>
+        <ion-col col-3>
+            <ion-row>
+                <img src="assets/imgs/airlines/{{filterTwo.ValidatingAirlineCode}}.gif">
+            </ion-row>
+            <ion-row>
+                <p class="label-col">{{filterTwo.ValidatingAirlineCode}} - {{filterTwo.OriginDestinationOptions[0].FlightSegment.FlightNumber}}</p>
+            </ion-row>
+            <ion-row *ngIf="FlightAllFix.b2c == 0">
+                <p class="label-col">{{filterTwo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}} {{domestic(filterTwo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}
+                </p>
+            </ion-row>
+            <ion-row *ngIf="FlightAllFix.b2c == 1">
+                <p class="label-col">{{filterTwo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}} {{pdomestic(filterTwo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}
+                </p>
+            </ion-row>
+        </ion-col>
+        <ion-col col-4>
+            <div class="detail">
+                <ion-row *ngIf="FlightAllFix.b2c == 0">
+                    <ion-col>
+                        <p class="label-col">Total Amount</p>
+                        <p class="detail-col">{{filterOne.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}} {{tDomestic(filterOne.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount,filterTwo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngIf="FlightAllFix.b2c == 1">
+                    <ion-col>
+                        <p class="label-col">Total Amount</p>
+                        <p class="detail-col">{{filterOne.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}} {{ptDomestic(filterOne.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)+ptDomestic(filterTwo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)|
+                            number:'.0-2'}}
+                        </p>
+                    </ion-col>
+                </ion-row>
+            </div>
+        </ion-col>
+        <ion-col col-2 padding>
+            <button (click)="selectDomesticFlight(filterOne,filterTwo)" ion-button>Book</button>
+        </ion-col>
+    </ion-row>
+</div>

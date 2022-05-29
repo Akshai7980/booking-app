@@ -1,0 +1,36 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>WELCOME TO WALZ TRAVELS</ion-title>
+  </ion-navbar>
+</ion-header> -->
+<ion-content>
+  <div class="outer-div">
+    <button (click)="goBack()" class="back-btn" clear ion-button>
+      <ion-icon name="custom-back"></ion-icon>
+    </button>
+    <p class="header-label">WELCOME TO<br> <span> {{addres.projectName}}</span> </p>
+    <p class="sub-label">By Logging in you can manage your booking & checkout faster.</p>
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Email ID</ion-label>
+          <ion-input [(ngModel)]="emailid" type="text"></ion-input>
+          <ion-icon class="icon-btn" name="custom-email" item-right></ion-icon>
+        </ion-item>
+        <ion-item>
+          <ion-label>Password</ion-label>
+          <ion-input [(ngModel)]="password" type={{type}}></ion-input>
+          <ion-icon *ngIf="!showPass" (click)="showPassword()" class="icon-btn" name="custom-eye-off" item-right></ion-icon>
+          <ion-icon *ngIf="showPass" (click)="showPassword()" class="icon-btn" name="custom-eye" item-right></ion-icon>
+        </ion-item>
+        <ion-row class="forget-pass-row" item-right>
+          <button class="forget-password" [disabled]="getForgetButtonStatus()" (click)="forgotPassord()" ion-button clear>Forgot password</button>
+        </ion-row>
+      </ion-card-content>
+      <div class="lgn-btn-div">
+        <button class="login-btn" [disabled]="getLoginButtonStatus()" (click)="login()" ion-button>Login</button>
+      </div>
+    </ion-card>
+  </div>
+  <p (click)="goToRegisterPage()" class="no-account">Don't Have an Account? <b>Create New</b></p>
+</ion-content>

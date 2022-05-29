@@ -1,0 +1,21 @@
+<!-- Generated template for the SightSeeingLocationSearchComponent component -->
+<ion-header>
+  <ion-row>
+    <ion-col>
+        <ion-item>
+            <ion-input (ionChange)='onChange($event._value)' placeholder="Enter City Name" [(ngModel)]="searchTerm" ></ion-input>
+          </ion-item>
+    </ion-col>
+    <ion-col *ngIf="searchTerm.length>0" (click)="clearTerm()" class="close-col" col-2>
+        <ion-icon ios="ios-close" md="md-close"></ion-icon>
+    </ion-col>
+  </ion-row>
+</ion-header>
+<ion-content>
+  <ion-row class="country-row" *ngFor="let city of cities" (click)="selectCity(city)">
+    <ion-col class="icon-col" col-2>
+      <ion-icon name="custom-hotel-city"></ion-icon>
+    </ion-col>
+    <ion-col  class="code-col">{{city.destination_name}}</ion-col>
+  </ion-row>
+</ion-content>

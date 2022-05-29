@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,sBADkB,CAClB,eAAe,CAAC;EACb,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,eAAe;CAC3B",
+    "sources": [
+        "hotel-city-search.scss"
+    ],
+    "names": [],
+    "file": "hotel-city-search.css"
+}

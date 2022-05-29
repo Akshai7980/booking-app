@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Holiday Search</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <img src="assets/imgs/hotDeals/image4.jpeg">
+  <div class="search-div">
+    <div class="single-round-way">
+      <div (click)="getPackages()" class="from-div">
+        <p class="detail">Search for Package</p>
+        <!-- <p class="label">Location</p> -->
+        <p class="detail">{{packege.city}}</p>
+      </div>
+    </div>
+    </div>
+    <div  class="search-button">
+     <button ion-button block (click)="searchHolidays()" >Search</button>
+    </div>
+
+    <ion-list>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Choose the best place to explore</span>
+      <p>Finding and booking your holiday destination from our app</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Featured Holiday</span>
+      <p>Lets you book your whole trip in the one app</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Easy Booking</span>
+      <p>Suggests activities for your destination</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Find cheap Holiday at {{addres.projectName}}</span>
+      <p>Shows price comparisons between holiday providers</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

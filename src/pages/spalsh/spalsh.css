@@ -1,0 +1,12 @@
+page-spalsh .not-found-block {
+  text-align: center;
+  padding: 25px;
+  padding-top: 60%;
+}
+
+page-spalsh .not-found-block .no-result {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px;
+}
+/*# sourceMappingURL=spalsh.css.map */

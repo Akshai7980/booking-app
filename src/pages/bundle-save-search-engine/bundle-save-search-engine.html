@@ -1,0 +1,87 @@
+<ion-header #header>
+  <ion-navbar>
+    <ion-title>Cruise</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content scroll-hide [header]="header">
+  <div class="search-div">
+    <img src="assets/imgs/cruise.png">
+    <ion-toolbar class="backbtn">
+      <ion-buttons (click)="goBack()" left><button ion-button icon-only>
+          <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Cruise</ion-title>
+    </ion-toolbar>
+    <div class="single-round-way">
+      <ion-row class="all-from">
+        <div (click)="getCountry()" class="from-div">
+          <p class="label">Pick Up</p>
+          <p class="detail"></p>
+        </div>
+        <div (click)="getport()" class="from-div">
+            <p class="label">Drop off</p>
+            <p class="detail"></p>
+          </div>
+      </ion-row>
+      <div class="date-div">
+        <ion-row>
+          <ion-col (click)="openCalendar()" class="from-date">
+            <ion-row>
+              <div>
+                <p class="label">Departure</p>
+                <p class="date">{{departDate|date:'EE'}}, {{departDate|date:'MMM'}} {{departDate|date:'dd'}}</p>
+              </div>
+            </ion-row>
+          </ion-col>
+          <ion-col (click)="openCalendar()" class="to-date">
+            <ion-row>
+              <div>
+                <p class="label">Return</p>
+                <p class="date">{{returnDate|date:'EE'}}, {{returnDate|date:'MMM'}} {{returnDate|date:'dd'}}</p>
+              </div>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="extra-info">
+        <ion-row>
+          <ion-col col-12 (click)="travellerSelection()" class="traveller-col">
+            <p class="label">Travellers</p>
+            <p class="value">{{rooms.length}} Room {{totalAdultCount}}
+              Adult{{totalChildCount>0?', '+totalChildCount+' Child':''}},{{totalInfantCount>0?' '+totalInfantCount+' Infant':''}}
+            </p>
+          </ion-col>
+          <!-- <ion-col (click)="classSelection()" class="class-col">
+            <p class="label">Cabin Class</p>
+            <ion-row padding class="value">{{flightClass}} Class</ion-row>
+            <ion-row class="value"></ion-row>
+          </ion-col> -->
+        </ion-row>
+      </div>
+    </div>
+    <ion-grid class="search-button">
+      <button ion-button block (click)="hotelSelected()">Search</button>
+    </ion-grid>
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Customize</span>
+      <p>Customize your perfect trip itinerary with the local agency we match you with.</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Our Guarantees</span>
+      <p>We're a Hello My Ticket and provide a range of safety guarantees</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Discover</span>
+      <p>Send a trip request to let our Local Agencies know what you're looking for.</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+

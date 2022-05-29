@@ -1,0 +1,229 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Review Flight Details</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    
+        <ion-item no-lines>
+            <p> {{fromCity.City}}
+                <ion-icon name="custom-aeroplane"></ion-icon>
+                {{toCity.City}}
+            </p>
+            <span> {{departDate|date:'EEE, dd LLL'}}| {{flightInfo.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption.length>1?(flightInfo.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption.length-1)+'Stop,':'Non Stop'}}|
+                  {{getTotalDuration(flightInfo.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption)}}
+              </span>
+            <button *ngIf="flightFareRules" item-end (click)="fareRulesdata(flightFareRules.FareRules)" ion-button clear>Fare Rules</button>
+        </ion-item>
+    
+
+    <ion-card class="flight-info">
+        <ion-card-content>
+            <div class="flight-div" *ngFor="let destInfo of flightInfo.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption;let i=index">
+                <ion-item>
+                    <ion-avatar item-start>
+                        <img src="assets/imgs/airlines/{{destInfo.FlightSegment.MarketingAirlineCode}}.gif">
+                    </ion-avatar>
+                    <h2>{{getAirlineName(destInfo.FlightSegment.MarketingAirlineCode)}}</h2>
+                    <span>{{destInfo.FlightSegment.MarketingAirlineCode}}-{{destInfo.FlightSegment.FlightNumber}}</span>
+                    <ion-badge item-end>
+                        <ion-icon name="custom-luggage" (click)="goToBaggage(destInfo.FlightSegment)"></ion-icon>
+                        <span> {{flightFareRules&&getBaggageInfo(destInfo.FlightSegment)}}</span>
+                    </ion-badge>
+                </ion-item>
+
+                <ion-row class="dest-detail">
+                    <ion-col class="from-col" col-4>
+                        <p>{{destInfo.FlightSegment.DepartureAirportLocationCode}}<span> {{getAirportDetailCity(destInfo.FlightSegment.DepartureAirportLocationCode)}}</span></p>
+                    </ion-col>
+                    <ion-col col-4></ion-col>
+                    <ion-col class="to-col" col-4>
+                        <p>{{destInfo.FlightSegment.ArrivalAirportLocationCode}} <span> {{getAirportDetailCity(destInfo.FlightSegment.ArrivalAirportLocationCode)}}</span></p>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="dest-detail">
+                    <ion-col class="from-col" col-4>
+                        <h2>{{destInfo.FlightSegment.DepartureDateTime|date:'HH:mm'}}</h2>
+                    </ion-col>
+                    <ion-col class="design-col" col-4>
+                        <div class="line-div">
+                            <div class="start-dot"></div>
+                            <div class="center-dot">
+                                <!-- <ion-icon ios="ios-clock" md="md-clock"></ion-icon> -->
+                            </div>
+                            <p>{{getTripDuration(destInfo.FlightSegment)}}</p>
+                            <div class="end-dot"></div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="to-col" col-4>
+                        <h2>{{destInfo.FlightSegment.ArrivalDateTime|date:'HH:mm'}}</h2>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="dest-detail">
+                    <ion-col class="from-col" col-4>
+                        <span>{{getAirportDetail(destInfo.FlightSegment.DepartureAirportLocationCode)}}</span>
+                    </ion-col>
+                    <ion-col col-4></ion-col>
+                    <ion-col class="to-col" col-4>
+                        <span>{{getAirportDetail(destInfo.FlightSegment.ArrivalAirportLocationCode)}}</span>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngIf="i<flightInfo.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption.length-1" class="layover-div">
+                    <ion-col col-12 class="value">
+                        <div>
+                            <p>{{getLayowerTime(i,flightInfo.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption.length-1)}} layover in {{getAirportDetail(destInfo.FlightSegment.ArrivalAirportLocationCode)}}</p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+
+            </div>
+        </ion-card-content>
+    </ion-card>
+    
+        <ion-item no-lines>
+            <p>
+                {{toCity.City}}
+                <ion-icon name="custom-aeroplane"></ion-icon>
+                {{fromCity.City}}
+            </p>
+            <span>{{returnDate|date:'EEE, dd LLL'}}</span> |
+            <span>{{flightInfo.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption.length>1?(flightInfo.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption.length-1)+'Stop,':'Non Stop'}}</span> |
+            <ion-icon ios="ios-time" md="md-time"></ion-icon>
+            <span>{{getTotalDuration(flightInfo.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption)}}</span>
+            <!-- <button item-end *ngFor="let rule of flightFareRules" (click)="fareRulesdata(rule.FareRules[0].FareRule.Rules)" ion-button clear>Fare</button> -->
+        </ion-item>
+    
+    <ion-card class="flight-info">
+        <ion-card-content>
+
+            <div class="flight-div" *ngFor="let destInfo of flightInfo.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption;let i=index">
+                <ion-item>
+                    <ion-avatar item-start>
+                        <img src="assets/imgs/airlines/{{destInfo.FlightSegment.MarketingAirlineCode}}.gif">
+                    </ion-avatar>
+                    <h2>{{getAirlineName(destInfo.FlightSegment.MarketingAirlineCode)}}</h2>
+                    <span>{{destInfo.FlightSegment.MarketingAirlineCode}}-{{destInfo.FlightSegment.FlightNumber}}</span>
+                    <ion-badge item-end>
+                        <ion-icon name="custom-luggage" (click)="goToBaggage(destInfo.FlightSegment)"></ion-icon>
+                        <span> {{flightFareRules&&getBaggageInfo(destInfo.FlightSegment)}}</span>
+                    </ion-badge>
+                </ion-item>
+                <ion-row class="dest-detail">
+                    <ion-col class="from-col" col-4>
+                        <p>{{destInfo.FlightSegment.DepartureAirportLocationCode}}<span> {{getAirportDetailCity(destInfo.FlightSegment.DepartureAirportLocationCode)}}</span></p>
+                    </ion-col>
+                    <ion-col col-4></ion-col>
+                    <ion-col class="to-col" col-4>
+                        <p>{{destInfo.FlightSegment.ArrivalAirportLocationCode}} <span> {{getAirportDetailCity(destInfo.FlightSegment.ArrivalAirportLocationCode)}}</span></p>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="dest-detail">
+                    <ion-col class="from-col" col-4>
+                        <h2>{{destInfo.FlightSegment.DepartureDateTime|date:'HH:mm'}}</h2>
+                    </ion-col>
+                    <ion-col class="design-col" col-4>
+                        <div class="line-div">
+                            <div class="start-dot"></div>
+                            <div class="center-dot">
+                                <!-- <ion-icon ios="ios-clock" md="md-clock"></ion-icon> -->
+                            </div>
+                            <p>{{getTripDuration(destInfo.FlightSegment)}}</p>
+                            <div class="end-dot"></div>
+                        </div>
+                    </ion-col>
+                    <ion-col class="to-col" col-4>
+                        <h2>{{destInfo.FlightSegment.ArrivalDateTime|date:'HH:mm'}}</h2>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="dest-detail">
+                    <ion-col class="from-col" col-4>
+                        <span>{{getAirportDetail(destInfo.FlightSegment.DepartureAirportLocationCode)}}</span>
+                    </ion-col>
+                    <ion-col col-4></ion-col>
+                    <ion-col class="to-col" col-4>
+                        <span>{{getAirportDetail(destInfo.FlightSegment.ArrivalAirportLocationCode)}}</span>
+                    </ion-col>
+                </ion-row>
+                <ion-row *ngIf="i<flightInfo.FareItinerary.OriginDestinationOptions[1].OriginDestinationOption.length-1" class="layover-div">
+                    <ion-col col-12 class="value">
+                        <div>
+                            <p>{{getLayowerTime(i,flightInfo.FareItinerary.OriginDestinationOptions[0].OriginDestinationOption.length-1)}} layover in {{getAirportDetail(destInfo.FlightSegment.ArrivalAirportLocationCode)}}</p>
+                        </div>
+                    </ion-col>
+                </ion-row>
+
+            </div>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="fare-detail-card">
+        <ion-card-content>
+            <div class="payment-info">
+                <ion-row class="header-row">
+                    <div class="label">
+                        Pax
+                    </div>
+                    <div class="value">
+                        Adult x {{personDetail.adults}}, Child x {{personDetail.children}}, Infant x {{personDetail.infants}}
+                    </div>
+                </ion-row>
+                <ion-row>
+                    <div class="label">
+                        Basic Fare
+                    </div>
+                    <div class="value" *ngIf="FlightAllFix.b2c == 0">
+                        {{flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.EquivFare.CurrencyCode}}
+                         {{roundOff(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.EquivFare.Amount)}}
+                    </div>
+                    <div class="value" *ngIf="FlightAllFix.b2c == 1">
+                        {{flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.EquivFare.CurrencyCode}}
+                         {{roundOffPer(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.EquivFare.Amount)}}
+                    </div>
+                </ion-row>
+                <ion-row>
+                    <div class="label">
+                        Fee & Surcharges
+                    </div>
+                    <div class="value">
+                        {{flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}} 
+                        {{flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalTax.Amount}}
+                    </div>
+
+                </ion-row>
+
+                <ion-row class="total-row">
+                    <div class="label">
+                        Total
+                    </div>
+                    <div class="value" *ngIf="FlightAllFix.b2c == 0">
+                        {{flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}} 
+                        {{roundOff(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}
+                    </div>
+                    <div class="value" *ngIf="FlightAllFix.b2c == 1">
+                        {{flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}}
+                         {{roundOffPer(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}
+                    </div>
+                </ion-row>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+<div class="div-footer-flight">
+    <ion-row>
+        <ion-col col-6 *ngIf="FlightAllFix.b2c == 0">
+            <p class="label-col">Total Amount</p>
+            <p class="detail-col">
+                {{flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}}
+                {{roundOff(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}
+            </p>
+        </ion-col>
+        <ion-col col-6 *ngIf="FlightAllFix.b2c == 1">
+            <p class="label-col">Total Amount</p>
+            <p class="detail-col">
+                {{flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}}
+                {{roundOffPer(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}
+            </p>
+        </ion-col>
+        <ion-col col-6 class="button-col"><button (click)="proceedToTravellerDetails()" color="danger" outline ion-button>PROCEED</button></ion-col>
+    </ion-row>
+</div>

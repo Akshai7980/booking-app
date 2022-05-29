@@ -1,0 +1,117 @@
+<ion-header >
+  <ion-navbar>
+    <ion-title>Car Search</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+ 
+
+
+  <div class="search-div">
+    <ion-slides #imageSlide class="image-slide">
+      <ion-slide *ngFor="let img of  SightseeingDeals">
+        <div class="deal-img" [style.background-image]=" 'url('+img.image+')'"></div>
+      </ion-slide>
+    </ion-slides> 
+    <div class="single-round-way">
+      <div (click)="getCarPickUpLocations()" class="from-div">
+        <p class="label">Pick Up</p>
+        <p class="detail">{{pickUpLocation.location_name}}
+          <span>{{pickUpLocation.airport_code?pickUpLocation.airport_code+', ':''}}
+            {{pickUpLocation.city?pickUpLocation.city+', ':''}} 
+            {{pickUpLocation.country_code?pickUpLocation.country_code:''}}</span>
+        </p>
+        <!-- <div *ngIf="!sameLocation" (click)="swap($event)" class="swap-div">
+          <ion-icon name="custom-swap"></ion-icon>
+        </div> -->
+      </div>
+      <div (click)="getCarDropOffLocations()" class="from-div">
+        <p class="label">Drop Off</p>
+        <p class="detail">{{dropOffLocation.location_name}}
+          <span>{{dropOffLocation.airport_code?dropOffLocation.airport_code+', ':''}}
+            {{dropOffLocation.city?dropOffLocation.city+', ':''}},
+            {{dropOffLocation.country_code?dropOffLocation.country_code:''}}</span></p>
+          </div>
+        <ion-item no-lines>
+          <ion-label>Same as pick up location</ion-label>
+          <ion-checkbox (ionChange)="checkBoxChanged()" [(ngModel)]="sameLocation"></ion-checkbox>
+        </ion-item>
+      <div class="date-div">
+        <ion-row>
+          <ion-col  class="from-date">
+            <p class="label">PICK-UP AT</p>
+            <ion-row>
+              <ion-col class="date" col-4 (click)="selectPickUpDate()" >{{pickUpDate|date:'dd'}}</ion-col>
+              <ion-col class="day-month" (click)="timeSelection()">
+                <ion-row class="month">{{pickUpDate|date:'MMM yyyy'}}</ion-row>
+                <ion-row class="day">{{arrivaltime[0].houres}} : {{arrivaltime[0].mintues}}</ion-row>
+                <!-- <ion-row class="day">{{pickUpDate|date:'HH:mm'}}</ion-row> -->
+              </ion-col>
+            </ion-row>
+          </ion-col>
+          <ion-col class="from-date">
+            <p class="label">Return By</p>
+            <ion-row>
+              <ion-col class="date" col-4 (click)="selectPickUpDate()">{{dropOffDate|date:'dd'}}</ion-col>
+              <ion-col class="day-month" (click)="timeSelectionDepa()">
+                <ion-row class="month">{{dropOffDate|date:'MMM yyyy'}}</ion-row>
+                <ion-row class="day">{{departuretime[0].houres}} : {{departuretime[0].mintues}}</ion-row>
+                <!-- <ion-row class="day">{{dropOffDate|date:'HH:mm'}}</ion-row> -->
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </div>
+      <ion-row>
+        <ion-col>
+          <div (click)="getCountry()" class="from-div">
+            <p class="label">Country of Residence</p>
+            <p class="detail">{{residentCountry}}</p>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div  (click)="selectDriverAge()" class="from-div">
+            <p class="label">Driver age</p>
+            <p class="detail">{{driver_age}}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+     
+      
+    </div>
+   
+
+  <ion-grid class="search-button"> 
+    <button ion-button block (click)="searchCars()">Search</button>
+    </ion-grid>
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Trustworthy</span>
+      <p>Our independent customer evaluations with {{addres.projectName}} create transparency; therefore, you can trust our service even before you have driven with us.</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>High-quality</span>
+      <p>Our quality management ensures a high standard for vehicles, drivers and service, so that you feel comfortable.</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>On time</span>
+      <p>Our drivers pick you up at the booked time. We always check for flight delays, so you don’t have to worry about waiting.</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Safety</span>
+      <p>Our transfer partners are regularly checked to ensure that all permits are valid, allowing you to travel in safety.</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Foresighted</span>
+      <p>Our easy and fast online payment system, which allows you to pay in advance. Enjoy your ride without the hassle of cash payments.</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

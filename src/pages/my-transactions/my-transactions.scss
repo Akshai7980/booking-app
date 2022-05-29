@@ -1,0 +1,120 @@
+page-my-transactions {
+    // .scroll-content {
+    //     overflow-y: auto;
+    //     margin-top: 50px;
+    // }
+
+
+  .outer-div {
+    position: fixed;
+    width: 100%;
+    height: 85px;
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
+    background-image: url('../../assets/imgs/backgrounds/blue-header-top.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+    button {
+      position: absolute;
+      top: 30%;
+      left: 5%;
+      transform: translate(-50%, -50%);
+    }
+
+    .header-p {
+      margin: 0;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .card-div {
+    margin-top: 30px;
+    ion-card {
+      ion-card-content {
+        padding: 7px;
+        .first-row {
+            border-bottom: 1px dashed #dededef0;
+          .icon-col {
+            div {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              font-size: 20px;
+              display: inline-flex;
+              color: #0070d2;
+              background-color: #0070d252;
+
+              ion-icon {
+                margin: auto;
+              } 
+            }
+          }
+          .time-col {
+            align-self: center;
+            text-align: start;
+            padding-left: 3px;
+            font-weight: 300;
+            font-style: italic;
+            font-size: 13px;
+          }
+          .currency-col{
+            align-self: center;
+            text-align: end;
+            padding-left: 3px;
+            font-weight: 300;
+            color: green;
+          }
+        }
+        .label-col{
+            color: #999;
+            font-weight: 400;
+            text-align: start;
+            font-size: 13px;
+        }
+        .data-col{
+            text-align: end;
+            font-weight: 300;
+            font-size: 12px;
+        }
+      }
+    }
+}
+
+.no-booking{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .icon-div{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      color: #0070d2;
+      background-color: #0070d252;
+      display: inline-flex;
+      font-size: 80px;
+      ion-icon{
+        margin: auto;
+      }
+    }
+    p{
+      font-weight: 300;
+      font-size: 16px;
+    }
+  }
+}

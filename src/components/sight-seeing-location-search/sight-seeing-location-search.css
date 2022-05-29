@@ -1,0 +1,60 @@
+sight-seeing-location-search ion-header {
+  border-bottom: 1px solid #dedede;
+  -webkit-box-shadow: 0px 0px 1px 0px #dedede;
+          box-shadow: 0px 0px 1px 0px #dedede;
+}
+
+sight-seeing-location-search ion-header ion-col {
+  padding: 0 !important;
+}
+
+sight-seeing-location-search ion-header ion-col ion-item .item-inner {
+  border-bottom: 0 !important;
+}
+
+sight-seeing-location-search ion-header .close-col {
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+sight-seeing-location-search ion-header .close-col ion-icon {
+  font-size: 25px;
+  color: #999;
+  font-weight: 600;
+}
+
+sight-seeing-location-search ion-content {
+  background: white !important;
+}
+
+sight-seeing-location-search ion-content .country-row {
+  border-bottom: 1px solid #dedede;
+}
+
+sight-seeing-location-search ion-content .country-row .icon-col {
+  text-align: center;
+  font-size: 20px;
+  -ms-grid-row-align: center;
+      align-self: center;
+  display: -ms-grid;
+  display: grid;
+  color: #666;
+}
+
+sight-seeing-location-search ion-content .country-row .code-col {
+  font-size: 14px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+sight-seeing-location-search ion-content .country-row .name-col {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #666;
+  font-size: 14px;
+}
+/*# sourceMappingURL=sight-seeing-location-search.css.map */

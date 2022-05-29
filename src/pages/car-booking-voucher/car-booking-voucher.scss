@@ -1,0 +1,194 @@
+page-car-booking-voucher {
+    .scroll-content {
+        overflow-y: auto !important;
+        margin-top: 50px;
+      }
+    
+      
+    
+      ion-content {
+        ion-card {
+          width: calc(100% - 10px) !important;
+          margin: 35px 5px 5px !important;
+    
+          ion-card-content {
+            padding: 10px !important;
+    
+            .header-div {
+              border-bottom: 1px dashed #dedede;
+              padding: 10px 0;
+    
+              .detail-col {
+                padding: 0;
+                display: flex;
+    
+                .image-div {
+                  display: inline-block;
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  background: #ff9a13;
+                  position: relative;
+                  ion-icon{
+                    left: 50%;
+                    top: 50%;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    color: white;
+                    font-size: 27px;
+                  }
+                }
+    
+                .detail-div {
+                  display: inline-block;
+                  padding-left: 5px;
+    
+                  p {
+                    text-transform: uppercase;
+                    color: black;
+                    font-weight: 300;
+                    font-size: 15px;
+                  }
+    
+                  span {
+                    font-weight: 400;
+                    font-size: 12px;
+                    font-style: italic;
+                  }
+                }
+              }
+    
+              .image-col {
+                padding: 0;
+                display: grid;
+                align-self: center;
+              }
+            }
+    
+            .detailed-info {
+              border-bottom: 1px dashed #dedede;
+              padding: 10px 0;
+    
+              .flight-info {
+                .label {
+                  font-size: 13px;
+                  color: #666;
+                  font-weight: 400;
+                  padding: 5px 0;
+                  text-align: start;
+                  display: grid;
+                  align-content: center;
+                }
+    
+                .value {
+                  font-size: 12px;
+                  font-weight: 400;
+                  padding: 5px 0;
+                  text-align: end;
+                }
+              }
+    
+              .passenger-info {
+                ion-card {
+                  margin: 5px 0 !important;
+                  width: 100% !important;
+    
+                  ion-card-header {
+                    padding: 5px;
+                    color: white;
+                    background: #0070d2;
+                    font-weight: 300;
+                    font-size: 13px;
+    
+                  }
+    
+                  ion-card-content {
+                    padding: 0 5px !important;
+                    border: 1px solid #0070d2;
+    
+                    [border-right] {
+                      border-right: 1px solid #0070d2;
+                    }
+    
+                    .row {
+                      .label {
+                        text-align: start;
+                      }
+    
+                      .detail {
+                        text-align: end;
+                      }
+                    }
+    
+                    .header {
+                      font-size: 13px;
+                      font-weight: 300;
+    
+                      .col {
+                        padding: 5px 0;
+                      }
+                    }
+    
+                    .data {
+                      font-size: 13px;
+                      color: #666;
+                      font-weight: 400;
+    
+                      .col {
+                        padding: 0px 0 5px;
+                      }
+                    }
+                  }
+    
+                }
+              }
+            }
+    
+            .payment-info {
+                border-bottom: 1px dashed #dedede;
+                padding: 10px 0;
+                ion-row{
+                    display: block;
+                    position: relative;
+                }
+              .label {
+    
+                font-size: 13px;
+                color: #666;
+                font-weight: 400;
+                /* padding: 5px 0; */
+                text-align: start;
+        display: inline-flex;
+              }
+    
+              .value {
+                font-size: 13px;
+                font-weight: 400;
+                /* padding: 5px 0; */
+                text-align: end;
+                display: inline-flex;
+                right: 0;
+                position: absolute;
+                color: #666;
+              }
+              .net-value{
+                color: red;
+              }
+            }
+    
+            .footer-div{
+                padding: 10px 0 0;
+                p{
+                    font-size: 9px;
+                }
+                [text-right]{
+                    text-align: end !important;
+                }
+                ion-col{
+                  padding: 0;
+              }
+            }
+          }
+        }
+      }
+}

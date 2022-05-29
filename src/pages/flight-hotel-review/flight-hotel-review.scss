@@ -1,0 +1,175 @@
+page-flight-hotel-review {
+    .hotel-detail-card {
+        ion-card-content {
+          padding: 8px;
+    
+          .hotel-name {
+            font-size: 15px;
+            color: black;
+            font-weight: 300;
+          }
+    
+          .hotel-address {
+            font-size: 11px;
+            color: #666;
+            font-weight: 100;
+            font-style: italic;
+          }
+    
+          rating {
+            color: red;
+    
+            ul {
+              margin: 0;
+              padding: 0;
+    
+              li {
+                padding: 0 !important;
+              }
+            }
+          }
+    
+          .date-row {
+            border-bottom: 1px dashed #dedede;
+    
+            ion-col {
+              padding: 0 !important;
+              display: grid;
+              align-self: center;
+    
+              p {
+                font-size: 10px;
+                color: #666;
+              }
+    
+              span {
+                font-size: 13px;
+                font-style: italic;
+              }
+            }
+    
+            .check-in-col {
+              text-align: start;
+              justify-content: start;
+            }
+    
+            .icon-col {
+              text-align: center;
+              justify-content: center;
+    
+              ion-icon {
+                margin: auto;
+                font-size: 16px;
+                color: #666;
+              }
+            }
+    
+            .check-out-col {
+              text-align: end;
+              justify-content: end;
+            }
+          }
+    
+          div {
+            padding-top: 5px;
+    
+            p {
+              color: black;
+              font-size: 12px;
+            }
+    
+            span {
+              font-size: 11px;
+              color: #666;
+              font-style: italic;
+            }
+          }
+        }
+        .horizontal-scroll {
+          overflow: auto;
+          white-space: nowrap;
+          .chip-md {
+            border-right: 1px solid #ffffff;
+            border-radius: 0px;
+            color: #3A5A99;
+        }
+      }
+      
+      }
+    
+      .cancellation-policy-card {
+   
+    
+        ion-card-header {
+          padding: 5px 8px;
+          background:$background;
+          color: white;
+          font-weight: 300;
+          font-size: 14px;
+        }
+    
+        ion-card-content {
+          padding: 8px;
+    
+          p {
+            font-size: 11px;
+            font-weight: 100;
+            color: #333;
+          }
+    
+          ion-row {
+            border-top: 1px dashed #dedede;
+            padding-top: 2px;
+            color: green;
+            font-size: 10px;
+            font-weight: 100;
+          }
+        }
+      }
+      .div-footer {
+        background-color:$background;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 10;
+        display: block;
+        width: 100%;
+        height: 55px;
+        box-shadow: 0px 1px 1px 1px #ccc;
+    
+        ion-col {
+          align-self: center;
+          justify-content: center;
+          /* align-content: center; */
+          display: grid;
+    
+          // padding: 0 !important;
+          .label-col {
+            padding: 0;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 400;
+            color: white;
+            margin: 0;
+          }
+    
+          .detail-col {
+    
+            padding: 0;
+            font-size: 16px;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            margin: 0;
+          }
+    
+          button {
+            background: $background;
+            height: auto;
+            padding: 8px;
+            white-space: pre-wrap !important;
+          }
+        }
+      }
+        
+}

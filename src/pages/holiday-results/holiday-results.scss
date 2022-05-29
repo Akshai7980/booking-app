@@ -1,0 +1,67 @@
+page-holiday-results {
+    .scroll-content {
+        overflow-y: auto !important;
+    }
+    ion-card {
+        ion-card-header {
+            position: relative;
+            .rating-row {
+                position: absolute;
+                bottom: 10px;
+                z-index: 10;
+                right: 10px;
+                rating {
+                    color: $background;
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                        li {
+                            padding: 0 !important;
+                        }
+                    }
+                }
+            }
+        }
+        ion-card-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+        .holiday {
+            h1 {
+                color: black;
+                font-size: 14px;
+                font-weight: 500;
+            }
+            p {
+                color: gray;
+                font-size: 10px;
+                font-weight: 300;
+            }
+        }
+        .price-row {
+            background: #fff;
+            ion-col {
+                .price-col {
+                    border: 1px solid $background;
+                    padding: 4px;
+                    p {
+                        text-align: center;
+                        text-transform: uppercase;
+                        font-weight: 300;
+                        border-radius: 6px;
+                        font-size: 12px;
+                        span {
+                            font-size: 12px;
+                            font-weight: 800;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

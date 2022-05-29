@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Transfers Search</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="search-div">
+      <ion-slides #imageSlide class="image-slide">
+        <ion-slide *ngFor="let img of  SightseeingDeals">
+          <div class="deal-img" [style.background-image]=" 'url('+img.image+')'"></div>
+        </ion-slide>
+      </ion-slides> 
+      <div class="toggle-div">
+        <ion-row>
+          <ion-col col-6><button [ngClass]="flightWay==1?'selected':''" (click)="selectedButton(1)"  ion-button clear>One Way</button></ion-col>
+          <ion-col col-6> <button [ngClass]="flightWay==2?'selected':''" (click)="selectedButton(2)" ion-button clear>Round Trip</button></ion-col>
+        </ion-row>
+      </div>
+      <div  class="single-round-way">
+        <div (click)="getPickUp()" class="from-div">
+            <p class="label">Pick Up</p>
+            <p class="detail">{{transferCity.value}}</p>
+          </div>
+          <div (click)="getDropOff()" class="from-div">
+              <p class="label">Drop off</p>
+              <p class="detail">{{transferDest.value}}</p>
+            </div>
+
+        <div class="date-div">
+          <ion-row>
+            <ion-col [hidden]="flightWay==1"   class="from-date">
+              <p class="label">Arrival</p>
+              <ion-row>
+                <ion-col class="date" (click)="selectDepartureDate()" col-4>{{arrivalDate|date:'dd'}}</ion-col>
+                <ion-col class="day-month" (click)="timeSelection()">
+                  <ion-row class="month">{{arrivalDate|date:'MMM yyyy'}}</ion-row>
+                  <ion-row class="day">{{arrivaltime[0].houres}} : {{arrivaltime[0].mintues}}
+                     <!-- <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.arrivaltime"></ion-datetime> -->
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+
+            <ion-col [hidden]="flightWay==2"  class="from-date">
+              <p class="label">Arrival</p>
+              <ion-row>
+                <ion-col class="date" (click)="selectArrivalDate()" col-4>{{arrivalDate|date:'dd'}}</ion-col>
+                <ion-col class="day-month" (click)="timeSelection()">
+                  <ion-row class="month">{{arrivalDate|date:'MMM yyyy'}}</ion-row>
+                  <ion-row class="day">{{arrivaltime[0].houres}} : {{arrivaltime[0].mintues}}</ion-row>
+                  <!-- <ion-row class="day">{{arrivalDate|date:'HH:mm'}}</ion-row> -->
+                </ion-col>
+              </ion-row>
+            </ion-col>
+
+            <ion-col  class="from-date">
+              <p class="label">Departure</p>
+              <ion-row [hidden]="flightWay==1">
+                  <ion-col class="date" (click)="selectDepartureDate()" col-4>{{departureDate|date:'dd'}}</ion-col>
+                  <ion-col class="day-month" (click)="timeSelectionDepa()">
+                    <ion-row class="month">{{departureDate|date:'MMM yyyy'}}</ion-row>
+                    <ion-row class="day">{{departuretime[0].houres}} : {{departuretime[0].mintues}}</ion-row>
+                    <!-- <ion-row class="day"> <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.departuretime"></ion-datetime></ion-row> -->
+                  </ion-col>
+              </ion-row>
+              <ion-row [hidden]="flightWay==2">
+                <ion-col class="one-way-col" (click)="classSelection()" >
+                  <ion-row>Book round trips</ion-row>
+                  <ion-row>for great savings</ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          
+        </div>
+  
+        <div no-border (click)="getPassengerDetails()" class="from-div">
+            <p class="label">Passengers</p>
+            <p class="detail">{{this.personDetail.adults}} Adult{{this.personDetail.children>0?', '+this.personDetail.children+' Child':''}}{{this.personDetail.infants>0?', '+this.personDetail.infants+' Infant':''}}</p>
+          </div>
+      </div>
+      <ion-grid class="search-button"> 
+      <button ion-button block (click)="searchTransfers()">Search</button>
+      </ion-grid>
+    </div>
+
+    <ion-list>
+      <ion-item>
+        <ion-icon item-start name="custom-check-mark"></ion-icon>
+        <span>Trustworthy</span>
+        <p>Our independent customer evaluations with {{addres.projectName}} create transparency; therefore, you can trust our service even before you have driven with us.</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-start name="custom-check-mark"></ion-icon>
+        <span>High-quality</span>                                                                                                                                             
+        <p>Our quality management ensures a high standard for vehicles, drivers and service, so that you feel comfortable.</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-start name="custom-check-mark"></ion-icon>
+        <span>On time</span>
+        <p>Our drivers pick you up at the booked time. We always check for flight delays, so you don’t have to worry about waiting.</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-start name="custom-check-mark"></ion-icon>
+        <span>Safety</span>
+        <p>Our transfer partners are regularly checked to ensure that all permits are valid, allowing you to travel in safety.</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-start name="custom-check-mark"></ion-icon>
+        <span>Foresighted </span>
+        <p>Our easy and fast online payment system, which allows you to pay in advance. Enjoy your ride without the hassle of cash payments.</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  

@@ -1,0 +1,12 @@
+<!-- Generated template for the TruncatedTextComponent component -->
+<div *ngIf="text">
+  <div *ngIf="text.length <= limit">{{text}}</div>
+  <div *ngIf="truncating && text.length > limit">
+    {{text | words : limit}}
+    <button clear ion-button (click)="truncating = false">show more</button>
+  </div>
+  <div *ngIf="!truncating && text.length > limit">
+    {{text}}
+    <button clear ion-button (click)="truncating = true">show less</button>
+  </div>
+</div>

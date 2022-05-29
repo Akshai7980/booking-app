@@ -1,0 +1,322 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.toolbar-background {
+    background:#143aa5;
+ }
+.toolbar-title {
+    font-size: 16px;  
+    color: #fff;
+    padding: 0 12px;
+    font-weight: 300;
+}
+.bar-button-default{
+    color: #fff;
+}
+$background: #1fa6de;
+$background-sec:#95A1AC;
+$font-family-base: "Poppins" !default;
+ion-app{
+//  font-family: 'Poppins' !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+body{
+    
+    background-color: #FFFFFF;
+   // font-family: 'Poppins' !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.searchCountryNameModel .modal-wrapper{
+    position: absolute;
+    overflow: hidden;
+    max-width: 320px;
+    border-radius: 10px;
+    width: 90vw;
+    height: 70vh !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 0;
+    box-shadow: 0 16px 20px rgba(0,0,0,.4);
+    background-color: #fafafa;
+  } 
+  .back-btn{
+    color: white;
+    padding: 0;
+    height: 24px;
+    width: auto;
+  }
+  .alert-ios .alert-head{
+    color: #062e4c;
+  }
+  .alert-ios [aria-checked=true] .alert-radio-inner{
+    border-color: #062e4c;
+    color: #062e4c; 
+  }
+  .alert-ios [aria-checked=true] .alert-radio-label {
+    color: #062e4c;
+  }
+  .alert-ios .alert-button{
+    color: #062e4c !important;
+  }
+  .popover-ios .item-ios{
+    min-height: auto !important;
+    min-width: auto !important;             
+}
+  .flightAddTraveller .modal-wrapper{
+    background: white;
+    height: 200px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  }
+
+  .payment .modal-wrapper{
+    background: white;
+    height: 400px;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  }
+
+ion-icon {
+    &[class*="custom-"] {
+      mask-size: contain;
+      mask-position: 50% 50%;
+      mask-repeat: no-repeat;
+      background: currentColor;
+      width: 1em;
+      height: 1em;
+      
+    }
+    &[class*="custom-ship"] {
+        mask-image: url(../assets/icon/ship.png);
+      }
+    &[class*="custom-cruise"] {
+        mask-image: url(../assets/icon/head-cruise.png);
+      }
+    &[class*="custom-rating"] {
+        mask-image: url(../assets/icon/reating.png);
+      }
+    &[class*="custom-flight"] {
+        mask-image: url(../assets/icon/plane.svg);
+      }
+      &[class*="custom-flight4"] {
+        mask-image: url(../assets/icon/flight.svg);
+      }
+      &[class*="custom-leftback"] {
+        mask-image: url(../assets/icon/left-arrow.svg);
+      }
+      &[class*="custom-fhotel"] {
+        mask-image: url(../assets/icon/fhotel.svg);
+      }
+    &[class*="custom-hotel"] {
+        mask-image: url(../assets/icon/hotel.svg);
+    }
+    &[class*="custom-car"] {
+        mask-image: url(../assets/icon/car.svg);
+    }
+    &[class*="custom-transfer"] {
+        mask-image: url(../assets/icon/transfer.svg);
+    }
+    &[class*="custom-bus"] {
+        mask-image: url(../assets/icon/bus.svg);
+    }
+    &[class*="custom-activities"] {
+        mask-image: url(../assets/icon/activities.svg);
+    }
+    &[class*="custom-holidays"] {
+        mask-image: url(../assets/icon/holidays.svg);
+    }
+    &[class*="custom-offer"] {
+        mask-image: url(../assets/icon/offer.svg);
+    }
+    &[class*="custom-blog"] {
+        mask-image: url(../assets/icon/blog.svg);
+    }
+    &[class*="custom-profile"] {
+        mask-image: url(../assets/icon/profile.svg);
+    }
+    &[class*="custom-booking"] {
+        mask-image: url(../assets/icon/booking.svg);
+    }
+    &[class*="custom-transaction"] {
+        mask-image: url(../assets/icon/transaction.svg);
+    }
+    &[class*="custom-forward"] {
+        mask-image: url(../assets/icon/forward.svg);
+    }
+    &[class*="custom-list"] {
+        mask-image: url(../assets/icon/list.svg);
+    }
+    &[class*="custom-download"] {
+        mask-image: url(../assets/icon/download.svg);
+    }
+    &[class*="custom-cancel"] {
+        mask-image: url(../assets/icon/cancel.svg);
+    }
+    &[class*="custom-about"] {
+        mask-image: url(../assets/icon/about.svg);
+    }
+    &[class*="custom-help"] {
+        mask-image: url(../assets/icon/help.svg);
+    }
+    &[class*="custom-notification"] {
+        mask-image: url(../assets/icon/notification.svg);
+    }
+    &[class*="custom-privacy"] {
+        mask-image: url(../assets/icon/privacy.svg);
+    }
+    &[class*="custom-share"] {
+        mask-image: url(../assets/icon/share.svg);
+    }
+    &[class*="custom-star"] {
+        mask-image: url(../assets/icon/star.svg);
+    }
+    &[class*="custom-logo"] {
+        mask-image: url(../assets/favicon.ico);
+    }
+    &[class*="custom-back"] {
+        mask-image: url(../assets/icon/back.svg);
+    } 
+    &[class*="custom-camera"] {
+        mask-image: url(../assets/icon/camera.svg);
+    }  
+    &[class*="custom-eye"] {
+        mask-image: url(../assets/icon/eye.svg);
+    } 
+    &[class*="custom-eye-off"] {
+        mask-image: url(../assets/icon/eye-off.svg);
+    }
+    &[class*="custom-email"] {
+        mask-image: url(../assets/icon/email.svg);
+    }
+    &[class*="custom-key"] {
+        mask-image: url(../assets/icon/key.svg);
+    }
+    &[class*="custom-mobile-transaction"] {
+        mask-image: url(../assets/icon/mobile-transaction.svg);
+    }
+    &[class*="custom-phone"] {
+        mask-image: url(../assets/icon/phone.svg);
+    }
+    &[class*="custom-map"] {
+        mask-image: url(../assets/icon/map.svg);
+    }
+    &[class*="custom-whatsapp"] {
+        mask-image: url(../assets/icon/whatsapp.svg);
+    }
+    &[class*="custom-ticket"] {
+        mask-image: url(../assets/icon/ticket.svg);
+    }
+    &[class*="custom-adult"] {
+        mask-image: url(../assets/icon/adult.svg);
+    }
+    &[class*="custom-child"] {
+        mask-image: url(../assets/icon/child.svg);
+    }
+    &[class*="custom-swap"] {
+        mask-image: url(../assets/icon/swap.svg);
+    }
+    &[class*="custom-add"] {
+        mask-image: url(../assets/icon/add.svg);
+    }
+    &[class*="custom-delete"] {
+        mask-image: url(../assets/icon/delete.svg);
+    }
+    &[class*="custom-night"] {
+        mask-image: url(../assets/night.png);
+    }
+    &[class*="custom-close"] {
+        mask-image: url(../assets/icon/close.svg);
+    }
+    &[class*="custom-trash"] {
+        mask-image: url(../assets/icon/trash.svg);
+    }
+    &[class*="custom-hotel-city"] {
+        mask-image: url(../assets/icon/hotel-city.svg);
+    }
+    &[class*="custom-aeroplane"] {
+        mask-image: url(../assets/icon/aeroplane.svg);
+    }
+    &[class*="custom-ascending"] {
+        mask-image: url(../assets/icon/ascending.svg);
+    }
+    &[class*="custom-descending"] {
+        mask-image: url(../assets/icon/descending.svg);
+    }
+    &[class*="custom-slim-right"] {
+        mask-image: url(../assets/icon/slim-right.svg);
+    }
+    &[class*="custom-dot"] {
+        mask-image: url(../assets/icon/dot.svg);
+    }
+    &[class*="custom-filter"] {
+        mask-image: url(../assets/icon/filter.svg);
+    }
+    &[class*="custom-early-morning"] {
+        mask-image: url(../assets/early-morning.png);
+    }
+    &[class*="custom-morning"] {
+        mask-image: url(../assets/day.png);
+    }
+    &[class*="custom-evening"] {
+        mask-image: url(../assets/evening.png);
+    }
+    &[class*="custom-refund"] {
+        mask-image: url(../assets/icon/refund.svg);
+    }
+    &[class*="custom-luggage"] {
+        mask-image: url(../assets/icon/luggage.svg);
+    }
+    &[class*="custom-infant"] {
+        mask-image: url(../assets/icon/infant.svg);
+    }
+    &[class*="custom-check-mark"] {
+        mask-image: url(../assets/icon/check-mark.svg);
+    }
+    &[class*="custom-search"] {
+        mask-image: url(../assets/icon/search.svg);
+    }
+    &[class*="custom-car-door"] {
+        mask-image: url(../assets/icon/car-door.svg);
+    }
+    &[class*="custom-gas-station"] {
+        mask-image: url(../assets/icon/gas-station.svg);
+    }
+    &[class*="custom-up-arrow"] {
+        mask-image: url(../assets/icon/up-arrow.svg);
+    }
+    &[class*="custom-down-arrow"] {
+        mask-image: url(../assets/icon/down-arrow.svg);
+    }
+    &[class*="custom-sight-seeing"] {
+        mask-image: url(../assets/icon/sight-seeing.svg);
+    }
+    &[class*="custom-time"] {
+        mask-image: url(../assets/icon/time.svg);
+    }
+    &[class*="custom-tours"] {
+        mask-image: url(../assets/icon/tours.svg);
+    }    
+}
+

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Contact us</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div style="background: #fff;" *ngFor="let about of suppore" >
+    <h5>{{about.title}}</h5>
+    <p [innerHTML]="about.details" ></p>
+    </div>
+
+
+</ion-content>
+<div class="div-footer-flight">
+  <ion-row>
+    <ion-col col-4 (click)="gotoPrivacyPage()" >
+      <p>Privacy Policy</p>   
+    </ion-col>
+    <ion-col col-4 (click)="gotoContactPage()">
+      <p>Contact Us</p>
+    </ion-col>
+    <ion-col col-4 (click)="gotoAboutPage()">
+      <p>About Us</p>
+    </ion-col>
+  </ion-row>
+</div>

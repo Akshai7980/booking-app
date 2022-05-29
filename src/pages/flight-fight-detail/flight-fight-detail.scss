@@ -1,0 +1,295 @@
+page-flight-fight-detail {
+    .scroll-content {
+        overflow-y: auto !important;
+         padding-bottom: 60px;
+      }
+        
+        
+      ion-content {
+        .flight-info {
+          ion-item {
+            padding-left: 10px;
+                font-size: 14px;
+                background-color:$background;
+                margin-bottom: 5px;
+                color: #ffffff;
+                button{
+                  background: $background;
+                  color: #ffffff;
+                  box-shadow: 0px 1px 1px 1px #000000;
+                }
+          }
+          .flight-div {
+            .start-dot {
+              left: 19%;
+              position: absolute;
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background-color: #ccc;
+            }
+            .flight-detail {
+              p {
+                text-align: start;
+                padding: 2px;
+                color: #000000;
+                font-weight: 300;
+                span {
+                  color: #000000;
+                  font-size: 14px;
+                  font-weight: 500;
+                }
+              }
+              .label {
+                padding: 0px;
+                p{
+                  font-size: 12px;
+                }
+                
+              }
+              .trip{
+                padding: 0px;
+                align-self: center;
+                .trip{
+                  p{
+                    font-size: 10px;
+                  }
+                }
+              }
+              .value {
+                padding: 0px;
+                border-left: 1px solid #ccc;
+                ion-item {
+                  background: #ccc;
+                  padding-left: 5px;
+                  margin: 0;
+                  height: 20px;
+                  img {
+                    width: 30px;
+                    margin: 0px;
+                  }
+                 
+                  button{
+                    color:#ffffff;
+                  }
+                }
+    
+                .item-block {
+                  min-height: 30px;
+                }
+    
+              }
+    
+              .end-dot {
+                bottom: 50%;
+                position: relative;
+                left: 16%;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: #ccc;
+              }
+            }
+          }
+        }
+      
+        .fare-detail-card{
+            // margin: 5px;
+            // width: calc(100% - 10px);
+            // border-radius: 5px;
+            ion-card-content{
+                padding: 0;
+                .payment-info {
+                   .header-row{
+                    border-bottom: 1px dashed #dedede;
+                    .label{
+                        color: #333;
+                        font-size: 14px;
+                    }
+                    .value{
+                        color: #333;
+                        font-size: 14px;
+                    }
+                   }
+                   .total-row{
+                    border-top: 1px dashed #dedede;
+                    .label{
+                        color: black;
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
+                    .value{
+                        color: black;
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
+                   }
+                    ion-row{
+                        display: block;
+                        position: relative;
+                        padding: 5px;
+                    }
+                  .label {
+        
+                    font-size: 13px;
+                    color: #666;
+                    font-weight: 400;
+                    /* padding: 5px 0; */
+                    text-align: start;
+                    display: inline-flex;
+                  }
+        
+                  .value {
+                    font-size: 13px;
+                    font-weight: 400;
+                    /* padding: 5px 0; */
+                    text-align: end;
+                    display: inline-flex;
+                    right: 5px;
+                    position: absolute;
+                    color: #666;
+                  }
+                  .net-value{
+                    color: red;
+                  }
+                }
+            }
+        }
+        .hotel-detail-card {
+          // margin: 10px 5px !important;
+          // border-radius: 6px !important;
+          // width: calc(100% - 10px) !important;
+      
+          ion-card-content {
+            padding: 8px;
+      
+            .hotel-name {
+              font-size: 15px;
+              color: black;
+              font-weight: 300;
+            }
+      
+            .hotel-address {
+              font-size: 11px;
+              color: #666;
+              font-weight: 100;
+              font-style: italic;
+            }
+      
+            rating {
+              color: red;
+      
+              ul {
+                margin: 0;
+                padding: 0;
+      
+                li {
+                  padding: 0 !important;
+                }
+              }
+            }
+      
+            .date-row {
+              border-bottom: 1px dashed #dedede;
+      
+              ion-col {
+                padding: 0 !important;
+                display: grid;
+                align-self: center;
+      
+                p {
+                  font-size: 10px;
+                  color: #666;
+                }
+      
+                span {
+                  font-size: 13px;
+                  font-style: italic;
+                }
+              }
+      
+              .check-in-col {
+                text-align: start;
+                justify-content: start;
+              }
+      
+              .icon-col {
+                text-align: center;
+                justify-content: center;
+      
+                ion-icon {
+                  margin: auto;
+                  font-size: 16px;
+                  color: #666;
+                }
+              }
+      
+              .check-out-col {
+                text-align: end;
+                justify-content: end;
+              }
+            }
+      
+            div {
+              padding-top: 5px;
+      
+              p {
+                color: black;
+                font-size: 12px;
+              }
+      
+              span {
+                font-size: 11px;
+                color: #666;
+                font-style: italic;
+              }
+            }
+          }
+        }
+      }
+    
+    
+}
+
+.div-footer-flight {
+  background-color:$background;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  box-shadow: 0px 1px 1px 1px #ccc;
+
+  ion-col {
+  padding: 10px;
+    .label-col {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 300;
+      color: white;
+      margin: 0;
+    }
+
+    .detail-col {
+
+      font-size: 24px;
+      font-weight: 600;
+      color: white;
+      margin: 0;
+    }
+   
+
+  
+  }
+  .button-col{
+    align-self: center;
+    justify-content: center;
+    align-content: center; 
+    text-align: end;
+    button{
+      color: white;
+      border-color: #ffffff;
+    }
+  }
+}

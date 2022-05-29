@@ -1,0 +1,178 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Car Review booking</ion-title>
+  </ion-navbar>
+</ion-header><span>
+<ion-content>
+      <div class="image-div">
+        <div class="inner-img-div" [style.background-image]=" 'url('+car.vehavailcore[0].vehicle[0].pictureurl[0]+')'">
+          <div class="transfer-detail-div">
+            <p class="header-p">{{car.vehavailcore[0].vehicle[0].vehmakemodel[0].Name[0]}}</p>
+            <ion-row>
+              <ion-col col-6><p>Pick-up: {{pickUpLocation.location_name}}</p></ion-col>
+              <ion-col col-6><p>Drop Off: {{dropOffLocation.location_name}}</p></ion-col>
+              <ion-col col-6><p>{{pickUpDate|date:"EEE, MMM dd"}}, {{arrivaltime[0].houres}} {{arrivaltime[0].mintues}}</p></ion-col>
+              <ion-col col-6><p>{{dropOffDate|date:"EEE, MMM dd"}}, {{departuretime[0].houres}}: {{departuretime[0].mintues}}</p></ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-icon name="custom-gas-station"></ion-icon>{{car.vehavailcore[0].vehicle[0].FuelType[0]}}
+              </ion-col>
+              <ion-col>
+                <ion-icon name="custom-adult"></ion-icon>{{car.vehavailcore[0].vehicle[0].PassengerQuantity[0]}}
+              </ion-col>
+              <ion-col>
+                <ion-icon name="custom-luggage"></ion-icon>{{car.vehavailcore[0].vehicle[0].BaggageQuantity[0]}}
+              </ion-col>
+              <ion-col>
+                <ion-icon name="custom-car-door"></ion-icon>{{car.vehavailcore[0].vehicle[0].vehtype[0].DoorCount[0]}}
+              </ion-col>
+            </ion-row>
+          </div>
+          <!-- <div class="prepaid-div">{{car.vehavailcore[0].rentalrate[0].ratequalifier[0].RateQualifier[0]}}</div> -->
+        </div>
+      </div>
+      <!-- <form #form="ngForm" (ngSubmit)="makepayment(form)" novalidate> -->
+  <ion-card>
+    <ion-card-header>
+      Personal Information
+    </ion-card-header>
+    <ion-card-content>
+        <ion-row  radio-group class="title-radio" [(ngModel)]="personDetail.title" name="title">
+          <ion-col col-3>
+            <ion-radio class="radio-icon" value="Mr" name="rad1"></ion-radio>
+            <ion-label class="radio-label">Mr</ion-label>
+          </ion-col>
+          <ion-col col-3>
+            <ion-radio class="radio-icon" value="Mrs" name="rad2"></ion-radio>
+            <ion-label class="radio-label">Mrs</ion-label>
+          </ion-col>
+          <ion-col col-3>
+            <ion-radio class="radio-icon" value="Ms" name="rad1"></ion-radio>
+            <ion-label class="radio-label">Ms</ion-label>
+          </ion-col>
+          <ion-col col-3>
+            <ion-radio class="radio-icon" value="Dr" name="rad3"></ion-radio>
+            <ion-label class="radio-label">Dr</ion-label>
+          </ion-col>
+        </ion-row>
+      <ion-item>
+        <ion-label fixed>First Name</ion-label>
+        <ion-input readOnly [(ngModel)]="personDetail.firstName" type="text" name="firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Last Name</ion-label>
+        <ion-input readOnly [(ngModel)]="personDetail.lastName" type="text" name="lastName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Email</ion-label>
+        <ion-input readOnly [(ngModel)]="personDetail.email" type="email" name="email"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col padding-right col-4>
+          <ion-item class="isd-item">
+            <ion-label>ISD</ion-label>
+            <ion-input readOnly [(ngModel)]="personDetail.country_code" type="number" name="country_code" ></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Phone</ion-label>
+            <ion-input readOnly [(ngModel)]="personDetail.mobile_no" type="number" name="mobile_no" ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+       <ion-item>
+        <ion-label fixed>Address</ion-label>
+        <ion-input  [(ngModel)]="personDetail.address" type="text" name="address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Card Type</ion-label>
+        <ion-select [(ngModel)]="personDetail.cardtype" type="number" name="cardtype" interface="popover">
+          <ion-option selected value="1">Credit Card</ion-option>
+          <ion-option value="2">Debit Card</ion-option>
+        </ion-select>
+        <ion-select [(ngModel)]="personDetail.cc_type" type="text" name="cc_type" interface="popover">
+          <ion-option selected value="1">VISA</ion-option>
+          <ion-option value="2">MasterCard</ion-option>
+          <ion-option value="3">Amex</ion-option>
+          <ion-option value="4">Switch</ion-option>
+          <ion-option value="5">Laser</ion-option>
+          <ion-option value="6">Carte Bleu</ion-option>
+          <ion-option value="7">Carte Blanche</ion-option>
+          <ion-option value="8">Diners Club</ion-option>
+          <ion-option value="9">Discover Card</ion-option>
+          <ion-option value="10">Eurocard</ion-option>
+          <ion-option value="11">Japanese Credit Brueau Credit Card</ion-option>
+          <ion-option value="12">Universal Air Travel Card</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Card Number</ion-label>
+        <ion-input [(ngModel)]="personDetail.cc_number" type="number" name="cc_number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Card Holder Name</ion-label>
+        <ion-input [(ngModel)]="personDetail.cardholdername" type="text" name="cardholdername"></ion-input>
+      </ion-item>
+<ion-row>
+  <ion-col col-6>
+    <ion-item>
+      <ion-label>Expiry Date</ion-label>
+      <ion-select [(ngModel)]="personDetail.cc_mo" type="text" name="cc_mo" interface="popover">
+        <ion-option value="1">01</ion-option>
+        <ion-option value="2">02</ion-option>
+        <ion-option value="3">03</ion-option>
+        <ion-option value="4">04</ion-option>
+        <ion-option value="5">05</ion-option>
+        <ion-option value="6">06</ion-option>
+        <ion-option value="7">07</ion-option>
+        <ion-option value="8">08</ion-option>
+        <ion-option value="9">09</ion-option>
+        <ion-option value="10">10</ion-option>
+        <ion-option value="11">11</ion-option>
+        <ion-option value="12">12</ion-option>
+      </ion-select>
+      <ion-select [(ngModel)]="personDetail.cc_yr" type="text" name="cc_yr" interface="popover">
+        <ion-option value="3">2021</ion-option>
+        <ion-option value="4">2022</ion-option>
+        <ion-option value="5">2023</ion-option>
+        <ion-option value="6">2024</ion-option>
+        <ion-option value="7">2025</ion-option>
+        <ion-option value="9">2026</ion-option>
+        <ion-option value="10">2027</ion-option>
+        <ion-option value="11">2028</ion-option>
+        <ion-option value="12">2029</ion-option>
+        <ion-option value="13">2030</ion-option>
+      </ion-select>
+    </ion-item>    
+  </ion-col>
+  <ion-col col-6>
+    <ion-item>
+      <ion-label fixed>CVV</ion-label>
+      <ion-input [(ngModel)]="personDetail.cc_code" type="number" name="cc_code"></ion-input>
+    </ion-item>
+  </ion-col>
+</ion-row>
+
+      
+     
+    </ion-card-content>
+  </ion-card>
+  
+<!-- </form> -->
+
+</ion-content>
+<div class="div-footer-flight">
+  <ion-row>
+    <ion-col col-6>
+      <p class="label-col">Total Amount</p>
+      <p class="detail-col">{{car.vehavailcore[0].totalcharge[0].CurrencyCode[0]}}
+        {{car.vehavailcore[0].totalcharge[0].RateTotalAmount[0]}}</p>
+    </ion-col>
+    <ion-col col-6 class="button-col"><button [disabled]="isButtonDisable()" (click)="makepayment()"   color="danger" outline type="submit" ion-button>Book Now</button></ion-col>
+  </ion-row>
+</div>
+
+
+

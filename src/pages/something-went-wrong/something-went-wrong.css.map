@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,yBADqB,CACrB,gBAAgB,CAAA;EACZ,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,IAAI;CAWpB;;AAfL,AAKQ,yBALiB,CACrB,gBAAgB,CAIZ,UAAU,CAAA;EACN,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;EAChB,MAAM,EAAE,IAAI;CACf;;AATT,AAUQ,yBAViB,CACrB,gBAAgB,CASZ,cAAc,CAAA;EACV,SAAS,EAAE,IAAI;EACf,MAAM,EAAE,IAAI;CACf",
+    "sources": [
+        "something-went-wrong.scss"
+    ],
+    "names": [],
+    "file": "something-went-wrong.css"
+}

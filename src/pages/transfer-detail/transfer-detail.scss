@@ -1,0 +1,230 @@
+page-transfer-detail {
+    .scroll-content {
+        overflow-y: auto !important;
+        margin-bottom: 55px;  
+      }
+ 
+    .backbtn{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 99;
+        background: transparent;
+      }
+     
+
+      .image-div{
+        position: relative;
+        padding-top: 30px;
+        .inner-img-div{
+            height: 150px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            .transfer-detail-div{
+                position: absolute;
+                padding: 5px;
+                color: white;
+                font-weight: 300;
+                bottom: 0;
+                .header-p{
+                    margin: 0;
+                    font-size: 18px;
+                }
+                ion-row{
+                    ion-col{
+                        padding: 0;
+                        display: flex;
+                        font-size: 15px;
+                        font-style: italic;
+                        align-items: center;
+                        ion-icon{
+                            margin-right: 3px;
+                        }
+                    }
+                }
+                .travel-time-p{
+                    margin: 0;
+                    font-size: 15px;
+                    font-style: italic;
+                    span{
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+      }
+      .image-div::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.3);
+
+      }
+
+      .description-card{
+      
+        ion-card-header{
+            padding: 5px 8px;
+            background: $background;
+            color: white;
+            font-weight: 300;
+            font-size: 14px;
+        }
+        ion-card-content{
+            padding: 8px;
+            p{
+                font-size: 12px;
+                font-weight: 300;
+                color: #333;
+                
+            }
+        }
+      }
+
+      .traveller-detail{
+        ion-card-header{
+            padding: 5px 8px;
+            background: $background;
+            color: white;
+            font-weight: 300;
+            font-size: 14px;
+        }
+        ion-card-content{
+            padding: 8px;
+            ion-row{
+               border-bottom: 2px dashed #dedede;
+                padding: 5px 0px;
+                .label{
+                    padding: 0;
+                    font-size: 15px;
+                    font-weight: 300;
+                    font-style: italic;
+                    display: grid;
+                    align-self: center;
+                }
+                .value{
+                    padding: 0;
+                    font-size: 15px;
+                    font-weight: 400;
+                    display: grid;
+                    align-self: center;
+                    justify-content: end;
+                }
+            }
+            ion-row:last-child{
+                border-bottom:0;
+
+            }
+        }
+      }
+
+      .price-card{
+      
+        ion-card-header{
+            padding: 5px 8px;
+            background: $background;
+            color: white;
+            font-weight: 300;
+            font-size: 14px;
+            .label{
+                padding: 0;
+                display: grid;
+                align-self: center;
+            }
+            .value{
+                padding: 0;
+                display: grid;
+                align-self: center;
+                font-size: 12px;
+                justify-content: end;
+            }
+        }
+        ion-card-content{
+            padding: 5px;
+            .detail-row {
+                padding: 5px 0;
+                border-top: 1px dashed #dedede;
+                .label{
+                    padding: 0;
+                    font-size: 15px;
+                    font-weight: 100;
+                    font-style: italic;
+                    display: grid;
+                    align-self: center;
+                }
+                .value{
+                    padding: 0;
+                    font-size: 15px;
+                    font-weight: 400;
+                    display: grid;
+                    align-self: center;
+
+                    justify-content: end;
+                }
+            }
+            .total-row{
+                padding: 5px 0;
+                border-top: 1px dashed #dedede;
+                .label{
+                    padding: 0;
+                    display: grid;
+                    align-self: center;
+                    font-style: italic;
+                    font-size: 15px;
+                }
+                .value{
+                    padding: 0;
+                    display: grid;
+                    align-self: center;
+                    font-style: italic;
+                    font-size: 15px;
+                    justify-content: end;
+                }
+            }
+        }
+      }
+      .div-footer {
+        background-color: $background;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 10;
+        display: block;
+        width: 100%;
+        height: 55px;
+        box-shadow: 0px 1px 1px 1px #ccc;
+    
+        ion-col {
+          align-self: center;
+          justify-content: center;
+          display: grid;
+            padding-top: 10px;
+          .label-col {
+            font-size: 16px;
+            text-align: center;
+            font-weight: 400;
+            color: white;
+            margin: 0;
+          }
+    
+          .detail-col {
+            font-size: 16px;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            margin: 0;
+          }
+    
+          button {
+            background: $background;
+            height: auto;
+            padding: 8px;
+            white-space: pre-wrap !important;
+          }
+        }
+      }
+}

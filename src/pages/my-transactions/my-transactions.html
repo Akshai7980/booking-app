@@ -1,0 +1,47 @@
+
+<!-- <div class="outer-div">
+    <button (click)="goBack()" class="back-btn" clear ion-button><ion-icon  name="custom-back"></ion-icon></button>
+  <p class="header-p">My Transactions</p>
+</div> -->
+<ion-header>
+  <ion-navbar>
+    <ion-title>My Transactions</ion-title>
+  </ion-navbar>
+</ion-header> 
+
+<ion-content>
+  <div *ngIf="isBookingAvailable" class="card-div">
+    <ion-card *ngFor="let transaction of transactions">
+      <ion-card-content>
+        <ion-row class="first-row">
+          <ion-col class="icon-col " col-2>
+            <div>
+              <ion-icon name="custom-mobile-transaction"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col class="time-col" col-6>{{transaction.DateCreated| date:'EEE, MMM dd, hh:mm aa'}}</ion-col>
+          <ion-col class="currency-col" col-4>{{transaction.currency}} {{transaction.Amount}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="label-col">Order ID:</ion-col>
+          <ion-col class="data-col">{{transaction.OrderID}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="label-col">Booking ID:</ion-col>
+          <ion-col class="data-col">{{transaction.booking_id}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="label-col">Transaction ID:</ion-col>
+          <ion-col class="data-col">{{transaction.TransactionID}}</ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div class="no-booking" *ngIf="!isBookingAvailable">
+    <div class="icon-div">
+      <ion-icon name="custom-mobile-transaction"></ion-icon>
+    </div>
+
+    <p>No Data Found</p>
+  </div>
+</ion-content>

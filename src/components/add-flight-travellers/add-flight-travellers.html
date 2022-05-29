@@ -1,0 +1,37 @@
+<!-- Generated template for the AddFlightTravellersComponent component -->
+<div>
+  <ion-row class="header-row">
+    <ion-col class="label">Pick Travellers</ion-col>
+    <ion-col class="button-col"><button (click)="travellersSelected()" ion-button clear>Done</button></ion-col>
+  </ion-row>
+  <ion-row class="detail-row">
+    <ion-col class="label"><p>Adult</p><span>Above 12 years</span></ion-col>
+    <ion-col class="value">
+      <ion-row>
+        <ion-col class="icon-col"><button (click)="decreaseAdults()" ion-button clear><ion-icon name="custom-delete"></ion-icon></button></ion-col>
+        <ion-col class="value-col">{{adults}}</ion-col>
+        <ion-col class="icon-col"><button (click)="increaseAdults()" ion-button clear><ion-icon name="custom-add"></ion-icon></button></ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row class="detail-row">
+      <ion-col class="label"><p>Children</p><span>2 - 12 years</span></ion-col>
+      <ion-col class="value">
+        <ion-row>
+          <ion-col class="icon-col"><button (click)="decreaseChildren()" ion-button clear><ion-icon name="custom-delete"></ion-icon></button></ion-col>
+          <ion-col class="value-col">{{children}}</ion-col>
+          <ion-col class="icon-col"><button (click)="increaseChildren()" ion-button clear><ion-icon name="custom-add"></ion-icon></button></ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row class="detail-row">
+        <ion-col class="label"><p>Infant</p><span>Below 2 years</span></ion-col>
+        <ion-col class="value">
+          <ion-row>
+            <ion-col class="icon-col"><button (click)="decreaseInfants()" ion-button clear><ion-icon name="custom-delete"></ion-icon></button></ion-col>
+            <ion-col class="value-col">{{infants}}</ion-col>
+            <ion-col class="icon-col"><button (click)="increaseInfants()" ion-button clear><ion-icon name="custom-add"></ion-icon></button></ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+</div>

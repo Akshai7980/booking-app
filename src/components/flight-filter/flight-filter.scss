@@ -1,0 +1,400 @@
+flight-filter {
+  background: white;
+
+  .scroll-content {
+    overflow-y: auto !important;
+    margin-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  .search-bar-div {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    color: #4486ff;
+    font-size: 18px;
+    font-weight: 300;
+    z-index: 1;
+    background-color: $background;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+
+    ion-row {
+      .icon-col {
+        button {
+          color: white;
+          font-size: 12px;
+        }
+
+        .apply-btn {
+          color: white;
+          font-size: 14px;
+          font-weight: 300;
+          text-transform: uppercase;
+        }
+      }
+
+      .search-col {
+        padding: 5px 0;
+        color: white;
+        text-align: center;
+        align-self: center;
+        // .searchbar-ios {
+        //   border-top: 0;
+        //   border-bottom: 0;
+        //   background: transparent;
+        // }
+      }
+    }
+  }
+
+  .done-btn {
+    position: fixed;
+    width: 100%;
+    background-color: #f3f3f3;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    z-index: 1;
+
+    // span {
+    //   position: absolute;
+    //   width: 55px;
+    //   height: 55px;
+    //   border-radius: 50%;
+    //   color: white;
+    //   font-size: 16px;
+    //   font-weight: 300;
+    //   z-index: 1;
+    //  // background-color: #4082ff;
+    //   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    //   top: 0px;
+    //   text-align: center;
+    //   left: 50%;
+    //   line-height: 55px;
+    //   text-transform: uppercase;
+    //   transform: translate(-50%, -50%);
+    // }
+  }
+
+  ion-content {
+    .selected-button {
+      color: white !important;
+      background-color: $background !important;
+
+      p {
+        color: white;
+      }
+    }
+    .price-card {
+      //  background-color: #FFFAFAFA;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+
+      ion-card-content {
+        padding: 0 10px;
+
+        ion-list-header {
+          // border-bottom: 0;
+          color: black;
+          font-size: 18px;
+          font-weight: 300;
+          padding: 5px;
+          ion-label {
+            margin: 0;
+          }
+
+          span {
+            margin: 0px 2px !important;
+          }
+        }
+
+        ion-range {
+          padding: 0 10px;
+        }
+
+        .range-ios.range-has-pin {
+          padding-top: 0;
+        }
+
+        .range-ios .range-bar {
+          height: 5px;
+        }
+
+        .range-ios .range-knob {
+          background: #0072cf;
+          color: #fff;
+        }
+
+        .range-ios .range-bar-active {
+          background: #0072cf;
+
+        }
+      }
+    }
+
+
+    .stop-card {
+      //  background-color: #FFFAFAFA;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      margin-top: 8px;
+
+      ion-card-content {
+        padding: 6px 10px 6px;
+
+        .label-p {
+          color: black;
+          font-size: 15px;
+          font-weight: 300;
+        }
+
+        button {
+          height: 50px;
+          color: #999;
+          background-color: white;
+          box-shadow: 1px 2px 4px 1px #ccc;
+
+          .button-inner {
+            display: block;
+
+            .outer-div {
+              width: 100%;
+              display: block;
+              height: 50%;
+              padding: 5px;
+              text-align: center;
+ 
+              div {
+                width: 2rem;
+                height: 2rem;
+                border: 1px solid;
+                border-radius: 50%;
+                text-align: center;
+                margin: auto;
+                padding: 2px;
+              }
+            }
+
+            p {
+              display: block;
+              width: 100%;
+            }
+          }
+        }
+      }
+
+
+    }
+
+    .time-card {
+      //  background-color: #FFFAFAFA;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      margin-top: 8px;
+
+      ion-card-content {
+        padding: 6px 10px 6px;
+
+        .label-p {
+          color: black;
+          font-size: 15px;
+          font-weight: 300;
+        }
+
+        button {
+          height: 50px;
+          padding: 0;
+          background-color: white;
+          color: #999;
+          box-shadow: 1px 2px 4px 1px #ccc;
+          text-align: center;
+
+          .button-inner {
+            width: 100%;
+            display: block;
+
+            ion-icon {
+              display: block;
+              margin: auto;
+              height: 50%;
+            }
+
+            p {
+              display: block;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .fare-card {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      margin-top: 8px;
+
+      ion-card-content {
+        padding: 6px 10px 6px;
+
+        .label-p {
+          color: black;
+          font-size: 15px;
+          font-weight: 300;
+        }
+
+        .label-col {
+          padding: 10px;
+
+          ion-label {
+            padding: 0;
+            display: inline-flex;
+            width: 100%;
+            margin: 6px 8px 6px 0;
+
+            ion-icon {
+              vertical-align: middle;
+              color: gray;
+              margin: auto;
+            }
+
+            span {
+              width: 100%;
+              height: 100%;
+              display: inline-block;
+              font-size: 15px;
+              padding-left: 10px;
+            }
+          }
+        }
+
+        .checkbox-col {
+          padding: 0;
+          display: inline-grid;
+          justify-content: center;
+          align-items: center;
+
+          .radio-ios .radio-icon {
+            width: 21px;
+            height: 21px;
+            border: 2px solid #488aff;
+            border-radius: 5px;
+          }
+
+          // .checkbox-ios .checkbox-checked{
+
+          //   border: 2px solid #488aff;
+          //   background-color: transparent;
+          // }
+
+          .radio-ios .radio-checked .radio-inner {
+            left: 7px;
+            top: 4px;
+            width: 4px;
+            height: 10px;
+          }
+        }
+      }
+    }
+
+    .airline-card {
+      //    background-color: #FFFAFAFA;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      margin-top: 8px;
+
+      ion-card-content {
+        padding: 6px 10px 6px;
+
+        .outer-div {
+          position: relative;
+          width: 21px;
+          height: 21px;
+          border-width: 1px;
+
+          border-radius: 5px;
+          border: 2px solid #c8c7cc;
+
+          .inner-div {
+            border-color: #488aff;
+            border-width: 2px;
+            border-top-width: 0;
+            border-left-width: 0;
+            transform: rotate(45deg);
+            border-style: solid;
+            left: 7px;
+            top: 4px;
+            position: absolute;
+            width: 4px;
+            height: 9px;
+          }
+        }
+
+        .selected-div {
+          border: 2px solid #488aff;
+          background-color: transparent;
+        }
+
+        ion-grid {
+          .airline-row {
+            padding: 2px 0;
+          }
+        }
+        .checkbox-col {
+          
+          display: inline-grid;
+          justify-content: center;
+          align-items: center;
+          // ion-checkbox{
+          //     padding-left: 10px;
+
+          // }
+          .checkbox-ios .checkbox-icon {
+            border-radius: 5px;
+            border: 2px solid #c8c7cc;
+          }
+
+          .checkbox-ios .checkbox-checked {
+
+            border: 2px solid #488aff;
+            background-color: transparent;
+          }
+
+          .checkbox-ios .checkbox-checked .checkbox-inner {
+            border-color: #488aff;
+            border-width: 2px;
+            border-top-width: 0;
+            border-left-width: 0;
+          }
+        }
+
+        .label-p {
+          color: black;
+          font-size: 15px;
+          font-weight: 300;
+        }
+
+        ion-label {
+          display: inline-flex;
+          vertical-align: middle;
+          align-items: center;
+          margin: 0;
+
+          img {
+            max-width: 50px;
+            max-height: 30px;
+          }
+
+          span {
+            padding-left: 10px;
+          }
+
+         
+        }
+      }
+    }
+  }
+}

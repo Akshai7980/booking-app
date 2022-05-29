@@ -1,0 +1,17 @@
+page-no-result .not-found-block {
+  text-align: center;
+  padding: 25px;
+  padding-top: 50px;
+}
+
+page-no-result .not-found-block .no-result {
+  font-size: 25px;
+  font-weight: 500;
+  margin: 10px;
+}
+
+page-no-result .not-found-block .modify-search {
+  font-size: 20px;
+  margin: 10px;
+}
+/*# sourceMappingURL=no-result.css.map */

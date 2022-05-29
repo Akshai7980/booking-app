@@ -1,0 +1,118 @@
+page-my-bookings .card-div {
+  margin-top: 30px;
+}
+
+page-my-bookings .card-div ion-card ion-card-content {
+  padding: 7px;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .first-row {
+  border-bottom: 1px dashed #dededef0;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .first-row .icon-col .hotel {
+  background-color: green;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .first-row .icon-col .flight {
+  background-color: red;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .first-row .icon-col div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: white;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .first-row .icon-col div ion-icon {
+  margin: auto;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .first-row .time-col {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: start;
+  padding-left: 3px;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 13px;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .first-row .status-col {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: end;
+  padding-left: 3px;
+  font-weight: 300;
+  color: green;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .first-row .status-confirm {
+  color: green;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .first-row .status-reject {
+  color: red;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .label-col {
+  color: #999;
+  font-weight: 400;
+  text-align: start;
+  font-size: 13px;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .data-col {
+  text-align: end;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .booking-info {
+  height: 20px;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0;
+}
+
+page-my-bookings .card-div ion-card ion-card-content .booking-info span {
+  font-size: 14px;
+}
+
+page-my-bookings .no-booking {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+page-my-bookings .no-booking .icon-div {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  color: #0070d2;
+  background-color: #0070d252;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 80px;
+}
+
+page-my-bookings .no-booking .icon-div ion-icon {
+  margin: auto;
+}
+
+page-my-bookings .no-booking p {
+  font-weight: 300;
+  font-size: 16px;
+}
+/*# sourceMappingURL=my-bookings.css.map */

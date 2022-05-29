@@ -1,0 +1,56 @@
+
+<ion-content>
+
+<div class="outer-div">
+  <button (click)="goBack()" class="back-btn" clear ion-button><ion-icon  name="custom-back"></ion-icon></button>
+<p class="header-p">My Profile</p>
+<span (click)="updateProfile()" class="apply-btn">Apply</span>
+<div class="profile-img">
+  <img [src]="profileImage?(profileImage):imageSafeData|safeUrl">
+  <div (click)="presentActionSheet()" class="inner-camera">
+    <ion-icon name="custom-camera"></ion-icon>
+  </div>
+</div>
+</div>
+  <div class="detail-div">
+      <p class="email-p">{{user.emailid}}</p>
+      <p class="mobile-p">+{{user.country_code}} - {{user.mobile}}</p>
+  </div>
+
+<div class="private-details">
+<p class="label-p">Private Details:</p>
+<ion-row  radio-group class="title-radio" [(ngModel)]="user.title">
+    <ion-col col-4>
+        <ion-radio class="radio-icon"  value="Mr" name="rad1"></ion-radio>
+        <ion-label class="radio-label">Mr</ion-label>
+      </ion-col>
+
+      <ion-col col-4>
+        <ion-radio class="radio-icon" value="Mrs" button name="rad2"></ion-radio>
+        <ion-label class="radio-label">Mrs</ion-label>
+
+      </ion-col>
+      <ion-col col-4>
+          <ion-radio class="radio-icon"  value="Ms" name="rad1"></ion-radio>
+          <ion-label class="radio-label">Ms</ion-label>
+        </ion-col>
+</ion-row>
+
+<ion-item>
+    <ion-label fixed>First Name</ion-label>
+    <ion-input [(ngModel)]="user.fname"  type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label fixed>Last Name</ion-label>
+      <ion-input [(ngModel)]="user.lname"  type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label fixed>Mobile</ion-label>
+        <ion-input [(ngModel)]="user.mobile"  type="mobile"></ion-input>
+      </ion-item>
+      <ion-row class="button-row">
+          <button (click)="changePassword()"  ion-button >Change password</button>
+        </ion-row>
+</div>
+</ion-content>

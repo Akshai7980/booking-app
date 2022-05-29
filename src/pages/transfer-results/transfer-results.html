@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+          <div class="header-p" *ngIf="searchResults">
+            <p>{{searchResults.Search_Result.origin_name}}</p>
+            <!-- <p class="p-span">-</p> -->
+            <p> {{searchResults.Search_Result.end_name}}</p>
+            <span>{{searchResults.Search_Result.travelling|date:'EEE, MMM dd, HH:mm'}}</span>
+          </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let transfer of transferResults" (click)="transferSelected(transfer)">
+      <ion-row>
+        <ion-col class="img-col" col-6>
+            <img src={{transfer.imageUrl}}>
+        </ion-col>
+        <ion-col class="detail-col" col-6>
+            <ion-row class="hotel-name-row">
+              <p>{{transfer.general.producttype}}</p>
+            </ion-row>
+            <ion-row  class="location-row">
+              <ion-col>
+                <span><ion-icon name="custom-adult"></ion-icon> {{transfer.general.minpax?transfer.general.minpax:'1'}} - {{transfer.general.maxpax?transfer.general.maxpax:'4'}}</span> 
+              </ion-col>
+              <ion-col>
+                  <span><ion-icon name="custom-luggage"></ion-icon> {{transfer.general.luggage?transfer.general.luggage:'2'}} Bag</span> 
+              </ion-col>
+            </ion-row>
+            <ion-row class="rating-row">
+             <p><span>Travelling Time: </span>{{transfer.general.transfertime}} Min</p>
+            </ion-row>
+            <ion-row class="price-row">
+              <p>{{currencys.currency}}  {{getTotalPrice(transfer)/currencys.value|number:'.0-2'}}</p>
+            </ion-row>
+          </ion-col>
+      </ion-row>
+  </ion-card>
+</ion-content>

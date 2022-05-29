@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Booking Voucher</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <div class="header-div">
+        <ion-row>
+          <ion-col class="detail-col">
+            <div class="image-div">
+              <ion-icon name="custom-ticket"></ion-icon>
+            </div>
+            <div class="detail-div">
+              <p>Booking Voucher</p><span>Date: {{departDate|date:'EE'}}, {{departDate|date:'dd'}} {{departDate|date:'MMM'}} {{departDate|date:'yyyy'}}</span>
+            </div>
+          </ion-col>
+          <ion-col class="image-col" col-4><img src="assets/imgs/logo/logo.png"></ion-col>
+        </ion-row>
+      </div>
+      <div class="header-div">
+        <ion-row>
+          <ion-col>
+            Hi {{adults[0].title+'. '+adults[0].firstName+' '+adults[0].lastName}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Your reservation is {{holidayBookingDetail.message}}.</ion-col>
+        </ion-row>
+      </div>
+
+      <div class="reservation">
+        <ion-row>
+          <ion-col class="details">Your reservation details are below. </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="Name"><p>Reference Number:</p> </ion-col>
+          <ion-col><span> CR5611602850127</span></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="Name"><p>Customer Name:</p> </ion-col>
+          <ion-col><span>{{adults[0].title+'. '+adults[0].firstName+' '+adults[0].lastName}}</span></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="email"><p>Customer email:</p></ion-col> 
+            <ion-col><span>{{contactDeatil.email}}</span></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="email"><p>Mobile No.:</p></ion-col> 
+            <ion-col><span>{{contactDeatil.mobile_no}}</span></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="email"><p>Number of Passenger:</p></ion-col> 
+            <ion-col><span>{{personDetail.adults}}</span></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="email"><p>Total Amount:</p></ion-col> 
+            <ion-col><span> {{holiday.total_price*personDetail.adults| number}}</span></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="email"><p>Booking Status:</p></ion-col> 
+            <ion-col><span>{{holidayBookingDetail.message}}</span></ion-col>
+        </ion-row>
+        <!-- <ion-row>
+          <ion-col col-5 class="email"><p>Pending Date :</p></ion-col> 
+            <ion-col><span>{{personDetail.adults}}</span></ion-col>
+        </ion-row> -->
+        <ion-row>
+          <ion-col class="refere">Please refere to your itinerary number if you contact customer servece for any reason</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="refere">You will shortly receive an email with further details. You can manage your booking by registering here and inputting your reference number CR5611602850127</ion-col>
+        </ion-row>
+      </div>
+      
+      <div class="flight-info">
+        <ion-row>
+          <ion-col col-5 class="label"><img src="{{holiday.main_img}}" onerror="this.src='assets/imgs/hotDeals/hotel.jpg'"></ion-col>
+          <ion-col>
+            <ion-row>{{holidayDetail[0].package_name}}</ion-row>
+            <ion-row>{{holidayDetail[0].start_end}}</ion-row>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row>
+          <ion-col col-5 class="label">Start Date:</ion-col>
+          <ion-col class="value">{{holidayDetail[0].from_date}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">Start Date:</ion-col>
+          <ion-col class="value">{{holidayDetail[0].to_date}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">Transport: </ion-col>
+          <ion-col class="value">{{holidayDetail[0].transport}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">Travel Style: </ion-col>
+          <ion-col class="value">{{holidayDetail[0].travel_style}}</ion-col>
+        </ion-row>
+      </div>
+        
+     
+ 
+      <div class="footer-div">
+        <p>Please Note: Preferences and special requests cannot be guaranteed. Special requests are subject to
+          availability upon check-in and may incur additional charges</p>
+          <ion-row>
+            <ion-col><p text-left>Phone : {{contact.mobile}}</p></ion-col>
+            <ion-col><p text-right>Email :  {{contact.emial}}</p></ion-col>
+          </ion-row>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

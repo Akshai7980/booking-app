@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Airport Search</ion-title>
+  </ion-navbar>
+  <ion-searchbar (ionChange)='onChange($event._value)'></ion-searchbar>
+</ion-header>
+<ion-content>
+      <ion-list>
+        <ion-item *ngFor="let airport of airportSearchResults" (click)="airportSelect(airport)" >
+            <ion-badge item-start>{{airport.AirportCode}}</ion-badge>  
+            <h2>{{airport.City}}</h2>
+            <p>{{airport.AirportName}}</p>
+            <p item-end>{{airport.Country}}</p>
+        </ion-item>
+      </ion-list>
+</ion-content>
+

@@ -1,0 +1,17 @@
+[
+    {
+        "title": "<b>GET 10% Off</b><br/> on Flight Tickets",
+        "description": "Get 10% Instant Discount on Flight Tickets.",
+        "promoCode": "FLIWOW"
+      },
+      {
+        "title": "<b>GET 10% Off</b><br/> on Hotel Bookings",
+        "description": "Get 10% Instant Discount on Hotel Bookings.",
+        "promoCode": "HOLWOW"
+      },
+      {
+        "title": "<b>GET 10% Off</b><br/> on Car Bookings",
+        "description": "Get 10% Instant Discount on Car Bookings.",
+        "promoCode": "CARWOW"
+      }
+]

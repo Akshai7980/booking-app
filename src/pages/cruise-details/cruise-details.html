@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cruise Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let detail of cruiseDetails">
+  <div class="image-div">
+    <div class="inner-img-div" [style.background-image]=" 'url('+cruiseData.ship_image+')'">
+     <div class="transfer-detail-div">
+         <p class="header-p">{{detail.operator_title}}</p>
+         <p class="header-p">Embark At: {{detail.fly_in}}</p>
+         <p class="header-p">Disembark At: {{detail.fly_out}}</p>
+         <p class="headers-p">Cruise Nights: {{detail.cruise_nights}}</p>
+         <p class="headers-p">Region: {{detail.region}}</p>
+       </div>
+    </div>
+   </div>
+   <ion-item no-lines (click)="isHidden[i]=!isHidden[i]">
+    <span item-end>
+      <ion-icon [hidden]="isHidden[i]" name="custom-up-arrow"></ion-icon>
+      <ion-icon [hidden]="!isHidden[i]" name="custom-down-arrow"></ion-icon>
+    </span>
+    <ion-label>Itinerary</ion-label>
+  </ion-item>
+ <div [hidden]="!isHidden[i]">
+  <ion-row class="color_row">
+    <ion-col><p>Port/Location</p></ion-col>
+    <ion-col><p>Arrival</p></ion-col>
+    <ion-col><p>Departure</p></ion-col>
+  </ion-row>
+  <ion-row class="color_row" *ngFor="let ports of detail.ports_info">
+    <ion-col><span>{{ports.port_name}}</span></ion-col>
+    <ion-col><span>{{ports.arrives_on}}</span></ion-col>
+    <ion-col><span>{{ports.departs_on}}</span></ion-col>
+  </ion-row>
+ </div>
+
+  <ion-row class="hotel-results" *ngFor="let cabin of detail.cabin">
+    <!-- <ion-col class="img-col"  col-4>
+      <img src="{{cabin.image}}" onerror="this.src='assets/imgs/hotDeals/hotel.jpg'">
+    </ion-col> -->
+    <ion-col class="detail-col" col-12>
+      <span> {{cabin.description}} </span>
+      <!-- <p>{{cabin.cabin_type}}</p> -->
+      <ion-row class="price-row" *ngIf="cruiseAllFix.b2c == 0"> 
+        <ion-col><p>Per Person <br>{{currencys.currency}} {{roundOff((cabin.price_per_person+cruiseAllMarkup.b2c)/currencys.value)}}</p></ion-col>
+        <ion-col><p>Total Price <br> {{currencys.currency}} {{roundOff(((cabin.price_per_person*(AdultCount.adults+ChildCount.childs))+cruiseAllMarkup.b2c)/currencys.value)}}</p></ion-col> 
+      </ion-row>
+      <ion-row class="price-row" *ngIf="cruiseAllFix.b2c == 1">
+        <ion-col><p>Per Person <br>{{currencys.currency}} {{roundOff((cabin.price_per_person*cruiseAllMarkup.b2c/100+cabin.price_per_person)/currencys.value)}}</p></ion-col>
+        <ion-col><p>Total Price <br> {{currencys.currency}} {{roundOff(((cabin.price_per_person*(AdultCount.adults+ChildCount.childs))*cruiseAllMarkup.b2c/100+(cabin.price_per_person*(AdultCount.adults+ChildCount.childs)))/currencys.value)}}</p></ion-col> 
+      </ion-row>
+    </ion-col>
+    <ion-item class="head-rooms" no-lines>
+      <ion-label>{{cabin.cabin_type}}</ion-label>
+      <button item-end ion-button (click)="proceed(cabin)">Book Now</button>
+    </ion-item>
+  </ion-row>
+ 
+ 
+</div>
+
+</ion-content>

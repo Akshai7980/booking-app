@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cruise</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="search-div">
+      <ion-slides #imageSlide class="image-slide">
+        <ion-slide *ngFor="let img of  SightseeingDeals">
+          <div class="deal-img" [style.background-image]=" 'url('+img.image+')'"></div>
+        </ion-slide>
+      </ion-slides> 
+      <div class="single-round-way">
+       <ion-row class="all-from">
+         <ion-col col-6>
+           <div (click)="getCountry()"  class="from-div1">
+             <p class="label"><ion-icon item-start name="custom-map"></ion-icon></p>
+              <p class="detail">{{destination}}</p>
+           </div>
+         </ion-col>
+         <ion-col col-6>
+           <div (click)="getCountryCity()" class="to-div1">
+             <p class="label"><ion-icon item-start name="custom-map"></ion-icon></p>
+             <p class="detail">{{ports.port_name}}</p>
+           </div>
+         </ion-col>
+       </ion-row>
+   
+         <div (click)="selectCheckInDate()" class="from-div">
+           <p class="label">Departing</p>
+           <ion-row>
+             <ion-col class="date" col-2>{{departureDate|date:'dd'}}</ion-col>
+             <ion-col class="day-month">
+               <ion-row class="month">{{departureDate|date:'MMM yyyy'}}</ion-row>
+               <ion-row class="day">{{departureDate|date:'EEEE'}}</ion-row>
+             </ion-col>
+           </ion-row>
+           <div  class="swap-div">
+             <!-- <ion-icon name="custom-night"></ion-icon> -->
+               <p>{{getNightStayDays()}} Day</p>
+           </div>
+         </div>
+         <div no-border (click)="selectCheckInDate()" class="from-div">
+           <p class="label">Arriving</p>
+           <ion-row>
+               <ion-col class="date" col-2>{{returnDate|date:'dd'}}</ion-col>
+               <ion-col class="day-month">
+                 <ion-row class="month">{{returnDate|date:'MMM yyyy'}}</ion-row>
+                 <ion-row class="day">{{returnDate|date:'EEEE'}}</ion-row>
+               </ion-col>
+           </ion-row>
+         </div>
+   
+         <ion-row class="all-from">
+           <ion-col col-6>
+             <div (click)="getAdults()"  class="from-div1">
+               <!-- <p class="label">From</p> -->
+               <p class="detail">Adults {{AdultCount.adults}}</p>
+             </div>
+           </ion-col>
+           <ion-col col-6>
+             <div (click)="getChlild()"  class="to-div1">
+               <!-- <p class="label">From</p> -->
+               <p class="detail">Children {{ChildCount.childs}}</p>
+             </div>
+           </ion-col>
+         </ion-row>
+       </div> 
+   
+       <ion-grid class="search-button"> 
+         <button ion-button block (click)="searchSightSeeing()">Search</button>
+       </ion-grid>
+       
+     </div>
+    <ion-list>
+      <ion-item>
+        <ion-icon item-start name="custom-check-mark"></ion-icon>
+        <span>Customize</span>
+        <p>Customize your perfect trip itinerary with the local agency we match you with.</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-start name="custom-check-mark"></ion-icon>
+        <span>Our Guarantees</span>
+        <p>We're a Walz Travels and provide a range of safety guarantees</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-start name="custom-check-mark"></ion-icon>
+        <span>Discover</span>
+        <p>Send a trip request to let our Local Agencies know what you're looking for.</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>

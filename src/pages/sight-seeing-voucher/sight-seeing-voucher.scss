@@ -1,0 +1,147 @@
+page-sight-seeing-voucher {
+
+        .scroll-content {
+            overflow-y: auto !important;
+          }
+          
+           
+                .header-div {
+                  border-bottom: 1px dashed #dedede;
+                  padding: 10px 0;
+                  .detail-col {
+                    padding: 0;
+                    display: flex;
+                    .image-div {
+                      display: inline-block;
+                      width: 40px;
+                      height: 40px;
+                      border-radius: 50%;
+                      background: #ff9a13;
+                      position: relative;
+                      ion-icon {
+                        left: 50%;
+                        top: 50%;
+                        position: absolute;
+                        transform: translate(-50%, -50%);
+                        color: white;
+                        font-size: 27px;
+                      }
+                    }
+        
+                    .detail-div {
+                      display: inline-block;
+                      padding-left: 5px;
+                      p {
+                        text-transform: uppercase;
+                        color: black;
+                        font-weight: 300;
+                        font-size: 14px;
+                        margin: 0;
+                      }
+                      span {
+                        font-weight: 400;
+                        font-size: 10px;
+                        font-style: italic;
+                      }
+                    }
+                  }
+                  .image-col {
+                    padding: 0;
+                    display: grid;
+                    align-self: center;
+                  }
+                }
+        
+                .reservation{
+                  background: #cccccc;
+                  .details{
+                    font-size: 12px;
+                  }
+                  .refere{
+                    font-size: 12px;
+                  }
+                }
+               
+                
+        
+                
+        
+                .guest-info {
+                  border-bottom: 1px dashed #dedede;
+                  padding: 10px 0;
+                  ion-card {
+                    margin: 5px 0 !important;
+                    width: 100% !important;
+                    ion-card-header {
+                      padding: 5px;
+                      color: white;
+                      background:$background;
+                      font-weight: 300;
+                      font-size: 12px;
+                    }
+                    ion-card-content {
+                      padding: 0 5px !important;
+                      border: 1px solid #956705;
+                      ion-row {
+                        font-size: 12px;
+                        font-weight: 400;
+                        padding: 5px 0;
+                        ion-col {
+                          padding: 0;
+                          display: grid;
+                          align-self: center;
+                          color: #666;
+                        }
+                      }
+                    }
+                  }
+                }
+        
+               
+                .payment-info {
+                  border-bottom: 1px dashed #dedede;
+                  padding: 10px 0;
+                  ion-row {
+                    display: block;
+                    position: relative;
+                  }
+                  .label {
+                    font-size: 13px;
+                    color: #666;
+                    font-weight: 400;
+                    /* padding: 5px 0; */
+                    text-align: start;
+                    display: inline-flex;
+                  }
+                  .value {
+                    font-size: 11px;
+                    font-weight: 400;
+                    /* padding: 5px 0; */
+                    text-align: end;
+                    display: inline-flex;
+                    right: 0;
+                    position: absolute;
+                    color: #666;
+                  }
+                  .net-value {
+                    color: red;
+                  }
+                }
+        
+                .footer-div {
+                  padding: 10px 10px;
+                  p {
+                    font-size: 9px;
+                  }
+                  [text-right] {
+                    text-align: end !important;
+                  }
+                  ion-col {
+                   padding: 0;
+                  }
+                }
+              
+            
+          
+    }
+    

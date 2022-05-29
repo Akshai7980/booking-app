@@ -1,0 +1,32 @@
+page-help-suport .scroll-content {
+  overflow-y: auto !important;
+  margin-top: 50px;
+}
+
+page-help-suport div {
+  padding: 15px 15px;
+}
+
+page-help-suport div h5 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+page-help-suport div p {
+  font-size: 14px;
+  margin: 5px 0 0;
+  font-weight: 400;
+  color: #000000;
+}
+
+page-help-suport div li {
+  background-image: url(../../assets/imgs/other/star.svg);
+  background-position: 0 0;
+  background-size: 1rem 1.6rem;
+  background-repeat: no-repeat;
+  padding-left: 2rem;
+  list-style-type: none;
+}
+/*# sourceMappingURL=help-suport.css.map */

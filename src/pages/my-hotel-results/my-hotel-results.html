@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{hotelCity.hotel_name}}<br>
+    <span>{{checkInDate|date:'MMM dd'}}-{{checkoutDate|date:'MMM dd'}} | {{guestCount}} Guests</span></ion-title>
+    <!-- <ion-buttons (click)="searchHotelName()" end><button ion-button icon-only>
+      <ion-icon name="custom-search"></ion-icon></button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  
+   
+    <ion-row class="hotel-results" *ngFor="let result of searchResults" (click)="hotelSelected(result)">
+      <ion-col class="img-col" col-6>
+        <img src="{{result.thumbNailUrl}}" onerror="this.src='assets/imgs/hotDeals/hotel16.jpg'">
+      </ion-col>
+      <ion-col class="detail-col" col-6>
+          <ion-row class="hotel-name-row">
+            <p>{{result.hotelName}}</p>
+          </ion-row>
+          <ion-row *ngIf="result.hotelRating" class="rating-row">
+            <rating [(ngModel)]="result.hotelRating" readOnly="true" max="5" emptyStarIconName="none"
+              halfStarIconName="star-half" starIconName="star" nullable="false" (ngModelChange)="onModelChange($event)">
+            </rating>
+          </ion-row>
+          <ion-row *ngIf="result.distanceValue" class="location-row"><span>
+              <ion-icon name="custom-map"></ion-icon>{{result.city}} | {{result.distanceValue}} {{result.distanceUnit}} from centre</span>
+        </ion-row>
+          <ion-row *ngIf="result.tripAdvisorRating" class="tripadv-row">
+           <div class="tripadv"><span>{{result.tripAdvisorRating}}/5</span></div> <span> <p>{{getReviewDetail(result.tripAdvisorRating)}}</p>{{result.tripAdvisorReview}} reviews</span>
+        </ion-row>
+          <ion-row class="tripad">
+            <ion-col *ngFor="let facility of result.face| slice:0:4;" col-2>
+              <object [data]="facility.url | safeUrl" type="image/svg+xml" style='width: 20px; height: 20px;'  title=""></object>
+            </ion-col>
+          </ion-row>
+          <ion-row class="propertyType">
+            <p>{{result.propertyType}}</p>
+          </ion-row>
+          <ion-row class="price-row">
+            <p>{{result.currency}} {{result.total | number}}</p>
+          </ion-row>
+        </ion-col>
+    </ion-row>
+  </ion-content>

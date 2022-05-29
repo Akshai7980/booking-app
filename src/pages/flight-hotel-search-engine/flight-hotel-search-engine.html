@@ -1,0 +1,101 @@
+<ion-header #header>
+  <ion-navbar>
+    <ion-title>Flight + Hotel + Transfer Search</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content scroll-hide [header]="header">
+  <div class="search-div">
+    <!-- <img src="assets/imgs/flight-holiday.jpg"> -->
+    <ion-toolbar class="backbtn">
+      <ion-buttons (click)="goBack()" left><button ion-button icon-only>
+          <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Flight + Hotel + Transfer</ion-title>
+    </ion-toolbar>
+    <div class="single-round-way">
+      <ion-slides #imageSlide class="image-slide">
+        <ion-slide *ngFor="let img of  SightseeingDeals">
+          <div class="deal-img" [style.background-image]=" 'url('+img.image+')'"></div>
+        </ion-slide>
+      </ion-slides> 
+      <ion-row class="all-from">
+        <ion-col col-5>
+          <div (click)="getFromAirport()" class="from-div">
+            <p class="label">From</p>
+            <p class="detail">{{fromCity.AirportCode}}</p>
+            <p class="detail">{{fromCity.City}}</p>
+          </div>
+        </ion-col>
+        <ion-col col-2 class="swap-div1">
+          <div (click)="swap($event)" class="swap-div">
+            <ion-icon name="custom-swap"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col col-5>
+          <div (click)="getToAirport()" class="to-div">
+            <p class="label">To</p>
+            <p class="detail">{{toCity.AirportCode}}</p>
+            <p class="detail">{{toCity.City}}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <div class="date-div">
+        <ion-row>
+          <ion-col (click)="openCalendar()" class="from-date">
+            <ion-row>
+              <div>
+                <p class="label">Departure</p>
+                <p class="date">{{departDate|date:'EE'}}, {{departDate|date:'MMM'}} {{departDate|date:'dd'}}</p>
+              </div>
+            </ion-row>
+          </ion-col>
+          <ion-col (click)="openCalendar()" class="to-date">
+            <ion-row>
+              <div>
+                <p class="label">Return</p>
+                <p class="date">{{returnDate|date:'EE'}}, {{returnDate|date:'MMM'}} {{returnDate|date:'dd'}}</p>
+              </div>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="extra-info">
+        <ion-row>
+          <ion-col (click)="travellerSelection()" class="traveller-col">
+            <p class="label">Travellers</p>
+            <p class="value">{{rooms.length}} Room {{totalAdultCount}}
+              Adult{{totalChildCount>0?', '+totalChildCount+' Child':''}},{{totalInfantCount>0?' '+totalInfantCount+' Infant':''}}
+            </p>
+          </ion-col>
+          <ion-col (click)="classSelection()" class="class-col">
+            <p class="label">Cabin Class</p>
+            <ion-row padding class="value">{{flightClass}} Class</ion-row>
+            <ion-row class="value"></ion-row>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+    <ion-grid class="search-button">
+      <button ion-button block (click)="hotelSelected()">Search</button>
+    </ion-grid>
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Customize</span>
+      <p>Customize your perfect trip itinerary with the local agency we match you with.</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Our Guarantees</span>
+      <p>We're a Trawex and provide a range of safety guarantees</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Discover</span>
+      <p>Send a trip request to let our Local Agencies know what you're looking for.</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

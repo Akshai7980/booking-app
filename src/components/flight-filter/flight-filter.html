@@ -1,0 +1,248 @@
+<!-- Generated template for the FlightFilterComponent component -->
+<div class="search-bar-div"> 
+  <ion-row>
+    <ion-col class="icon-col" col-1>
+      <button (click)="close()" class="back-btn" clear ion-button><ion-icon  name="custom-close"></ion-icon></button>
+    </ion-col>
+    <ion-col col-1></ion-col>
+    <ion-col class="search-col"> Filters</ion-col>
+    <ion-col class="icon-col" col-2>
+      <button (click)="reset()" class="back-btn apply-btn" clear ion-button>RESET</button>
+    </ion-col>
+  </ion-row>
+</div>
+<ion-content>
+  <ion-card class="price-card">
+    <ion-card-content>
+      <ion-list-header>
+        Price
+        <span item-end>{{currencys.currency}} {{price.lower| number}}</span>
+        <span item-end>-</span>
+        <span item-end>{{currencys.currency}} {{price.upper| number}}</span>
+      </ion-list-header>
+      <ion-range [min]="minPrice" [max]="maxPrice" dualKnobs="true" pin="false" [(ngModel)]="price" >
+      </ion-range>
+    </ion-card-content>
+  </ion-card>
+
+ 
+  <ion-card class="stop-card" *ngIf="!isMultiWay">
+    <ion-card-header>Number of stops from {{fromCity}}</ion-card-header>
+    <ion-card-content>
+      <!-- Add card content here! -->
+      <ion-row>
+        <ion-col>
+          <button [ngClass]="{'selected-button':isZeroStopsSelected}"  (click)="isZeroStopsSelected=!isZeroStopsSelected" block ion-button>
+            <div class="outer-div"><div>0</div> </div><p>Non-Stop</p>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button [ngClass]="{'selected-button':isOneStopSelected}" (click)="isOneStopSelected=!isOneStopSelected" block ion-button>
+            <div class="outer-div"><div>1</div> </div> <p>Stop</p>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button  [ngClass]="{'selected-button':isTwoStopsSelected}" (click)="isTwoStopsSelected=!isTwoStopsSelected" block ion-button>
+            <div class="outer-div"><div>2</div></div><p>Plus Stop</p>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="time-card" *ngIf="!isMultiWay">
+    <ion-card-header>Departure from {{fromCity}}</ion-card-header>
+    <ion-card-content>
+      <!-- Add card content here! -->
+      <div>
+      <ion-row>
+        <ion-col col-3>
+          <button [ngClass]="{'selected-button':isDepartEarlyMorning}"  (click)="isDepartEarlyMorning=!isDepartEarlyMorning" block ion-button>
+            <ion-icon name="custom-early-morning"></ion-icon><p>00-06</p>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button [ngClass]="{'selected-button':isDepartDay}" (click)="isDepartDay=!isDepartDay" block ion-button>
+            <ion-icon name="custom-morning"></ion-icon><p>06-12</p>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button  [ngClass]="{'selected-button':isDepartEvening}" (click)="isDepartEvening=!isDepartEvening" block ion-button>
+            <ion-icon name="custom-evening"></ion-icon><p>12-18</p>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button [ngClass]="{'selected-button':isDepartNight}"  (click)="isDepartNight=!isDepartNight" block ion-button>
+            <ion-icon name="custom-night"></ion-icon><p>18-00</p>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-card-header>Arrival At {{toCity}}</ion-card-header>
+      <!-- <p class="label-p"></p> -->
+      <ion-row>
+        <ion-col col-3>
+          <button [ngClass]="{'selected-button':isArriveEarlyMorning}" (click)="isArriveEarlyMorning=!isArriveEarlyMorning" block ion-button>
+            <ion-icon name="custom-early-morning"></ion-icon><p>00-06</p>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button [ngClass]="{'selected-button':isArriveDay}" (click)="isArriveDay=!isArriveDay" block ion-button>
+            <ion-icon name="custom-morning"></ion-icon><p>06-12</p>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button [ngClass]="{'selected-button':isArriveEvening}" (click)="isArriveEvening=!isArriveEvening" block ion-button>
+            <ion-icon name="custom-evening"></ion-icon><p>12-18</p>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button [ngClass]="{'selected-button':isArriveNight}" (click)="isArriveNight=!isArriveNight" block ion-button>
+            <ion-icon name="custom-night"></ion-icon><p>18-00</p>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <div  *ngIf="isRoundTrip">
+      <ion-card-header>Departure from {{toCity}}</ion-card-header>
+        <!-- <p class="label-p"></p> -->
+        <ion-row>
+          <ion-col col-3>
+            <button [ngClass]="{'selected-button':isReturnDepartEarlyMorning}" (click)="isReturnDepartEarlyMorning=!isReturnDepartEarlyMorning" block ion-button>
+              <ion-icon name="custom-early-morning"></ion-icon><p>00-06</p>
+            </button>
+          </ion-col>
+          <ion-col col-3>
+            <button [ngClass]="{'selected-button':isReturnDepartDay}"  (click)="isReturnDepartDay=!isReturnDepartDay" block ion-button>
+              <ion-icon name="custom-morning"></ion-icon><p>06-12</p>
+            </button>
+          </ion-col>
+          <ion-col col-3>
+            <button [ngClass]="{'selected-button':isReturnDepartEvening}" (click)="isReturnDepartEvening=!isReturnDepartEvening" block ion-button>
+              <ion-icon name="custom-evening"></ion-icon><p>12-18</p>
+            </button>
+          </ion-col>
+          <ion-col col-3>
+            <button [ngClass]="{'selected-button':isReturnDepartNight}" (click)="isReturnDepartNight=!isReturnDepartNight" block ion-button>
+              <ion-icon name="custom-night"></ion-icon><p>18-00</p>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-card-header>Arrival At {{fromCity}}</ion-card-header>
+        <!-- <p class="label-p"></p> -->
+        <ion-row>
+          <ion-col col-3>
+            <button [ngClass]="{'selected-button':isReturnArriveEarlyMorning}" (click)="isReturnArriveEarlyMorning=!isReturnArriveEarlyMorning" block ion-button>
+              <ion-icon name="custom-early-morning"></ion-icon><p>00-06</p>
+            </button>
+          </ion-col>
+          <ion-col col-3>
+            <button [ngClass]="{'selected-button':isReturnArriveDay}" (click)="isReturnArriveDay=!isReturnArriveDay" block ion-button>
+              <ion-icon name="custom-morning"></ion-icon><p>06-12</p>
+            </button>
+          </ion-col>
+          <ion-col col-3>
+            <button [ngClass]="{'selected-button':isReturnArriveEvening}" (click)="isReturnArriveEvening=!isReturnArriveEvening" block ion-button>
+              <ion-icon name="custom-evening"></ion-icon><p>12-18</p>
+            </button>
+          </ion-col>
+          <ion-col col-3>
+            <button [ngClass]="{'selected-button':isReturnArriveNight}" (click)="isReturnArriveNight=!isReturnArriveNight" block ion-button>
+              <ion-icon name="custom-night"></ion-icon><p>18-00</p>
+            </button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card class="fare-card">
+    <ion-card-header>Fare Type</ion-card-header>
+    <ion-card-content radio-group [(ngModel)]="selectedFareType" >
+      <ion-row>
+        <ion-col class="label-col" col-10>
+          <ion-label>
+            <ion-icon name="custom-refund"></ion-icon><span>Non-Refundable</span>
+          </ion-label>
+        </ion-col>
+        <ion-col class="checkbox-col" col-2>
+          <ion-radio  value="Yes"></ion-radio>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="label-col" col-10>
+          <ion-label>
+            <ion-icon name="custom-refund"></ion-icon><span>Refundable</span>
+          </ion-label>
+        </ion-col>
+        <ion-col class="checkbox-col" col-2>
+          <ion-radio  value="No"></ion-radio>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="airline-card">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="label-col" col-7>
+            <p class="label-p">Preferred Airlines </p>
+          </ion-col>
+          <ion-col class="label-col" col-3>
+            <p class="label-p">Select All</p>
+          </ion-col>
+          <ion-col class="checkbox-col" col-2>
+            <!-- <ion-checkbox [(ngModel)]="allAirlineSelected" (ionChange)="allAirlineCheckboxChange($event)"></ion-checkbox> -->
+            <div class="outer-div" [ngClass]="{'selected-div':allAirlineSelected}"  (click)="allAirlineCheckboxChange()"><div [hidden]="!allAirlineSelected" class="inner-div"></div></div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="airline-row" *ngFor="let airline of airlines">
+          <ion-col class="label-col" col-10>
+            <ion-label><img src="assets/imgs/airlines/{{airline.value}}.gif"><span>{{getAirlineName(airline.value)}}</span></ion-label>
+          </ion-col>
+          <ion-col class="checkbox-col" col-2>
+            <ion-checkbox  [(ngModel)]="airline.selected"  (ionChange)="airlineCheckboxChange($event)"></ion-checkbox>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card class="airline-card" *ngIf="!isMultiWay && (layowerAirports && layowerAirports.length>0)">
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="label-col" col-7>
+            <p class="label-p"> Layover Airports </p>
+          </ion-col>
+          <ion-col class="label-col" col-3>
+            <p class="label-p">Select All</p>
+          </ion-col>
+          <ion-col class="checkbox-col" col-2>
+            <!-- <ion-checkbox [(ngModel)]="allLayowersSelected" (ionChange)="allLayowerCheckboxChange($event)"></ion-checkbox> -->
+            <div class="outer-div" [ngClass]="{'selected-div':allLayowersSelected}" (click)="allLayowerCheckboxChange()"><div [hidden]="!allLayowersSelected"  class="inner-div"></div></div>
+          </ion-col>
+        </ion-row>
+        <ion-row class="airline-row" *ngFor="let layowerAirport of layowerAirports">
+          <ion-col class="label-col" col-10>
+            <ion-label><span class="airport-span">{{layowerAirport.value}}</span></ion-label>
+          </ion-col>
+          <ion-col class="checkbox-col" col-2>
+            <ion-checkbox [(ngModel)]="layowerAirport.selected" (ionChange)="layowerCheckboxChange($event)"></ion-checkbox>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>
+<ion-grid class="done-btn">
+  <button ion-button block outlines (click)="done()">Done</button>
+</ion-grid>
+<!-- <div (click)="done()"  class="done-btn">
+  <span>Done</span>
+  </div> -->

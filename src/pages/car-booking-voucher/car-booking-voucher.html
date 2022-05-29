@@ -1,0 +1,158 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons (click)="goBack()" right><button ion-button icon-only>
+      <ion-icon ios="ios-home" md="md-home"></ion-icon></button>
+    </ion-buttons>
+    <ion-title>Car Booking Voucher</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-card>
+  <ion-card-content>
+    <div class="header-div">
+      <ion-row>
+        <ion-col class="detail-col">
+          <div class="image-div">
+            <ion-icon name="custom-ticket"></ion-icon>
+          </div>
+          <div class="detail-div">
+            <p>Booking Voucher</p>
+            <span>Date: {{departDate|date:'EE'}}, {{departDate|date:'dd'}} {{departDate|date:'MMM'}} {{departDate|date:'yyyy'}}</span>
+          </div>
+        </ion-col>
+        <ion-col class="image-col" col-4>
+          <img src="../../assets/imgs/logo/logo.png">
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="detailed-info">
+      <div class="flight-info">
+        <ion-row>
+          <ion-col col-5 class="label">
+            Reference Number
+          </ion-col>
+          <ion-col class="value">
+            BK81107086324154
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">
+            Booking Status
+          </ion-col>
+          <ion-col class="value">
+            Confirmed
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">
+            Pick-Ups
+          </ion-col>
+          <ion-col class="value">
+            {{pickUpLocation.location_name}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">
+            Drop Off
+          </ion-col>
+          <ion-col class="value">
+            {{dropOffLocation.location_name}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">
+            Pick-Up Date Time
+          </ion-col>
+          <ion-col class="value">
+            {{pickUpDate|date:"EEE, MMM dd,"}} {{arrivaltime[0].houres}} : {{arrivaltime[0].mintues}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">
+            Drop Off Date  Time
+          </ion-col>
+          <ion-col class="value">
+            {{dropOffDate|date:"EEE, MMM dd,"}} {{departuretime[0].houres}} : {{departuretime[0].mintues}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-5 class="label">
+            Car Type
+          </ion-col>
+          <ion-col class="value">
+            {{car.vehavailcore[0].vehicle[0].vehmakemodel[0].Name[0]}}
+          </ion-col>
+        </ion-row>
+      </div>
+      <div class="passenger-info">
+        <ion-card>
+          <ion-card-header>
+            Personal Information
+          </ion-card-header>
+          <ion-card-content>
+            <ion-row>
+              <ion-col col-6 class="label">Name</ion-col>
+              <ion-col class="value">{{personDetail.title}} {{personDetail.firstName}} {{personDetail.lastName}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="label">Email</ion-col>
+              <ion-col class="value">{{personDetail.email}}</ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col class="label">Mobile</ion-col>
+              <ion-col class="value">{{personDetail.mobile_no}}</ion-col>
+            </ion-row>
+            <!-- <div class="row header">
+              <div border-right class="col label">Name</div>
+              <div class="col detail">{{personDetail.title}} {{personDetail.firstName}} {{personDetail.lastName}}</div>
+              <div border-right class="col label">Email</div>
+              <div class="col detail">{{personDetail.email}} </div>
+            </div> -->
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+    <div class="payment-info">
+      <ion-row>
+        <div   class="label">
+          Rental Cost
+        </div>
+        <div class="value">
+          {{car.vehavailcore[0].totalcharge[0].CurrencyCode[0]}} {{car.vehavailcore[0].totalcharge[0].RateTotalAmount[0]}}
+        </div>
+      </ion-row>
+      
+      <ion-row>
+        <div class="label">
+          Extras
+        </div>
+        <div class="value">
+          {{car.vehavailcore[0].totalcharge[0].CurrencyCode[0]}} 0
+        </div>
+      </ion-row>
+      <ion-row>
+        <div   class="label">
+          Total
+        </div>
+        <div class="value">
+          {{car.vehavailcore[0].totalcharge[0].CurrencyCode[0]}} {{car.vehavailcore[0].totalcharge[0].RateTotalAmount[0]}}
+        </div>
+      </ion-row>
+      <ion-row>
+        <div   class="label">
+        </div>
+        <div class="value net-value">
+          NET PAYABLE : {{car.vehavailcore[0].totalcharge[0].CurrencyCode[0]}} {{car.vehavailcore[0].totalcharge[0].RateTotalAmount[0]}}
+        </div>
+      </ion-row>
+    </div>
+    <div class="footer-div">
+      <p>Baggage Discount may apply base on frequest flyer status / Online Checking /Form of payment / etc.</p>
+      <ion-row>
+        <ion-col><p text-left>Phone : {{addres.mobile}}</p></ion-col>
+        <ion-col><p text-right>Email :  {{addres.emial}}</p></ion-col>
+      </ion-row>
+    </div>
+  </ion-card-content>
+</ion-card>
+</ion-content>

@@ -1,0 +1,371 @@
+flight-filter-domestic {
+  background: white;
+}
+
+flight-filter-domestic .scroll-content {
+  overflow-y: auto !important;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+
+flight-filter-domestic .search-bar-div {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  color: #4486ff;
+  font-size: 18px;
+  font-weight: 300;
+  z-index: 1;
+  background-color: #000000;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+flight-filter-domestic .search-bar-div ion-row .icon-col button {
+  color: white;
+  font-size: 12px;
+}
+
+flight-filter-domestic .search-bar-div ion-row .icon-col .apply-btn {
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+flight-filter-domestic .search-bar-div ion-row .search-col {
+  padding: 5px 0;
+  color: white;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+flight-filter-domestic .done-btn {
+  position: fixed;
+  width: 100%;
+  background-color: #f3f3f3;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  z-index: 1;
+}
+
+flight-filter-domestic ion-content .selected-button {
+  color: white !important;
+  background-color: #956705 !important;
+}
+
+flight-filter-domestic ion-content .selected-button p {
+  color: white;
+}
+
+flight-filter-domestic ion-content .price-card {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+flight-filter-domestic ion-content .price-card ion-card-content {
+  padding: 0 10px;
+}
+
+flight-filter-domestic ion-content .price-card ion-card-content ion-list-header {
+  color: black;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 5px;
+}
+
+flight-filter-domestic ion-content .price-card ion-card-content ion-list-header ion-label {
+  margin: 0;
+}
+
+flight-filter-domestic ion-content .price-card ion-card-content ion-list-header span {
+  margin: 0px 2px !important;
+}
+
+flight-filter-domestic ion-content .price-card ion-card-content ion-range {
+  padding: 0 10px;
+}
+
+flight-filter-domestic ion-content .price-card ion-card-content .range-ios.range-has-pin {
+  padding-top: 0;
+}
+
+flight-filter-domestic ion-content .price-card ion-card-content .range-ios .range-bar {
+  height: 5px;
+}
+
+flight-filter-domestic ion-content .price-card ion-card-content .range-ios .range-knob {
+  background: #0072cf;
+}
+
+flight-filter-domestic ion-content .price-card ion-card-content .range-ios .range-bar-active {
+  background: #0072cf;
+}
+
+flight-filter-domestic ion-content .stop-card {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-top: 8px;
+}
+
+flight-filter-domestic ion-content .stop-card ion-card-content {
+  padding: 6px 10px 6px;
+}
+
+flight-filter-domestic ion-content .stop-card ion-card-content .label-p {
+  color: black;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+flight-filter-domestic ion-content .stop-card ion-card-content button {
+  height: 50px;
+  color: #999;
+  background-color: white;
+  -webkit-box-shadow: 1px 2px 4px 1px #ccc;
+          box-shadow: 1px 2px 4px 1px #ccc;
+}
+
+flight-filter-domestic ion-content .stop-card ion-card-content button .button-inner {
+  display: block;
+}
+
+flight-filter-domestic ion-content .stop-card ion-card-content button .button-inner .outer-div {
+  width: 100%;
+  display: block;
+  height: 50%;
+  padding: 5px;
+  text-align: center;
+}
+
+flight-filter-domestic ion-content .stop-card ion-card-content button .button-inner .outer-div div {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid;
+  border-radius: 50%;
+  text-align: center;
+  margin: auto;
+  padding: 2px;
+}
+
+flight-filter-domestic ion-content .stop-card ion-card-content button .button-inner p {
+  display: block;
+  width: 100%;
+}
+
+flight-filter-domestic ion-content .time-card {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-top: 8px;
+}
+
+flight-filter-domestic ion-content .time-card ion-card-content {
+  padding: 6px 10px 6px;
+}
+
+flight-filter-domestic ion-content .time-card ion-card-content .label-p {
+  color: black;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+flight-filter-domestic ion-content .time-card ion-card-content button {
+  height: 50px;
+  padding: 0;
+  background-color: white;
+  color: #999;
+  -webkit-box-shadow: 1px 2px 4px 1px #ccc;
+          box-shadow: 1px 2px 4px 1px #ccc;
+  text-align: center;
+}
+
+flight-filter-domestic ion-content .time-card ion-card-content button .button-inner {
+  width: 100%;
+  display: block;
+}
+
+flight-filter-domestic ion-content .time-card ion-card-content button .button-inner ion-icon {
+  display: block;
+  margin: auto;
+  height: 50%;
+}
+
+flight-filter-domestic ion-content .time-card ion-card-content button .button-inner p {
+  display: block;
+  margin: 0;
+}
+
+flight-filter-domestic ion-content .fare-card {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-top: 8px;
+}
+
+flight-filter-domestic ion-content .fare-card ion-card-content {
+  padding: 6px 10px 6px;
+}
+
+flight-filter-domestic ion-content .fare-card ion-card-content .label-p {
+  color: black;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+flight-filter-domestic ion-content .fare-card ion-card-content .label-col {
+  padding: 10px;
+}
+
+flight-filter-domestic ion-content .fare-card ion-card-content .label-col ion-label {
+  padding: 0;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  margin: 6px 8px 6px 0;
+}
+
+flight-filter-domestic ion-content .fare-card ion-card-content .label-col ion-label ion-icon {
+  vertical-align: middle;
+  color: gray;
+  margin: auto;
+}
+
+flight-filter-domestic ion-content .fare-card ion-card-content .label-col ion-label span {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  font-size: 15px;
+  padding-left: 10px;
+}
+
+flight-filter-domestic ion-content .fare-card ion-card-content .checkbox-col {
+  padding: 0;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+flight-filter-domestic ion-content .fare-card ion-card-content .checkbox-col .radio-ios .radio-icon {
+  width: 21px;
+  height: 21px;
+  border: 2px solid #488aff;
+  border-radius: 5px;
+}
+
+flight-filter-domestic ion-content .fare-card ion-card-content .checkbox-col .radio-ios .radio-checked .radio-inner {
+  left: 7px;
+  top: 4px;
+  width: 4px;
+  height: 10px;
+}
+
+flight-filter-domestic ion-content .airline-card {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-top: 8px;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content {
+  padding: 6px 10px 6px;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content .outer-div {
+  position: relative;
+  width: 21px;
+  height: 21px;
+  border-width: 1px;
+  border-radius: 5px;
+  border: 2px solid #c8c7cc;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content .outer-div .inner-div {
+  border-color: #488aff;
+  border-width: 2px;
+  border-top-width: 0;
+  border-left-width: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-style: solid;
+  left: 7px;
+  top: 4px;
+  position: absolute;
+  width: 4px;
+  height: 9px;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content .selected-div {
+  border: 2px solid #488aff;
+  background-color: transparent;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content ion-grid .airline-row {
+  padding: 2px 0;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content .checkbox-col {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content .checkbox-col .checkbox-ios .checkbox-icon {
+  border-radius: 5px;
+  border: 2px solid #c8c7cc;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content .checkbox-col .checkbox-ios .checkbox-checked {
+  border: 2px solid #488aff;
+  background-color: transparent;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content .checkbox-col .checkbox-ios .checkbox-checked .checkbox-inner {
+  border-color: #488aff;
+  border-width: 2px;
+  border-top-width: 0;
+  border-left-width: 0;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content .label-p {
+  color: black;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content ion-label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content ion-label img {
+  max-width: 50px;
+  max-height: 30px;
+}
+
+flight-filter-domestic ion-content .airline-card ion-card-content ion-label span {
+  padding-left: 10px;
+}
+/*# sourceMappingURL=flight-filter-domestic.css.map */

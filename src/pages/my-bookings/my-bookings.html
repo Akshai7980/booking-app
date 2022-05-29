@@ -1,0 +1,56 @@
+
+<!-- <div class="outer-div">
+    <button  *ngIf="isGoBack" (click)="goBack()" class="back-btn" clear ion-button><ion-icon  name="custom-back"></ion-icon></button>
+  <p class="header-p">My Bookings</p>
+</div> -->
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>My Bookings</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="isBookingAvailable" class="card-div">
+    <ion-card *ngFor="let booking of bookings">
+      <ion-card-content>
+        <ion-row class="first-row">
+          <ion-col class="icon-col" col-2>
+            <div [ngClass]="booking.module=='hotel'?'hotel':'flight'">
+              <ion-icon *ngIf="booking.module=='hotel'" name="custom-hotel"></ion-icon>
+              <ion-icon *ngIf="booking.module!='hotel'" name="custom-flight"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col class="time-col" col-6>{{getDateFormat(booking.created_on)| date:'EEE, MMM dd, hh:mm aa'}}</ion-col>
+          <ion-col [ngClass]="booking.status=='CONFIRMED' || booking.status=='Confirmed'?'status-confirm':'status-reject'"
+            class="status-col" col-4>{{booking.status}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="label-col">Travel Date:</ion-col>
+          <ion-col class="data-col">{{booking.travel_date|date:'EEE, MMM dd'}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="label-col">Booking ID:</ion-col>
+          <ion-col class="data-col">{{booking.booking_id}}</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="label-col">Total Fare:</ion-col>
+          <ion-col class="data-col">{{booking.currency}} {{booking.sale_Amount}}</ion-col>
+        </ion-row>
+        <ion-row *ngIf="booking.status=='CONFIRMED' || booking.status=='Confirmed' || booking.status=='Cancelled' || booking.status=='CANCELLED'">
+          <button class="booking-info" (click)="bookInfo(booking)" ion-button clear>Booking Info</button>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+
+  </div>
+
+  <div class="no-booking" *ngIf="!isBookingAvailable">
+    <div class="icon-div">
+      <ion-icon name="custom-booking"></ion-icon>
+    </div>
+
+    <p>No Data Found</p>
+  </div>
+</ion-content>

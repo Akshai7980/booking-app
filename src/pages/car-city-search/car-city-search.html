@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-searchbar placeholder="Search" (ionChange)='onChange($event._value)'></ion-searchbar>
+  </ion-navbar>
+  </ion-header>      
+  <ion-content>
+    <ion-list *ngIf="carCities">
+      <ion-item *ngFor="let carCity of carCities" (click)="selectedCity(carCity)">
+        <!-- <ion-icon item-start name="custom-hotel-city"></ion-icon> -->
+          <h2>{{carCity.location_name||carCity.message}}</h2>
+          <p>{{carCity.airport_code?carCity.airport_code+', ':''}}{{carCity.city?carCity.city+', ':''}}{{carCity.country_code?carCity.country_code:''}}</p>
+      </ion-item>
+    </ion-list>
+     
+  </ion-content>
+
+  

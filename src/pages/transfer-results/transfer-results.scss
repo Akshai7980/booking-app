@@ -1,0 +1,92 @@
+page-transfer-results {
+    .scroll-content {
+        overflow-y: auto !important;
+        margin-top: 75px;
+        padding-top: 25px;
+      }
+
+        
+          .header-p {
+           // text-align: center;
+           margin: auto;
+            p {
+              margin: 0;
+              font-size: 14px;
+              line-height: 1;
+              color: #ffffff;
+            }
+            // .p-span {
+            //     text-align: center;
+            //     font-size: 12px;
+            // }
+            span{
+                color: #ffffff;
+                font-size: 12px;
+            }
+          }
+        
+      
+
+      ion-card{
+            ion-row{
+                .img-col{
+                    padding: 0;
+                    max-height: 125px;
+                    img{
+                        height: 100%;
+                        border-radius: 6px;
+                    }
+                }
+                .detail-col{
+                    padding: 0 0px 0 5px;
+                    .hotel-name-row{
+                        p{
+                            color: black;
+                            font-size: 16px;
+                            font-weight: 300;
+                        }
+                    }
+                    .location-row{
+                        padding: 3px 0px;
+                        ion-col{
+                            padding: 0
+                        }
+                        span{
+                            font-size: 14px;
+                            font-weight: 100;
+                            ion-icon{
+                                color: #3A5A99;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                    .rating-row{
+                       p{
+                        font-style: italic;
+                        font-size: 12px;
+                        span{
+                            font-size: 10px;
+                        }
+                       }
+                    }
+                    .price-row{
+                        padding: 5px;
+                        justify-content: flex-end;
+                        background-color: #ffffff;
+                        p{
+                            padding: 5px;
+                            background: $background;
+                            color: white;
+                            font-weight: 300;
+                            border-radius: 6px;
+                            margin: 0;
+                            span{
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        
+     }
+}

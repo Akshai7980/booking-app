@@ -1,0 +1,447 @@
+[
+    {
+        "id": "1",
+        "AirportGroupId": "39",
+        "AirportGroupName": "Abu Dhabi"
+    },
+    {
+        "id": "3",
+        "AirportGroupId": "114",
+        "AirportGroupName": "Argentina"
+    },
+    {
+        "id": "4",
+        "AirportGroupId": "80",
+        "AirportGroupName": "Australia"
+    },
+    {
+        "id": "5",
+        "AirportGroupId": "11",
+        "AirportGroupName": "Austria"
+    },
+    {
+        "id": "7",
+        "AirportGroupId": "73",
+        "AirportGroupName": "Bahamas"
+    },
+    {
+        "id": "8",
+        "AirportGroupId": "75",
+        "AirportGroupName": "Bali"
+    },
+    {
+        "id": "9",
+        "AirportGroupId": "144",
+        "AirportGroupName": "Bangladesh"
+    },
+    {
+        "id": "10",
+        "AirportGroupId": "55",
+        "AirportGroupName": "Belgium"
+    },
+    {
+        "id": "12",
+        "AirportGroupId": "117",
+        "AirportGroupName": "Brazil"
+    },
+    {
+        "id": "13",
+        "AirportGroupId": "154",
+        "AirportGroupName": "Brunei"
+    },
+    {
+        "id": "14",
+        "AirportGroupId": "33",
+        "AirportGroupName": "Bulgaria"
+    },
+    {
+        "id": "15",
+        "AirportGroupId": "100",
+        "AirportGroupName": "Cambodia"
+    },
+    {
+        "id": "16",
+        "AirportGroupId": "63",
+        "AirportGroupName": "Canada"
+    },
+    {
+        "id": "17",
+        "AirportGroupId": "64",
+        "AirportGroupName": "Cape Verde"
+    },
+    {
+        "id": "18",
+        "AirportGroupId": "25",
+        "AirportGroupName": "Caribbean / Mexico"
+    },
+    {
+        "id": "19",
+        "AirportGroupId": "109",
+        "AirportGroupName": "Chile"
+    },
+    {
+        "id": "20",
+        "AirportGroupId": "94",
+        "AirportGroupName": "China"
+    },
+    {
+        "id": "21",
+        "AirportGroupId": "34",
+        "AirportGroupName": "Corsica"
+    },
+    {
+        "id": "23",
+        "AirportGroupId": "31",
+        "AirportGroupName": "Croatia"
+    },
+    {
+        "id": "24",
+        "AirportGroupId": "135",
+        "AirportGroupName": "Cuba"
+    },
+    {
+        "id": "25",
+        "AirportGroupId": "19",
+        "AirportGroupName": "Czech Republic"
+    },
+    {
+        "id": "26",
+        "AirportGroupId": "61",
+        "AirportGroupName": "Denmark"
+    },
+    {
+        "id": "27",
+        "AirportGroupId": "20",
+        "AirportGroupName": "Dubai"
+    },
+    {
+        "id": "29",
+        "AirportGroupId": "13",
+        "AirportGroupName": "Egypt"
+    },
+    {
+        "id": "30",
+        "AirportGroupId": "29",
+        "AirportGroupName": "Estonia"
+    },
+    {
+        "id": "31",
+        "AirportGroupId": "155",
+        "AirportGroupName": "Ethiopia"
+    },
+    {
+        "id": "33",
+        "AirportGroupId": "68",
+        "AirportGroupName": "Finland"
+    },
+    {
+        "id": "34",
+        "AirportGroupId": "18",
+        "AirportGroupName": "France"
+    },
+    {
+        "id": "35",
+        "AirportGroupId": "106",
+        "AirportGroupName": "Gambia"
+    },
+    {
+        "id": "36",
+        "AirportGroupId": "12",
+        "AirportGroupName": "Germany"
+    },
+    {
+        "id": "37",
+        "AirportGroupId": "157",
+        "AirportGroupName": "Ghana"
+    },
+    {
+        "id": "38",
+        "AirportGroupId": "30",
+        "AirportGroupName": "Gibraltar"
+    },
+    {
+        "id": "39",
+        "AirportGroupId": "116",
+        "AirportGroupName": "Goa"
+    },
+    {
+        "id": "40",
+        "AirportGroupId": "4",
+        "AirportGroupName": "Greece/Cyprus"
+    },
+    {
+        "id": "42",
+        "AirportGroupId": "17",
+        "AirportGroupName": "Holland"
+    },
+    {
+        "id": "43",
+        "AirportGroupId": "81",
+        "AirportGroupName": "Hong Kong"
+    },
+    {
+        "id": "44",
+        "AirportGroupId": "16",
+        "AirportGroupName": "Hungary"
+    },
+    {
+        "id": "45",
+        "AirportGroupId": "71",
+        "AirportGroupName": "Iceland"
+    },
+    {
+        "id": "46",
+        "AirportGroupId": "47",
+        "AirportGroupName": "India"
+    },
+    {
+        "id": "47",
+        "AirportGroupId": "124",
+        "AirportGroupName": "Indonesia"
+    },
+    {
+        "id": "48",
+        "AirportGroupId": "22",
+        "AirportGroupName": "Ireland"
+    },
+    {
+        "id": "49",
+        "AirportGroupId": "101",
+        "AirportGroupName": "Israel"
+    },
+    {
+        "id": "50",
+        "AirportGroupId": "10",
+        "AirportGroupName": "Italy"
+    },
+    {
+        "id": "51",
+        "AirportGroupId": "158",
+        "AirportGroupName": "Ivory Coast"
+    },
+    {
+        "id": "52",
+        "AirportGroupId": "85",
+        "AirportGroupName": "Japan"
+    },
+    {
+        "id": "53",
+        "AirportGroupId": "72",
+        "AirportGroupName": "Jersey"
+    },
+    {
+        "id": "54",
+        "AirportGroupId": "48",
+        "AirportGroupName": "Jordan"
+    },
+    {
+        "id": "55",
+        "AirportGroupId": "76",
+        "AirportGroupName": "Kazakhstan"
+    },
+    {
+        "id": "58",
+        "AirportGroupId": "130",
+        "AirportGroupName": "Laos"
+    },
+    {
+        "id": "59",
+        "AirportGroupId": "44",
+        "AirportGroupName": "Latvia"
+    },
+    {
+        "id": "60",
+        "AirportGroupId": "88",
+        "AirportGroupName": "Lebanon"
+    },
+    {
+        "id": "61",
+        "AirportGroupId": "46",
+        "AirportGroupName": "Lithuania"
+    },
+    {
+        "id": "65",
+        "AirportGroupId": "78",
+        "AirportGroupName": "Malaysia"
+    },
+    {
+        "id": "66",
+        "AirportGroupId": "6",
+        "AirportGroupName": "Malta"
+    },
+    {
+        "id": "67",
+        "AirportGroupId": "90",
+        "AirportGroupName": "Mauritius"
+    },
+    {
+        "id": "69",
+        "AirportGroupId": "50",
+        "AirportGroupName": "Montenegro"
+    },
+    {
+        "id": "70",
+        "AirportGroupId": "32",
+        "AirportGroupName": "Morocco"
+    },
+    {
+        "id": "71",
+        "AirportGroupId": "147",
+        "AirportGroupName": "Myanmar"
+    },
+    {
+        "id": "73",
+        "AirportGroupId": "104",
+        "AirportGroupName": "New Zealand"
+    },
+    {
+        "id": "76",
+        "AirportGroupId": "79",
+        "AirportGroupName": "Oman"
+    },
+    {
+        "id": "77",
+        "AirportGroupId": "125",
+        "AirportGroupName": "Philippines"
+    },
+    {
+        "id": "78",
+        "AirportGroupId": "43",
+        "AirportGroupName": "Poland"
+    },
+    {
+        "id": "79",
+        "AirportGroupId": "5",
+        "AirportGroupName": "Portugal"
+    },
+    {
+        "id": "80",
+        "AirportGroupId": "99",
+        "AirportGroupName": "Puerto Rico"
+    },
+    {
+        "id": "81",
+        "AirportGroupId": "67",
+        "AirportGroupName": "Qatar"
+    },
+    {
+        "id": "82",
+        "AirportGroupId": "84",
+        "AirportGroupName": "Romania"
+    },
+    {
+        "id": "83",
+        "AirportGroupId": "65",
+        "AirportGroupName": "Russia"
+    },
+    {
+        "id": "84",
+        "AirportGroupId": "42",
+        "AirportGroupName": "Sicily"
+    },
+    {
+        "id": "107",
+        "AirportGroupId": "74",
+        "AirportGroupName": "Singapore"
+    },
+    {
+        "id": "86",
+        "AirportGroupId": "9",
+        "AirportGroupName": "Ski"
+    },
+    {
+        "id": "87",
+        "AirportGroupId": "24",
+        "AirportGroupName": "Slovakia"
+    },
+    {
+        "id": "88",
+        "AirportGroupId": "40",
+        "AirportGroupName": "Slovenia"
+    },
+    {
+        "id": "89",
+        "AirportGroupId": "69",
+        "AirportGroupName": "South Africa"
+    },
+    {
+        "id": "91",
+        "AirportGroupId": "3",
+        "AirportGroupName": "Spain (Balearic Islands)"
+    },
+    {
+        "id": "92",
+        "AirportGroupId": "2",
+        "AirportGroupName": "Spain (Canary Islands)"
+    },
+    {
+        "id": "93",
+        "AirportGroupId": "1",
+        "AirportGroupName": "Spain (Mainland)"
+    },
+    {
+        "id": "94",
+        "AirportGroupId": "49",
+        "AirportGroupName": "Sri Lanka"
+    },
+    {
+        "id": "95",
+        "AirportGroupId": "59",
+        "AirportGroupName": "Sweden"
+    },
+    {
+        "id": "96",
+        "AirportGroupId": "21",
+        "AirportGroupName": "Switzerland"
+    },
+    {
+        "id": "97",
+        "AirportGroupId": "118",
+        "AirportGroupName": "Taiwan"
+    },
+    {
+        "id": "98",
+        "AirportGroupId": "152",
+        "AirportGroupName": "Tasmania"
+    },
+    {
+        "id": "99",
+        "AirportGroupId": "66",
+        "AirportGroupName": "Thailand"
+    },
+    {
+        "id": "100",
+        "AirportGroupId": "23",
+        "AirportGroupName": "Tunisia"
+    },
+    {
+        "id": "101",
+        "AirportGroupId": "14",
+        "AirportGroupName": "Turkey"
+    },
+    {
+        "id": "102",
+        "AirportGroupId": "87",
+        "AirportGroupName": "Ukraine"
+    },
+    {
+        "id": "103",
+        "AirportGroupId": "8",
+        "AirportGroupName": "United Kingdom"
+    },
+    {
+        "id": "104",
+        "AirportGroupId": "15",
+        "AirportGroupName": "USA"
+    },
+    {
+        "id": "105",
+        "AirportGroupId": "70",
+        "AirportGroupName": "Vietnam"
+    },
+    {
+        "id": "106",
+        "AirportGroupId": "160",
+        "AirportGroupName": "Zimbabwe"
+    }
+]

@@ -1,0 +1,382 @@
+page-flight-search-engine {
+    .scroll-content {
+        overflow-y: auto !important;
+      }
+      .content-ios .scroll-content{
+        margin-top: 45px !important;  
+        
+      }
+      .backbtn .toolbar-background {
+        background: transparent;
+    }
+        .toolbar-title {
+            font-size: 20px;
+            color: #fff;
+        }
+      .backbtn{
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        z-index: 99;
+        background: transparent;
+      }
+    .toggle-div{
+        justify-content: center;
+        align-self: center;
+        text-align: center;
+        margin: auto;
+        padding: 5px 0;
+        ion-row{
+            width: 90%;
+            margin: auto;
+            // box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+            // border-radius: 50px;
+            ion-col{
+                padding: 0;
+                button{
+                    margin: 0;
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 50px;
+                    color: #000000;
+                    span{
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                }
+                .selected{
+                    background-color:$background;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+    .search-div{
+        background-color: #ffffff;
+        .image-slide {
+            ion-slide {
+              margin-right: 0;
+                .deal-img {
+                  height: 180px;
+                  background-size: cover;
+                }
+            }
+          }
+          .deal-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+           // background: rgba(0, 0, 0, 0.3);
+      
+          }
+      
+        .header-div{
+            width: 100%;
+            position: relative;
+            height: 50px;
+            button{
+                position: absolute;
+                top: 54%;
+                left: 5%;
+                transform: translate(-50%, -50%);
+                margin: 0;
+                color:$background;
+            }
+            p{
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 18px;
+                font-weight: 300;
+            }
+        }
+        
+        .single-round-way{
+          //  padding-top: 10px;
+          //  padding-bottom: 10px;
+            .all-from{
+                border-bottom: 1px solid #dedede;
+            .from-div{
+               
+                padding: 5px 10px;
+                position: relative;
+                width: 100%;
+                .label{
+                    margin: 0;
+                    text-transform: uppercase;
+                    color: #666;
+                    font-size: 13px;
+                }
+                .detail{
+                    font-size: 16px;
+                    font-weight: 300;
+                    margin: 0;
+                    span{
+                        padding-left: 5px;
+                        color: #666;
+                    }
+                }
+            }
+            .swap-div1{
+                margin: auto;
+                .swap-div{
+                    text-align: center;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+                   // position: absolute;
+                    display: inline-grid;
+                    justify-content: center;
+                    align-items: center;
+                    // bottom: -40%;
+                    // right: 5%;
+                    background: white;
+                    ion-icon{
+                        font-size: 25px;
+                        color: #3A5A99;
+                    }
+                }
+
+            }
+           
+            .to-div{
+                padding: 5px 10px;
+               position: relative;
+                width: 100%;
+                text-align: end;
+                .label {
+                    margin: 0;
+                    text-transform: uppercase;
+                    color: #666;
+                    font-size: 13px;
+                }
+
+                .detail {
+                    font-size: 16px;
+                    font-weight: 300;
+                    margin: 0;
+
+                    span {
+                        padding-left: 5px;
+                        color: #666;
+                    }
+            }
+        }}
+
+            .date-div{
+                border-bottom: 1px solid #dedede;
+                position: relative;
+                width: 100%;
+                ion-row{
+                    .from-date{
+                        padding: 10px 15px;
+                        .label{
+                            margin: 0;
+                            text-transform: uppercase;
+                            color: #666;
+                            font-size: 13px;
+                        }
+                        .date{
+                            font-size: 16px;
+                            font-weight: 300;
+                            margin: 0;
+                        }
+                       
+                    }
+                    .to-date{
+                        padding: 10px 15px;
+                        position: relative;
+                        width: 100%;
+                        ion-row{
+                            float: right;
+                        .label{
+                            margin: 0;
+                            text-transform: uppercase;
+                            color: #666;
+                            font-size: 13px;   
+                            text-align: end;  
+                        }
+                        .date{
+                            font-size: 16px;
+                            font-weight: 300;
+                            margin: 0;
+                            float: right;
+                        }
+                       
+                    }
+                }
+            }
+            }
+
+            .button-row{
+                ion-row{
+                    border-bottom: 1px solid #dedede;
+                    padding: 5px 0;
+                    ion-col{
+                        padding: 0;
+                        justify-content: center;
+                        display: grid;
+                        button{
+                            height: auto;
+                            margin: 0;
+                            .icon-div{
+                                height: 25px;
+                                width: 25px;
+                                border: 1px solid;
+                                border-radius: 50%;
+                                display: inline-grid;
+                                justify-content: center;
+                                align-items: center;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            .extra-info{
+                ion-row{
+                    .traveller-col {
+                        padding: 10px 15px 0;
+                        .label{
+                            margin: 0;
+                            text-transform: uppercase;
+                            color: #666;
+                            font-size: 13px;
+                        }
+                        .value{
+                            margin: 0;
+                            font-size: 14px;
+                            font-weight: 300;
+                        }
+                    }
+                    .class-col{
+                        padding: 10px 10px 0;
+                        text-align: end;
+                        .label{
+                            margin: 0;
+                            text-transform: uppercase;
+                            color: #666;
+                            font-size: 13px;
+                            padding: 0 10px;
+                        }
+                        .value{
+                            margin: 0;
+                            font-size: 14px;
+                            font-weight: 300;
+                            padding: 0 10px;
+                            float: right;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    
+        .multi-round-way{
+          //  padding-top: 10px;
+            padding-bottom: 10px;
+            .journey-detail-div{
+                .label-row{
+                    margin: 5px 10px 0;
+                    ion-col{
+                        padding: 0;
+                        text-transform: uppercase;
+                        color: #666;
+                        font-size: 13px;
+                    }
+                }
+                .date-detail{
+                    margin: 0px 10px;
+                    padding: 3px 0;
+                    border-bottom: 1px solid #dedede;
+                    ion-col{
+                        padding: 0;
+                        .main{
+                            font-size: 16px;
+                            font-weight: 300;
+                            margin: 0;
+                        }
+                        .sub{
+                            color: #666;
+                            font-size: 11px;
+                            font-weight: 100;
+                        }
+                    }
+                }
+                
+            }
+            .extra-info{
+                ion-row{
+                    .traveller-col {
+                        padding: 0 15px;
+                        .label{
+                            margin: 0;
+                            text-transform: uppercase;
+                            color: #666;
+                            font-size: 13px;
+                        }
+                        .value{
+                            margin: 0;
+                            font-size: 14px;
+                            font-weight: 300;
+                        }
+                    }
+                    .class-col{
+                        padding: 0 10px;
+                        text-align: end;
+                        .label{
+                            margin: 0;
+                            text-transform: uppercase;
+                            color: #666;
+                            font-size: 13px;
+                            padding: 0 10px;
+                        }
+                        .value{
+                            margin: 0;
+                            font-size: 14px;
+                            font-weight: 300;
+                            padding: 0 10px;
+                            float: right;
+                        }
+                        
+                    }
+                }
+            }
+        }
+        
+        .search-button{
+            padding: 15px;
+          
+        }
+    }
+    .item{
+        background: transparent;
+        ion-label{
+            white-space: normal;
+        }
+        
+        ion-icon{
+            color: $background;
+        }
+        p{
+            font-size: 12px;
+        }
+        .toolbar-title {
+            font-size: 12px;
+            color: #ffffff;
+        }
+    }
+}
+.action-sheet-md .action-sheet-group:last-child {
+   padding-bottom: 0;
+    border: 0.5px solid #ccc;
+}
+.action-sheet-md .action-sheet-button {
+    border: 0.5px solid #ccc;
+}

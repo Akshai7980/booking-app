@@ -1,0 +1,10 @@
+page-cruise-itinerary {
+    .color_row:nth-child(even) {
+        background-color:#D90F16;
+        color: #fff;
+    }
+        .color_row:nth-child(odd) {
+        background-color:#EFF8FF;
+        color: #000000;
+    }
+}

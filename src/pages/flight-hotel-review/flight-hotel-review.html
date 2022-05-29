@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Flight Hotel Review</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="hotel-detail-card">
+    <ion-card-content>
+      <ion-grid>
+       <p class="hotel-name">{{hotelContentDetail[0].name}}</p> 
+      <span class="hotel-address">{{hotelContentDetail[0].address}} {{hotelContentDetail[0].city}}</span>
+      <rating [(ngModel)]="hotelContentDetail[0].hotelRating" readOnly="true" max="5" emptyStarIconName="star-outline"
+      halfStarIconName="star-half" starIconName="star" nullable="false" (ngModelChange)="onModelChange($event)">
+    </rating>
+    <ion-row class="date-row">
+      <ion-col class="check-in-col" col-5>
+          <p class="label">Check In</p>
+          <span>{{checkInDate|date:"EEE, MMM dd, yy"}}</span>
+      </ion-col>
+      <ion-col class="icon-col" col-2>
+        <ion-icon name="custom-night"></ion-icon>
+        <p>{{getNightStayDays}} Night</p>
+      </ion-col>
+      <ion-col class="check-out-col" col-5>
+          <p class="label">Check Out</p>
+          <span>{{checkoutDate|date:"EEE, MMM dd, yy"}}</span>
+      </ion-col>
+    </ion-row>
+    <div *ngFor="let room of roomDetails">
+      <span>{{rooms.length}} Room, {{totalAdultCount}} Adult{{totalChildCount>0?', '+totalChildCount+' Child':''}}</span>
+      <p>{{room.description}}</p>
+      <div class="horizontal-scroll" >
+        <ion-chip *ngFor="let facilities of room.facilities">
+          <ion-label>{{facilities}}</ion-label>
+        </ion-chip>
+      </div>
+    </div>
+  </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="cancellation-policy-card" *ngFor="let room of roomDetails"> 
+    <ion-card-header>
+      Cancellation-policy
+    </ion-card-header>
+    <ion-card-content>
+      <p> {{room.cancellationPolicy}}</p>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>
+<div class="div-footer">
+  <ion-row>
+    <ion-col col-3.5>
+      <p class="label-col">Total Amount</p>
+    </ion-col>
+    <ion-col col-5>
+      <p class="detail-col">{{selectedOption.currency}} {{selectedOption.netPrice}}</p>
+    </ion-col>
+    <ion-col col-3.5>
+      <button ion-button type="submit"  (click)="proceed()" >Go To Flight</button>
+    </ion-col>
+  </ion-row>
+</div>

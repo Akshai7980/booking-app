@@ -1,0 +1,29 @@
+page-flight-fare-rule {
+    .scroll-content {
+        overflow-y: auto !important;
+        margin-top: 50px;
+        padding-top: 30px;
+        overflow-x: auto !important;
+      }
+    
+    
+      
+      .rule-div{
+        border-bottom: 1px solid rgba(0, 0, 0, .15);
+        padding: 5px;
+        .rule-label{
+            margin: 5px 0px;
+            font-size: 16px;
+            font-weight: 300;
+        }
+        .rule-description{
+            padding-top: 5px;
+            font-size: 12px;
+            color: #000;
+            font-weight: 500;
+            white-space: pre-wrap;
+        }
+    }
+
+  
+}

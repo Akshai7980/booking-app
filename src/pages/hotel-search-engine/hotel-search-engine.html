@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Hotel Search</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <div class="search-div">
+    <ion-slides #imageSlide class="image-slide">
+      <ion-slide *ngFor="let img of  hotelOffers">
+        <div class="deal-img" [style.background-image]=" 'url('+img.image+')'"></div>
+      </ion-slide>
+    </ion-slides> 
+    <div class="single-round-way">
+      <div class="from-div">
+        <ion-row>
+          <ion-col col-10 (click)="getHotelCity()">
+            <p class="label">Search Hotel</p>
+            <p class="detail">{{hotelCity.city || hotelCity.latitude || hotelCity.longitude}}</p>
+          </ion-col>
+          <ion-col col-2>
+            <button ion-button clear (click)="getHotelCity()">
+              <ion-icon name="custom-search"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div (click)="openCalendar()" class="from-div">
+        <p class="label">Check In</p>
+        <ion-row>
+          <ion-col class="date" col-2>{{checkInDate|date:'dd'}}</ion-col>
+          <ion-col class="day-month">
+            <ion-row class="month">{{checkInDate|date:'MMM yyyy'}}</ion-row>
+            <ion-row class="day">{{checkInDate|date:'EEEE'}}</ion-row>
+          </ion-col>
+        </ion-row>
+        <div class="swap-div">
+          <ion-icon name="custom-night"></ion-icon>
+          <p>{{getNightStayDays()}} Night/s</p>
+        </div>
+      </div>
+      <div (click)="openCalendar()" class="from-div">
+        <p class="label">Check Out</p>
+        <ion-row>
+          <ion-col class="date" col-2>{{checkoutDate|date:'dd'}}</ion-col>
+          <ion-col class="day-month">
+            <ion-row class="month">{{checkoutDate|date:'MMM yyyy'}}</ion-row>
+            <ion-row class="day">{{checkoutDate|date:'EEEE'}}</ion-row>
+          </ion-col>
+        </ion-row>
+      </div>
+    
+      <ion-item no-lines (click)="addRoomDetails()">
+        <ion-icon item-start name="custom-adult"></ion-icon>
+        <span>{{rooms.length}} Room {{totalAdultCount}} Adult{{totalChildCount>0?'  '+totalChildCount+' Child':''}}</span>
+      </ion-item>
+    </div>
+    <ion-grid padding>
+      <button class="search-btn" ion-button block (click)="searchHotel()">Search</button>
+    </ion-grid>
+   
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>24x7 Customer Support</span>
+      <p>We're here to help whenever you need us</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Over 400 Million Members</span>
+      <p>4-star rating on Trustpilot</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Book Worry-free</span>
+      <p>Thousands of our hotels offer free cancellation</p>
+    </ion-item>
+    <ion-item>
+      <ion-icon item-start name="custom-check-mark"></ion-icon>
+      <span>Secure Payment</span>
+      <p>Payments are secured using the latest industry standards</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

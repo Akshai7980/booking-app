@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACA,cADc,CACd,MAAM,CAAA;EACF,MAAM,EAAE,YAAY;EACpB,MAAM,EAAE,eAAe;EACvB,OAAO,EAAE,YAAY;CAIxB;;AARD,AAKI,cALU,CACd,MAAM,CAIF,IAAI,CAAA;EACA,SAAS,EAAE,IAAI;CAClB",
+    "sources": [
+        "truncated-text.scss"
+    ],
+    "names": [],
+    "file": "truncated-text.css"
+}

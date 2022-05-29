@@ -1,0 +1,249 @@
+page-transfer-voucher .scroll-content {
+  overflow-y: auto !important;
+}
+
+page-transfer-voucher ion-content ion-card {
+  width: calc(100% - 10px) !important;
+  margin: 5px 5px 5px !important;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content {
+  padding: 10px !important;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .header-div {
+  border-bottom: 1px dashed #dedede;
+  padding: 10px 0;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .header-div .detail-col {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .header-div .detail-col .image-div {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ff9a13;
+  position: relative;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .header-div .detail-col .image-div ion-icon {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  font-size: 27px;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .header-div .detail-col .detail-div {
+  display: inline-block;
+  padding-left: 5px;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .header-div .detail-col .detail-div p {
+  text-transform: uppercase;
+  color: black;
+  font-weight: 300;
+  font-size: 14px;
+  margin: 0;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .header-div .detail-col .detail-div span {
+  font-weight: 400;
+  font-size: 10px;
+  font-style: italic;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .header-div .image-col {
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .detailed-info {
+  border-bottom: 1px dashed #dedede;
+  padding: 10px 0;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .detailed-info .flight-info .label {
+  font-size: 12px;
+  color: #666;
+  font-weight: 400;
+  padding: 5px 0;
+  text-align: start;
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .detailed-info .flight-info .value {
+  font-size: 11px;
+  font-weight: 400;
+  padding: 5px 0;
+  text-align: end;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .detailed-info .room-info ion-card {
+  margin: 5px 0 !important;
+  width: 100% !important;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .detailed-info .room-info ion-card ion-card-header {
+  padding: 5px;
+  color: white;
+  background: #0070d2;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .detailed-info .room-info ion-card ion-card-content {
+  padding: 0 5px !important;
+  border: 1px solid #0070d2;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .detailed-info .room-info ion-card ion-card-content [item-right] {
+  text-align: end;
+  font-size: 12px;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .detailed-info .room-info ion-card ion-card-content ion-row {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 5px 0;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .guest-info {
+  border-bottom: 1px dashed #dedede;
+  padding: 10px 0;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .guest-info ion-card {
+  margin: 5px 0 !important;
+  width: 100% !important;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .guest-info ion-card ion-card-header {
+  padding: 5px;
+  color: white;
+  background: #0070d2;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .guest-info ion-card ion-card-content {
+  padding: 0 5px !important;
+  border: 1px solid #0070d2;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .guest-info ion-card ion-card-content ion-row {
+  font-size: 12px;
+  font-weight: 400;
+  padding: 5px 0;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .guest-info ion-card ion-card-content ion-row ion-col {
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row-align: center;
+      align-self: center;
+  color: #666;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .cancellation-policy {
+  border-bottom: 1px dashed #dedede;
+  padding: 10px 0;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .cancellation-policy ion-card {
+  margin: 5px 0 !important;
+  width: 100% !important;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .cancellation-policy ion-card ion-card-header {
+  padding: 5px;
+  color: white;
+  background: #0070d2;
+  font-weight: 300;
+  font-size: 13px;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .cancellation-policy ion-card ion-card-content {
+  padding: 0 5px !important;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .cancellation-policy ion-card ion-card-content p {
+  color: black;
+  font-size: 12px;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .cancellation-policy ion-card ion-card-content span {
+  color: #0070d2;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .payment-info {
+  border-bottom: 1px dashed #dedede;
+  padding: 10px 0;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .payment-info ion-row {
+  display: block;
+  position: relative;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .payment-info .label {
+  font-size: 13px;
+  color: #666;
+  font-weight: 400;
+  /* padding: 5px 0; */
+  text-align: start;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .payment-info .value {
+  font-size: 11px;
+  font-weight: 400;
+  /* padding: 5px 0; */
+  text-align: end;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  right: 0;
+  position: absolute;
+  color: #666;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .payment-info .net-value {
+  color: red;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .footer-div {
+  padding: 10px 0 0;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .footer-div p {
+  font-size: 9px;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .footer-div [text-right] {
+  text-align: end !important;
+}
+
+page-transfer-voucher ion-content ion-card ion-card-content .footer-div ion-col {
+  padding: 0;
+}
+/*# sourceMappingURL=transfer-voucher.css.map */

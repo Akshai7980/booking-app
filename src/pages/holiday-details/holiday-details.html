@@ -1,0 +1,110 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Holiday Details</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div class="image-div" *ngFor="let holiday of holidayDetail">
+        <ion-slides #imageSlide class="image-slide" (ionSlideDidChange)="slideChanged()">
+            <ion-slide *ngFor="let img of holiday.downloaded_img">
+                <img src="{{img}}" onerror="this.src='assets/imgs/hotDeals/hotel12.jpg'">
+                <div class="travel-time-p">
+                    <p>Starts: {{holiday.start_end}} </p>
+                    <p>Duration: {{holiday.total_day}}</p>
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </div>
+
+    <ion-card class="button-card">
+        <ion-card-content>
+            <ion-row>
+                <ion-col col-3><button ion-button (click)="isHidden[i]=!isHidden[i]" clear>H-lights</button></ion-col>
+                <ion-col col-3><button ion-button (click)="isHiddenl[i]=!isHiddenl[i]" clear>Itinerary</button></ion-col>
+                <ion-col col-3><button ion-button (click)="isHiddenw[i]=!isHiddenw[i]" clear>Included</button></ion-col>
+                <ion-col col-3><button ion-button (click)="isHiddenr[i]=!isHiddenr[i]" clear>Reviews</button></ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+    <ion-card *ngFor="let holiday of holidayDetail" class="description-card">
+        <ion-item (click)="isHidden[i]=!isHidden[i]">
+            <span item-end>
+          <ion-icon [hidden]="isHidden[i]" name="custom-up-arrow"></ion-icon>
+          <ion-icon [hidden]="!isHidden[i]" name="custom-down-arrow"></ion-icon>
+        </span>
+            <ion-label> Hightlights</ion-label>
+        </ion-item>
+        <ion-card-content [hidden]="!isHidden[i]">
+            <p>Age Range: {{holiday.age_range}} </p>
+            <p>Accommodation: {{holiday.accommodation}} </p>
+            <p>Transportation: {{holiday.transport}} </p>
+            <p>Travel style: {{holiday.travel_style}} </p>
+            <!-- <p>Max Group Size: {{holiday.seats}} </p> -->
+        </ion-card-content>
+    </ion-card>
+    <ion-card *ngFor="let holiday of holidayDetail" class="description-card">
+        <ion-item (click)="isHiddenl[i]=!isHiddenl[i]">
+            <span item-end>
+        <ion-icon [hidden]="isHiddenl[i]" name="custom-up-arrow"></ion-icon>
+        <ion-icon [hidden]="!isHiddenl[i]" name="custom-down-arrow"></ion-icon>
+      </span>
+            <ion-label>Itinerary</ion-label>
+        </ion-item>
+        <ion-card-content [hidden]="!isHiddenl[i]">
+            <p [innerHtml]="holiday.itinery"></p>
+            <p> {{holiday.highlights_intro}} </p>
+            <p [innerHtml]="holiday.highlights_points"></p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card *ngFor="let holiday of holidayDetail" class="description-card">
+        <ion-item (click)="isHiddenw[i]=!isHiddenw[i]">
+            <span item-end>
+        <ion-icon [hidden]="isHiddenw[i]" name="custom-up-arrow"></ion-icon>
+        <ion-icon [hidden]="!isHiddenw[i]" name="custom-down-arrow"></ion-icon>
+      </span>
+            <ion-label>What's included</ion-label>
+        </ion-item>
+        <ion-card-content [hidden]="!isHiddenw[i]">
+            <p>Accommodation: {{holiday.inc_1}} </p>
+            <p>Transfers: {{holiday.inc_2}} </p>
+            <h1>Not included</h1>
+            <p>Tax: {{holiday.not_inc_1}} </p>
+            <p>Insurance: {{holiday.not_inc_2}} </p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card *ngFor="let holiday of holidayDetail" class="description-card">
+        <ion-item (click)="isHiddenr[i]=!isHiddenr[i]">
+            <span item-end>
+        <ion-icon [hidden]="isHiddenr[i]" name="custom-up-arrow"></ion-icon>
+        <ion-icon [hidden]="!isHiddenr[i]" name="custom-down-arrow"></ion-icon>
+      </span>
+            <ion-label>Reviews</ion-label>
+        </ion-item>
+        <ion-card-content [hidden]="!isHiddenr[i]">
+            <p> {{holiday.reviewer_name}} </p>
+            <p [innerHtml]="holiday.user_reviews"></p>
+            <p [innerHtml]="holiday.highlights_points"></p>
+        </ion-card-content>
+    </ion-card>
+    <!-- <ion-card class="map-card">
+    <ion-card-content>
+      <div id='map_canvas'>
+        <ion-fab bottom right (click)="directionMap()"><button ion-fab >
+            <ion-icon name=custom-mapdirection></ion-icon>
+          </button></ion-fab>
+      </div>
+</ion-card-content>
+  </ion-card>  -->
+</ion-content>
+
+<div class="div-footer-flight">
+    <ion-row>
+        <ion-col col-6>
+            <p class="label-col">Total Amount</p>
+            <p class="detail-col">{{currency.currency}} {{roundOff(holiday.total_price/currency.value)}}</p>
+        </ion-col>
+        <ion-col col-6 class="button-col">
+            <button ion-button color="danger" outline (click)="proceed()">Book Now</button>
+        </ion-col>
+    </ion-row>
+</div>

@@ -1,0 +1,11 @@
+<ion-content >
+  <div  class="footer">
+    <ion-tabs >
+      <ion-tab tabTitle="Home" tabIcon="home" (ionSelect)="myHome()"  [root]="homePage"></ion-tab>
+      <ion-tab tabTitle="Account" tabIcon="person" (ionSelect)="myAccount()" [root]="accountPage"></ion-tab>
+      <!-- <ion-tab tabIcon="custom-flight"></ion-tab> -->
+      <ion-tab tabTitle="My Trips" tabIcon="briefcase" (ionSelect)="myTrips()" [root]="tripsPage"></ion-tab>
+      <ion-tab tabTitle="More" tabIcon="more" (ionSelect)="more()"  [root]="morePage"></ion-tab>
+    </ion-tabs>
+  </div>
+</ion-content>

@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Transfer Details</ion-title>
+  </ion-navbar>
+</ion-header>
+<!--<ion-content hide-header [header]="header">
+  <button class="backbtn" ion-button (click)="goBack()">
+    <ion-icon name="custom-leftback"></ion-icon>
+  </button> -->
+  <ion-content>
+  <div class="image-div">
+   <div class="inner-img-div" [style.background-image]=" 'url('+transfer.imageUrl+')'">
+    <div class="transfer-detail-div">
+        <p class="header-p">{{transfer.general.producttype}}</p>
+        <ion-row>
+          <ion-col><ion-icon name="custom-adult"></ion-icon>{{transfer.general.minpax?transfer.general.minpax:'1'}} - {{transfer.general.maxpax?transfer.general.maxpax:'4'}}</ion-col>
+          <ion-col><ion-icon name="custom-luggage"></ion-icon>{{transfer.general.luggage?transfer.general.luggage:'2'}} Bag</ion-col>
+        </ion-row>
+        <p class="travel-time-p"><span>Travelling Time: </span>{{transfer.general.transfertime}} Min</p>
+      </div>
+   </div>
+  </div>
+  <ion-card class="description-card">
+      <ion-card-header>
+       Description
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+        <p> {{transfer.general.description}}</p>
+      </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card class="traveller-detail">
+        <ion-card-header>
+           Travel Details
+           </ion-card-header>
+           <ion-card-content>
+            <ion-grid>
+             <ion-row>
+               <ion-col col-3 class="label">Pickup location</ion-col>
+               <ion-col col-9 class="value">{{transferType==1?pickUPLocation.value:pickUPLocation.value}}</ion-col>
+             </ion-row>
+             <ion-row>
+                <ion-col col-3 class="label">Drop Off location</ion-col>
+                <ion-col col-9 class="value"> {{transferType==1?dropOffLocation.value:dropOffLocation.value}}</ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col class="label">Arrival Date</ion-col>
+                  <ion-col class="value">{{arrivalDate|date:'EEE, MMM dd,'}} {{arrivaltime[0].houres}} : {{arrivaltime[0].mintues}}</ion-col>
+                </ion-row>
+                <ion-row *ngIf="transferWay==2">
+                    <ion-col class="label">Departure Date</ion-col>
+                    <ion-col class="value">{{departureDate|date:'EEE, MMM dd,'}} {{departuretime[0].houres}} : {{departuretime[0].mintues}}</ion-col>
+                  </ion-row>
+                </ion-grid>
+           </ion-card-content>
+    </ion-card>
+
+
+    <ion-card class="price-card">
+      <ion-card-header>
+        <ion-row>
+          <ion-col class="label" col-4> Booking Summary</ion-col>
+          <ion-col class="value" col-8>Adult x {{personDetail.adults}}, Child x {{personDetail.children}}, Infant x {{personDetail.infants}}</ion-col>
+        </ion-row>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+        <ion-row class="detail-row">
+          <ion-col class="label">Type of Transfer</ion-col>
+          <ion-col class="value">{{pickUPLocation.atype == "GIATA"?'Hotel to Airport':'Airport to Hotel'}}</ion-col>
+        </ion-row>
+        <ion-row class="detail-row">
+            <ion-col class="label">Vehicle Type</ion-col>
+            <ion-col class="value">{{transfer.general.producttype}}</ion-col>
+          </ion-row>
+          <ion-row class="detail-row">
+              <ion-col class="label">Journey Type</ion-col>
+              <ion-col class="value">{{transferWay==1?'One Way':'Round Trip'}}</ion-col>
+            </ion-row>
+          <ion-row class="total-row">
+              <ion-col class="label">Total Payable</ion-col>
+              <ion-col class="value">{{currencys.currency}}  {{roundOff(totalPrice/currencys.value)}}</ion-col>
+          </ion-row>
+          </ion-grid>
+      </ion-card-content>
+    </ion-card>
+</ion-content>
+
+<div class="div-footer">
+  <ion-row>
+    <ion-col col-4>
+      <p class="label-col">Total Amount</p>
+    </ion-col>
+    <ion-col col-4>
+      <p class="detail-col">{{currencys.currency}}  {{roundOff(totalPrice/currencys.value)}}</p>
+    </ion-col>
+    <ion-col col-4><button    (click)="proceed()"  ion-button>Proceed</button></ion-col>
+  </ion-row>
+</div>

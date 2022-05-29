@@ -1,0 +1,212 @@
+page-flight-domestic-details {
+    .scroll-content {
+        overflow-y: auto !important;
+        margin-bottom: 50px;
+      }  
+      ion-content {
+    
+        .flight-info {
+          ion-item{
+            background-color: $background;
+            padding-left: 10px;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #ffffff;
+            button{
+              background:  $background;
+              color: #ffffff;
+              box-shadow: 0px 1px 1px 1px #000000;
+            }
+          }
+          .farerules{
+            background-color: #ffffff;
+            padding-left: 10px;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #ffffff;
+            button{
+              background:$background;
+              color: #ffffff;
+            }
+            .icon{
+              background:$background;
+              color: #ffffff;
+            }
+          }
+          .flight-div {
+            .start-dot {
+              left: 19%;
+              position: absolute;
+              width: 5px;
+              height: 5px;
+              border-radius: 50%;
+              background-color: #ccc;
+            }
+            .flight-detail {
+              p {
+                text-align: start;
+                padding: 2px;
+                color: #000000;
+                font-weight: 300;
+                span {
+                  color: #000000;
+                  font-size: 14px;
+                  font-weight: 500;
+                }
+              }
+              .label {
+                padding: 0px;
+                p{
+                  font-size: 12px;
+                }
+                
+              }
+              .trip{
+                padding: 0px;
+                align-self: center;
+                .trip{
+                  p{
+                    font-size: 10px;
+                  }
+                }
+              }
+              .value {
+                padding: 0px;
+                border-left: 1px solid #ccc;
+                ion-item {
+                  background: #ccc;
+                  padding-left: 5px;
+                  margin: 0;
+                  height: 20px;
+                  img {
+                    width: 30px;
+                    margin: 0px;
+                  }
+                 
+                  button{
+                    color: #3A5A99;;
+                  }
+                }
+    
+                .item-block {
+                  min-height: 30px;
+                }
+    
+              }
+    
+              .end-dot {
+                bottom: 50%;
+                position: relative;
+                left: 16%;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: #ccc;
+              }
+            }
+          }
+        }
+        
+        .fare-detail-card{
+            ion-card-content{
+                padding: 0;
+                .payment-info {
+                   .header-row{
+                    border-bottom: 1px dashed #dedede;
+                    .label{
+                        color: #333;
+                        font-size: 14px;
+                    }
+                    .value{
+                        color: #333;
+                        font-size: 14px;
+                    }
+                   }
+                   .total-row{
+                    border-top: 1px dashed #dedede;
+                    .label{
+                        color: black;
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
+                    .value{
+                        color: black;
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
+                   }
+                    ion-row{
+                        display: block;
+                        position: relative;
+                        padding: 5px;
+                    }
+                  .label {
+        
+                    font-size: 13px;
+                    color: #666;
+                    font-weight: 400;
+                    /* padding: 5px 0; */
+                    text-align: start;
+                    display: inline-flex;
+                  }
+        
+                  .value {
+                    font-size: 13px;
+                    font-weight: 400;
+                    /* padding: 5px 0; */
+                    text-align: end;
+                    display: inline-flex;
+                    right: 5px;
+                    position: absolute;
+                    color: #666;
+                  }
+                  .net-value{
+                    color: red;
+                  }
+                }
+            }
+        }
+      }
+      .div-footer-flight {
+        background-color:$background;
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 10;
+        display: block;
+        width: 100%;
+        box-shadow: 0px 1px 1px 1px #ccc;
+    
+        ion-col {
+        padding: 10px;
+          .label-col {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 300;
+            color: white;
+            margin: 0;
+          }
+    
+          .detail-col {
+    
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+            margin: 0;
+          }
+         
+    
+        
+        }
+        .button-col{
+          align-self: center;
+          justify-content: center;
+          align-content: center; 
+          text-align: end;
+          button{
+            color: white;
+            border-color: #ffffff;
+          }
+        }
+      }
+}

@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Search Location City</ion-title>
+  </ion-navbar>
+  </ion-header> 
+<ion-content>
+  <ion-searchbar placeholder="Search Location City" (ionChange)='onChange($event._value)'></ion-searchbar>
+  <ion-item *ngFor="let package of packages" (click)="selectedCity(package)">
+        <ion-icon item-start name="custom-tours"></ion-icon>
+        <h2>{{package.city ||package.message}}</h2>
+        <!-- <p>{{package.countryid}}</p> -->
+    </ion-item>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+          <div class="header-p">
+            <p><ion-icon  name="custom-map"></ion-icon>{{sightseenigCity.dest_name}},{{sightseenigCity.country}}  </p>
+            <span>{{startDate|date:'MMM dd, yyyy'}} - {{endDate|date:'MMM dd, yyyy'}}</span> 
+          </div>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card *ngFor="let result of sightSeeingResults.activities" >
+    <ion-card-content (click)="selectSightSeeing(result)">
+      <ion-row>
+        <ion-col class="img-col" col-6>
+            <ion-slides #imageSlide class="image-slide" (ionSlideDidChange)="slideChanged()">
+              <ion-slide *ngFor="let img of result.content.media">
+                <img src="{{img.url}}" onerror="this.src='assets/imgs/hotDeals/hotel.jpg'">
+                <div class="slider-num-div"><span>{{currentIndex+1}}/{{result.content.media.length}}</span></div>
+              </ion-slide>
+            </ion-slides>
+        </ion-col>
+        <ion-col class="detail-col" col-6 >
+          <ion-row class="hotel-name-row" *ngFor="let descri of result.content.startingPoints">
+            <p>{{descri.description}}</p>
+          </ion-row>
+          <ion-row class="location">
+            <ion-col col-6>
+              <ion-row>
+                <p>{{result.options.duration}}</p>
+              </ion-row>        
+            </ion-col>
+            <ion-col col-6>
+              <ion-row *ngFor="let amount of result.options.amounts">
+                <p>{{amount.paxtype}} {{result.currency}} {{amount.amount}} </p>
+                <!-- <p>{{result.options[0].amounts[1].paxtype}} {{result.options[0].amounts[1].amount}} </p> -->
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="location">
+        <ion-col class="detail-col" col-6>
+          <p>{{result.options.name}}</p>
+        </ion-col>
+        <ion-col class="detail-col" col-3>
+          <p>{{startDate|date:'MMM dd, yyyy'}}</p>
+          <!-- <p>{{result.options.cancellationPolicies.dateFrom|date:'MMM dd, yyyy'}}</p> -->
+        </ion-col>
+        <ion-col class="detail-col" col-3>
+          <ion-row class="price-row">
+            <p> {{result.currency}} {{roundOff(result.options.totalPrice)}}</p>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    <!-- <truncated-text [text]="result.content.description" limit="20" text-wrap></truncated-text> -->
+  </ion-card>
+</ion-content>

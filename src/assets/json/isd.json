@@ -1,0 +1,1724 @@
+[
+    {
+      "id": "1",
+      "name": " American Samoa ",
+      "alphaOne": " AS ",
+      "alphaTwo": " ASM ",
+      "unNum": " 1-684 "
+    },
+    {
+      "id": "2",
+      "name": " Angola ",
+      "alphaOne": " AO ",
+      "alphaTwo": " AGO ",
+      "unNum": " 244 "
+    },
+    {
+      "id": "3",
+      "name": " Anguilla ",
+      "alphaOne": " AI ",
+      "alphaTwo": " AIA ",
+      "unNum": " 1-264 "
+    },
+    {
+      "id": "4",
+      "name": " Antarctica ",
+      "alphaOne": " AQ ",
+      "alphaTwo": " ATA ",
+      "unNum": " 672 "
+    },
+    {
+      "id": "5",
+      "name": " Antigua and Barbuda ",
+      "alphaOne": " AG ",
+      "alphaTwo": " ATG ",
+      "unNum": " 1-268 "
+    },
+    {
+      "id": "6",
+      "name": " Argentina ",
+      "alphaOne": " AR ",
+      "alphaTwo": " ARG ",
+      "unNum": " 54 "
+    },
+    {
+      "id": "7",
+      "name": " Armenia ",
+      "alphaOne": " AM ",
+      "alphaTwo": " ARM ",
+      "unNum": " 374 "
+    },
+    {
+      "id": "8",
+      "name": " Andorra ",
+      "alphaOne": " AD ",
+      "alphaTwo": " AND ",
+      "unNum": " 376 "
+    },
+    {
+      "id": "9",
+      "name": " Afghanistan ",
+      "alphaOne": " AF ",
+      "alphaTwo": " AFG ",
+      "unNum": " 93 "
+    },
+    {
+      "id": "10",
+      "name": " Albania ",
+      "alphaOne": " AL ",
+      "alphaTwo": " ALB ",
+      "unNum": " 355 "
+    },
+    {
+      "id": "11",
+      "name": " Aruba ",
+      "alphaOne": " AW ",
+      "alphaTwo": " ABW ",
+      "unNum": " 297 "
+    },
+    {
+      "id": "12",
+      "name": " Australia ",
+      "alphaOne": " AU ",
+      "alphaTwo": " AUS ",
+      "unNum": " 61 "
+    },
+    {
+      "id": "13",
+      "name": " Algeria ",
+      "alphaOne": " DZ ",
+      "alphaTwo": " DZA ",
+      "unNum": " 213 "
+    },
+    {
+      "id": "14",
+      "name": " Azerbaijan ",
+      "alphaOne": " AZ ",
+      "alphaTwo": " AZE ",
+      "unNum": " 994 "
+    },
+    {
+      "id": "15",
+      "name": " Bahamas ",
+      "alphaOne": " BS ",
+      "alphaTwo": " BHS ",
+      "unNum": " 1-242 "
+    },
+    {
+      "id": "17",
+      "name": " Austria ",
+      "alphaOne": " AT ",
+      "alphaTwo": " AUT ",
+      "unNum": " 43 "
+    },
+    {
+      "id": "18",
+      "name": " Bangladesh ",
+      "alphaOne": " BD ",
+      "alphaTwo": " BGD ",
+      "unNum": " 880 "
+    },
+    {
+      "id": "19",
+      "name": " Bahrain ",
+      "alphaOne": " BH ",
+      "alphaTwo": " BHR ",
+      "unNum": " 973 "
+    },
+    {
+      "id": "20",
+      "name": " Barbados ",
+      "alphaOne": " BB ",
+      "alphaTwo": " BRB ",
+      "unNum": " 1-246 "
+    },
+    {
+      "id": "21",
+      "name": " Belize ",
+      "alphaOne": " BZ ",
+      "alphaTwo": " BLZ ",
+      "unNum": " 501 "
+    },
+    {
+      "id": "22",
+      "name": " Belgium ",
+      "alphaOne": " BE ",
+      "alphaTwo": " BEL ",
+      "unNum": " 32 "
+    },
+    {
+      "id": "23",
+      "name": " Belarus ",
+      "alphaOne": " BY ",
+      "alphaTwo": " BLR ",
+      "unNum": " 375 "
+    },
+    {
+      "id": "24",
+      "name": " Bermuda ",
+      "alphaOne": " BM ",
+      "alphaTwo": " BMU ",
+      "unNum": " 1-441 "
+    },
+    {
+      "id": "25",
+      "name": " Benin ",
+      "alphaOne": " BJ ",
+      "alphaTwo": " BEN ",
+      "unNum": " 229 "
+    },
+    {
+      "id": "26",
+      "name": " Bolivia ",
+      "alphaOne": " BO ",
+      "alphaTwo": " BOL ",
+      "unNum": " 591 "
+    },
+    {
+      "id": "27",
+      "name": " Bhutan ",
+      "alphaOne": " BT ",
+      "alphaTwo": " BTN ",
+      "unNum": " 975 "
+    },
+    {
+      "id": "28",
+      "name": " Bonaire ",
+      "alphaOne": " BQ ",
+      "alphaTwo": " BES ",
+      "unNum": " 599 "
+    },
+    {
+      "id": "29",
+      "name": " Bosnia and Herzegovina ",
+      "alphaOne": " BA ",
+      "alphaTwo": " BIH ",
+      "unNum": " 387 "
+    },
+    {
+      "id": "30",
+      "name": " Botswana ",
+      "alphaOne": " BW ",
+      "alphaTwo": " BWA ",
+      "unNum": " 267 "
+    },
+    {
+      "id": "31",
+      "name": " Bouvet Island ",
+      "alphaOne": " BV ",
+      "alphaTwo": " BVT ",
+      "unNum": " 47 "
+    },
+    {
+      "id": "32",
+      "name": " Brazil ",
+      "alphaOne": " BR ",
+      "alphaTwo": " BRA ",
+      "unNum": " 55 "
+    },
+    {
+      "id": "33",
+      "name": " Brunei Darussalam ",
+      "alphaOne": " BN ",
+      "alphaTwo": " BRN ",
+      "unNum": " 673 "
+    },
+    {
+      "id": "34",
+      "name": " Bulgaria ",
+      "alphaOne": " BG ",
+      "alphaTwo": " BGR ",
+      "unNum": " 359 "
+    },
+    {
+      "id": "35",
+      "name": " British Indian Ocean Territory ",
+      "alphaOne": " IO ",
+      "alphaTwo": " IOT ",
+      "unNum": " 246 "
+    },
+    {
+      "id": "36",
+      "name": " Burundi ",
+      "alphaOne": " BI ",
+      "alphaTwo": " BDI ",
+      "unNum": " 257 "
+    },
+    {
+      "id": "37",
+      "name": " Burkina Faso ",
+      "alphaOne": " BF ",
+      "alphaTwo": " BFA ",
+      "unNum": " 226 "
+    },
+    {
+      "id": "38",
+      "name": " Cameroon ",
+      "alphaOne": " CM ",
+      "alphaTwo": " CMR ",
+      "unNum": " 237 "
+    },
+    {
+      "id": "39",
+      "name": " Cambodia ",
+      "alphaOne": " KH ",
+      "alphaTwo": " KHM ",
+      "unNum": " 855 "
+    },
+    {
+      "id": "40",
+      "name": " Canada ",
+      "alphaOne": " CA ",
+      "alphaTwo": " CAN ",
+      "unNum": " 1 "
+    },
+    {
+      "id": "41",
+      "name": " Cape Verde ",
+      "alphaOne": " CV ",
+      "alphaTwo": " CPV ",
+      "unNum": " 238 "
+    },
+    {
+      "id": "42",
+      "name": " Cayman Islands ",
+      "alphaOne": " KY ",
+      "alphaTwo": " CYM ",
+      "unNum": " 1-345 "
+    },
+    {
+      "id": "43",
+      "name": " Central African Republic ",
+      "alphaOne": " CF ",
+      "alphaTwo": " CAF ",
+      "unNum": " 236 "
+    },
+    {
+      "id": "44",
+      "name": " Chad ",
+      "alphaOne": " TD ",
+      "alphaTwo": " TCD ",
+      "unNum": " 235 "
+    },
+    {
+      "id": "45",
+      "name": " Chile ",
+      "alphaOne": " CL ",
+      "alphaTwo": " CHL ",
+      "unNum": " 56 "
+    },
+    {
+      "id": "46",
+      "name": " China ",
+      "alphaOne": " CN ",
+      "alphaTwo": " CHN ",
+      "unNum": " 86 "
+    },
+    {
+      "id": "47",
+      "name": " Christmas Island ",
+      "alphaOne": " CX ",
+      "alphaTwo": " CXR ",
+      "unNum": " 61 "
+    },
+    {
+      "id": "48",
+      "name": " Cocos (Keeling) Islands ",
+      "alphaOne": " CC ",
+      "alphaTwo": " CCK ",
+      "unNum": " 61 "
+    },
+    {
+      "id": "49",
+      "name": " Colombia ",
+      "alphaOne": " CO ",
+      "alphaTwo": " COL ",
+      "unNum": " 57 "
+    },
+    {
+      "id": "50",
+      "name": " Comoros ",
+      "alphaOne": " KM ",
+      "alphaTwo": " COM ",
+      "unNum": " 269 "
+    },
+    {
+      "id": "51",
+      "name": " Democratic Republic of the Congo ",
+      "alphaOne": " CD ",
+      "alphaTwo": " COD ",
+      "unNum": " 243 "
+    },
+    {
+      "id": "52",
+      "name": " Cook Islands ",
+      "alphaOne": " CK ",
+      "alphaTwo": " COK ",
+      "unNum": " 682 "
+    },
+    {
+      "id": "53",
+      "name": " Congo ",
+      "alphaOne": " CG ",
+      "alphaTwo": " COG ",
+      "unNum": " 242 "
+    },
+    {
+      "id": "54",
+      "name": " Costa Rica ",
+      "alphaOne": " CR ",
+      "alphaTwo": " CRI ",
+      "unNum": " 506 "
+    },
+    {
+      "id": "55",
+      "name": " Croatia ",
+      "alphaOne": " HR ",
+      "alphaTwo": " HRV ",
+      "unNum": " 385 "
+    },
+    {
+      "id": "56",
+      "name": " Cyprus ",
+      "alphaOne": " CY ",
+      "alphaTwo": " CYP ",
+      "unNum": " 357 "
+    },
+    {
+      "id": "57",
+      "name": " Cuba ",
+      "alphaOne": " CU ",
+      "alphaTwo": " CUB ",
+      "unNum": " 53 "
+    },
+    {
+      "id": "58",
+      "name": " CuraÃƒÂ§ao ",
+      "alphaOne": " CW ",
+      "alphaTwo": " CUW ",
+      "unNum": " 599 "
+    },
+    {
+      "id": "59",
+      "name": " Czech Republic ",
+      "alphaOne": " CZ ",
+      "alphaTwo": " CZE ",
+      "unNum": " 420 "
+    },
+    {
+      "id": "60",
+      "name": " Denmark ",
+      "alphaOne": " DK ",
+      "alphaTwo": " DNK ",
+      "unNum": " 45 "
+    },
+    {
+      "id": "61",
+      "name": " Djibouti ",
+      "alphaOne": " DJ ",
+      "alphaTwo": " DJI ",
+      "unNum": " 253 "
+    },
+    {
+      "id": "62",
+      "name": " Dominica ",
+      "alphaOne": " DM ",
+      "alphaTwo": " DMA ",
+      "unNum": " 1-767 "
+    },
+    {
+      "id": "63",
+      "name": " Ecuador ",
+      "alphaOne": " EC ",
+      "alphaTwo": " ECU ",
+      "unNum": " 593 "
+    },
+    {
+      "id": "64",
+      "name": " Egypt ",
+      "alphaOne": " EG ",
+      "alphaTwo": " EGY ",
+      "unNum": " 20 "
+    },
+    {
+      "id": "65",
+      "name": " Dominican Republic ",
+      "alphaOne": " DO ",
+      "alphaTwo": " DOM ",
+      "unNum": " 1-809,1-829,1-849 "
+    },
+    {
+      "id": "66",
+      "name": " El Salvador ",
+      "alphaOne": " SV ",
+      "alphaTwo": " SLV ",
+      "unNum": " 503 "
+    },
+    {
+      "id": "67",
+      "name": " Equatorial Guinea ",
+      "alphaOne": " GQ ",
+      "alphaTwo": " GNQ ",
+      "unNum": " 240 "
+    },
+    {
+      "id": "68",
+      "name": " Falkland Islands (Malvinas) ",
+      "alphaOne": " FK ",
+      "alphaTwo": " FLK ",
+      "unNum": " 500 "
+    },
+    {
+      "id": "69",
+      "name": " Eritrea ",
+      "alphaOne": " ER ",
+      "alphaTwo": " ERI ",
+      "unNum": " 291 "
+    },
+    {
+      "id": "70",
+      "name": " Estonia ",
+      "alphaOne": " EE ",
+      "alphaTwo": " EST ",
+      "unNum": " 372 "
+    },
+    {
+      "id": "71",
+      "name": " Ethiopia ",
+      "alphaOne": " ET ",
+      "alphaTwo": " ETH ",
+      "unNum": " 251 "
+    },
+    {
+      "id": "72",
+      "name": " Fiji ",
+      "alphaOne": " FJ ",
+      "alphaTwo": " FJI ",
+      "unNum": " 679 "
+    },
+    {
+      "id": "73",
+      "name": " Faroe Islands ",
+      "alphaOne": " FO ",
+      "alphaTwo": " FRO ",
+      "unNum": " 298 "
+    },
+    {
+      "id": "74",
+      "name": " Finland ",
+      "alphaOne": " FI ",
+      "alphaTwo": " FIN ",
+      "unNum": " 358 "
+    },
+    {
+      "id": "75",
+      "name": " France ",
+      "alphaOne": " FR ",
+      "alphaTwo": " FRA ",
+      "unNum": " 33 "
+    },
+    {
+      "id": "76",
+      "name": " French Polynesia ",
+      "alphaOne": " PF ",
+      "alphaTwo": " PYF ",
+      "unNum": " 689 "
+    },
+    {
+      "id": "77",
+      "name": " French Southern Territories ",
+      "alphaOne": " TF ",
+      "alphaTwo": " ATF ",
+      "unNum": " 262 "
+    },
+    {
+      "id": "78",
+      "name": " French Guiana ",
+      "alphaOne": " GF ",
+      "alphaTwo": " GUF ",
+      "unNum": " 594 "
+    },
+    {
+      "id": "79",
+      "name": " Gabon ",
+      "alphaOne": " GA ",
+      "alphaTwo": " GAB ",
+      "unNum": " 241 "
+    },
+    {
+      "id": "80",
+      "name": " Gambia ",
+      "alphaOne": " GM ",
+      "alphaTwo": " GMB ",
+      "unNum": " 220 "
+    },
+    {
+      "id": "81",
+      "name": " Germany ",
+      "alphaOne": " DE ",
+      "alphaTwo": " DEU ",
+      "unNum": " 49 "
+    },
+    {
+      "id": "82",
+      "name": " Ghana ",
+      "alphaOne": " GH ",
+      "alphaTwo": " GHA ",
+      "unNum": " 233 "
+    },
+    {
+      "id": "83",
+      "name": " Gibraltar ",
+      "alphaOne": " GI ",
+      "alphaTwo": " GIB ",
+      "unNum": " 350 "
+    },
+    {
+      "id": "84",
+      "name": " Greece ",
+      "alphaOne": " GR ",
+      "alphaTwo": " GRC ",
+      "unNum": " 30 "
+    },
+    {
+      "id": "85",
+      "name": " Georgia ",
+      "alphaOne": " GE ",
+      "alphaTwo": " GEO ",
+      "unNum": " 995 "
+    },
+    {
+      "id": "86",
+      "name": " Greenland ",
+      "alphaOne": " GL ",
+      "alphaTwo": " GRL ",
+      "unNum": " 299 "
+    },
+    {
+      "id": "87",
+      "name": " Grenada ",
+      "alphaOne": " GD ",
+      "alphaTwo": " GRD ",
+      "unNum": " 1-473 "
+    },
+    {
+      "id": "88",
+      "name": " Guadeloupe ",
+      "alphaOne": " GP ",
+      "alphaTwo": " GLP ",
+      "unNum": " 590 "
+    },
+    {
+      "id": "89",
+      "name": " Guam ",
+      "alphaOne": " GU ",
+      "alphaTwo": " GUM ",
+      "unNum": " 1-671 "
+    },
+    {
+      "id": "90",
+      "name": " Guatemala ",
+      "alphaOne": " GT ",
+      "alphaTwo": " GTM ",
+      "unNum": " 502 "
+    },
+    {
+      "id": "91",
+      "name": " Guernsey ",
+      "alphaOne": " GG ",
+      "alphaTwo": " GGY ",
+      "unNum": " 44 "
+    },
+    {
+      "id": "92",
+      "name": " Guinea ",
+      "alphaOne": " GN ",
+      "alphaTwo": " GIN ",
+      "unNum": " 224 "
+    },
+    {
+      "id": "93",
+      "name": " Guyana ",
+      "alphaOne": " GY ",
+      "alphaTwo": " GUY ",
+      "unNum": " 592 "
+    },
+    {
+      "id": "94",
+      "name": " Haiti ",
+      "alphaOne": " HT ",
+      "alphaTwo": " HTI ",
+      "unNum": " 509 "
+    },
+    {
+      "id": "95",
+      "name": " Heard Island and McDonald Mcdonald Islands ",
+      "alphaOne": " HM ",
+      "alphaTwo": " HMD ",
+      "unNum": " 672 "
+    },
+    {
+      "id": "96",
+      "name": " Holy See (Vatican City State) ",
+      "alphaOne": " VA ",
+      "alphaTwo": " VAT ",
+      "unNum": " 379 "
+    },
+    {
+      "id": "97",
+      "name": " Guinea-Bissau ",
+      "alphaOne": " GW ",
+      "alphaTwo": " GNB ",
+      "unNum": " 245 "
+    },
+    {
+      "id": "98",
+      "name": " Honduras ",
+      "alphaOne": " HN ",
+      "alphaTwo": " HND ",
+      "unNum": " 504 "
+    },
+    {
+      "id": "99",
+      "name": " Hungary ",
+      "alphaOne": " HU ",
+      "alphaTwo": " HUN ",
+      "unNum": " 36 "
+    },
+    {
+      "id": "100",
+      "name": " Iceland ",
+      "alphaOne": " IS ",
+      "alphaTwo": " ISL ",
+      "unNum": " 354 "
+    },
+    {
+      "id": "101",
+      "name": " Hong Kong ",
+      "alphaOne": " HK ",
+      "alphaTwo": " HKG ",
+      "unNum": " 852 "
+    },
+    {
+      "id": "102",
+      "name": " Indonesia ",
+      "alphaOne": " ID ",
+      "alphaTwo": " IDN ",
+      "unNum": " 62 "
+    },
+    {
+      "id": "103",
+      "name": " India ",
+      "alphaOne": " IN ",
+      "alphaTwo": " IND ",
+      "unNum": " 91 "
+    },
+    {
+      "id": "104",
+      "name": " Iran, Islamic Republic of ",
+      "alphaOne": " IR ",
+      "alphaTwo": " IRN ",
+      "unNum": " 98 "
+    },
+    {
+      "id": "105",
+      "name": " Isle of Man ",
+      "alphaOne": " IM ",
+      "alphaTwo": " IMN ",
+      "unNum": " 44 "
+    },
+    {
+      "id": "106",
+      "name": " Iraq ",
+      "alphaOne": " IQ ",
+      "alphaTwo": " IRQ ",
+      "unNum": " 964 "
+    },
+    {
+      "id": "107",
+      "name": " Ireland ",
+      "alphaOne": " IE ",
+      "alphaTwo": " IRL ",
+      "unNum": " 353 "
+    },
+    {
+      "id": "108",
+      "name": " Italy ",
+      "alphaOne": " IT ",
+      "alphaTwo": " ITA ",
+      "unNum": " 39 "
+    },
+    {
+      "id": "109",
+      "name": " Israel ",
+      "alphaOne": " IL ",
+      "alphaTwo": " ISR ",
+      "unNum": " 972 "
+    },
+    {
+      "id": "110",
+      "name": " Jamaica ",
+      "alphaOne": " JM ",
+      "alphaTwo": " JAM ",
+      "unNum": " 1-876 "
+    },
+    {
+      "id": "111",
+      "name": " Japan ",
+      "alphaOne": " JP ",
+      "alphaTwo": " JPN ",
+      "unNum": " 81 "
+    },
+    {
+      "id": "112",
+      "name": " Jordan ",
+      "alphaOne": " JO ",
+      "alphaTwo": " JOR ",
+      "unNum": " 962 "
+    },
+    {
+      "id": "113",
+      "name": " Kazakhstan ",
+      "alphaOne": " KZ ",
+      "alphaTwo": " KAZ ",
+      "unNum": " 7 "
+    },
+    {
+      "id": "114",
+      "name": " Jersey ",
+      "alphaOne": " JE ",
+      "alphaTwo": " JEY ",
+      "unNum": " 44 "
+    },
+    {
+      "id": "115",
+      "name": " Kenya ",
+      "alphaOne": " KE ",
+      "alphaTwo": " KEN ",
+      "unNum": " 254 "
+    },
+    {
+      "id": "116",
+      "name": " Kiribati ",
+      "alphaOne": " KI ",
+      "alphaTwo": " KIR ",
+      "unNum": " 686 "
+    },
+    {
+      "id": "117",
+      "name": " Korea, Republic of ",
+      "alphaOne": " KR ",
+      "alphaTwo": " KOR ",
+      "unNum": " 82 "
+    },
+    {
+      "id": "118",
+      "name": " Kyrgyzstan ",
+      "alphaOne": " KG ",
+      "alphaTwo": " KGZ ",
+      "unNum": " 996 "
+    },
+    {
+      "id": "119",
+      "name": " Kuwait ",
+      "alphaOne": " KW ",
+      "alphaTwo": " KWT ",
+      "unNum": " 965 "
+    },
+    {
+      "id": "120",
+      "name": " Latvia ",
+      "alphaOne": " LV ",
+      "alphaTwo": " LVA ",
+      "unNum": " 371 "
+    },
+    {
+      "id": "121",
+      "name": " Lebanon ",
+      "alphaOne": " LB ",
+      "alphaTwo": " LBN ",
+      "unNum": " 961 "
+    },
+    {
+      "id": "122",
+      "name": " Lesotho ",
+      "alphaOne": " LS ",
+      "alphaTwo": " LSO ",
+      "unNum": " 266 "
+    },
+    {
+      "id": "123",
+      "name": " Lithuania ",
+      "alphaOne": " LT ",
+      "alphaTwo": " LTU ",
+      "unNum": " 370 "
+    },
+    {
+      "id": "124",
+      "name": " Liechtenstein ",
+      "alphaOne": " LI ",
+      "alphaTwo": " LIE ",
+      "unNum": " 423 "
+    },
+    {
+      "id": "125",
+      "name": " Liberia ",
+      "alphaOne": " LR ",
+      "alphaTwo": " LBR ",
+      "unNum": " 231 "
+    },
+    {
+      "id": "126",
+      "name": " Luxembourg ",
+      "alphaOne": " LU ",
+      "alphaTwo": " LUX ",
+      "unNum": " 352 "
+    },
+    {
+      "id": "127",
+      "name": " Libya ",
+      "alphaOne": " LY ",
+      "alphaTwo": " LBY ",
+      "unNum": " 218 "
+    },
+    {
+      "id": "128",
+      "name": " Macedonia, the Former Yugoslav Republic of ",
+      "alphaOne": " MK ",
+      "alphaTwo": " MKD ",
+      "unNum": " 389 "
+    },
+    {
+      "id": "129",
+      "name": " Macao ",
+      "alphaOne": " MO ",
+      "alphaTwo": " MAC ",
+      "unNum": " 853 "
+    },
+    {
+      "id": "130",
+      "name": " Maldives ",
+      "alphaOne": " MV ",
+      "alphaTwo": " MDV ",
+      "unNum": " 960 "
+    },
+    {
+      "id": "131",
+      "name": " Malaysia ",
+      "alphaOne": " MY ",
+      "alphaTwo": " MYS ",
+      "unNum": " 60 "
+    },
+    {
+      "id": "132",
+      "name": " Malawi ",
+      "alphaOne": " MW ",
+      "alphaTwo": " MWI ",
+      "unNum": " 265 "
+    },
+    {
+      "id": "133",
+      "name": " Madagascar ",
+      "alphaOne": " MG ",
+      "alphaTwo": " MDG ",
+      "unNum": " 261 "
+    },
+    {
+      "id": "134",
+      "name": " Mali ",
+      "alphaOne": " ML ",
+      "alphaTwo": " MLI ",
+      "unNum": " 223 "
+    },
+    {
+      "id": "135",
+      "name": " Malta ",
+      "alphaOne": " MT ",
+      "alphaTwo": " MLT ",
+      "unNum": " 356 "
+    },
+    {
+      "id": "136",
+      "name": " Mauritius ",
+      "alphaOne": " MU ",
+      "alphaTwo": " MUS ",
+      "unNum": " 230 "
+    },
+    {
+      "id": "137",
+      "name": " Marshall Islands ",
+      "alphaOne": " MH ",
+      "alphaTwo": " MHL ",
+      "unNum": " 692 "
+    },
+    {
+      "id": "138",
+      "name": " Martinique ",
+      "alphaOne": " MQ ",
+      "alphaTwo": " MTQ ",
+      "unNum": " 596 "
+    },
+    {
+      "id": "139",
+      "name": " Mauritania ",
+      "alphaOne": " MR ",
+      "alphaTwo": " MRT ",
+      "unNum": " 222 "
+    },
+    {
+      "id": "140",
+      "name": " Mexico ",
+      "alphaOne": " MX ",
+      "alphaTwo": " MEX ",
+      "unNum": " 52 "
+    },
+    {
+      "id": "141",
+      "name": " Mayotte ",
+      "alphaOne": " YT ",
+      "alphaTwo": " MYT ",
+      "unNum": " 262 "
+    },
+    {
+      "id": "142",
+      "name": " Micronesia, Federated States of ",
+      "alphaOne": " FM ",
+      "alphaTwo": " FSM ",
+      "unNum": " 691 "
+    },
+    {
+      "id": "143",
+      "name": " Moldova, Republic of ",
+      "alphaOne": " MD ",
+      "alphaTwo": " MDA ",
+      "unNum": " 373 "
+    },
+    {
+      "id": "144",
+      "name": " Monaco ",
+      "alphaOne": " MC ",
+      "alphaTwo": " MCO ",
+      "unNum": " 377 "
+    },
+    {
+      "id": "145",
+      "name": " Mongolia ",
+      "alphaOne": " MN ",
+      "alphaTwo": " MNG ",
+      "unNum": " 976 "
+    },
+    {
+      "id": "146",
+      "name": " Montserrat ",
+      "alphaOne": " MS ",
+      "alphaTwo": " MSR ",
+      "unNum": " 1-664 "
+    },
+    {
+      "id": "147",
+      "name": " Montenegro ",
+      "alphaOne": " ME ",
+      "alphaTwo": " MNE ",
+      "unNum": " 382 "
+    },
+    {
+      "id": "148",
+      "name": " Morocco ",
+      "alphaOne": " MA ",
+      "alphaTwo": " MAR ",
+      "unNum": " 212 "
+    },
+    {
+      "id": "149",
+      "name": " Mozambique ",
+      "alphaOne": " MZ ",
+      "alphaTwo": " MOZ ",
+      "unNum": " 258 "
+    },
+    {
+      "id": "150",
+      "name": " Myanmar ",
+      "alphaOne": " MM ",
+      "alphaTwo": " MMR ",
+      "unNum": " 95 "
+    },
+    {
+      "id": "151",
+      "name": " Namibia ",
+      "alphaOne": " NA ",
+      "alphaTwo": " NAM ",
+      "unNum": " 264 "
+    },
+    {
+      "id": "152",
+      "name": " Nauru ",
+      "alphaOne": " NR ",
+      "alphaTwo": " NRU ",
+      "unNum": " 674 "
+    },
+    {
+      "id": "153",
+      "name": " Nepal ",
+      "alphaOne": " NP ",
+      "alphaTwo": " NPL ",
+      "unNum": " 977 "
+    },
+    {
+      "id": "154",
+      "name": " Netherlands ",
+      "alphaOne": " NL ",
+      "alphaTwo": " NLD ",
+      "unNum": " 31 "
+    },
+    {
+      "id": "155",
+      "name": " New Caledonia ",
+      "alphaOne": " NC ",
+      "alphaTwo": " NCL ",
+      "unNum": " 687 "
+    },
+    {
+      "id": "156",
+      "name": " Nicaragua ",
+      "alphaOne": " NI ",
+      "alphaTwo": " NIC ",
+      "unNum": " 505 "
+    },
+    {
+      "id": "157",
+      "name": " New Zealand ",
+      "alphaOne": " NZ ",
+      "alphaTwo": " NZL ",
+      "unNum": " 64 "
+    },
+    {
+      "id": "158",
+      "name": " Nigeria ",
+      "alphaOne": " NG ",
+      "alphaTwo": " NGA ",
+      "unNum": " 234 "
+    },
+    {
+      "id": "159",
+      "name": " Niger ",
+      "alphaOne": " NE ",
+      "alphaTwo": " NER ",
+      "unNum": " 227 "
+    },
+    {
+      "id": "160",
+      "name": " Norway ",
+      "alphaOne": " NO ",
+      "alphaTwo": " NOR ",
+      "unNum": " 47 "
+    },
+    {
+      "id": "161",
+      "name": " Norfolk Island ",
+      "alphaOne": " NF ",
+      "alphaTwo": " NFK ",
+      "unNum": " 672 "
+    },
+    {
+      "id": "162",
+      "name": " Niue ",
+      "alphaOne": " NU ",
+      "alphaTwo": " NIU ",
+      "unNum": " 683 "
+    },
+    {
+      "id": "163",
+      "name": " Northern Mariana Islands ",
+      "alphaOne": " MP ",
+      "alphaTwo": " MNP ",
+      "unNum": " 1-670 "
+    },
+    {
+      "id": "164",
+      "name": " Pakistan ",
+      "alphaOne": " PK ",
+      "alphaTwo": " PAK ",
+      "unNum": " 92 "
+    },
+    {
+      "id": "165",
+      "name": " Oman ",
+      "alphaOne": " OM ",
+      "alphaTwo": " OMN ",
+      "unNum": " 968 "
+    },
+    {
+      "id": "166",
+      "name": " Papua New Guinea ",
+      "alphaOne": " PG ",
+      "alphaTwo": " PNG ",
+      "unNum": " 675 "
+    },
+    {
+      "id": "167",
+      "name": " Palestine, State of ",
+      "alphaOne": " PS ",
+      "alphaTwo": " PSE ",
+      "unNum": " 970 "
+    },
+    {
+      "id": "168",
+      "name": " Panama ",
+      "alphaOne": " PA ",
+      "alphaTwo": " PAN ",
+      "unNum": " 507 "
+    },
+    {
+      "id": "169",
+      "name": " Palau ",
+      "alphaOne": " PW ",
+      "alphaTwo": " PLW ",
+      "unNum": " 680 "
+    },
+    {
+      "id": "170",
+      "name": " Paraguay ",
+      "alphaOne": " PY ",
+      "alphaTwo": " PRY ",
+      "unNum": " 595 "
+    },
+    {
+      "id": "171",
+      "name": " Peru ",
+      "alphaOne": " PE ",
+      "alphaTwo": " PER ",
+      "unNum": " 51 "
+    },
+    {
+      "id": "172",
+      "name": " Poland ",
+      "alphaOne": " PL ",
+      "alphaTwo": " POL ",
+      "unNum": " 48 "
+    },
+    {
+      "id": "173",
+      "name": " Pitcairn ",
+      "alphaOne": " PN ",
+      "alphaTwo": " PCN ",
+      "unNum": " 870 "
+    },
+    {
+      "id": "174",
+      "name": " Philippines ",
+      "alphaOne": " PH ",
+      "alphaTwo": " PHL ",
+      "unNum": " 63 "
+    },
+    {
+      "id": "175",
+      "name": " Portugal ",
+      "alphaOne": " PT ",
+      "alphaTwo": " PRT ",
+      "unNum": " 351 "
+    },
+    {
+      "id": "176",
+      "name": " Qatar ",
+      "alphaOne": " QA ",
+      "alphaTwo": " QAT ",
+      "unNum": " 974 "
+    },
+    {
+      "id": "177",
+      "name": " Puerto Rico ",
+      "alphaOne": " PR ",
+      "alphaTwo": " PRI ",
+      "unNum": " 1 "
+    },
+    {
+      "id": "178",
+      "name": " Russian Federation ",
+      "alphaOne": " RU ",
+      "alphaTwo": " RUS ",
+      "unNum": " 7 "
+    },
+    {
+      "id": "179",
+      "name": " Romania ",
+      "alphaOne": " RO ",
+      "alphaTwo": " ROU ",
+      "unNum": " 40 "
+    },
+    {
+      "id": "180",
+      "name": " Rwanda ",
+      "alphaOne": " RW ",
+      "alphaTwo": " RWA ",
+      "unNum": " 250 "
+    },
+    {
+      "id": "181",
+      "name": " Reunion ",
+      "alphaOne": " RE ",
+      "alphaTwo": " REU ",
+      "unNum": " 262 "
+    },
+    {
+      "id": "182",
+      "name": " Saint Helena ",
+      "alphaOne": " SH ",
+      "alphaTwo": " SHN ",
+      "unNum": " 290"
+    },
+    {
+      "id": "183",
+      "name": " Saint Barthelemy ",
+      "alphaOne": " BL ",
+      "alphaTwo": " BLM ",
+      "unNum": " 590 "
+    },
+    {
+      "id": "184",
+      "name": " Saint Pierre and Miquelon ",
+      "alphaOne": " PM ",
+      "alphaTwo": " SPM ",
+      "unNum": " 508 "
+    },
+    {
+      "id": "185",
+      "name": " Saint Lucia ",
+      "alphaOne": " LC ",
+      "alphaTwo": " LCA ",
+      "unNum": " 1-758 "
+    },
+    {
+      "id": "186",
+      "name": " Saint Kitts and Nevis ",
+      "alphaOne": " KN ",
+      "alphaTwo": " KNA ",
+      "unNum": " 1-869 "
+    },
+    {
+      "id": "187",
+      "name": " Saint Martin (French part) ",
+      "alphaOne": " MF ",
+      "alphaTwo": " MAF ",
+      "unNum": " 590 "
+    },
+    {
+      "id": "188",
+      "name": " Saint Vincent and the Grenadines ",
+      "alphaOne": " VC ",
+      "alphaTwo": " VCT ",
+      "unNum": " 1-784 "
+    },
+    {
+      "id": "189",
+      "name": " Samoa ",
+      "alphaOne": " WS ",
+      "alphaTwo": " WSM ",
+      "unNum": " 685 "
+    },
+    {
+      "id": "190",
+      "name": " Sao Tome and Principe ",
+      "alphaOne": " ST ",
+      "alphaTwo": " STP ",
+      "unNum": " 239 "
+    },
+    {
+      "id": "191",
+      "name": " Saudi Arabia ",
+      "alphaOne": " SA ",
+      "alphaTwo": " SAU ",
+      "unNum": " 966 "
+    },
+    {
+      "id": "192",
+      "name": " Senegal ",
+      "alphaOne": " SN ",
+      "alphaTwo": " SEN ",
+      "unNum": " 221 "
+    },
+    {
+      "id": "193",
+      "name": " San Marino ",
+      "alphaOne": " SM ",
+      "alphaTwo": " SMR ",
+      "unNum": " 378 "
+    },
+    {
+      "id": "194",
+      "name": " Seychelles ",
+      "alphaOne": " SC ",
+      "alphaTwo": " SYC ",
+      "unNum": " 248 "
+    },
+    {
+      "id": "195",
+      "name": " Serbia ",
+      "alphaOne": " RS ",
+      "alphaTwo": " SRB ",
+      "unNum": " 381"
+    },
+    {
+      "id": "196",
+      "name": " Sierra Leone ",
+      "alphaOne": " SL ",
+      "alphaTwo": " SLE ",
+      "unNum": " 232 "
+    },
+    {
+      "id": "197",
+      "name": " Singapore ",
+      "alphaOne": " SG ",
+      "alphaTwo": " SGP ",
+      "unNum": " 65 "
+    },
+    {
+      "id": "198",
+      "name": " Slovakia ",
+      "alphaOne": " SK ",
+      "alphaTwo": " SVK ",
+      "unNum": " 421 "
+    },
+    {
+      "id": "199",
+      "name": " Sint Maarten (Dutch part) ",
+      "alphaOne": " SX ",
+      "alphaTwo": " SXM ",
+      "unNum": " 1-721 "
+    },
+    {
+      "id": "200",
+      "name": " Solomon Islands ",
+      "alphaOne": " SB ",
+      "alphaTwo": " SLB ",
+      "unNum": " 677 "
+    },
+    {
+      "id": "201",
+      "name": " Slovenia ",
+      "alphaOne": " SI ",
+      "alphaTwo": " SVN ",
+      "unNum": " 386 "
+    },
+    {
+      "id": "202",
+      "name": " South Africa ",
+      "alphaOne": " ZA ",
+      "alphaTwo": " ZAF ",
+      "unNum": " 27 "
+    },
+    {
+      "id": "203",
+      "name": " South Georgia and the South Sandwich Islands ",
+      "alphaOne": " GS ",
+      "alphaTwo": " SGS ",
+      "unNum": " 500 "
+    },
+    {
+      "id": "204",
+      "name": " South Sudan ",
+      "alphaOne": " SS ",
+      "alphaTwo": " SSD ",
+      "unNum": " 211 "
+    },
+    {
+      "id": "205",
+      "name": " Somalia ",
+      "alphaOne": " SO ",
+      "alphaTwo": " SOM ",
+      "unNum": " 252 "
+    },
+    {
+      "id": "206",
+      "name": " Sri Lanka ",
+      "alphaOne": " LK ",
+      "alphaTwo": " LKA ",
+      "unNum": " 94 "
+    },
+    {
+      "id": "207",
+      "name": " Spain ",
+      "alphaOne": " ES ",
+      "alphaTwo": " ESP ",
+      "unNum": " 34 "
+    },
+    {
+      "id": "208",
+      "name": " Sudan ",
+      "alphaOne": " SD ",
+      "alphaTwo": " SDN ",
+      "unNum": " 249 "
+    },
+    {
+      "id": "209",
+      "name": " Suriname ",
+      "alphaOne": " SR ",
+      "alphaTwo": " SUR ",
+      "unNum": " 597 "
+    },
+    {
+      "id": "210",
+      "name": " Sweden ",
+      "alphaOne": " SE ",
+      "alphaTwo": " SWE ",
+      "unNum": " 46 "
+    },
+    {
+      "id": "211",
+      "name": " Switzerland ",
+      "alphaOne": " CH ",
+      "alphaTwo": " CHE ",
+      "unNum": " 41 "
+    },
+    {
+      "id": "212",
+      "name": " Svalbard and Jan Mayen ",
+      "alphaOne": " SJ ",
+      "alphaTwo": " SJM ",
+      "unNum": " 47 "
+    },
+    {
+      "id": "213",
+      "name": " Swaziland ",
+      "alphaOne": " SZ ",
+      "alphaTwo": " SWZ ",
+      "unNum": " 268 "
+    },
+    {
+      "id": "214",
+      "name": " Syrian Arab Republic ",
+      "alphaOne": " SY ",
+      "alphaTwo": " SYR ",
+      "unNum": " 963 "
+    },
+    {
+      "id": "215",
+      "name": " Taiwan, Province of China ",
+      "alphaOne": " TW ",
+      "alphaTwo": " TWN ",
+      "unNum": " 886 "
+    },
+    {
+      "id": "216",
+      "name": " Tajikistan ",
+      "alphaOne": " TJ ",
+      "alphaTwo": " TJK ",
+      "unNum": " 992 "
+    },
+    {
+      "id": "217",
+      "name": " Togo ",
+      "alphaOne": " TG ",
+      "alphaTwo": " TGO ",
+      "unNum": " 228 "
+    },
+    {
+      "id": "218",
+      "name": " United Republic of Tanzania ",
+      "alphaOne": " TZ ",
+      "alphaTwo": " TZA ",
+      "unNum": " 255 "
+    },
+    {
+      "id": "219",
+      "name": " Timor-Leste ",
+      "alphaOne": " TL ",
+      "alphaTwo": " TLS ",
+      "unNum": " 670 "
+    },
+    {
+      "id": "220",
+      "name": " Thailand ",
+      "alphaOne": " TH ",
+      "alphaTwo": " THA ",
+      "unNum": " 66 "
+    },
+    {
+      "id": "221",
+      "name": " Tokelau ",
+      "alphaOne": " TK ",
+      "alphaTwo": " TKL ",
+      "unNum": " 690 "
+    },
+    {
+      "id": "222",
+      "name": " Tunisia ",
+      "alphaOne": " TN ",
+      "alphaTwo": " TUN ",
+      "unNum": " 216 "
+    },
+    {
+      "id": "223",
+      "name": " Tonga ",
+      "alphaOne": " TO ",
+      "alphaTwo": " TON ",
+      "unNum": " 676 "
+    },
+    {
+      "id": "224",
+      "name": " Turkmenistan ",
+      "alphaOne": " TM ",
+      "alphaTwo": " TKM ",
+      "unNum": " 993 "
+    },
+    {
+      "id": "225",
+      "name": " Trinidad and Tobago ",
+      "alphaOne": " TT ",
+      "alphaTwo": " TTO ",
+      "unNum": " 1-868 "
+    },
+    {
+      "id": "226",
+      "name": " Turkey ",
+      "alphaOne": " TR ",
+      "alphaTwo": " TUR ",
+      "unNum": " 90 "
+    },
+    {
+      "id": "227",
+      "name": " Turks and Caicos Islands ",
+      "alphaOne": " TC ",
+      "alphaTwo": " TCA ",
+      "unNum": " 1-649 "
+    },
+    {
+      "id": "228",
+      "name": " Uganda ",
+      "alphaOne": " UG ",
+      "alphaTwo": " UGA ",
+      "unNum": " 256 "
+    },
+    {
+      "id": "229",
+      "name": " Tuvalu ",
+      "alphaOne": " TV ",
+      "alphaTwo": " TUV ",
+      "unNum": " 688 "
+    },
+    {
+      "id": "230",
+      "name": " Ukraine ",
+      "alphaOne": " UA ",
+      "alphaTwo": " UKR ",
+      "unNum": " 380 "
+    },
+    {
+      "id": "231",
+      "name": " United Kingdom ",
+      "alphaOne": " GB ",
+      "alphaTwo": " GBR ",
+      "unNum": " 44 "
+    },
+    {
+      "id": "232",
+      "name": " United Arab Emirates ",
+      "alphaOne": " AE ",
+      "alphaTwo": " ARE ",
+      "unNum": " 971 "
+    },
+    {
+      "id": "233",
+      "name": " United States ",
+      "alphaOne": " US ",
+      "alphaTwo": " USA ",
+      "unNum": " 1 "
+    },
+    {
+      "id": "234",
+      "name": " United States Minor Outlying Islands ",
+      "alphaOne": " UM ",
+      "alphaTwo": " UMI ",
+      "unNum": "1"
+    },
+    {
+      "id": "235",
+      "name": " Uzbekistan ",
+      "alphaOne": " UZ ",
+      "alphaTwo": " UZB ",
+      "unNum": " 998 "
+    },
+    {
+      "id": "236",
+      "name": " Venezuela ",
+      "alphaOne": " VE ",
+      "alphaTwo": " VEN ",
+      "unNum": " 58 "
+    },
+    {
+      "id": "237",
+      "name": " Uruguay ",
+      "alphaOne": " UY ",
+      "alphaTwo": " URY ",
+      "unNum": " 598 "
+    },
+    {
+      "id": "238",
+      "name": " Vanuatu ",
+      "alphaOne": " VU ",
+      "alphaTwo": " VUT ",
+      "unNum": " 678 "
+    },
+    {
+      "id": "239",
+      "name": " Viet Nam ",
+      "alphaOne": " VN ",
+      "alphaTwo": " VNM ",
+      "unNum": " 84 "
+    },
+    {
+      "id": "240",
+      "name": " Yemen ",
+      "alphaOne": " YE ",
+      "alphaTwo": " YEM ",
+      "unNum": " 967 "
+    },
+    {
+      "id": "241",
+      "name": " US Virgin Islands ",
+      "alphaOne": " VI ",
+      "alphaTwo": " VIR ",
+      "unNum": " 1-340 "
+    },
+    {
+      "id": "242",
+      "name": " Wallis and Futuna ",
+      "alphaOne": " WF ",
+      "alphaTwo": " WLF ",
+      "unNum": " 681 "
+    },
+    {
+      "id": "243",
+      "name": " British Virgin Islands ",
+      "alphaOne": " VG ",
+      "alphaTwo": " VGB ",
+      "unNum": " 1-284 "
+    },
+    {
+      "id": "244",
+      "name": " Western Sahara ",
+      "alphaOne": " EH ",
+      "alphaTwo": " ESH ",
+      "unNum": " 212 "
+    },
+    {
+      "id": "245",
+      "name": " Zambia ",
+      "alphaOne": " ZM ",
+      "alphaTwo": " ZMB ",
+      "unNum": " 260 "
+    },
+    {
+      "id": "246",
+      "name": " Zimbabwe ",
+      "alphaOne": " ZW ",
+      "alphaTwo": " ZWE ",
+      "unNum": " 263 "
+    },
+    {
+      "id": "247",
+      "name": " Aland Islands ",
+      "alphaOne": " AX ",
+      "alphaTwo": " ALA ",
+      "unNum": " 358 "
+    }
+  ]

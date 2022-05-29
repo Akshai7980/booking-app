@@ -1,0 +1,91 @@
+page-holiday-package-search {
+    .scroll-content {
+        overflow-y: auto !important;
+        margin-top: 50px;
+      }
+    
+      .search-bar-div {
+        position: fixed;
+        width: 100%;
+        height: auto;
+        color: #4486ff;
+        font-size: 18px;
+        font-weight: 300;
+        z-index: 1;
+        background-color: #4486ff;
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    
+        ion-row {
+          .icon-col {
+            button {
+              color: white;
+            }
+          }
+    
+          .search-col {
+            padding: 5px 0;
+            .searchbar-ios {
+              border-top: 0;
+              border-bottom: 0;
+              background: transparent;
+            }
+          }
+        }
+      }
+    
+      ion-content{
+        ion-row {
+            padding: 5px;
+            border-bottom: 1px solid #dedede;
+            .ion-col{
+                justify-content: center;
+                display: flex;
+                color: #4082ff;
+                font-size: 25px;
+            }
+            ion-col{
+                display: flex-root;
+                align-self: center;
+                .aircode-div {
+                    border-radius: 5px;
+                    width: 40px;
+                    height: 30px;
+                    background-color: #4486ff;
+                    text-align: center;
+              
+                    span {
+                      line-height: 30px;
+                      vertical-align: middle;
+                    }
+                  }
+              
+                  .city-p {
+                    margin: 0;
+                    font-size: 14px;
+                   
+                  }
+              
+                  .name-p {
+                    margin: 0;
+                    font-size: 10px;
+                    color: #666;
+                    padding-left: 5px;
+                  }
+              
+                //   .country-col {
+                //     display: inline-grid;
+                //     justify-content: flex-start;
+                //     align-items: center;
+              
+                    .country-p {
+                      margin: 0;
+                      font-size: 13px;
+                      color: #4486ff;
+                      text-align: end;
+                      margin: 0;
+                    }
+                //   }
+            }
+        }
+      }
+}

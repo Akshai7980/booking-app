@@ -1,0 +1,91 @@
+page-car-city-search .scroll-content {
+  overflow-y: auto !important;
+  margin-top: 50px;
+}
+
+page-car-city-search .content-ios .scroll-content {
+  margin-top: 45px !important;
+}
+
+page-car-city-search .search-bar-div {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  color: #4486ff;
+  font-size: 18px;
+  font-weight: 300;
+  z-index: 1;
+  background-color: #4486ff;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+page-car-city-search .search-bar-div ion-row .icon-col button {
+  color: white;
+}
+
+page-car-city-search .search-bar-div ion-row .search-col {
+  padding: 5px 0;
+}
+
+page-car-city-search .search-bar-div ion-row .search-col .searchbar-ios {
+  border-top: 0;
+  border-bottom: 0;
+  background: transparent;
+}
+
+page-car-city-search ion-content ion-row {
+  padding: 5px;
+  border-bottom: 1px solid #dedede;
+}
+
+page-car-city-search ion-content ion-row .ion-col {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #4082ff;
+  font-size: 18px;
+}
+
+page-car-city-search ion-content ion-row ion-col {
+  display: flex-root;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+page-car-city-search ion-content ion-row ion-col .aircode-div {
+  border-radius: 5px;
+  width: 40px;
+  height: 30px;
+  background-color: #4486ff;
+  text-align: center;
+}
+
+page-car-city-search ion-content ion-row ion-col .aircode-div span {
+  line-height: 30px;
+  vertical-align: middle;
+}
+
+page-car-city-search ion-content ion-row ion-col .city-p {
+  margin: 0;
+  font-size: 14px;
+}
+
+page-car-city-search ion-content ion-row ion-col .name-p {
+  margin: 0;
+  font-size: 10px;
+  color: #666;
+  padding-left: 5px;
+}
+
+page-car-city-search ion-content ion-row ion-col .country-p {
+  margin: 0;
+  font-size: 13px;
+  color: #4486ff;
+  text-align: end;
+  margin: 0;
+}
+/*# sourceMappingURL=car-city-search.css.map */

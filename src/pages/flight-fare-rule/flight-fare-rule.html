@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Review Flight Details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <!-- <div class="rule-div" *ngFor="let rule of fareRule">
+        <p class="rule-label">{{rule.Category}}</p>
+        <span class="rule-description" [innerHtml]="rule.Rules||rule.rule_det"></span>
+        </div> -->
+
+
+        <div class="rule-div" *ngFor="let rule of fareRule">
+          <p class="rule-label">{{rule.FareRule.Category}}</p>
+          <span class="rule-description" [innerHtml]="rule.FareRule.Rules"></span>
+          </div>
+</ion-content>

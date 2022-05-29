@@ -1,0 +1,107 @@
+page-sight-seeing-results {
+    .scroll-content {
+        overflow-y: auto !important;
+        margin-top: 75px;
+      }
+          .header-p {
+            color: white;
+             text-align: center;
+             align-items: center;
+             display: block;
+            
+            p {
+              font-size: 16px;
+              line-height: 0;
+              margin: 5px;
+            }
+            ion-icon{
+                font-size: 12px;  
+              justify-items: center;
+            }
+    
+            span {
+              font-size: 12px;
+            }
+          }
+        
+      
+      ion-card{
+        margin: 5px !important;
+        width: calc(100% - 10px) !important;
+        border-radius: 6px !important;
+        ion-card-content{
+            padding: 8px !important;
+            .hotel-name-row{
+                p{
+                    color: black;
+                    font-size: 15px;
+                    font-weight: 300;
+                }
+            }
+            ion-row{
+               
+                .img-col{
+                    padding: 0;
+                    max-height: 125px;
+                    img{
+                        height: 100%;
+                        border-radius: 6px;
+                    }
+                }
+               
+                .detail-col{
+                    padding: 0 0px 0 5px;
+                    .location{
+                        border-top: 1px solid #cccccc;
+                        border-bottom: 1px solid #cccccc;
+                        padding: 3px 0px;
+                        p{
+                            font-size: 11px;
+                        }
+                        ion-col{
+                            padding: 0
+                        }
+                        span{
+                            color: #333;
+                        }
+                    }
+               
+                    
+                }
+            }
+
+            
+                .location{
+                   // border-bottom: 1px solid #cccccc;
+                    padding: 3px 0px;
+                    p{
+                        font-size: 11px;
+                    }
+                    ion-col{
+                        padding: 0
+                    }
+                    span{
+                        color: #333;
+                    }
+                }
+           
+                .price-row{
+                    justify-content: flex-end;
+                    background-color: #ffffff;
+                    p{
+                        padding: 5px;
+                        background: $background;
+                        color: white;
+                        font-weight: 300;
+                        border-radius: 6px;
+                        margin: 0;
+                        span{
+                            font-size: 10px;
+                        }
+                    }
+                }
+            
+
+        }
+      }
+}

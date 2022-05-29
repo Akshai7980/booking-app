@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+          <div class="header-p" *ngIf="searchResults">
+            <p>{{searchResults.Search_Result.origin_name}}</p>
+            <!-- <p class="p-span">-</p> -->
+            <p> {{searchResults.Search_Result.end_name}}</p>
+            <span>{{searchResults.Search_Result.travelling|date:'EEE, MMM dd, HH:mm'}}</span>
+          </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card   class="transfer-results" *ngFor="let transfer of transferResults;let i = index" >
+    <ion-row>
+      <ion-col class="img-col" col-6>
+          <img src={{transfer.imageUrl}}>
+      </ion-col>
+      <ion-col class="detail-col" col-6>
+          <ion-row class="hotel-name-row">
+            <p>{{transfer.general.producttype}}</p>
+          </ion-row>
+          <ion-row  class="location-row">
+            <ion-col>
+              <span><ion-icon name="custom-adult"></ion-icon> {{transfer.general.minpax?transfer.general.minpax:'1'}} - {{transfer.general.maxpax?transfer.general.maxpax:'4'}}</span> 
+            </ion-col>
+            <ion-col>
+                <span><ion-icon name="custom-luggage"></ion-icon> {{transfer.general.luggage?transfer.general.luggage:'2'}} Bag</span> 
+            </ion-col>
+          </ion-row>
+          <ion-row class="rating-row">
+           <p><span>Travelling Time: </span>{{transfer.general.transfertime}} Min</p>
+          </ion-row>
+          <ion-row class="price-row">
+            <p>{{currencys.currency}} {{getTotalPrice(transfer)/currencys.value|number:'.0-2'}}</p>
+            <button *ngIf="transfer.isSelectedClose"  ion-button tappable (click)="selecthotelType(i,transfer)">
+              <ion-icon name="custom-delete"></ion-icon>
+              </button>
+
+              <button *ngIf="!transfer.isSelectedClose"  ion-button tappable (click)="selecthotelType(i,transfer)">
+                <ion-icon name="custom-add"></ion-icon>
+               </button>
+
+          </ion-row>
+        </ion-col>
+    </ion-row>
+</ion-card>
+<div class="no-transfer" *ngIf="transferResults">
+<div class="not-found-block"  *ngIf="transferResults.length == 0">
+  <img class="d-inline-block align-bottom" src="assets/imgs/other/not-found.jpg">
+  <p class="no-result">No Transfer Results Found</p>
+  <p class="modify-search">You can book without transfer</p>
+  <!-- <button (click)="modifySearch()"  ion-button>Book Now</button> -->
+</div>
+</div>
+</ion-content>
+
+<div class="div-footer-flight">
+  <ion-row>
+    <ion-col col-6>
+      <p class="label-col">Total Flight Amount</p>
+      <p class="detail-col">{{currencys.currency}} {{roundOff(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount/currencys.value)}} </p>
+      <p class="label-col">Total Hotel Amount</p>
+      <p class="detail-col"> {{currencys.currency}} {{selectedOption.netPrice}} </p>
+    </ion-col>
+    <ion-col col-6  class="button-col"><button (click)="makePayment()" color="danger" outline ion-button>Book Now</button></ion-col>
+  </ion-row>
+</div>
+
+

@@ -1,0 +1,149 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-left>Welcome to 24x7booking</ion-title>
+    <ion-buttons (click)="fnCurrency()" right>
+      <button ion-button icon-only>{{currency}}
+      <ion-icon ios="ios-arrow-down" md="md-arrow-down"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div class="banner">
+    <div class="logo-box">
+      <img class="logo" (click)="saveCard()" src="assets/imgs/logo/logo.png">
+    </div>
+        <ion-row>
+        <ion-col col-0.5></ion-col>
+        <ion-col col-11>
+          <ion-row>
+          <ion-col col-4 (click)="goToFlightSearchPage()">
+            <button ion-button full large class="button-icon-top">
+              <ion-icon name="custom-flight"></ion-icon>
+            </button>
+            <p>Flights</p>
+          </ion-col>
+          <ion-col col-4 (click)="goToHotelSearchPage()">
+            <button ion-button full large class="button-icon-top">
+              <ion-icon name="custom-hotel"></ion-icon>
+            </button>
+            <p>Hotels</p>
+          </ion-col>
+          <ion-col col-4 (click)="goTocarSearchPage()">
+            <button ion-button full large class="button-icon-top">
+              <ion-icon name="custom-car"></ion-icon>
+            </button>
+            <p>car rental</p>
+          </ion-col>
+          <!-- <ion-col  col-4 (click)="goToTransferSearchPage()">
+            <button ion-button full large class="button-icon-top">
+              <ion-icon name="custom-transfer"></ion-icon>
+            </button>
+            <p>Transfers</p>
+          </ion-col>
+          <ion-col  col-4 (click)="goToHolidaySearchPage()">
+            <button ion-button block large class="button-icon-top">
+              <ion-icon name="custom-holidays"></ion-icon>
+            </button>
+            <p>Holiday</p>
+          </ion-col>
+          <ion-col  col-4 (click)="goToSightseeingSearchPage()">
+            <button ion-button block large class="button-icon-top">
+              <ion-icon name="custom-sight-seeing"></ion-icon>
+            </button>
+            <p>Sight-seeing</p>
+          </ion-col> -->
+        </ion-row>
+      </ion-col>
+        <ion-col col-0.5></ion-col>
+        </ion-row> 
+  </div>
+  <div class="detailed-div">
+    <div class="hot-deals-div">
+      <p class="deal-label" *ngFor="let offer of hotDeals.title;"> {{offer.Sightseeing}}</p>
+       <ion-slides #imageSlide class="image-slide">
+        <ion-slide *ngFor="let offer of hotDeals.deals">
+          <div class="deal-img" [style.background-image]=" 'url('+offer.image+')'"></div>
+        </ion-slide>
+      </ion-slides> 
+      <ion-slides #cardSlide class="card-slide">
+        <ion-slide *ngFor="let offer of hotDeals.deals;let i=index"  (click)="SightseeingSearch(offer)">
+          <ion-row>
+            <ion-col>
+              <p class="category">{{offer.title}}</p>
+              <p [innerHTML]="offer.description" class="content"></p>
+            </ion-col>
+           </ion-row>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="super-deal-div" > 
+        <p  *ngFor="let deal of superOffers.flight_title" class="main-label">{{deal.Flight}}</p>
+      <ion-slides slidesPerView='2.2'>
+        <ion-slide *ngFor="let offer of superOffers.flight_deals;let i=index" (click)="flightSearch(offer)">
+          <ion-card>
+            <ion-card-header>
+                <img src="{{offer.image}}" >
+            </ion-card-header>
+            <ion-card-content>
+              <p>{{offer.fromCity.City}}</p>
+              <div class="box">
+                <h1 class="text">TO</h1>
+              </div>
+              <p>{{offer.toCity.City}}</p>
+              <p><strong> {{currencys.currency}} {{roundOff(offer.fare/currencys.value)}}</strong></p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div> 
+
+    <div class="super-deal-div">
+      <p class="main-label" *ngFor="let offer of hotelOffers.hotel_title;"> {{offer.Hotel}}</p>
+      <ion-slides slidesPerView='2.2'>
+        <ion-slide *ngFor="let offer of hotelOffers.hotel_deals;let i=index"  (click)="HotelSearch(offer)">
+          <ion-card>
+            <ion-card-header>
+                <img src="{{offer.image}}" >
+            </ion-card-header>
+            <ion-card-content>
+              <p class="lavel">{{offer.hotel_name}}</p>
+              <ion-row *ngIf="offer.starts" class="rating-row">
+                <ion-col>
+                  <rating [(ngModel)]="offer.starts" readOnly="true" max="5" emptyStarIconName="none"
+                  halfStarIconName="star-half" starIconName="star" nullable="false" (ngModelChange)="onModelChange($event)">
+                </rating>
+                </ion-col>
+              </ion-row>
+              <p><strong> {{currencys.currency}} {{roundOff(offer.amount/currencys.value)}}</strong></p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div> 
+    
+    <!-- <div class="super-deal-div">
+      <p class="main-label" *ngFor="let deal of SightseeingDeals.sightseeing_title">{{deal.Sightseeing}}</p>
+      <ion-slides slidesPerView='2.2'>
+        <ion-slide *ngFor="let offer of SightseeingDeals.sightseeing_deals;let i=index"  (click)="SightseeingSearch(offer)">
+          <ion-card>
+            <ion-card-header>
+                <img src="{{offer.image}}" >
+            </ion-card-header>
+            <ion-card-content>
+              <p class="lavel">{{offer.sightseenigCity.dest_description}} - {{offer.sightseenigCity.dest_name}}</p>
+              <ion-row *ngIf="offer.starts" class="rating-row">
+                <ion-col>
+                <rating [(ngModel)]="offer.starts" readOnly="true" max="5" emptyStarIconName="star-outline"
+                halfStarIconName="star-half" starIconName="star" nullable="false" (ngModelChange)="onModelChange($event)">
+              </rating>
+                </ion-col>
+              </ion-row>
+              <p><strong> {{currencys.currency}} {{roundOff(offer.amount/currencys.value)}} </strong></p>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>  -->
+  </div>
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-header #header>
+  <ion-navbar>
+    <ion-title>{{hotelDetail.hotelName}}</ion-title></ion-navbar>
+</ion-header>
+<ion-content hide-header [header]="header">
+  <div *ngFor="let result of hotelContentDetail">
+  <button class="backbtn" ion-button (click)="goBack()">
+    <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+  </button>
+
+  <div class="image-div">
+    <ion-slides #imageSlide class="image-slide" (ionSlideDidChange)="slideChanged()">
+      <ion-slide *ngFor="let img of result.hotelImages">
+        <img src="{{img.url}}" (click)="preview(img.url,result.name)" onerror="this.src='assets/imgs/hotDeals/hotel.jpg'">
+        <div class="slider-num-div"><span>{{currentIndex+1}}/{{result.hotelImages.length}}</span></div>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <ion-row class="header-div">
+    <ion-col class="detail-col" col-12>
+        <p class="header-p">{{result.name}}</p>
+        <rating [(ngModel)]="result.hotelRating" readOnly="true" max="5" emptyStarIconName="none"
+          halfStarIconName="star-half" starIconName="star" nullable="false" (ngModelChange)="onModelChange($event)">
+        </rating>
+    </ion-col>
+    <div class="horizontal-scroll" >
+      <ion-chip *ngFor="let facility of result.facilities">
+        <ion-label>{{facility}}</ion-label>
+      </ion-chip>
+    </div>
+      <ion-item class="review-item" *ngIf="hotelDetail.tripAdvisorRating">
+        <ion-badge item-start>{{hotelDetail.tripAdvisorRating}}/5</ion-badge>
+        <span>{{getReviewDetail(hotelDetail.tripAdvisorRating)}}</span>
+        <p item-end>{{hotelDetail.tripAdvisorReview}} reviews</p>
+      </ion-item>
+      <ion-item>
+        <ion-icon item-start name="custom-map"></ion-icon>
+        <p>{{result.address}} {{result.country}}</p>
+      </ion-item>
+        <ion-item (click)="isHidden[i]=!isHidden[i]">
+          <span item-end>
+            <ion-icon [hidden]="isHidden[i]" name="custom-up-arrow"></ion-icon>
+            <ion-icon [hidden]="!isHidden[i]" name="custom-down-arrow"></ion-icon>
+          </span>
+          <ion-label>OVERVIEW</ion-label>
+        </ion-item>
+        <ion-item [hidden]="isHidden[i]">
+          <!-- <truncated-text [text]="result.description.content" limit="20"></truncated-text> -->
+          <p [innerHTML]="result.description.content"></p>
+        </ion-item>
+    </ion-row>
+  </div>
+    <div class="rooms-data" *ngFor="let bookingRate of roomOptionResult" >
+      <ion-item class="head-rooms" no-lines (click)="btnClick(bookingRate)">
+        <p>{{bookingRate.roomType}} -  <span [innerHTML]="bookingRate.boardType"></span></p> 
+        <button ion-button item-end>Book Now</button>
+      </ion-item>
+      <ion-item (click)="gotoCancellation(bookingRate.cancellationPolicy)">
+        <p>Cancellation Policy</p>
+        <ion-icon  item-end ios="ios-information-circle" md="md-information-circle"></ion-icon>
+      </ion-item>
+      <ion-item *ngIf="HotelFix.b2c == 0">
+        <p>Price for {{getNightStayDays}} night</p>
+        <p item-end>{{bookingRate.currency}} {{roundOff(bookingRate.netPrice+hotelAllMarkup.b2c)}}</p>
+      </ion-item>
+      <ion-item *ngIf="HotelFix.b2c == 1">
+        <p>Price for {{getNightStayDays}} night</p>
+        <p item-end>{{bookingRate.currency}} {{roundOff((bookingRate.netPrice*hotelAllMarkup.b2c)/100+(bookingRate.netPrice))}}</p>
+      </ion-item>
+    </div>
+            
+</ion-content>

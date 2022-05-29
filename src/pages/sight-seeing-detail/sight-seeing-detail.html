@@ -1,0 +1,139 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Tour Details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content  *ngIf="tourDetail">
+  <div class="image-div">
+      <ion-slides #imageSlide class="image-slide" (ionSlideDidChange)="slideChanged()">
+        <ion-slide *ngFor="let img of tourDetail.activity.content.media">
+          <img src="{{img}}" onerror="this.src='assets/imgs/hotDeals/hotel.jpg'">
+          <div class="slider-num-div"><span>{{currentIndex+1}}/{{tourDetail.activity.content.media.length}}</span></div>
+        </ion-slide>
+      </ion-slides>
+  </div>
+  <ion-card *ngIf="tourDetail" class="description-card">
+    <ion-card-header *ngFor="let description of tourDetail.activity.content.startingPoints">
+      {{description.description}}
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item (click)="isHidden[i]=!isHidden[i]">
+        <span item-end>
+          <ion-icon [hidden]="isHidden[i]" name="custom-up-arrow"></ion-icon>
+          <ion-icon [hidden]="!isHidden[i]" name="custom-down-arrow"></ion-icon>
+        </span>
+        <ion-label>Description</ion-label>
+      </ion-item>
+      <ion-item [hidden]="!isHidden[i]">
+        <p [innerHTML]="tourDetail.activity.content.description"></p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="traveller-detail">
+    <ion-card-header>
+      Guest Details
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <ion-row *ngFor="let adult of adultsAll;let j=index" (click)="adultDetail(j)">
+            <ion-col class="icon-col" col-2>
+              <div>
+                <ion-icon name="custom-adult"></ion-icon>
+                <ion-icon *ngIf="adult.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+              </div>  
+            </ion-col>
+            <ion-col class="label-col">{{adult.firstName?adult.title+'. '+adult.firstName+' '+adult.lastName:'Adult'}}</ion-col>
+            <ion-col class="icon-col" col-2>
+              <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngFor="let child of children;let j=index" (click)="childDetail(j)">
+            <ion-col class="icon-col" col-2>
+              <div>
+                <ion-icon name="custom-child"></ion-icon>
+                <ion-icon *ngIf="child.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+             </div>
+            </ion-col>
+            <ion-col class="label-col">{{child.firstName?child.title+'. '+child.firstName+' '+child.lastName:'Child'}}</ion-col>
+            <ion-col class="icon-col" col-2>
+              <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+            </ion-col>
+          </ion-row>
+    </div>
+    </ion-card-content>
+  </ion-card>
+  <!-- <form #form="ngForm" (ngSubmit)="proceed(form)" novalidate> -->
+  <ion-card class="contact-info">
+      <ion-card-header>
+        Contact Details
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-input  [(ngModel)]="contactDeatil.email" type="email" name="email" ></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col padding-right col-4>
+            <ion-item class="isd-item">
+              <ion-label>ISD</ion-label>
+              <ion-input  [(ngModel)]="contactDeatil.country_code" type="text" name="country_code" ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label>Phone</ion-label>
+              <ion-input  [(ngModel)]="contactDeatil.mobile_no" type="number" name="mobile_no" ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-checkbox [(ngModel)]="contactDeatil.confirm" color="dark" checked="true"></ion-checkbox>
+          <ion-label>I confirm that I have read, understood and agree with the Booking Engine Terms & Conditions provided</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-card class="contact-info">
+      <ion-card-header>
+        Pay with Stripe
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label fixed>Card Number</ion-label>
+          <ion-input  [(ngModel)]="card.number" type="number"></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col padding-right col-4>
+            <ion-item class="isd-item">
+              <ion-label fixed>MM</ion-label>
+              <ion-input  [(ngModel)]="card.expMonth" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label fixed>YY</ion-label>
+              <ion-input  [(ngModel)]="card.expYear" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label  fixed>CVC</ion-label>
+              <ion-input [(ngModel)]="card.cvc" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+     
+</ion-content>
+
+<div  class="div-footer-flight" *ngIf="tourDetail">
+  <ion-row>
+    <ion-col col-6>
+      <p class="label-col">Total Amount</p>
+      <p class="detail-col">{{tourDetail.activity.currency}} {{roundOff(tourDetail.activity.options[0].rates[0].rateDetails[0].totalAmount.amount)}}</p>
+    </ion-col>
+    <ion-col class="button-col" col-6><button [disabled]="getButtonStatus()" (click)="proceed()" color="danger" outline ion-button>Proceed</button></ion-col>
+  </ion-row>
+</div>
+

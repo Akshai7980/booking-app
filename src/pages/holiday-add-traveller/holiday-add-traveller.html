@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Traveller Details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form #form="ngForm" (ngSubmit)="addTravellerDetail(form)" novalidate>
+        <div>
+          <p>Title</p>
+          <ion-row *ngIf="isAdult" radio-group class="title-radio" [(ngModel)]="detail.title" name="title">
+            <ion-col col-4>
+              <ion-radio class="radio-icon" value="Mr" name="rad1"></ion-radio>
+              <ion-label class="radio-label">Mr</ion-label>
+            </ion-col>
+            <ion-col col-4>
+              <ion-radio class="radio-icon" value="Mrs" button name="rad2"></ion-radio>
+              <ion-label class="radio-label">Mrs</ion-label>
+            </ion-col>
+            <ion-col col-4>
+              <ion-radio class="radio-icon" value="Ms" name="rad1"></ion-radio>
+              <ion-label class="radio-label">Ms</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="!isAdult" radio-group class="title-radio" [(ngModel)]="detail.title" name="title">
+            <ion-col>
+              <ion-radio class="radio-icon" value="Master" name="rad1"></ion-radio>
+              <ion-label class="radio-label">Master</ion-label>
+            </ion-col>
+            <ion-col>
+              <ion-radio class="radio-icon" value="Miss" button name="rad2"></ion-radio>
+              <ion-label class="radio-label">Miss</ion-label>
+            </ion-col>
+          </ion-row>
+        </div>
+        <ion-item>
+          <ion-label fixed>First Name</ion-label>
+          <ion-input [(ngModel)]="detail.firstName" type="text" name="firstName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>Last Name</ion-label>
+          <ion-input [(ngModel)]="detail.lastName" type="text" name="lastName"></ion-input>
+        </ion-item>
+        <div>
+          <p>Gender</p>
+          <ion-row radio-group class="title-radio" [(ngModel)]="detail.gender" name="gender">
+            <ion-col col-4>
+              <ion-radio class="radio-icon" value="M" name="rad1"></ion-radio>
+              <ion-label class="radio-label">Male</ion-label>
+            </ion-col>
+
+            <ion-col col-4>
+              <ion-radio class="radio-icon" value="F" button name="rad2"></ion-radio>
+              <ion-label class="radio-label">Female</ion-label>
+
+            </ion-col>
+            <ion-col col-4>
+              <ion-radio class="radio-icon" value="O" name="rad1"></ion-radio>
+              <ion-label class="radio-label">Other</ion-label>
+            </ion-col>
+          </ion-row>
+        </div>
+        <ion-item (click)="getDateOfBirth()">
+          <ion-label fixed>Date of Birth</ion-label>
+          <ion-icon item-end name="custom-down-arrow"></ion-icon>
+          <ion-input readonly [ngModel]="detail.dob | date" (ngModelChange)="detail.dob=$event" type="text" name="dob">
+          </ion-input>
+        </ion-item>
+
+        <ion-item (click)="getNationality()">
+          <ion-label fixed>Nationality</ion-label>
+          <ion-icon item-end name="custom-down-arrow"></ion-icon>
+          <ion-input readonly [(ngModel)]="detail.nationality" type="text" name="nationality"></ion-input>
+        </ion-item>
+        <ion-row class="button-row">
+          <button [disabled]="getButtonStatus()" type="submit" ion-button>Add Traveller</button>
+        </ion-row>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

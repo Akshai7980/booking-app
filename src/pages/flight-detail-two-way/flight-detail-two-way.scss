@@ -1,0 +1,242 @@
+page-flight-detail-two-way {
+    .scroll-content {
+        overflow-y: auto !important;
+        margin-bottom: 70px;
+    }
+     .content-ios .scroll-content{
+        margin-top: 45px !important;  
+        margin-bottom: 80px;
+    }
+    
+   
+    .flight-info {
+        ion-card-content {
+            .flight-div {
+                ion-item {
+                    border: 1px solid #ccc;
+                    border-radius:0 0 50px 0;
+                    background: #ccc;
+                    color: #000;
+                    h2 {
+                        color: #000;
+                    }
+                    span {
+                        font-size: 12px;
+                    }
+                }
+            }
+            .dest-detail {
+                //  border-bottom: 1px dashed #dedede;
+                .from-col {
+                    span {
+                        color: #000;
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                    h2 {
+                        color: #000;
+                    }
+                    p {
+                        margin: auto;
+                        padding: 0px;
+                        text-align: start;
+                        font-size: 15px;
+                        font-weight: 500;
+                        color: #000;
+                        span {
+                            padding: 0;
+                            font-size: 15px;
+                            padding-left: 5px;
+                            color: #000;
+                            font-weight: 300;
+                        }
+                    }
+                }
+                .design-col {
+                    align-self: center;
+                    .line-div {
+                        width: 100%;
+                        border-bottom: 2px solid $background;
+                        // .start-dot {
+                        //     top: 2px;
+                        //     position: absolute;
+                        //     width: 7px;
+                        //     height: 7px;
+                        //     border-radius: 50%;
+                        //     background-color: #000;
+                        // }
+                        .center-dot {
+                            top: 17px;
+                            left: 45%;
+                            position: absolute;
+                           
+                            ion-icon {
+                                
+                                font-size: 20px;
+                                color: #000;
+                            }
+                        }
+                        // .end-dot {
+                        //     top: 2px;
+                        //     position: absolute;
+                        //     left: 90%;
+                        //     width: 7px;
+                        //     height: 7px;
+                        //     border-radius: 50%;
+                        //     background-color: #000;
+                        // }
+                    }
+                    p {
+                        font-size: 10px !important;
+                        text-align: center;
+                        padding-bottom: 5px;
+                    }
+                }
+                .to-col {
+                    display: inline-grid;   
+                    text-align: end;
+                    span {
+                        color: #000;
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+                    p {
+                        margin: 0;
+                        padding: 0px;
+                        text-align: end;
+                        font-size: 15px;
+                        font-weight: 500;
+                        color: black;
+                        span {
+                            padding: 0;
+                            font-size: 15px;
+                            padding-right: 5px;
+                            color: #000;
+                            font-weight: 300;
+                        }
+                    }
+                }
+            }
+            .time-detail {
+                padding-top: 0;
+                p {
+                    font-size: 16px !important;
+                    padding: 0;
+                }
+                .design-col {
+                    padding: 0;
+                }
+            }
+            .layover-div {
+                //position: absolute;
+                
+                
+                background: #ccc;
+                padding: 5px;
+                border-radius: 5px;
+                margin: 15px 5px;
+                // top: 100%;
+                // left: 50%;
+                // transform: translate(-50%, -50%);
+                p{
+                    color: #000;
+                    font-size:12px;
+                }
+            }
+        }
+    }
+    .fare-detail-card {
+        ion-card-content {
+            padding: 0;
+            .payment-info {
+                .header-row {
+                    border-bottom: 1px dashed #dedede;
+                    .label {
+                        color: #000;
+                        font-size: 14px;
+                    }
+                    .value {
+                        color: #000;
+                        font-size: 14px;
+                    }
+                }
+                .total-row {
+                    border-top: 1px dashed #dedede;
+                    .label {
+                        color: #000;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                    .value {
+                        color: #000;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                }
+                ion-row {
+                    display: block;
+                    position: relative;
+                    padding: 5px;
+                }
+                .label {
+                    font-size: 13px;
+                    color: #000;
+                    font-weight: 400;
+                    /* padding: 5px 0; */
+                    text-align: start;
+                    display: inline-flex;
+                }
+                .value {
+                    font-size: 13px;
+                    font-weight: 400;
+                    /* padding: 5px 0; */
+                    text-align: end;
+                    display: inline-flex;
+                    right: 5px;
+                    position: absolute;
+                    color: #000;
+                }
+                .net-value {
+                    color: red;
+                }
+            }
+        }
+    }
+}
+
+.div-footer-flight {
+    background-color: $background;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: 10;
+    display: block;
+    width: 100%;
+    box-shadow: 0px 1px 1px 1px #ccc;
+    ion-col {
+        padding: 10px;
+        .label-col {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 300;
+            color: white;
+            margin: 0;
+        }
+        .detail-col {
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+            margin: 0;
+        }
+    }
+    .button-col {
+        align-self: center;
+        justify-content: center;
+        align-content: center;
+        text-align: end;
+        button {
+            color: white;
+            border-color: #ffffff;
+        }
+    }
+}

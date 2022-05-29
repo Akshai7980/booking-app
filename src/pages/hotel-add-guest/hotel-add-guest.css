@@ -1,0 +1,82 @@
+page-hotel-add-guest ion-content ion-card ion-card-content {
+  padding: 5px !important;
+}
+
+page-hotel-add-guest ion-content ion-card ion-card-content .button-row {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 20px;
+}
+
+page-hotel-add-guest ion-content ion-card ion-card-content .button-row button {
+  width: 90%;
+}
+
+page-hotel-add-guest ion-content ion-card ion-card-content .title-radio {
+  font-weight: 400;
+  font-size: 13px;
+  padding-top: 5px;
+}
+
+page-hotel-add-guest ion-content ion-card ion-card-content .title-radio .radio-label {
+  display: inline-block;
+  margin: auto;
+  padding-left: 5px;
+}
+
+page-hotel-add-guest ion-content ion-card ion-card-content .title-radio ion-col {
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+page-hotel-add-guest ion-content ion-card ion-card-content .title-radio .radio .radio-icon {
+  border-color: gray;
+  border: 1px solid gray;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+page-hotel-add-guest ion-content ion-card ion-card-content .title-radio .radio .radio-checked.radio-icon {
+  border-color: #006fd2 !important;
+  border: 1px solid #006fd2 !important;
+}
+
+page-hotel-add-guest ion-content ion-card ion-card-content .title-radio .radio .radio-checked .radio-inner {
+  left: 3px !important;
+  top: 3px !important;
+  position: absolute;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 50% !important;
+  border-width: 0 !important;
+  background: #006fd2;
+}
+
+page-hotel-add-guest ion-content ion-card ion-card-content ion-item {
+  padding: 0 !important;
+  background-color: #EBF6FF !important;
+  margin-top: 10px !important;
+}
+
+page-hotel-add-guest ion-content ion-card ion-card-content ion-item .item-inner {
+  border-bottom: 0;
+}
+
+page-hotel-add-guest ion-content ion-card ion-card-content ion-item ion-label {
+  padding-left: 5px;
+  font-size: 13px;
+  color: #333;
+}
+
+page-hotel-add-guest ion-content ion-card ion-card-content ion-item ion-input .text-input {
+  text-align: end;
+  text-align: end;
+  color: #000;
+  font-size: 13px;
+}
+/*# sourceMappingURL=hotel-add-guest.css.map */

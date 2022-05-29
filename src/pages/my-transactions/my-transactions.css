@@ -1,0 +1,132 @@
+page-my-transactions .outer-div {
+  position: fixed;
+  width: 100%;
+  height: 85px;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  background-image: url("../../assets/imgs/backgrounds/blue-header-top.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+page-my-transactions .outer-div button {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+page-my-transactions .outer-div .header-p {
+  margin: 0;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: 300;
+}
+
+page-my-transactions .outer-div img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+page-my-transactions .card-div {
+  margin-top: 30px;
+}
+
+page-my-transactions .card-div ion-card ion-card-content {
+  padding: 7px;
+}
+
+page-my-transactions .card-div ion-card ion-card-content .first-row {
+  border-bottom: 1px dashed #dededef0;
+}
+
+page-my-transactions .card-div ion-card ion-card-content .first-row .icon-col div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: #0070d2;
+  background-color: #0070d252;
+}
+
+page-my-transactions .card-div ion-card ion-card-content .first-row .icon-col div ion-icon {
+  margin: auto;
+}
+
+page-my-transactions .card-div ion-card ion-card-content .first-row .time-col {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: start;
+  padding-left: 3px;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 13px;
+}
+
+page-my-transactions .card-div ion-card ion-card-content .first-row .currency-col {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  text-align: end;
+  padding-left: 3px;
+  font-weight: 300;
+  color: green;
+}
+
+page-my-transactions .card-div ion-card ion-card-content .label-col {
+  color: #999;
+  font-weight: 400;
+  text-align: start;
+  font-size: 13px;
+}
+
+page-my-transactions .card-div ion-card ion-card-content .data-col {
+  text-align: end;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+page-my-transactions .no-booking {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+page-my-transactions .no-booking .icon-div {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  color: #0070d2;
+  background-color: #0070d252;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 80px;
+}
+
+page-my-transactions .no-booking .icon-div ion-icon {
+  margin: auto;
+}
+
+page-my-transactions .no-booking p {
+  font-weight: 300;
+  font-size: 16px;
+}
+/*# sourceMappingURL=my-transactions.css.map */

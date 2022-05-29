@@ -1,0 +1,174 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Traveller Details</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-card class="traveller-detail">
+        <ion-card-header>
+            Traveller Details
+        </ion-card-header>
+        <ion-card-content>
+
+            <ion-row *ngFor="let adult of adults; let i=index" (click)="addAdultTravellerDetail(adult,i)">
+                <ion-col class="icon-col" col-2>
+                    <div>
+                        <ion-icon name="custom-adult"></ion-icon>
+                        <ion-icon *ngIf="adult.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+                    </div>
+                </ion-col>
+                <ion-col class="label-col">{{adult.firstName?adult.title+'. '+adult.firstName+' '+adult.lastName:'Adult'}}</ion-col>
+                <ion-col class="icon-col" col-2>
+                    <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngFor="let child of children; let i=index" (click)="addChildTravellerDetail(child,i)">
+                <ion-col class="icon-col" col-2>
+                    <div>
+                        <ion-icon name="custom-child"></ion-icon>
+                        <ion-icon *ngIf="child.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+                    </div>
+                </ion-col>
+                <ion-col class="label-col">{{child.firstName?child.title+'. '+child.firstName+' '+child.lastName:'Child'}}</ion-col>
+                <ion-col class="icon-col" col-2>
+                    <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngFor="let infant of infants; let i=index" (click)="addInfantTravellerDetail(infant,i)">
+                <ion-col class="icon-col" col-2>
+                    <div>
+                        <ion-icon name="custom-infant"></ion-icon>
+                        <ion-icon *ngIf="infant.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+                    </div>
+                </ion-col>
+                <ion-col class="label-col">{{infant.firstName?infant.title+'. '+infant.firstName+' '+infant.lastName:'Infant'}}</ion-col>
+                <ion-col class="icon-col" col-2>
+                    <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="contact-info">
+        <ion-card-header>
+            Contact Details
+        </ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                <ion-label fixed>Email</ion-label>
+                <ion-input readOnly [(ngModel)]="user.emailid" type="email"></ion-input>
+            </ion-item>
+            <ion-row>
+                <ion-col padding-right col-4>
+                    <ion-item class="isd-item">
+                        <ion-label fixed>ISD</ion-label>
+                        <ion-input readOnly [(ngModel)]="user.country_code" type="text"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col>
+                    <ion-item>
+                        <ion-label fixed>Phone</ion-label>
+                        <ion-input readOnly [(ngModel)]="user.mobile" type="number"></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-item *ngIf="isAreaCode">
+                <ion-label fixed>Area Code</ion-label>
+                <ion-input [(ngModel)]="areaCode" type="text"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="isPostCode">
+                <ion-label fixed>Postal Code</ion-label>
+                <ion-input [(ngModel)]="postalCode" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-checkbox [(ngModel)]="user.confirm" color="dark" checked="true"></ion-checkbox>
+                <ion-label>I confirm that I have read,understood and agree with the Rate Details and Terms & Conditions provided</ion-label>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+
+    <!-- <ion-card class="contact-info">
+    <ion-card-header>
+      Payment Details
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label fixed>Name on Card</ion-label>
+          <ion-input [(ngModel)]="payment.name" type="text" name="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Card Type</ion-label>
+          <ion-select [(ngModel)]="payment.cardtypelist" type="text" name="cardtypelist">
+            <ion-option value="V">VISA</ion-option>
+            <ion-option value="M">MasterCard</ion-option>
+            <ion-option value="C">Cashlink (Bank of Valletta)</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>Card Number</ion-label>
+          <ion-input [(ngModel)]="payment.Card" type="number" name="Card"></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col padding-right col-7>
+        <ion-item>
+          <ion-label>Expiry Date</ion-label>
+          <ion-select [(ngModel)]="payment.DateMM" type="text" name="DateMM" interface="popover">
+            <ion-option value="01">01</ion-option>
+            <ion-option value="02">02</ion-option>
+            <ion-option value="03">03</ion-option>
+            <ion-option value="04">04</ion-option>
+            <ion-option value="05">05</ion-option>
+            <ion-option value="06">06</ion-option>
+            <ion-option value="07">07</ion-option>
+            <ion-option value="08">08</ion-option>
+            <ion-option value="09">09</ion-option>
+            <ion-option value="10">10</ion-option>
+            <ion-option value="11">11</ion-option>
+            <ion-option value="12">12</ion-option>
+          </ion-select>
+          <ion-select [(ngModel)]="payment.DateYY" type="text" name="DateYY" interface="popover">
+            <ion-option selected value="3">2021</ion-option>
+            <ion-option value="22">2022</ion-option>
+            <ion-option value="23">2023</ion-option>
+            <ion-option value="24">2024</ion-option>
+            <ion-option value="25">2025</ion-option>
+            <ion-option value="26">2026</ion-option>
+            <ion-option value="27">2027</ion-option>
+            <ion-option value="28">2028</ion-option>
+            <ion-option value="29">2029</ion-option>
+            <ion-option value="30">2030</ion-option>
+          </ion-select>
+        </ion-item> 
+          </ion-col>  
+          <ion-col col-5>
+            <ion-item>
+              <ion-label fixed>CVV</ion-label>
+              <ion-input [(ngModel)]="payment.CVV" type="number" name="CVV"></ion-input>
+            </ion-item>
+          </ion-col>  
+       
+        </ion-row>
+    </ion-list>   
+    </ion-card-content>
+  </ion-card> -->
+</ion-content>
+
+<div class="div-footer-flight" *ngIf="adminBalance">
+    <ion-row *ngIf="flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount+FlightAllMarkup.b2c<adminBalance.amount || flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount+FlightAllMarkup.b2c==adminBalance.amount">
+        <ion-col col-6 *ngIf="FlightAllFix.b2c == 0">
+            <p class="label-col">Total Amount</p>
+            <p class="detail-col">{{currencys.currency}} {{roundOff(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</p>
+        </ion-col>
+        <ion-col col-6 *ngIf="FlightAllFix.b2c == 1">
+            <p class="label-col">Total Amount</p>
+            <p class="detail-col">{{currencys.currency}} {{roundOffPer(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</p>
+        </ion-col>
+        <ion-col col-6 class="button-col"><button [disabled]="getButtonStatus()" (click)="makePayment()" color="danger" outline ion-button>Book Now</button></ion-col>
+    </ion-row>
+    <ion-row *ngIf="flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount+FlightAllMarkup.b2c>adminBalance.amount">
+        <ion-col>
+            <p class="label-col">Please contact Administrator!</p>
+        </ion-col>
+    </ion-row>
+</div>

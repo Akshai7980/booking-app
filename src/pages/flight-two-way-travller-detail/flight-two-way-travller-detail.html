@@ -1,0 +1,146 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Traveller Details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card class="traveller-detail">
+    <ion-card-header>
+      Traveller Details
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-row *ngFor="let adult of adults; let i=index" (click)="addAdultTravellerDetail(adult,i)">
+        <ion-col class="icon-col" col-2>
+          <div>
+            <ion-icon name="custom-adult"></ion-icon>
+            <ion-icon *ngIf="adult.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col class="label-col">{{adult.firstName?adult.title+'. '+adult.firstName+' '+adult.lastName:'Adult'}}</ion-col>
+        <ion-col class="icon-col" col-2>
+          <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let child of children; let i=index" (click)="addChildTravellerDetail(child,i)">
+        <ion-col class="icon-col" col-2>
+          <div>
+            <ion-icon name="custom-child"></ion-icon>
+            <ion-icon *ngIf="child.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col class="label-col">{{child.firstName?child.title+'. '+child.firstName+' '+child.lastName:'Child'}}</ion-col>
+        <ion-col class="icon-col" col-2>
+          <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let infant of infants; let i=index" (click)="addInfantTravellerDetail(infant,i)">
+        <ion-col class="icon-col" col-2>
+          <div>
+            <ion-icon name="custom-infant"></ion-icon>
+            <ion-icon *ngIf="infant.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col class="label-col">{{infant.firstName?infant.title+'. '+infant.firstName+' '+infant.lastName:'Infant'}}</ion-col>
+        <ion-col class="icon-col" col-2>
+          <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="contact-info">
+    <ion-card-header>
+      Contact Details
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label fixed>Email</ion-label>
+        <ion-input  [(ngModel)]="user.emailid" type="email"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col padding-right col-4>
+          <ion-item class="isd-item">
+            <ion-label fixed>ISD</ion-label>
+            <ion-input  [(ngModel)]="user.country_code" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label fixed>Phone</ion-label>
+            <ion-input  [(ngModel)]="user.mobile" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-item *ngIf="isAreaCode">
+        <ion-label  fixed>Area Code</ion-label>
+        <ion-input [(ngModel)]="areaCode" type="text"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="isPostCode">
+        <ion-label  fixed>Postal Code</ion-label>
+        <ion-input [(ngModel)]="postalCode" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox [(ngModel)]="user.confirm" color="dark" checked="true"></ion-checkbox>
+        <ion-label>I confirm that I have read,understood and agree with the Rate Details and Terms & Conditions provided</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- <ion-card class="contact-info">
+    <ion-card-header>
+      Pay with Stripe
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label fixed>Card Number</ion-label>
+        <ion-input  [(ngModel)]="card.number" type="number"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col padding-right col-4>
+          <ion-item class="isd-item">
+            <ion-label fixed>MM</ion-label>
+            <ion-input  [(ngModel)]="card.expMonth" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label fixed>YY</ion-label>
+            <ion-input  [(ngModel)]="card.expYear" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label  fixed>CVC</ion-label>
+            <ion-input [(ngModel)]="card.cvc" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card> -->
+
+</ion-content>
+
+<div class="div-footer-flight" *ngIf="adminBalance">
+    <ion-row *ngIf="flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount<adminBalance.amount || flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount==adminBalance.amount">
+      <ion-col col-6 *ngIf="FlightAllFix.b2c == 0">
+        <p class="label-col">Total Amount</p>
+        <p class="detail-col">{{flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}}
+           {{roundOff(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</p>
+      </ion-col>
+      <ion-col col-6 *ngIf="FlightAllFix.b2c == 1">
+        <p class="label-col">Total Amount</p>
+        <p class="detail-col">{{flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.CurrencyCode}}
+           {{roundOffPer(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</p>
+      </ion-col>
+      <ion-col col-6 class="button-col"><button [disabled]="getButtonStatus()" (click)="startTransaction()" color="danger" outline ion-button>Make Payment</button></ion-col>
+    </ion-row>
+    <ion-row *ngIf="flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount>adminBalance.amount">
+      <ion-col>
+        <p class="label-col">Please contact Administrator!</p>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  
+

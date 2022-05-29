@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Guest Details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <form #form="ngForm" (ngSubmit)="addGuest(form)" novalidate>
+      <div>
+        <p>Title</p>
+        <ion-row *ngIf="isAdult" radio-group class="title-radio" [(ngModel)]="personDetail.title" name="title">
+          <ion-col col-4>
+            <ion-radio class="radio-icon" value="Mr" name="rad1"></ion-radio>
+            <ion-label class="radio-label">Mr</ion-label>
+          </ion-col>
+          <ion-col col-4>
+            <ion-radio class="radio-icon" value="Mrs" button name="rad2"></ion-radio>
+            <ion-label class="radio-label">Mrs</ion-label>
+          </ion-col>
+          <ion-col col-4>
+            <ion-radio class="radio-icon" value="Ms" name="rad1"></ion-radio>
+            <ion-label class="radio-label">Ms</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="isChild" radio-group class="title-radio" [(ngModel)]="personDetail.title"  name="title">
+          <ion-col>
+            <ion-radio class="radio-icon" value="Mstr" name="rad1"></ion-radio>
+            <ion-label class="radio-label">Master</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-radio class="radio-icon" value="Miss" button name="rad2"></ion-radio>
+            <ion-label class="radio-label">Miss</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="isInfant" radio-group class="title-radio" [(ngModel)]="personDetail.title"  name="title">
+          <ion-col>
+            <ion-radio class="radio-icon" value="Mstr" name="rad1"></ion-radio>
+            <ion-label class="radio-label">Master</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-radio class="radio-icon" value="Miss" button name="rad2"></ion-radio>
+            <ion-label class="radio-label">Miss</ion-label>
+          </ion-col>
+        </ion-row>
+      </div>
+     
+      <ion-item>
+        <ion-label fixed>First Name</ion-label>
+        <ion-input [(ngModel)]="personDetail.firstName" type="text" name="firstName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Last Name</ion-label>
+        <ion-input [(ngModel)]="personDetail.lastName" type="text" name="lastName"></ion-input>
+      </ion-item>
+      <div>
+        <p>Gender</p>
+        <ion-row radio-group class="title-radio" [(ngModel)]="personDetail.gender" name="gender">
+          <ion-col col-4>
+            <ion-radio class="radio-icon" value="M" name="rad1"></ion-radio>
+            <ion-label class="radio-label">Male</ion-label>
+          </ion-col>
+
+          <ion-col col-4>
+            <ion-radio class="radio-icon" value="F" button name="rad2"></ion-radio>
+            <ion-label class="radio-label">Female</ion-label>
+
+          </ion-col>
+          <ion-col col-4>
+            <!-- <ion-radio class="radio-icon" value="O" name="rad1"></ion-radio>
+            <ion-label class="radio-label">Other</ion-label> -->
+          </ion-col>
+        </ion-row>
+      </div>
+      <ion-item *ngIf="isAdult">
+        <ion-label fixed>Date of Birth</ion-label>
+        <ion-datetime type="date" [ngModel]="personDetail.dob | date:'yyyy-MM-dd'" (ngModelChange)="personDetail.dob = $event"  name="dob"  [min]="dateFormatterminAdult(departDate)" [max]="dateFormattermaxAdult(departDate)"></ion-datetime>
+      </ion-item>
+
+      <ion-item *ngIf="isChild">
+        <ion-label fixed>Date of Birth</ion-label>
+        <ion-datetime type="date" [ngModel]="personDetail.dob | date:'yyyy-MM-dd'" (ngModelChange)="personDetail.dob = $event"  name="dob"  [min]="dateFormatterminChild(departDate)" [max]="dateFormattermaxChild(departDate)"></ion-datetime>
+      </ion-item>
+      
+      <ion-item *ngIf="isInfant">
+        <ion-label fixed>Date of Birth</ion-label>
+        <ion-datetime type="date" [ngModel]="personDetail.dob | date:'yyyy-MM-dd'" (ngModelChange)="personDetail.dob = $event"  name="dob"  [min]="dateFormattermin(departDate)" [max]="dateFormattermax(departDate)"></ion-datetime>
+      </ion-item>
+      
+      <ion-item *ngIf="isPassportMandatory">
+        <ion-label fixed>Passport No.</ion-label>
+        <ion-input [(ngModel)]="personDetail.passportNumber" type="text" name="passportNumber"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="isPassportMandatory">
+        <ion-label fixed>Expiry Date</ion-label>
+        <ion-datetime type="date" [ngModel]="personDetail.passportExpiry | date:'yyyy-MM-dd'" (ngModelChange)="personDetail.passportExpiry = $event"  name="passportExpiry"  [min]="dateFormattermax(departDate)" [max]="dateFormatterminPass(departDate)"></ion-datetime>
+      </ion-item>
+     
+      <ion-item (click)="getIssueCountry()" *ngIf="isPassportMandatory">
+        <ion-label fixed>Issue Country</ion-label>
+        <ion-input readonly [(ngModel)]="personDetail.issueCountry" type="text" name="issueCountry"></ion-input>
+      </ion-item>
+
+      <ion-item (click)="getNationality()" *ngIf="isNationality">
+        <ion-label fixed>Nationality</ion-label>
+        <ion-input readonly [(ngModel)]="personDetail.nationality" type="text" name="nationality"></ion-input>
+      </ion-item>
+      
+      <ion-row class="button-row">
+        <button [disabled]="isButtonDisable()" type="submit" ion-button>Add Guest</button>
+      </ion-row>
+    </form>
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

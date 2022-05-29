@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AACI,WADO,CACP,gBAAgB,CAAA;EACZ,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,IAAI;EACb,WAAW,EAAE,GAAG;CAQnB;;AAZL,AAKQ,WALG,CACP,gBAAgB,CAIZ,UAAU,CAAA;EACN,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;EAChB,MAAM,EAAE,IAAI;CACf",
+    "sources": [
+        "spalsh.scss"
+    ],
+    "names": [],
+    "file": "spalsh.css"
+}

@@ -1,0 +1,187 @@
+page-flight-search-multi-way-results {
+    .scroll-content {
+        overflow-y: auto !important;
+      }
+        .sort-btn-div {
+          justify-content: center;
+          align-self: center;
+          text-align: center;
+          margin: auto;
+          padding-top: 5px;
+          padding-bottom: 10px;
+    
+          ion-row {
+            width: 95%;
+            margin: auto;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+    
+            ion-col {
+              padding: 0;
+              border-right: 1px solid #cccccc;
+              display: flex;
+    
+              button {
+                margin: 0;
+                width: 100%;
+                padding: 10px 0;
+                height: auto;
+    
+                span {
+                    font-size: 11px;
+                    font-weight: 300;
+    
+                  ion-icon {
+                    margin-left: 1px;
+                    font-size: 8px;
+                  }
+                }
+              }
+              button{
+                color: #3A5A99;
+              }
+              .selected {
+                background-color: #3A5A99;
+                color: white;
+              }
+            }
+    
+            ion-col:last-child {
+              border: 0;
+            }
+          }
+        }
+   
+        ion-slide{
+            border-right: 1px solid #ffffff;
+            .slide-p{
+                margin: auto;
+                font-size: 16px;
+                line-height: 0;
+                color:  #ffffff;
+                ion-icon{
+                    font-size: 16px;
+                    margin: 0 5px;
+                    color:  #ffffff;
+                }
+            }
+            .slide-span{
+                font-size: 11px;
+                color:  #ffffff;
+            }
+        }
+        ion-slide:last-child{
+            border-right: 0;
+        }
+   
+      ion-content{
+        ion-card{
+       
+          ion-card-content{
+            padding: 0 !important;
+            .timings-row{
+                padding: 0px 5px;
+              .from{
+                display: flow-root;
+                text-align: start;
+                align-self: center;
+                p{
+                  font-size: 16px;
+                  color: black;
+                  font-weight: 300;
+                }
+                span{
+                  color: #666;
+                  font-size: 11px;
+                }
+              }
+              .info{
+                display: flow-root;
+                text-align: end;
+                align-self: center;
+                ion-row{
+                  justify-content: center;
+                  font-size: 10px;
+                  color: #666;
+                }
+                .arrow-row{
+                 
+                  .arrow-col{
+                    border-bottom: 2px dotted $background;
+                    /* height: 1px; */
+                    padding: 0;
+                    display: flow-root;
+                    /* text-align: end; */
+                    -webkit-align-self: center;
+                    -ms-flex-item-align: center;
+                    align-self: center;
+                  }
+                  .forward-col{
+                    padding: 0;
+                    display: flow-root;
+                    text-align: end;
+                    -webkit-align-self: center;
+                    -ms-flex-item-align: center;
+                    align-self: center;
+                    font-size: 7px;
+                    color: #3A5A99;
+                  }
+                  .dot-col{
+                    padding: 0;
+                    display: flow-root;
+                    text-align: end;
+                    -webkit-align-self: center;
+                    -ms-flex-item-align: center;
+                    align-self: center;
+                    font-size: 7px;
+                    color: #3A5A99;
+                  }
+                }
+              }
+              .to{
+                display: flow-root;
+                text-align: end;
+                align-self: center;
+                p{
+                  font-size: 16px;
+                  color: black;
+                  font-weight: 300;
+                }
+                span{
+                  color: #666;
+                  font-size: 11px;
+                }
+              }
+            }
+            .price-row{
+              background: #efefef;
+              padding: 0 5px;
+              .flight-info{
+                text-align: center;
+                display: flow-root;
+                align-self: center;
+                font-size: 12px;
+                img{
+                  max-width: 40px;
+                  max-height: 30px;
+                }
+              }
+              .price{
+                text-align: center;
+                justify-content: flex-end;
+                
+                p {
+                  padding: 2px;
+                  background:$background;
+                  color: white;
+                  font-weight: 500;
+                  border-radius: 6px;
+                  margin: 0;
+                 
+                }
+              }
+            }
+          }
+        }
+      }
+}

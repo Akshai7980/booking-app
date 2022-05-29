@@ -1,0 +1,52 @@
+page-help-suport {
+  .scroll-content {
+    overflow-y: auto !important;
+    margin-top: 50px;
+  }
+
+  div{
+    padding: 15px 15px;
+    h5{
+        margin: 0;
+        font-weight: 500;
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+    p{
+        font-size: 14px;
+        margin: 5px 0 0;
+        font-weight: 400;
+        color: #000000;
+    }
+    li{
+        background-image: url(../../assets/imgs/other/star.svg);
+        background-position: 0 0;
+        background-size: 1rem 1.6rem;
+        background-repeat: no-repeat;
+        padding-left: 2rem;
+        list-style-type: none;
+    }
+  }
+}
+   .div-footer-flight {
+            background-color: $background;
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 10;
+            display: block;
+            width: 100%;
+            box-shadow: 0px 1px 1px 1px #ccc;
+            ion-col {
+                p{
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #fff;
+                }
+                
+            
+            }
+        }
+    
+
+   

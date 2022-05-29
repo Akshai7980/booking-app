@@ -1,0 +1,102 @@
+page-cruise-details {
+    .image-div{
+        position: relative;
+        .inner-img-div{
+            height: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            .transfer-detail-div{
+                position: absolute;
+                padding: 5px;
+                color: white;
+                font-weight: 300;
+                bottom: 0;
+                .header-p{
+                    margin: 0;
+                    font-size: 16px;
+                }
+                .headers-p{
+                  margin: 0;
+                  font-size: 12px;
+              }
+          
+            }
+        }
+      }
+      .image-div::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+
+      }
+
+      .hotel-results{
+        border-bottom: 1px solid #cccccc;
+        padding-top: 5px;
+         .img-col {
+           // padding: 0;
+           max-height: 120px;
+           height: auto;
+           img {
+             height: 100px;
+             width: 100%;
+      
+           }
+         }
+ 
+         .detail-col {
+          align-self: center;
+          justify-content: center;
+          align-content: center; 
+           p {
+            padding: 0px;
+            font-weight: 500;
+            margin: 0;
+            // font-style: italic;
+            // span{
+            //   font-style: italic;
+            // }
+          }
+           .price-row {
+             text-align: center;
+             justify-content: flex-end;
+             padding: 5px 10px 10px 0;
+             p {
+               padding: 2px;
+               background:$background;
+               color: white;
+               font-weight: 500;
+               border-radius: 6px;
+               margin: 0;
+              //  font-style: italic;
+              //  span{
+              //    font-style: italic;
+              //  }
+             }
+           }
+         }
+       }
+
+       .item{
+        background-color: $background;
+        color: #fff;
+        ion-label{
+            white-space: normal;
+        }
+       
+        
+    }
+       .color_row:nth-child(even) {
+        background-color:$background;
+        color: #fff;
+    }
+        .color_row:nth-child(odd) {
+        background-color:#EFF8FF;
+        color: #000000;
+    }
+}

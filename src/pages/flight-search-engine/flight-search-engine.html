@@ -1,0 +1,158 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Flight Search</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <div class="search-div">
+     <ion-slides  #imageSlide class="image-slide"> 
+          <ion-slide *ngFor="let img of  superOffers">
+        <div class="deal-img" [style.background-image]=" 'url('+img.image+')'"></div> 
+          </ion-slide>
+     </ion-slides>  
+     
+    <div class="toggle-div">
+      <ion-row>
+        <ion-col col-6><button [ngClass]="flightWay==1?'selected':''" (click)="selectedButton(1)" ion-button clear>One
+            Way</button></ion-col>
+        <ion-col col-6> <button [ngClass]="flightWay==2?'selected':''" (click)="selectedButton(2)" ion-button clear>Round
+            Trip</button></ion-col>
+      </ion-row>
+    </div>
+  <div [hidden]="flightWay==3" class="single-round-way">
+    <ion-row class="all-from">
+      <ion-col col-5>
+        <div (click)="getFromAirport()" class="from-div">
+          <p class="label">From</p>
+          <p class="detail">{{fromCity.AirportCode}}</p>
+          <p class="detail">{{fromCity.City}}</p>
+        </div>
+      </ion-col>
+      <ion-col col-2 class="swap-div1">
+        <div  (click)="swap($event)"  class="swap-div">
+          <ion-icon name="custom-swap"></ion-icon>
+        </div>
+      </ion-col>
+      <ion-col col-5>
+        <div (click)="getToAirport()" class="to-div">
+          <p class="label">To</p>
+          <p class="detail">{{toCity.AirportCode}}</p>
+          <p class="detail">{{toCity.City}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    
+    <div class="date-div">
+      <ion-row [hidden]="flightWay==2">
+        <ion-col col-6 (click)="opensingleCalendar()" class="from-date">
+          <ion-row>  
+            <div>
+              <p class="label">Departure</p>
+              <p class="date">{{departDate|date:'EE'}}, {{departDate|date:'MMM'}} {{departDate|date:'dd'}}</p>
+            </div>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row [hidden]="flightWay==1">
+        <ion-col col-6 (click)="openCalendar()" class="from-date">
+          <ion-row>  
+            <div>
+              <p class="label">Departure</p>
+              <p class="date">{{departDate|date:'EE'}}, {{departDate|date:'MMM'}} {{departDate|date:'dd'}}</p>
+            </div>
+          </ion-row>
+        </ion-col>
+        <ion-col col-6 (click)="openCalendar()" class="to-date">
+          <ion-row>
+            <div>
+              <p class="label">Return</p>
+              <p class="date">{{returnDate|date:'EE'}}, {{returnDate|date:'MMM'}} {{returnDate|date:'dd'}}</p>
+            </div>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="extra-info">
+      <ion-row>
+        <ion-col (click)="travellerSelection()" class="traveller-col">
+          <p class="label">Travellers</p>
+          <p class="value">{{pad(totalTravellers,2)}}</p>
+        </ion-col>
+        <ion-col (click)="classSelection()" class="class-col">
+          <p class="label">Cabin Class</p>
+          <p class="value">{{flightClass}} Class</p>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+  <div [hidden]="flightWay!=3" class="multi-round-way">
+    <div class="journey-detail-div">
+      <ion-row class="label-row">
+        <ion-col>From</ion-col>
+        <ion-col>To</ion-col>
+        <ion-col>Date</ion-col>
+      </ion-row>
+      <ion-row class="date-detail" *ngFor="let dest of destinationDetail;let i =index">
+        <ion-col (click)="getFromMultiAirport(i)">
+          <ion-row class="main">{{dest.from.AirportCode}}</ion-row>
+          <ion-row class="sub">{{dest.from.City}}</ion-row>
+        </ion-col>
+        <ion-col (click)="getToMultyAirport(i)">
+          <ion-row class="main">{{dest.to.AirportCode}}</ion-row>
+          <ion-row class="sub">{{dest.to.City}}</ion-row>
+        </ion-col>
+        <ion-col (click)="selectJourneyDate(i)">
+          <ion-row class="main">{{dest.date|date:'dd MMM'}}</ion-row>
+          <ion-row class="sub">{{dest.date|date:'EEEE'}}</ion-row>
+        </ion-col>
+      </ion-row>
+      <div class="button-row">
+        <ion-row>
+          <ion-col><button (click)="addRow()" [disabled]="destinationDetail.length>=5" ion-button clear><div class="icon-div"><ion-icon name=custom-add></ion-icon></div> City</button></ion-col>
+          <ion-col style="text-align: end;" ><button (click)="removeRow()" [disabled]="destinationDetail.length<=1" ion-button clear><div class="icon-div"><ion-icon name=custom-delete></ion-icon></div> City</button></ion-col>
+        </ion-row>
+      </div>
+    </div>
+    <div class="extra-info">
+        <ion-row>
+          <ion-col (click)="travellerSelection()"  class="traveller-col">
+            <p class="label">Travellers</p>
+            <ion-row class="value">{{pad(totalTravellers,2)}}</ion-row>
+          </ion-col>
+          <ion-col (click)="classSelection()" class="class-col">
+            <p class="label">Cabin Class</p>
+            <p class="value">{{flightClass}} Class</p>
+          </ion-col>
+        </ion-row>
+      </div>
+  </div>
+  <ion-grid class="search-button">
+    <button ion-button block (click)="searchFlights()">Search</button>
+  </ion-grid>
+  <!-- <div (click)="searchFlights()" class="search-button">
+    <span>Search</span>
+  </div> -->
+</div>
+<ion-list>
+  <ion-item>
+    <ion-icon item-start name="custom-check-mark"></ion-icon>
+    <span>Choose the best place to explore</span>
+    <p>Search thousands of cheap flight offers to your favorite destinations around the world.</p>
+  </ion-item>
+  <ion-item>
+    <ion-icon item-start name="custom-check-mark"></ion-icon>
+    <span>Featured Flights</span>
+    <p>Book the best rated flights anywhere in the world.</p>
+  </ion-item>
+  <ion-item>
+    <ion-icon item-start name="custom-check-mark"></ion-icon>
+    <span>Easy Booking</span>
+    <p>Search, select and save - the fastest way to book your trip.</p>
+  </ion-item>
+  <ion-item>
+    <ion-icon item-start name="custom-check-mark"></ion-icon>
+    <span>Find cheap flights at {{addres.projectName}}</span>
+    <p>More than 100 airlines & travel wholesalers find best deals on airline tickets at {{addres.projectName}}</p>
+  </ion-item>
+</ion-list>
+</ion-content>

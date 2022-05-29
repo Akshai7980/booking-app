@@ -1,0 +1,175 @@
+add-flight-hotel-travels .search-bar-div {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  color: #4486ff;
+  font-size: 18px;
+  font-weight: 300;
+  z-index: 1;
+  background-color: #4486ff;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+add-flight-hotel-travels .search-bar-div ion-row .icon-col button {
+  color: white;
+  font-size: 12px;
+}
+
+add-flight-hotel-travels .search-bar-div ion-row .search-col {
+  padding: 5px 0;
+  color: white;
+  text-align: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+add-flight-hotel-travels .done-btn {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  background-color: #f3f3f3;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  bottom: 0;
+  z-index: 2;
+}
+
+add-flight-hotel-travels .done-btn span {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  z-index: 1;
+  background-color: #4082ff;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  top: 0px;
+  text-align: center;
+  left: 50%;
+  line-height: 55px;
+  text-transform: uppercase;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-header {
+  background: #4082ff !important;
+  padding: 5px !important;
+  color: white !important;
+  font-weight: 400 !important;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-header span {
+  display: inline-block;
+  width: 50%;
+  font-size: 14px;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-header .icon-span {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  vertical-align: middle;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  color: white;
+  width: 45%;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-content {
+  padding: 5px !important;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-content [no-border-bottom] {
+  border-bottom: 0 !important;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-content .detail-row {
+  border-bottom: 1px solid #dedede;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-content .detail-row .label p {
+  margin: 0;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-content .detail-row .label span {
+  color: #666;
+  font-size: 11px;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-content .detail-row .value {
+  display: flow-root;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-content .detail-row .value .icon-col {
+  padding: 0;
+  /* text-align: center; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-content .detail-row .value .icon-col button {
+  padding: 5px;
+  margin: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 1px solid;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-content .detail-row .value .value-col {
+  padding: 0;
+  /* text-align: center; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 18px;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-content ion-item {
+  padding-left: 5px !important;
+  font-size: 11px !important;
+  height: auto !important;
+  min-height: auto !important;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-content ion-item .label-ios {
+  margin: 0 !important;
+}
+
+add-flight-hotel-travels ion-content ion-card ion-card-content ion-item .select-ios {
+  padding: 0px 8px 0px 16px !important;
+}
+
+add-flight-hotel-travels ion-content .add-btn {
+  width: 100%;
+}
+
+add-flight-hotel-travels ion-content .add-btn span {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+/*# sourceMappingURL=add-flight-hotel-travels.css.map */

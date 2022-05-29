@@ -1,0 +1,26 @@
+[{
+  "category": "Domestic Flights",
+  "title": "Dubai Flights",
+  "description": "<font face='Sans serif,Comic Sans MS,Lucida'>Abu Dhabi - Dubai</font><br/><i>Weekend breaks | Affordable prices</i><br/>$ 24 ",
+  "image": "assets/imgs/hotDeals/domestic-flights.jpg"
+},{
+    "category": "International Flights",
+    "title": "Upto $ 20 Instant Off",
+    "description": "<font face='Sans serif,Comic Sans MS,Lucida'>New Year Sale</font><br/>Upto $ 20 Instant Off on International Flights",
+    "image": "assets/imgs/hotDeals/international-flights.jpg"
+  },{
+    "category": "Domestic Flights",
+    "title": "Weekend Trips",
+    "description": "<font face='Sans serif,Comic Sans MS,Lucida'>Upto 10% Instant off</font><br/>Enjoy Your weekend in Dubai to the fullest in affordable prices",
+    "image": "assets/imgs/hotDeals/flight+hotel.jpg"
+  },{
+    "category": "International Hotels",
+    "title": "Dubai Sale",
+    "description": "<font face='Sans serif,Comic Sans MS,Lucida'>Upto 25% off on Hotels</font><br/>Great hotel deals for Dubai. Book Now!",
+    "image": "assets/imgs/hotDeals/international-hotel.jpg"
+  },{
+    "category": "Domestic Hotels",
+    "title": "Greatest Hotel Sale",
+    "description": "<font face='Sans serif,Comic Sans MS,Lucida'>Upto 15% Instant off on Domestic Hotels</font><br/>Valid till Today Only",
+    "image": "assets/imgs/hotDeals/domestic-hotel.jpg"
+  }]

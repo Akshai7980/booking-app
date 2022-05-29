@@ -1,0 +1,60 @@
+page-more {
+    .header-div{
+        position: relative;
+        .bg-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .logo-img{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            width: 60%;
+            transform: translate(-50%, -50%)
+        }
+    }
+    
+
+    .my-detail {
+     
+        ion-row{
+            padding: 10px;
+            border-bottom: 1px solid #dedede61;
+            color: #666;
+            .icon-col{
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                ion-icon{
+                    font-size: 18px;
+                }
+                .forward-icon{
+                    font-size: 14px 
+                }
+                .toggle-ios{
+                    width: 40px;
+                    height: 24px;
+                    .toggle-inner{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+            .label-col{
+                display: grid;
+                align-items: center;
+                font-size: 14px;
+                font-weight: 400;
+            }
+        } 
+        .version-div{
+            ion-row{
+                justify-content: center;
+                color: #666;
+                border-bottom: 0;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,159 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons (click)="goBack()" right><button ion-button icon-only>
+      <ion-icon ios="ios-home" md="md-home"></ion-icon></button>
+        </ion-buttons>
+        <ion-title>Booking Voucher</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <div class="header-div">
+        <ion-row>
+            <ion-col class="detail-col">
+                <div class="image-div">
+                    <ion-icon name="custom-ticket"></ion-icon>
+                </div>
+                <div class="detail-div">
+                    <p>Booking Voucher</p>
+                    <span>Date: {{departDate|date:'EE'}}, {{departDate|date:'dd'}} {{departDate|date:'MMM'}} {{departDate|date:'yyyy'}}</span>
+                </div>
+            </ion-col>
+            <ion-col class="image-col" col-4>
+                <img src="assets/imgs/logo/logo.png">
+            </ion-col>
+        </ion-row>
+    </div>
+
+    <div class="header-div">
+        <ion-row>
+            <ion-col>
+                Hi {{adults[0].title+'. '+adults[0].firstName+' '+adults[0].lastName}}
+            </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let destInfo of bookingDetails">
+            <ion-col>Thank you for booking with The walz travels<br> The walz travels Reference number : {{destInfo.reference_no}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>Please print and take this booking confirmation with you to the airport. It may speed up your check-in experience.</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>For any concerns / queries related to this booking, please mention this reference number in all your future communications with us.</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let destInfo of bookingDetails">
+            <ion-col>Booking Status : {{destInfo.Status}}</ion-col>
+        </ion-row>
+    </div>
+
+    <div>
+        <ion-row class="heading-data">
+            <ion-col>Travellers Information:</ion-col>
+        </ion-row>
+        <div class="contant-data">
+            <ion-row *ngFor="let adult of adults;">
+                <ion-col>
+                    <div *ngIf="adult.firstName"></div>
+                    {{adult.firstName?adult.title+'. '+adult.firstName+' '+adult.lastName:'Adult'}}
+                </ion-col>
+            </ion-row>
+            <ion-row *ngFor="let child of children;">
+                <ion-col>
+                    <div *ngIf="child.firstName"></div>
+                    {{child.firstName?child.title+'. '+child.firstName+' '+child.lastName:'Child'}}
+                </ion-col>
+            </ion-row>
+            <ion-row *ngFor="let infant of infants;">
+                <ion-col>
+                    <div *ngIf="infant.firstName"></div>
+                    {{infant.firstName?infant.title+'. '+infant.firstName+' '+infant.lastName:'Infant'}}
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+
+    <ion-row class="heading-data">
+        <ion-col col-1.5>Booking Information</ion-col>
+    </ion-row>
+    <ion-row class="heading-data">
+        <ion-col col-4>PNR</ion-col>
+        <ion-col col-4>Reference Number</ion-col>
+        <ion-col col-4>Ticket Number</ion-col>
+    </ion-row>
+    <ion-row class="contant-data" *ngFor="let destInfo of bookingDetails">
+        <ion-col col-4>{{destInfo.PNR}}</ion-col>
+        <ion-col col-4>{{destInfo.reference_no}}</ion-col>
+        <ion-col col-4>{{destInfo.TktTimeLimit}}</ion-col>
+    </ion-row>
+    <!-- <ion-item>
+        <ion-badge item-end>Departure</ion-badge>
+      </ion-item> -->
+    <div>
+        <ion-row class="heading-data">
+            <ion-col col-1.5>Dep.</ion-col>
+            <ion-col col-3>From</ion-col>
+            <ion-col col-3>To</ion-col>
+            <ion-col col-1.5>Arv.</ion-col>
+            <ion-col col-1.5>Flight</ion-col>
+            <ion-col col-1>
+                <ion-icon item-start name="custom-luggage"></ion-icon>
+            </ion-col>
+        </ion-row>
+        <div *ngFor="let info of AllflightInfo; let i=index">
+            <ion-row class="contant-data" *ngFor="let infoDetail of info.OriginDestinationOption;let j=index">
+                <ion-col col-1.5><span>{{infoDetail.FlightSegment.DepartureDateTime | date:'HH:mm'}}
+            {{infoDetail.FlightSegment.DepartureDateTime|date:'MMM dd'}}</span></ion-col>
+                <ion-col col-3><span>{{infoDetail.FlightSegment.DepartureAirportLocationCode}} <br>
+            {{getAirportDetail(infoDetail.FlightSegment.DepartureAirportLocationCode)}} <br>
+            {{getAirportName(infoDetail.FlightSegment.DepartureAirportLocationCode)}} </span></ion-col>
+                <ion-col col-3><span>{{infoDetail.FlightSegment.ArrivalAirportLocationCode}} <br>
+            {{getAirportDetail(infoDetail.FlightSegment.ArrivalAirportLocationCode)}} <br>
+            {{getAirportName(infoDetail.FlightSegment.ArrivalAirportLocationCode)}} </span></ion-col>
+                <ion-col col-1.5><span>{{infoDetail.FlightSegment.ArrivalDateTime|date:'HH:mm'}}
+            {{infoDetail.FlightSegment.ArrivalDateTime|date:'MMM dd'}}</span></ion-col>
+                <ion-col col-1.5><span>{{infoDetail.FlightSegment.MarketingAirlineCode}}-{{infoDetail.FlightSegment.FlightNumber}}
+          </span> <img src="assets/imgs/airlines/{{infoDetail.FlightSegment.MarketingAirlineCode}}.gif"> <br> {{getAirlineName(infoDetail.FlightSegment.MarketingAirlineCode)}} </ion-col>
+                <ion-col col-1><span>{{infoDetail.FlightSegment.Baggage}}</span></ion-col>
+            </ion-row>
+        </div>
+    </div>
+    <ion-row class="heading-data">
+        <ion-col col-2.5>Pax</ion-col>
+        <ion-col col-2.5>Base Fare</ion-col>
+        <ion-col col-2.5>Tax & Charges</ion-col>
+        <ion-col col-2>Extra Baggage</ion-col>
+        <ion-col col-2.5>Total</ion-col>
+    </ion-row>
+    <ion-row class="contant-data">
+        <ion-col col-2.5>Adult x {{personDetail.adults}}, Child x {{personDetail.children}}, Infant x {{personDetail.infants}}</ion-col>
+        <ion-col col-2.5 *ngIf="FlightAllFix.b2c == 0">{{currencys.currency}} {{roundOff(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.BaseFare.Amount)}}</ion-col>
+        <ion-col col-2.5 *ngIf="FlightAllFix.b2c == 1">{{currencys.currency}} {{roundOffPer(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.BaseFare.Amount)}}</ion-col>
+
+        <ion-col col-2.5 *ngIf="FlightAllFix.b2c == 0">{{currencys.currency}} {{roundOff(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalTax.Amount)}}</ion-col>
+        <ion-col col-2.5 *ngIf="FlightAllFix.b2c == 1">{{currencys.currency}} {{roundOffPer(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalTax.Amount)}}</ion-col>
+
+        <ion-col col-2>{{currencys.currency}} 0</ion-col>
+        <ion-col col-2.5 *ngIf="FlightAllFix.b2c == 0">{{currencys.currency}} {{roundOff(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</ion-col>
+        <ion-col col-2.5 *ngIf="FlightAllFix.b2c == 1">{{currencys.currency}} {{roundOffPer(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</ion-col>
+
+    </ion-row>
+    <ion-row *ngIf="FlightAllFix.b2c == 0">
+        <ion-col>
+            <p text-right>NET PAYABLE :
+                <ion-badge>{{currencys.currency}} {{roundOff(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</ion-badge>
+            </p>
+        </ion-col>
+    </ion-row>
+    <ion-row *ngIf="FlightAllFix.b2c == 1">
+        <ion-col>
+            <p text-right>NET PAYABLE :
+                <ion-badge>{{currencys.currency}} {{roundOffPer(flightInfo.FareItinerary.AirItineraryFareInfo.ItinTotalFares.TotalFare.Amount)}}</ion-badge>
+            </p>
+        </ion-col>
+    </ion-row>
+    <div class="footer-div">
+        <p>Baggage Discount may apply base on frequest flyer status / Online Checking /Form of payment / etc.</p>
+        <ion-row>
+            <ion-col><p text-left>Phone : +44 (0) 2088431737</p></ion-col>
+            <ion-col><p text-right>Email : info@walztravels.com</p></ion-col>
+          </ion-row>
+    </div>
+</ion-content>

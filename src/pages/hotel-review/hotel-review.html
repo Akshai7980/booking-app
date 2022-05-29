@@ -1,0 +1,171 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Review Hotel</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+<ion-card class="hotel-detail-card">
+  <ion-card-content>
+    <ion-grid>
+     <p class="hotel-name">{{hotelContentDetail[0].name}}</p> 
+    <span class="hotel-address">{{hotelContentDetail[0].address}} {{hotelContentDetail[0].city}}</span>
+    <rating [(ngModel)]="hotelContentDetail[0].hotelRating" readOnly="true" max="5" emptyStarIconName="none"
+    halfStarIconName="star-half" starIconName="star" nullable="false" (ngModelChange)="onModelChange($event)">
+  </rating>
+  <ion-row class="date-row">
+    <ion-col class="check-in-col" col-5>
+        <p class="label">Check In</p>
+        <span>{{checkInDate|date:"EEE, MMM dd, yy"}}</span>
+    </ion-col>
+    <ion-col class="icon-col" col-2>
+      <ion-icon name="custom-night"></ion-icon>
+      <p>{{getNightStayDays}} Night</p>
+    </ion-col>
+    <ion-col class="check-out-col" col-5>
+        <p class="label">Check Out</p>
+        <span>{{checkoutDate|date:"EEE, MMM dd, yy"}}</span>
+    </ion-col>
+  </ion-row>
+  <div>
+    <span>{{rooms.length}} Room, {{totalAdultCount}} Adult{{totalChildCount>0?', '+totalChildCount+' Child':''}}</span>
+    <!-- <p>{{room.roomType}}</p> -->
+    <p>{{selectedOption.roomType}} -  <span [innerHTML]="selectedOption.boardType"></span></p> 
+    <div class="horizontal-scroll" *ngFor="let room of roomDetails">
+      <ion-chip *ngFor="let facilities of room.facilities">
+        <ion-label>{{facilities}}</ion-label>
+      </ion-chip>
+    </div>
+  </div>
+</ion-grid>
+  </ion-card-content>
+</ion-card>
+<ion-card class="cancellation-policy-card" *ngFor="let room of roomDetails"> 
+  <ion-card-header>
+    Cancellation-policy
+  </ion-card-header>
+  <ion-card-content>
+    <p> {{room.cancellationPolicy}}</p>
+  </ion-card-content>
+</ion-card>
+<ion-card class="traveller-detail">
+    <ion-card-header>
+      Guest Details
+    </ion-card-header>
+    <ion-card-content>
+      <div *ngFor="let room of guestDetails;let i=index">
+          <p class="sub-label">Room {{i+1}}</p>
+          <ion-row *ngFor="let adult of room.adults;let j=index" (click)="adultDetail(i,j)">
+              <ion-col class="icon-col" col-2>
+                <div>
+                  <ion-icon name="custom-adult"></ion-icon>
+                  <ion-icon *ngIf="adult.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+                </div>  
+              </ion-col>
+              <ion-col class="label-col">{{adult.firstName?adult.title+'. '+adult.firstName+' '+adult.lastName:'Adult'}}</ion-col>
+              <ion-col class="icon-col" col-2>
+                <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+              </ion-col>
+            </ion-row>
+            <ion-row *ngFor="let child of room.children;let j=index" (click)="childDetail(i,j)">
+              <ion-col class="icon-col" col-2>
+                <div>
+                  <ion-icon name="custom-child"></ion-icon>
+                  <ion-icon *ngIf="child.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+               </div>
+              </ion-col>
+              <ion-col class="label-col">{{child.firstName?child.title+'. '+child.firstName+' '+child.lastName:'Child'}}</ion-col>
+              <ion-col class="icon-col" col-2>
+                <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+              </ion-col>
+            </ion-row>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <!-- <form #form="ngForm" (ngSubmit)="proceed(form)" novalidate> -->
+  <ion-card class="contact-info">
+      <ion-card-header>
+        Contact Details
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label>Email</ion-label>
+          <ion-input  [(ngModel)]="contactDeatil.email" type="email" name="email" ></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col padding-right col-4>
+            <ion-item class="isd-item">
+              <ion-label>ISD</ion-label>
+              <ion-input  [(ngModel)]="contactDeatil.country_code" type="text" name="country_code" ></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label>Phone</ion-label>
+              <ion-input  [(ngModel)]="contactDeatil.mobile_no" type="number" name="mobile_no" ></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <ion-checkbox [(ngModel)]="contactDeatil.confirm" color="dark" checked="true"></ion-checkbox>
+          <ion-label>I confirm that I have read, understood and agree with the Booking Engine Terms & Conditions provided</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    
+    <!-- <ion-card class="contact-info">
+      <ion-card-header>
+        Pay with Stripe
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item>
+          <ion-label fixed>Card Number</ion-label>
+          <ion-input  [(ngModel)]="card.number" type="number"></ion-input>
+        </ion-item>
+        <ion-row>
+          <ion-col padding-right col-4>
+            <ion-item class="isd-item">
+              <ion-label fixed>MM</ion-label>
+              <ion-input  [(ngModel)]="card.expMonth" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label fixed>YY</ion-label>
+              <ion-input  [(ngModel)]="card.expYear" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label  fixed>CVC</ion-label>
+              <ion-input [(ngModel)]="card.cvc" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card> -->
+
+</ion-content>
+<div class="div-footer-flight" *ngIf="adminBalance">
+  <ion-row *ngIf="selectedOption.netPrice+hotelAllMarkup.b2c<adminBalance.amount || selectedOption.netPrice+hotelAllMarkup.b2c==adminBalance.amount">
+    <ion-col col-6 *ngIf="HotelFix.b2c == 0">
+      <p class="label-col">Total Amount</p>
+      <p class="detail-col">{{selectedOption.currency}} {{roundOff(selectedOption.netPrice+hotelAllMarkup.b2c)}}</p>
+    </ion-col>
+    
+    <ion-col col-6 *ngIf="HotelFix.b2c == 1">
+      <p class="label-col">Total Amount</p>
+      <p class="detail-col">{{selectedOption.currency}} {{roundOff((selectedOption.netPrice*hotelAllMarkup.b2c)/100+(selectedOption.netPrice))}}</p>
+    </ion-col>
+    <ion-col col-6 class="button-col">
+      <button ion-button color="danger" outline type="submit" [disabled]="isButtonDisable()" (click)="proceed()" >Book Now</button>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="selectedOption.netPrice+hotelAllMarkup.b2c>adminBalance.amount">
+    <ion-col>
+      <p class="label-col">Please contact Administrator!</p>
+    </ion-col>
+  </ion-row>
+</div>
+
+
+

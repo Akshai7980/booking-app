@@ -1,0 +1,453 @@
+.toolbar-background {
+  background: #143aa5;
+}
+
+.toolbar-title {
+  font-size: 16px;
+  color: #fff;
+  padding: 0 12px;
+  font-weight: 300;
+}
+
+.bar-button-default {
+  color: #fff;
+}
+
+ion-app {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+body {
+  background-color: #FFFFFF;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+.searchCountryNameModel .modal-wrapper {
+  position: absolute;
+  overflow: hidden;
+  max-width: 320px;
+  border-radius: 10px;
+  width: 90vw;
+  height: 70vh !important;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border: 0;
+  -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+  background-color: #fafafa;
+}
+
+.back-btn {
+  color: white;
+  padding: 0;
+  height: 24px;
+  width: auto;
+}
+
+.alert-ios .alert-head {
+  color: #062e4c;
+}
+
+.alert-ios [aria-checked=true] .alert-radio-inner {
+  border-color: #062e4c;
+  color: #062e4c;
+}
+
+.alert-ios [aria-checked=true] .alert-radio-label {
+  color: #062e4c;
+}
+
+.alert-ios .alert-button {
+  color: #062e4c !important;
+}
+
+.popover-ios .item-ios {
+  min-height: auto !important;
+  min-width: auto !important;
+}
+
+.flightAddTraveller .modal-wrapper {
+  background: white;
+  height: 200px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.payment .modal-wrapper {
+  background: white;
+  height: 400px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+ion-icon[class*="custom-"] {
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: 50% 50%;
+          mask-position: 50% 50%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  background: currentColor;
+  width: 1em;
+  height: 1em;
+}
+
+ion-icon[class*="custom-ship"] {
+  -webkit-mask-image: url(../assets/icon/ship.png);
+          mask-image: url(../assets/icon/ship.png);
+}
+
+ion-icon[class*="custom-cruise"] {
+  -webkit-mask-image: url(../assets/icon/head-cruise.png);
+          mask-image: url(../assets/icon/head-cruise.png);
+}
+
+ion-icon[class*="custom-rating"] {
+  -webkit-mask-image: url(../assets/icon/reating.png);
+          mask-image: url(../assets/icon/reating.png);
+}
+
+ion-icon[class*="custom-flight"] {
+  -webkit-mask-image: url(../assets/icon/plane.svg);
+          mask-image: url(../assets/icon/plane.svg);
+}
+
+ion-icon[class*="custom-flight4"] {
+  -webkit-mask-image: url(../assets/icon/flight.svg);
+          mask-image: url(../assets/icon/flight.svg);
+}
+
+ion-icon[class*="custom-leftback"] {
+  -webkit-mask-image: url(../assets/icon/left-arrow.svg);
+          mask-image: url(../assets/icon/left-arrow.svg);
+}
+
+ion-icon[class*="custom-fhotel"] {
+  -webkit-mask-image: url(../assets/icon/fhotel.svg);
+          mask-image: url(../assets/icon/fhotel.svg);
+}
+
+ion-icon[class*="custom-hotel"] {
+  -webkit-mask-image: url(../assets/icon/hotel.svg);
+          mask-image: url(../assets/icon/hotel.svg);
+}
+
+ion-icon[class*="custom-car"] {
+  -webkit-mask-image: url(../assets/icon/car.svg);
+          mask-image: url(../assets/icon/car.svg);
+}
+
+ion-icon[class*="custom-transfer"] {
+  -webkit-mask-image: url(../assets/icon/transfer.svg);
+          mask-image: url(../assets/icon/transfer.svg);
+}
+
+ion-icon[class*="custom-bus"] {
+  -webkit-mask-image: url(../assets/icon/bus.svg);
+          mask-image: url(../assets/icon/bus.svg);
+}
+
+ion-icon[class*="custom-activities"] {
+  -webkit-mask-image: url(../assets/icon/activities.svg);
+          mask-image: url(../assets/icon/activities.svg);
+}
+
+ion-icon[class*="custom-holidays"] {
+  -webkit-mask-image: url(../assets/icon/holidays.svg);
+          mask-image: url(../assets/icon/holidays.svg);
+}
+
+ion-icon[class*="custom-offer"] {
+  -webkit-mask-image: url(../assets/icon/offer.svg);
+          mask-image: url(../assets/icon/offer.svg);
+}
+
+ion-icon[class*="custom-blog"] {
+  -webkit-mask-image: url(../assets/icon/blog.svg);
+          mask-image: url(../assets/icon/blog.svg);
+}
+
+ion-icon[class*="custom-profile"] {
+  -webkit-mask-image: url(../assets/icon/profile.svg);
+          mask-image: url(../assets/icon/profile.svg);
+}
+
+ion-icon[class*="custom-booking"] {
+  -webkit-mask-image: url(../assets/icon/booking.svg);
+          mask-image: url(../assets/icon/booking.svg);
+}
+
+ion-icon[class*="custom-transaction"] {
+  -webkit-mask-image: url(../assets/icon/transaction.svg);
+          mask-image: url(../assets/icon/transaction.svg);
+}
+
+ion-icon[class*="custom-forward"] {
+  -webkit-mask-image: url(../assets/icon/forward.svg);
+          mask-image: url(../assets/icon/forward.svg);
+}
+
+ion-icon[class*="custom-list"] {
+  -webkit-mask-image: url(../assets/icon/list.svg);
+          mask-image: url(../assets/icon/list.svg);
+}
+
+ion-icon[class*="custom-download"] {
+  -webkit-mask-image: url(../assets/icon/download.svg);
+          mask-image: url(../assets/icon/download.svg);
+}
+
+ion-icon[class*="custom-cancel"] {
+  -webkit-mask-image: url(../assets/icon/cancel.svg);
+          mask-image: url(../assets/icon/cancel.svg);
+}
+
+ion-icon[class*="custom-about"] {
+  -webkit-mask-image: url(../assets/icon/about.svg);
+          mask-image: url(../assets/icon/about.svg);
+}
+
+ion-icon[class*="custom-help"] {
+  -webkit-mask-image: url(../assets/icon/help.svg);
+          mask-image: url(../assets/icon/help.svg);
+}
+
+ion-icon[class*="custom-notification"] {
+  -webkit-mask-image: url(../assets/icon/notification.svg);
+          mask-image: url(../assets/icon/notification.svg);
+}
+
+ion-icon[class*="custom-privacy"] {
+  -webkit-mask-image: url(../assets/icon/privacy.svg);
+          mask-image: url(../assets/icon/privacy.svg);
+}
+
+ion-icon[class*="custom-share"] {
+  -webkit-mask-image: url(../assets/icon/share.svg);
+          mask-image: url(../assets/icon/share.svg);
+}
+
+ion-icon[class*="custom-star"] {
+  -webkit-mask-image: url(../assets/icon/star.svg);
+          mask-image: url(../assets/icon/star.svg);
+}
+
+ion-icon[class*="custom-logo"] {
+  -webkit-mask-image: url(../assets/favicon.ico);
+          mask-image: url(../assets/favicon.ico);
+}
+
+ion-icon[class*="custom-back"] {
+  -webkit-mask-image: url(../assets/icon/back.svg);
+          mask-image: url(../assets/icon/back.svg);
+}
+
+ion-icon[class*="custom-camera"] {
+  -webkit-mask-image: url(../assets/icon/camera.svg);
+          mask-image: url(../assets/icon/camera.svg);
+}
+
+ion-icon[class*="custom-eye"] {
+  -webkit-mask-image: url(../assets/icon/eye.svg);
+          mask-image: url(../assets/icon/eye.svg);
+}
+
+ion-icon[class*="custom-eye-off"] {
+  -webkit-mask-image: url(../assets/icon/eye-off.svg);
+          mask-image: url(../assets/icon/eye-off.svg);
+}
+
+ion-icon[class*="custom-email"] {
+  -webkit-mask-image: url(../assets/icon/email.svg);
+          mask-image: url(../assets/icon/email.svg);
+}
+
+ion-icon[class*="custom-key"] {
+  -webkit-mask-image: url(../assets/icon/key.svg);
+          mask-image: url(../assets/icon/key.svg);
+}
+
+ion-icon[class*="custom-mobile-transaction"] {
+  -webkit-mask-image: url(../assets/icon/mobile-transaction.svg);
+          mask-image: url(../assets/icon/mobile-transaction.svg);
+}
+
+ion-icon[class*="custom-phone"] {
+  -webkit-mask-image: url(../assets/icon/phone.svg);
+          mask-image: url(../assets/icon/phone.svg);
+}
+
+ion-icon[class*="custom-map"] {
+  -webkit-mask-image: url(../assets/icon/map.svg);
+          mask-image: url(../assets/icon/map.svg);
+}
+
+ion-icon[class*="custom-whatsapp"] {
+  -webkit-mask-image: url(../assets/icon/whatsapp.svg);
+          mask-image: url(../assets/icon/whatsapp.svg);
+}
+
+ion-icon[class*="custom-ticket"] {
+  -webkit-mask-image: url(../assets/icon/ticket.svg);
+          mask-image: url(../assets/icon/ticket.svg);
+}
+
+ion-icon[class*="custom-adult"] {
+  -webkit-mask-image: url(../assets/icon/adult.svg);
+          mask-image: url(../assets/icon/adult.svg);
+}
+
+ion-icon[class*="custom-child"] {
+  -webkit-mask-image: url(../assets/icon/child.svg);
+          mask-image: url(../assets/icon/child.svg);
+}
+
+ion-icon[class*="custom-swap"] {
+  -webkit-mask-image: url(../assets/icon/swap.svg);
+          mask-image: url(../assets/icon/swap.svg);
+}
+
+ion-icon[class*="custom-add"] {
+  -webkit-mask-image: url(../assets/icon/add.svg);
+          mask-image: url(../assets/icon/add.svg);
+}
+
+ion-icon[class*="custom-delete"] {
+  -webkit-mask-image: url(../assets/icon/delete.svg);
+          mask-image: url(../assets/icon/delete.svg);
+}
+
+ion-icon[class*="custom-night"] {
+  -webkit-mask-image: url(../assets/night.png);
+          mask-image: url(../assets/night.png);
+}
+
+ion-icon[class*="custom-close"] {
+  -webkit-mask-image: url(../assets/icon/close.svg);
+          mask-image: url(../assets/icon/close.svg);
+}
+
+ion-icon[class*="custom-trash"] {
+  -webkit-mask-image: url(../assets/icon/trash.svg);
+          mask-image: url(../assets/icon/trash.svg);
+}
+
+ion-icon[class*="custom-hotel-city"] {
+  -webkit-mask-image: url(../assets/icon/hotel-city.svg);
+          mask-image: url(../assets/icon/hotel-city.svg);
+}
+
+ion-icon[class*="custom-aeroplane"] {
+  -webkit-mask-image: url(../assets/icon/aeroplane.svg);
+          mask-image: url(../assets/icon/aeroplane.svg);
+}
+
+ion-icon[class*="custom-ascending"] {
+  -webkit-mask-image: url(../assets/icon/ascending.svg);
+          mask-image: url(../assets/icon/ascending.svg);
+}
+
+ion-icon[class*="custom-descending"] {
+  -webkit-mask-image: url(../assets/icon/descending.svg);
+          mask-image: url(../assets/icon/descending.svg);
+}
+
+ion-icon[class*="custom-slim-right"] {
+  -webkit-mask-image: url(../assets/icon/slim-right.svg);
+          mask-image: url(../assets/icon/slim-right.svg);
+}
+
+ion-icon[class*="custom-dot"] {
+  -webkit-mask-image: url(../assets/icon/dot.svg);
+          mask-image: url(../assets/icon/dot.svg);
+}
+
+ion-icon[class*="custom-filter"] {
+  -webkit-mask-image: url(../assets/icon/filter.svg);
+          mask-image: url(../assets/icon/filter.svg);
+}
+
+ion-icon[class*="custom-early-morning"] {
+  -webkit-mask-image: url(../assets/early-morning.png);
+          mask-image: url(../assets/early-morning.png);
+}
+
+ion-icon[class*="custom-morning"] {
+  -webkit-mask-image: url(../assets/day.png);
+          mask-image: url(../assets/day.png);
+}
+
+ion-icon[class*="custom-evening"] {
+  -webkit-mask-image: url(../assets/evening.png);
+          mask-image: url(../assets/evening.png);
+}
+
+ion-icon[class*="custom-refund"] {
+  -webkit-mask-image: url(../assets/icon/refund.svg);
+          mask-image: url(../assets/icon/refund.svg);
+}
+
+ion-icon[class*="custom-luggage"] {
+  -webkit-mask-image: url(../assets/icon/luggage.svg);
+          mask-image: url(../assets/icon/luggage.svg);
+}
+
+ion-icon[class*="custom-infant"] {
+  -webkit-mask-image: url(../assets/icon/infant.svg);
+          mask-image: url(../assets/icon/infant.svg);
+}
+
+ion-icon[class*="custom-check-mark"] {
+  -webkit-mask-image: url(../assets/icon/check-mark.svg);
+          mask-image: url(../assets/icon/check-mark.svg);
+}
+
+ion-icon[class*="custom-search"] {
+  -webkit-mask-image: url(../assets/icon/search.svg);
+          mask-image: url(../assets/icon/search.svg);
+}
+
+ion-icon[class*="custom-car-door"] {
+  -webkit-mask-image: url(../assets/icon/car-door.svg);
+          mask-image: url(../assets/icon/car-door.svg);
+}
+
+ion-icon[class*="custom-gas-station"] {
+  -webkit-mask-image: url(../assets/icon/gas-station.svg);
+          mask-image: url(../assets/icon/gas-station.svg);
+}
+
+ion-icon[class*="custom-up-arrow"] {
+  -webkit-mask-image: url(../assets/icon/up-arrow.svg);
+          mask-image: url(../assets/icon/up-arrow.svg);
+}
+
+ion-icon[class*="custom-down-arrow"] {
+  -webkit-mask-image: url(../assets/icon/down-arrow.svg);
+          mask-image: url(../assets/icon/down-arrow.svg);
+}
+
+ion-icon[class*="custom-sight-seeing"] {
+  -webkit-mask-image: url(../assets/icon/sight-seeing.svg);
+          mask-image: url(../assets/icon/sight-seeing.svg);
+}
+
+ion-icon[class*="custom-time"] {
+  -webkit-mask-image: url(../assets/icon/time.svg);
+          mask-image: url(../assets/icon/time.svg);
+}
+
+ion-icon[class*="custom-tours"] {
+  -webkit-mask-image: url(../assets/icon/tours.svg);
+          mask-image: url(../assets/icon/tours.svg);
+}
+/*# sourceMappingURL=app.css.map */

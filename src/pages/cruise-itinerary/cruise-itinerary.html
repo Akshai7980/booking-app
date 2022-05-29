@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cruise Itinerary</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<!-- <div *ngFor="let result of results">
+  <ion-row>
+    <ion-col col-12>
+      <p> {{result.port_name}} </p>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>
+      <span>Arrives</span>
+    </ion-col>
+    <ion-col col-6>
+      <span>Departs</span>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-6>
+      <span>{{result.arrives_on}}</span>
+    </ion-col>
+    <ion-col col-6>
+      <span>{{result.departs_on}}</span>
+    </ion-col>
+  </ion-row>
+</div> -->
+
+<ion-row class="color_row">
+  <ion-col><p>Port/Location</p></ion-col>
+  <ion-col><p>Arrival</p></ion-col>
+  <ion-col><p>Departure</p></ion-col>
+</ion-row>
+<ion-row class="color_row" *ngFor="let result of results">
+  <ion-col><span>{{result.port_name}}</span></ion-col>
+  <ion-col><span>{{result.arrives_on}}</span></ion-col>
+  <ion-col><span>{{result.departs_on}}</span></ion-col>
+</ion-row>
+</ion-content>

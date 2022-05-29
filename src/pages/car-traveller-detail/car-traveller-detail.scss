@@ -1,0 +1,211 @@
+page-car-traveller-detail {
+  .scroll-content {
+    overflow-y: auto !important;
+    margin-top: 45px;
+    margin-bottom: 55px;
+    padding-top: 0 !important;
+  }
+
+  ion-content {
+    .image-div {
+
+      position: relative;
+      padding-top: 30px;
+  
+      .inner-img-div {
+        height: 200px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+  
+        .transfer-detail-div {
+          position: absolute;
+          padding: 5px;
+          color: white;
+          font-weight: 300;
+          bottom: 0;
+  
+          .header-p {
+            margin: 0;
+            font-size: 18px;
+          }
+  
+          ion-row {
+            ion-col {
+              padding: 0;
+              display: flex;
+              font-size: 15px;
+              font-style: italic;
+              align-items: center;
+  
+              ion-icon {
+                margin-right: 3px;
+              }
+            }
+          }
+  
+          .travel-time-p {
+            margin: 0;
+            font-size: 15px;
+            font-style: italic;
+  
+            span {
+              font-size: 13px;
+            }
+          }
+        }
+  
+       
+      }
+    }
+  
+    .image-div::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+  
+    }
+  
+    ion-card {
+      border-radius: 5px !important;
+      margin: 10px 5px !important;
+      width: calc(100% - 10px) !important;
+      
+      ion-card-header{
+        background: $background;
+        color: #fff!important;
+      }
+      ion-card-content {
+        padding: 5px !important;
+
+        .button-row {
+          justify-content: center;
+          padding-top: 20px;
+
+          button {
+            width: 90%;
+          }
+        }
+
+        .title-radio {
+          font-weight: 400;
+          font-size: 13px;
+          padding-top: 5px;
+
+          .radio-label {
+            display: inline-block;
+            margin: auto;
+            padding-left: 5px;
+          }
+
+          ion-col {
+            align-self: center;
+            display: flex;
+          }
+
+          .radio .radio-icon {
+            border-color: gray;
+            border: 1px solid gray;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+          }
+
+          .radio .radio-checked.radio-icon {
+            border-color: #006fd2 !important;
+            border: 1px solid #006fd2 !important;
+          }
+
+          .radio .radio-checked .radio-inner {
+            left: 3px !important;
+            top: 3px !important;
+            position: absolute;
+            width: 12px !important;
+            height: 12px !important;
+            border-radius: 50% !important;
+            border-width: 0 !important;
+            background: #006fd2;
+          }
+        }
+
+        ion-item {
+          padding: 0 !important;
+          background-color: #EBF6FF !important;
+          margin-top: 10px !important;
+
+          .item-inner {
+            border-bottom: 0;
+          }
+
+          ion-label {
+            // padding-left: 5px;
+            font-size: 13px;
+            color: #333;
+          }
+
+          .select-text {
+            // text-align: end;
+            // text-align: end;
+            color: #000;
+            font-size: 13px;
+          }
+
+         
+
+        }
+      }
+    }
+  }
+
+
+
+ 
+
+}
+
+.div-footer-flight {
+  background-color:$background;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  box-shadow: 0px 1px 1px 1px #ccc;
+
+  ion-col {
+  padding: 10px;
+    .label-col {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 300;
+      color: white;
+      margin: 0;
+    }
+
+    .detail-col {
+
+      font-size: 24px;
+      font-weight: 600;
+      color: white;
+      margin: 0;
+    }
+   
+
+  
+  }
+  .button-col{
+    align-self: center;
+    justify-content: center;
+    align-content: center; 
+    text-align: end;
+    button{
+      color: white;
+      border-color: #ffffff;
+    }
+  }
+}

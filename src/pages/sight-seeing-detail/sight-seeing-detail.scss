@@ -1,0 +1,236 @@
+page-sight-seeing-detail {
+    .scroll-content {
+        overflow-y: auto !important;
+        margin-top: 45px;
+        margin-bottom: 70px;
+        padding-top: 0 !important;
+      }
+    
+      .image-div {
+        width: 100%;
+        height: 200px;
+        img {
+         //opacity: 0.7;
+          width: 100%;
+          height: 100%;
+        }
+    
+        .slider-num-div {
+          width: min-content;
+          height: min-content;
+          padding: 0px;
+          border-radius: 0px;
+          font-size: 11px;
+          font-style: italic;
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          /* background: antiquewhite; */
+          background-color:  $background;
+          color: #fff;
+          z-index: 5;
+          min-width: 30px;
+          max-height: 25px;
+        }
+      }
+
+      .description-card{
+        ion-card-header{
+            padding: 5px 8px;
+            background: $background;
+            color: white;
+            font-weight: 300;
+            font-size: 14px;
+        }
+        ion-card-content{
+            padding: 8px;
+            p{
+                font-size: 11px;
+                font-weight: 100;
+                color: #333;
+            }
+        }
+      }
+
+      .traveller-detail {
+  
+
+        ion-card-header {
+          color: white;
+          background:  $background;
+          font-weight: 300;
+          font-size: 14px;
+          padding: 5px 8px;
+    
+        }
+    
+        ion-card-content {
+          padding: 0;
+    
+          .sub-label {
+            padding-left: 5px;
+            color: #333;
+          }
+    
+          ion-row {
+            padding: 5px;
+            border-bottom: 1px solid #dedede61;
+            color: #666;
+    
+            .icon-col {
+              display: grid;
+              justify-content: center;
+              align-items: center;
+    
+              ion-icon {
+                font-size: 25px;
+              }
+    
+              .forward-icon {
+                font-size: 14px
+              }
+    
+              div {
+                position: relative;
+    
+                .check-icon {
+                  position: absolute;
+                  top: -5px;
+                  font-size: 12px;
+                  color:  #D90F16;
+                  right: -10px;
+                }
+              }
+            }
+    
+            .label-col {
+              display: grid;
+              align-items: center;
+              font-size: 14px;
+              font-weight: 400;
+            }
+          }
+    
+    
+        }
+    
+      }
+
+      .contact-info {
+
+        ion-card-header {
+          color: white;
+          background:  $background;
+          font-weight: 300;
+          font-size: 14px;
+          padding: 5px 8px;
+    
+        }
+    
+        ion-card-content {
+          padding: 8px;
+    
+          [padding-right] {
+            padding-right: 10px;
+          }
+    
+          ion-col {
+            padding: 0;
+    
+            ion-label {
+              width: fit-content;
+              min-width: auto;
+              max-width: fit-content;
+            }
+    
+            ion-input {
+              .text-input {
+                margin-left: 0;
+                width: 100%;
+              }
+            }
+    
+            // padding-right: 10px;
+          }
+    
+          ion-item {
+            padding: 0 !important;
+            background-color: #EBF6FF !important;
+            margin-top: 10px !important;
+    
+            .icon-btn {
+              font-size: 16px;
+              color: #D90F16;
+            }
+    
+            .item-inner {
+              border-bottom: 0;
+            }
+    
+            ion-label {
+              padding-left: 5px;
+              font-size: 13px;
+              color: #333;
+              width: fit-content;
+              min-width: auto;
+              max-width: fit-content;
+              white-space: normal;
+            }
+    
+            ion-input {
+    
+              .text-input {
+                text-align: end;
+                text-align: end;
+                color: #000;
+                font-size: 13px;
+                margin-left: 0;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+}
+.div-footer-flight {
+  background-color:$background;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  box-shadow: 0px 1px 1px 1px #ccc;
+
+  ion-col {
+  padding: 10px;
+    .label-col {
+      text-transform: uppercase;
+      font-size: 14px;
+      font-weight: 300;
+      color: white;
+      margin: 0;
+    }
+
+    .detail-col {
+
+      font-size: 24px;
+      font-weight: 600;
+      color: white;
+      margin: 0;
+    }
+   
+
+  
+  }
+  .button-col{
+    align-self: center;
+    justify-content: center;
+    align-content: center; 
+    text-align: end;
+    button{
+      color: white;
+      border-color: #ffffff;
+    }
+  }
+}

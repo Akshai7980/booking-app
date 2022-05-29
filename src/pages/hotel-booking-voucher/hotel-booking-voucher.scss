@@ -1,0 +1,246 @@
+page-hotel-booking-voucher {
+
+  .scroll-content {
+    overflow-y: auto !important;
+  }
+  ion-content {
+    ion-card {
+      width: calc(100% - 10px) !important;
+      margin: 5px 5px !important;
+      ion-card-content {
+        padding: 10px !important;
+        
+        .header-div {
+          border-bottom: 1px dashed #dedede;
+          padding: 10px 0;
+          .detail-col {
+            padding: 0;
+            display: flex;
+            .image-div {
+              display: inline-block;
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              background: $background;
+              position: relative;
+              ion-icon {
+                left: 50%;
+                top: 50%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                color: white;
+                font-size: 27px;
+              }
+            }
+
+            .detail-div {
+              display: inline-block;
+              padding-left: 5px;
+              p {
+                text-transform: uppercase;
+                color: black;
+                font-weight: 300;
+                font-size: 14px;
+                margin: 0;
+              }
+              span {
+                font-weight: 400;
+                font-size: 10px;
+                font-style: italic;
+              }
+            }
+          }
+          .image-col {
+            padding: 0;
+            display: grid;
+            align-self: center;
+          }
+        }
+
+        .reservation{
+          background: #cccccc;
+          .details{
+            font-size: 10px;
+          }
+          .Name{
+            p{
+              margin: 0;
+              font-size: 12px;
+              font-weight: 500;
+            }
+            span{
+              font-size: 10px;
+            }
+          }
+          .email{
+            p{
+              margin: 0;
+              font-size: 12px;
+              font-weight: 500;
+            }
+            span{
+              font-size: 10px;
+            }
+          }
+          .refere{
+            font-size: 10px;
+          }
+        }
+       
+          .flight-info {
+            .label {
+              font-size: 12px;
+              color: #666;
+              font-weight: 400;
+              padding: 5px 0;
+              text-align: start;
+              display: grid;
+              align-content: center;
+            }
+            .value {
+              font-size: 11px;
+              font-weight: 400;
+              padding: 5px 0;
+              text-align: end;
+            }
+          }
+
+          .room-info {
+            ion-card {
+              margin: 5px 0 !important;
+              width: 100% !important;
+              ion-card-header {
+                padding: 5px;
+                color: white;
+                background: $background;
+                font-weight: 300;
+                font-size: 12px;
+              }
+              ion-card-content {
+                //padding: 0 5px !important;
+                border: 1px solid $background;
+                [item-right] {
+                  text-align: end;
+                  font-size: 12px;
+                }
+                .room-heder{
+                  color: white;
+                  background: $background;
+                  font-weight: 300;
+                  font-size: 12px;
+                }
+                ion-row {
+                  font-size: 12px;
+                  font-weight: 400;
+                  padding: 5px 0;
+                }
+              }
+            }
+          }
+        
+
+        .guest-info {
+          border-bottom: 1px dashed #dedede;
+          padding: 10px 0;
+          ion-card {
+            margin: 5px 0 !important;
+            width: 100% !important;
+            ion-card-header {
+              padding: 5px;
+              color: white;
+              background: $background;
+              font-weight: 300;
+              font-size: 12px;
+            }
+            ion-card-content {
+              padding: 0 5px !important;
+              border: 1px solid $background;
+              ion-row {
+                font-size: 12px;
+                font-weight: 400;
+                padding: 5px 0;
+                ion-col {
+                  padding: 0;
+                  display: grid;
+                  align-self: center;
+                  color: #666;
+                }
+              }
+            }
+          }
+        }
+
+        .cancellation-policy {
+          border-bottom: 1px dashed #dedede;
+          padding: 10px 0;
+          ion-card {
+            margin: 5px 0 !important;
+            width: 100% !important;
+            ion-card-header {
+              padding: 5px;
+              color: white;
+              background: $background;
+              font-weight: 300;
+              font-size: 13px;
+            }
+            ion-card-content {
+              padding: 0 5px !important;
+              border: 1px solid $background;
+              p {
+                color: black;
+              }
+              span {
+                color: #666;
+                font-size: 11px;
+                font-weight: 100;
+              }
+            }
+          }
+        }
+
+        .payment-info {
+          border-bottom: 1px dashed #dedede;
+          padding: 10px 0;
+          ion-row {
+            display: block;
+            position: relative;
+          }
+          .label {
+            font-size: 13px;
+            color: #666;
+            font-weight: 400;
+            /* padding: 5px 0; */
+            text-align: start;
+            display: inline-flex;
+          }
+          .value {
+            font-size: 11px;
+            font-weight: 400;
+            /* padding: 5px 0; */
+            text-align: end;
+            display: inline-flex;
+            right: 0;
+            position: absolute;
+            color: #666;
+          }
+          .net-value {
+            color: red;
+          }
+        }
+
+        .footer-div {
+          padding: 10px 0 0;
+          p {
+            font-size: 9px;
+          }
+          [text-right] {
+            text-align: end !important;
+          }
+          ion-col {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+}

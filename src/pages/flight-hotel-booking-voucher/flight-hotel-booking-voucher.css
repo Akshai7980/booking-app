@@ -1,0 +1,83 @@
+page-flight-hotel-booking-voucher .scroll-content {
+  overflow-y: auto !important;
+}
+
+page-flight-hotel-booking-voucher ion-content .heading-data {
+  background: #ff9a13;
+  color: #ffffff;
+  font-weight: 500;
+  font-family: 'Times New Roman';
+}
+
+page-flight-hotel-booking-voucher ion-content .contant-data {
+  border-bottom: 1px solid #ff9a13;
+}
+
+page-flight-hotel-booking-voucher ion-content .header-div {
+  border-bottom: 1px solid #ff9a13;
+  padding: 5px;
+}
+
+page-flight-hotel-booking-voucher ion-content .header-div .detail-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+page-flight-hotel-booking-voucher ion-content .header-div .detail-col .image-div {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ff9a13;
+  position: relative;
+}
+
+page-flight-hotel-booking-voucher ion-content .header-div .detail-col .image-div ion-icon {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  font-size: 27px;
+}
+
+page-flight-hotel-booking-voucher ion-content .header-div .detail-col .detail-div {
+  display: inline-block;
+  padding-left: 5px;
+}
+
+page-flight-hotel-booking-voucher ion-content .header-div .detail-col .detail-div p {
+  text-transform: uppercase;
+  color: black;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+page-flight-hotel-booking-voucher ion-content .header-div .detail-col .detail-div span {
+  font-weight: 400;
+  font-size: 12px;
+  font-style: italic;
+}
+
+page-flight-hotel-booking-voucher ion-content .header-div .image-col {
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+
+page-flight-hotel-booking-voucher ion-content .footer-div {
+  padding: 5px;
+}
+
+page-flight-hotel-booking-voucher ion-content .footer-div p {
+  font-size: 9px;
+}
+
+page-flight-hotel-booking-voucher ion-content .footer-div [text-right] {
+  text-align: end !important;
+}
+/*# sourceMappingURL=flight-hotel-booking-voucher.css.map */

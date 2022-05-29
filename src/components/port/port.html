@@ -1,0 +1,16 @@
+<!-- Generated template for the PortComponent component -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-searchbar placeholder="Enter Country Name" (ionChange)='onChange($event._value)'></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row class="country-row" *ngFor="let country of countries" (click)="selectCountry(country)">
+    <ion-col class="icon-col" col-2>
+      <ion-icon ios="ios-flag" md="md-flag"></ion-icon>
+    </ion-col>
+    <ion-col col-3 class="code-col">({{country.unNum}})</ion-col>
+    <ion-col class="name-col">{{country.name}}</ion-col>
+  </ion-row>
+</ion-content>
+

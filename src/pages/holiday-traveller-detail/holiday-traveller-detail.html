@@ -1,0 +1,163 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Traveller Details</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+<ion-card class="total-traveller-card" (click)="selectTravellers()">
+  <ion-card-content>
+    <ion-row>
+      <ion-col col-10>  <p> {{personDetail.adults}} Adults, {{personDetail.children}} Children, {{personDetail.infants}} Infants</p></ion-col>
+      <ion-col class="icon-col" col-2>
+          <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+        </ion-col>
+    </ion-row>
+  
+  </ion-card-content>
+</ion-card>
+
+<ion-card class="traveller-detail">
+    <ion-card-header>
+      Traveller Details
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-row *ngFor="let adult of adults; let i=index" (click)="addAdultTravellerDetail(adult,i)">
+        <ion-col class="icon-col" col-2>
+          <div>
+            <ion-icon name="custom-adult"></ion-icon>
+            <ion-icon *ngIf="adult.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+          </div>
+
+        </ion-col>
+        <ion-col class="label-col">{{adult.firstName?adult.title+'. '+adult.firstName+' '+adult.lastName:'Adult'}}</ion-col>
+        <ion-col class="icon-col" col-2>
+          <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let child of children; let i=index" (click)="addChildTravellerDetail(child,i)">
+        <ion-col class="icon-col" col-2>
+          <div>
+            <ion-icon name="custom-child"></ion-icon>
+            <ion-icon *ngIf="child.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+          </div>
+
+        </ion-col>
+        <ion-col class="label-col">{{child.firstName?child.title+'. '+child.firstName+' '+child.lastName:'Child'}}</ion-col>
+        <ion-col class="icon-col" col-2>
+          <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let infant of infants; let i=index" (click)="addInfantTravellerDetail(infant,i)">
+        <ion-col class="icon-col" col-2>
+          <div>
+            <ion-icon name="custom-infant"></ion-icon>
+            <ion-icon *ngIf="infant.firstName" class="check-icon" name="custom-check-mark"></ion-icon>
+          </div>
+
+        </ion-col>
+        <ion-col class="label-col">{{infant.firstName?infant.title+'. '+infant.firstName+' '+infant.lastName:'Infant'}}</ion-col>
+        <ion-col class="icon-col" col-2>
+          <ion-icon class="forward-icon" name="custom-forward"></ion-icon>
+        </ion-col>
+      </ion-row>
+
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="contact-info">
+    <ion-card-header>
+      Contact Details
+    </ion-card-header>
+    <ion-card-content>
+      <form #form="ngForm" (ngSubmit)="proceed(form)" novalidate>
+        <!-- <ion-item>
+            <ion-label>Address</ion-label>
+            <ion-input [(ngModel)]="contactDeatil.address" type="text" name="address"></ion-input>
+          </ion-item> -->
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input readOnly [(ngModel)]="contactDeatil.email" type="email" name="email" ></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col padding-right col-4>
+          <ion-item class="isd-item">
+            <ion-label>ISD</ion-label>
+            <ion-input readOnly [(ngModel)]="contactDeatil.country_code" type="text" name="country_code" ></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label>Phone</ion-label>
+            <ion-input readOnly [(ngModel)]="contactDeatil.mobile_no" type="number" name="mobile_no" ></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <!-- <ion-item (click)="getTravelDate()">
+        <ion-label>Travel Date *</ion-label>
+        <ion-icon item-end name="custom-down-arrow"></ion-icon>
+        <ion-input readonly [(ngModel)]="contactDeatil.travel_date" (ngModelChange)="contactDeatil.travel_date=$event" type="text" name="travel_date" ></ion-input>
+      </ion-item> -->
+      <ion-item >
+        <ion-label>Past Passenger (optional)</ion-label>
+        <ion-input [(ngModel)]="contactDeatil.past_passenger" type="number" name="past_passenger" ></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-label>Previous Booking Reference (optional) </ion-label>
+        <ion-input [(ngModel)]="contactDeatil.pre_booking_ref" type="text" name="pre_booking_ref" ></ion-input>
+      </ion-item>
+      <ion-item >
+          <ion-label>Pre-existing medical conditions *</ion-label>
+          <ion-input [(ngModel)]="contactDeatil.pre_ex_med_cond" type="text" name="pre_ex_med_cond" ></ion-input>
+        </ion-item>
+
+        </form>
+    </ion-card-content>
+  </ion-card>
+  <!-- <ion-card class="contact-info">
+    <ion-card-header>
+      Pay with Stripe
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label fixed>Card Number</ion-label>
+        <ion-input  [(ngModel)]="card.number" type="number"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col padding-right col-4>
+          <ion-item class="isd-item">
+            <ion-label fixed>MM</ion-label>
+            <ion-input  [(ngModel)]="card.expMonth" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label fixed>YY</ion-label>sssssssssss
+            <ion-input  [(ngModel)]="card.expYear" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label  fixed>CVC</ion-label>
+            <ion-input [(ngModel)]="card.cvc" type="number"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card> -->
+</ion-content>
+<div class="div-footer-flight">
+    <ion-row>
+      <ion-col col-6>
+        <p class="label-col">Total Amount</p>
+        <p class="detail-col">{{currency.currency}} {{roundOff(holiday.total_price*personDetail.adults/currency.value)}}</p>
+      </ion-col>
+      <ion-col col-6 class="button-col">
+        <button ion-button color="danger" outline type="submit"[disabled]="isButtonDisable()"   (click)="proceed()"  >Book Now</button>
+      </ion-col>
+    </ion-row>
+  </div>
+
+
+  

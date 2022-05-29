@@ -1,0 +1,188 @@
+page-hotel-results,page-my-hotel-results  {
+  .scroll-content {
+    overflow-y: auto !important;
+  }
+  .content-ios .scroll-content{
+    margin-top: 5px !important;  
+    }
+    .sort-btn-div {
+      justify-content: center;
+      align-self: center;
+      text-align: center;
+      margin: auto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background: #ffffff;
+      ion-row {
+        width: 95%;
+        margin: auto;
+        border: 1px solid #cccccc;
+        border-radius: 5px;
+
+        ion-col {
+          padding: 0;
+          border-right: 1px solid #cccccc;
+          display: flex;
+
+          button {
+            margin: 0;
+            width: 100%;
+            padding: 10px 0;
+            height: auto;
+            color: $background;
+            span {
+              font-size: 12px;
+
+              ion-icon {
+                margin-left: 1px;
+              }
+            }
+          }
+
+          .selected {
+            background-color:$background;
+            color: white;
+          }
+        }
+
+        ion-col:last-child {
+          border: 0;
+        }
+      }
+    
+    }
+  
+     .hotel-results{
+       border-bottom: 1px solid #cccccc;
+        .img-col {
+          // padding: 0;
+          max-height: 175px;
+          height: auto;
+          img {
+            height: 170px;
+            width: 100%;
+            //border-radius: 5px;
+          }
+        }
+
+        .detail-col {
+          padding: 0 0px 0 5px;
+          .hotel-name-row {
+            p {
+              color: black;
+              font-size: 16px;
+              font-weight: 500;
+              margin: 5px 0;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+          }
+
+          .location-row {
+            span {
+              font-size: 12px;
+              font-weight: 100;
+
+              ion-icon {
+                color:$background;
+                font-size: 12px;
+              }
+            }
+          }
+
+          .tripadv-row {
+            .tripadv{
+              background: $background;
+              border-radius: 5px;
+              padding: 2px;
+            img {
+              width: 60px;
+              display: inline-flex;
+            }
+            span {
+              font-size: 10px;
+              color: #fff;
+              font-weight: 400;
+            }
+          }
+
+            span {
+              font-size: 11px;
+              font-weight: 100;
+             padding: 5px;
+              align-self: center;
+
+              p {
+                display: inline-flex;
+                font-size: 10px;
+                padding-right: 3px;
+                color: #00A680;
+                margin: 0;
+                font-weight: 400;
+              }
+            }
+
+          }
+
+          .rating-row {
+            rating {
+              color: #FFC000;
+
+              ul {
+                margin: 0;
+                padding: 0;
+
+                li {
+                  padding: 0 !important;
+                }
+              }
+            }
+          }
+          .propertyType{
+            p {
+              padding: 2px;
+              border: 1px solid #cccccc;
+              border-radius: 5px;
+              color: #000000;
+              font-weight: 300;
+              font-size: 16px;
+              margin: 2px;
+            }
+          }
+          .price-row {
+           
+            text-align: center;
+            justify-content: flex-end;
+            padding: 5px 10px 10px 0;
+            p {
+              padding: 5px;
+              background:$background;
+              color: white;
+              font-weight: 500;
+              border-radius: 6px;
+              margin: 0;
+              
+              span{
+                font-style: italic;
+              }
+            }
+          }
+        }
+      }
+ 
+
+  ion-fab {
+    button {
+      width: 50px !important;
+      height: 50px !important;
+      color: $background !important;
+      background-color: white !important;
+      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+
+      ion-icon {
+        font-size: 26px !important;
+      }
+    }
+  }
+}

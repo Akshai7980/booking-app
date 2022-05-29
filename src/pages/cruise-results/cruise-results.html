@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Cruise Results</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let result of cruiseResults" (click)="SelectedCruise(result)">
+  <ion-row class="hotel-results" >
+    <ion-col no-padding class="img-col" col-12 >
+      <img src="{{result.ship_image}}" onerror="this.src='assets/imgs/hotDeals/hotel.jpg'">
+    </ion-col>
+  </ion-row>
+  <ion-row class="logo-box">
+    <ion-col no-padding>
+      <p [innerHTML]="result.tour_name"></p>
+    </ion-col>
+   <ion-col class="logo-img">
+    <img src="{{result.ship_operator_logo}}">
+   </ion-col> 
+  </ion-row>
+  <ion-row>
+    <ion-col class="detail-col">
+        <ion-row  class="location-row">
+        <span> <strong>Departing:</strong> {{result.fly_in}}</span>
+      </ion-row>
+      <ion-row  class="location-row">
+       <span><strong>Visiting: </strong> {{result.fly_out}}</span>
+     </ion-row>
+     <ion-row class="location-row">
+      <span><strong>Sailing Dates: </strong> {{result.starts_on}}</span>
+    </ion-row>
+      </ion-col>
+  </ion-row>
+  <ion-row class="price-row" *ngIf="cruiseAllFix.b2c == 0" >
+    <ion-col col-4>
+      <div class="price-col">
+        <p>Per Person <span> {{currencys.currency}} {{roundOff((result.price+cruiseAllMarkup.b2c)/currencys.value)}}</span> </p>
+      </div>
+      </ion-col>
+    <ion-col col-4>
+      <div class="price-col">
+      <p>Total Price <span> {{currencys.currency}} {{roundOff(((result.price*(AdultCount.adults+ChildCount.childs))+cruiseAllMarkup.b2c)/currencys.value)}}</span></p>
+    </div>
+    </ion-col> 
+    <ion-col col-4>
+       <button ion-button block>Book Now</button>
+      </ion-col>
+  </ion-row> 
+  <ion-row class="price-row" *ngIf="cruiseAllFix.b2c == 1" >
+    <ion-col col-4>
+    <div class="price-col">
+      <p>Per Person <span> {{currencys.currency}} {{roundOff(((result.price*cruiseAllMarkup.b2c/100)+result.price)/currencys.value)}}</span></p>
+    </div>
+    </ion-col>
+    <ion-col col-4>
+    <div class="price-col">
+      <p>Total Price <span> {{currencys.currency}} {{roundOff(((result.price*(AdultCount.adults+ChildCount.childs)*cruiseAllMarkup.b2c/100)+(result.price*(AdultCount.adults+ChildCount.childs)))/currencys.value)}}</span></p>
+    </div>
+    </ion-col> 
+    <ion-col col-4> 
+      <button ion-button block>Book Now</button> 
+    </ion-col>
+  </ion-row> 
+
+  <!-- <ion-row class="hotel-results">
+    <ion-grid>
+      <truncated-text [text]="result.cruise_description" limit="8" text-wrap></truncated-text>
+    </ion-grid>
+  </ion-row> -->
+  </div>
+</ion-content>
